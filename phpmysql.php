@@ -23,6 +23,15 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } else {
     echo "connection successful<br/>";
+echo $servername;
+echo $username;
+echo $password;
+echo $dbname;
 }
 $conn->close();
 ?>
+
+
+
+
+
