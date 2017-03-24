@@ -16,8 +16,13 @@ foreach ($_SERVER as $key => $value) {
     $password = preg_replace("/^.*Password=(.+?)$/", "\\1", $value);
 }
 
+define('DB_SERVERNAME', $servername);
+define('DB_NAME', $dbname);
+define('DB_USERNAME', $username);
+define('DB_PASSWORD', $password);
+
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli(DB_SERVERNAME, DB_USERNAME, DB_PASSWORD, DB_NAME);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
