@@ -32,7 +32,7 @@ if ($conn->connect_error) {
     // Test if any records match the supplied username and password
       $sql = "SELECT * FROM stock;";
       // Query the database to acquire results and hand them to resultSet
-      $result = $pdo->query($sql);
+      $result = $conn->query($sql);
   }
   catch(PDOEXCEPTION $e){
       // Display error message details
