@@ -43,7 +43,7 @@ if ($conn->connect_error) {
     
     // Check the number of rows that match the SELECT statement
   $row = $resultSet->fetch();
-
+  echo $row;
 $conn->close();
 ?>
 
