@@ -32,7 +32,7 @@ if ($conn->connect_error) {
     // Test if any records match the supplied username and password
       $sql = "SELECT * FROM stock;";
       // Query the database to acquire results and hand them to resultSet
-      $resultSet = $pdo->query($sql);
+      $result = $pdo->query($sql);
   }
   catch(PDOEXCEPTION $e){
       // Display error message details
@@ -40,10 +40,16 @@ if ($conn->connect_error) {
       // Stop running script
       exit();
   }
-    
-    // Check the number of rows that match the SELECT statement
-  $row = $resultSet->fetch();
-  echo $row;
+  
+   if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "ID: " . $row["item_id"]. " - Name: " . $row["item_name"]. " - Description: " . $row["item_description"]. "<br>";
+    }
+} else {
+    echo "0 results";
+}
+
 $conn->close();
 ?>
 
