@@ -28,6 +28,22 @@ if ($conn->connect_error) {
  //   echo "DB_USERNAME: $username<br/>";
  //   echo "DB_PASSWORD: $password<br/>";
 }
+  try{
+    // Test if any records match the supplied username and password
+      $sql = "SELECT * FROM stock;";
+      // Query the database to acquire results and hand them to resultSet
+      $resultSet = $pdo->query($sql);
+  }
+  catch(PDOEXCEPTION $e){
+      // Display error message details
+      echo 'Error fetching user login details: '.$e->getMessage();
+      // Stop running script
+      exit();
+  }
+    
+    // Check the number of rows that match the SELECT statement
+  $row = $resultSet->fetch();
+
 $conn->close();
 ?>
 
