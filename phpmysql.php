@@ -22,7 +22,7 @@ define('DB_USERNAME', $username);
 define('DB_PASSWORD', $password);
 
 // Create connection
-$conn = new mysqli(DB_SERVERNAME, DB_USERNAME, DB_PASSWORD, DB_NAME);
+$conn = new mysqli(DB_SERVERNAME, 'pharmacy', DB_PASSWORD, DB_NAME);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
