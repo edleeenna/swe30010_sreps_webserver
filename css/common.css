@@ -6,8 +6,11 @@ body{
   color: cyan;
 }
 nav a:hover{
-  color: white;
+  color: yellow;
 }
 nav a:link{
+  color: pink;
+}
+nav a:visited{
   color: white;
 }
