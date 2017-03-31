@@ -5,3 +5,6 @@ body{
   background-color: navy;
   color: cyan;
 }
+nav a:hover, a:link{
+  color: white;
+}
