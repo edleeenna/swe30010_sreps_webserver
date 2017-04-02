@@ -23,10 +23,10 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } else {
     echo "connection successful<br/>";
- //   echo "DB_SERVERNAME: $servername<br/>";
- //   echo "DB_NAME: $dbname<br/>";
- //   echo "DB_USERNAME: $username<br/>";
- //   echo "DB_PASSWORD: $password<br/>";
+    echo "DB_SERVERNAME: $servername<br/>";
+    echo "DB_NAME: $dbname<br/>";
+    echo "DB_USERNAME: $username<br/>";
+    echo "DB_PASSWORD: $password<br/>";
 }
   try{
     // Test if any records match the supplied username and password
