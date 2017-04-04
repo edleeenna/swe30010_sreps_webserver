@@ -1,36 +1,39 @@
 CREATE DATABASE IF NOT EXISTS localdb;
 USE
     localdb;
-CREATE TABLE IF NOT EXISTS sale(
-    sale_id INT(4),
-    sale_date_time DATETIME,
+CREATE TABLE IF NOT EXISTS sales(
+    sale_id VARCHAR(32),
+    sale_datetime DATETIME,
     PRIMARY KEY(sale_id)
 );
-CREATE TABLE IF NOT EXISTS catagory(
-    catagory_id INT(4),
-    catagory_name VARCHAR(255),
-    PRIMARY KEY(catagory_id)
+CREATE TABLE IF NOT EXISTS categories(
+    category_id INT(4),
+    category_name VARCHAR(255),
+    PRIMARY KEY(category_id)
 );
 CREATE TABLE IF NOT EXISTS stock(
-    item_id INT(4),
-    item_name VARCHAR(255),
-    item_description VARCHAR(1024),
-    item_qty INT,
-    item_price DECIMAL(7, 2),
-    item_cost_price DECIMAL(7, 2),
-    item_order_code VARCHAR(255),
-    item_target_min_qty INT,
-    catagory_id INT(4),
-    FOREIGN KEY(catagory_id) REFERENCES catagory(catagory_id),
-    bar_code VARCHAR(16),
-    PRIMARY KEY(item_id)
+    stock_id INT(5),
+    stock_name VARCHAR(255),
+    stock_description LONGTEXT,
+    stock_directions LONGTEXT,
+    stock_ingredients LONGTEXT,
+    stock_price DECIMAL(7, 2),
+    stock_cost_price DECIMAL(7, 2),
+    stock_qty INT,
+    stock_target_min_qty INT,
+    stock_supplier VARCHAR(255),
+    stock_supplier_order_code VARCHAR(32),
+    stock_category_id INT(4),
+    stock_bar_code VARCHAR(32),
+    PRIMARY KEY(stock_id),
+    FOREIGN KEY(stock_category_id) REFERENCES categories(category_id)
 );
-CREATE TABLE IF NOT EXISTS purchase(
-    sale_id INT(4),
-    item_id INT(4),
-    FOREIGN KEY(sale_id) REFERENCES sale(sale_id),
-    FOREIGN KEY(item_id) REFERENCES stock(item_id),
-    purchase_qty INT,
-    purchase_price DECIMAL(7, 2),
-    PRIMARY KEY(sale_id, item_id)
+CREATE TABLE IF NOT EXISTS orderline(
+    orderline_sale_id VARCHAR(32),
+    orderline_stock_id INT(5),
+    orderline_qty INT,
+    orderline_price DECIMAL(7, 2),
+    PRIMARY KEY(orderline_sale_id, orderline_stock_id),
+    FOREIGN KEY(orderline_sale_id) REFERENCES sales(sale_id),
+    FOREIGN KEY(orderline_stock_id) REFERENCES stock(stock_id)
 );
