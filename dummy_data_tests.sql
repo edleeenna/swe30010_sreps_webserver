@@ -1,0 +1,27 @@
+-- Stock
+INSERT INTO stock (stock_id,stock_name,stock_description,stock_directions,stock_ingredients,stock_price,stock_cost_price,stock_qty,stock_target_min_qty,stock_supplier,stock_supplier_order_code,stock_category_id,stock_bar_code) VALUES ('80206','Double D Sugarfree Fruit Chews 70g','','','','2.69','2.7','20','15','Cole-Kuhn','99-PG','8000','214359169-1');
+INSERT INTO stock (stock_id,stock_name,stock_description,stock_directions,stock_ingredients,stock_price,stock_cost_price,stock_qty,stock_target_min_qty,stock_supplier,stock_supplier_order_code,stock_category_id,stock_bar_code) VALUES ('80322','Ostelin Vitamin D and Calcium Kids Chewable 90','','','','21.99','22','30','11','Boyer-Bayer','931-GH-9','1000','869917010-6');
+INSERT INTO stock (stock_id,stock_name,stock_description,stock_directions,stock_ingredients,stock_price,stock_cost_price,stock_qty,stock_target_min_qty,stock_supplier,stock_supplier_order_code,stock_category_id,stock_bar_code) VALUES ('80460','Swisse Ultiboost Liver Detox 200 Tablets','','','','43.95','43.95','29','2','Luettgen-Considine','24MW4-CO-012','1000','728330614-5');
+INSERT INTO stock (stock_id,stock_name,stock_description,stock_directions,stock_ingredients,stock_price,stock_cost_price,stock_qty,stock_target_min_qty,stock_supplier,stock_supplier_order_code,stock_category_id,stock_bar_code) VALUES ('80611','Swisse Ultiboost High Strength Cranberry 90 Capsules','','','','57.99','58','12','2','Lueilwitz-Klein','DkVsWz-1','1000','582046084-7');
+INSERT INTO stock (stock_id,stock_name,stock_description,stock_directions,stock_ingredients,stock_price,stock_cost_price,stock_qty,stock_target_min_qty,stock_supplier,stock_supplier_order_code,stock_category_id,stock_bar_code) VALUES ('81473','Cavendish & Harvey Barley Sugar Tin 175g','','','','3.95','3.95','24','8','Lueilwitz-Klein','LxLdYe-6','8000','596662560-3');
+INSERT INTO stock (stock_id,stock_name,stock_description,stock_directions,stock_ingredients,stock_price,stock_cost_price,stock_qty,stock_target_min_qty,stock_supplier,stock_supplier_order_code,stock_category_id,stock_bar_code) VALUES ('81476','Cavendish & Harvey Wild Berry Tin 175g','','','','3.95','3.95','23','26','Dicki, Leuschke and Osinski','YW-544','8000','150730713-6');
+INSERT INTO stock (stock_id,stock_name,stock_description,stock_directions,stock_ingredients,stock_price,stock_cost_price,stock_qty,stock_target_min_qty,stock_supplier,stock_supplier_order_code,stock_category_id,stock_bar_code) VALUES ('81822','Tena Men Pads Level 3 8 Pack','','','','9.54','9.55','0','10','Hartmann-O\'Connell','YT-H68','4000','397037151-1');
+INSERT INTO stock (stock_id,stock_name,stock_description,stock_directions,stock_ingredients,stock_price,stock_cost_price,stock_qty,stock_target_min_qty,stock_supplier,stock_supplier_order_code,stock_category_id,stock_bar_code) VALUES ('81837','Sweet Shack Berries & Cream 100g','','','','6.5','6.5','17','11','Dicki, Leuschke and Osinski','VZ-013','8000','990562914-9');
+INSERT INTO stock (stock_id,stock_name,stock_description,stock_directions,stock_ingredients,stock_price,stock_cost_price,stock_qty,stock_target_min_qty,stock_supplier,stock_supplier_order_code,stock_category_id,stock_bar_code) VALUES ('82204','Radox Sleep Easy Bath Soak with Chamomile & Jasmine 500ml','','','','10','10','27','18','Bauch and Sons','312-23-0469','5000','412878741-8');
+INSERT INTO stock (stock_id,stock_name,stock_description,stock_directions,stock_ingredients,stock_price,stock_cost_price,stock_qty,stock_target_min_qty,stock_supplier,stock_supplier_order_code,stock_category_id,stock_bar_code) VALUES ('82825','Goat Soap 100g 6 Pack Gift Set','','','','10.3','10.3','30','1','Dicki, Leuschke and Osinski','CO-012','2000','001017673-X');
+
+-- Sales
+INSERT INTO sales (sale_id,sale_datetime) VALUES ('ba8a1bdff533cd9da514532674c04278','2017-03-09 13:58:32');
+INSERT INTO sales (sale_id,sale_datetime) VALUES ('25eff997f4c3b2e559a965cc0da9dbad','2017-03-10 13:45:0');
+
+-- Orderlines
+INSERT INTO orderlines (orderline_sale_id,orderline_stock_id,orderline_qty,orderline_price) VALUES ('ba8a1bdff533cd9da514532674c04278','3907','5','1.16');
+INSERT INTO orderlines (orderline_sale_id,orderline_stock_id,orderline_qty,orderline_price) VALUES ('ba8a1bdff533cd9da514532674c04278','6594','4','29.99');
+INSERT INTO orderlines (orderline_sale_id,orderline_stock_id,orderline_qty,orderline_price) VALUES ('ba8a1bdff533cd9da514532674c04278','31145','3','8.99');
+INSERT INTO orderlines (orderline_sale_id,orderline_stock_id,orderline_qty,orderline_price) VALUES ('ba8a1bdff533cd9da514532674c04278','5875','1','15.95');
+INSERT INTO orderlines (orderline_sale_id,orderline_stock_id,orderline_qty,orderline_price) VALUES ('ba8a1bdff533cd9da514532674c04278','6245','5','29.35');
+INSERT INTO orderlines (orderline_sale_id,orderline_stock_id,orderline_qty,orderline_price) VALUES ('25eff997f4c3b2e559a965cc0da9dbad','31731','3','13.95');
+INSERT INTO orderlines (orderline_sale_id,orderline_stock_id,orderline_qty,orderline_price) VALUES ('25eff997f4c3b2e559a965cc0da9dbad','31052','1','18.69');
+INSERT INTO orderlines (orderline_sale_id,orderline_stock_id,orderline_qty,orderline_price) VALUES ('25eff997f4c3b2e559a965cc0da9dbad','8256','3','147.16');
+INSERT INTO orderlines (orderline_sale_id,orderline_stock_id,orderline_qty,orderline_price) VALUES ('25eff997f4c3b2e559a965cc0da9dbad','6593','1','29.99');
+INSERT INTO orderlines (orderline_sale_id,orderline_stock_id,orderline_qty,orderline_price) VALUES ('25eff997f4c3b2e559a965cc0da9dbad','7703','4','2.3');
