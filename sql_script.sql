@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS stock(
     PRIMARY KEY(stock_id),
     FOREIGN KEY(stock_category_id) REFERENCES categories(category_id)
 );
-CREATE TABLE IF NOT EXISTS orderline(
+CREATE TABLE IF NOT EXISTS orderlines(
     orderline_sale_id VARCHAR(32),
     orderline_stock_id INT(5),
     orderline_qty INT,
