@@ -5,26 +5,37 @@
 <form method="" action="">
   <fieldset>
     <legend>Add Stock</legend>
-    <p> <label for="itemId">Item Id: </label>
+    <p>
+      <label for="itemId">Item Id: </label>
       <input type="number" id="itemId" name="itemId">
     </p>
-    <p><label for="itemName">Item Name: </label>
+    <p>
+      <label for="itemName">Item Name: </label>
       <input type="text" id="itemName" name="itemName">
     </p>
-    <p><label for="itemDescription">Item Description: </label>
+    <p>
+      <label for="itemDescription">Item Description: </label>
       <input type="text" id="itemDescription" name="itemDescription" >
     </p>
-    <p><label for="directions">Directions: </label>
+    <p>
+      <label for="directions">Directions: </label>
       <input name="directions" id="directions">
     </p>
-    <p><label for="ingredients">Ingredients: </label>
+    <p>
+      <label for="ingredients">Ingredients: </label>
       <input type="text" id="ingredients" name="ingredients">
     </p>
-    <p> <label for="itemprice">Item Price: </label> <input type="number" id="itemprice" name="itemprice">
+    <p>
+      <label for="itemprice">Item Price: </label>
+      <input type="number" id="itemprice" name="itemprice">
     </p>
-    <p> <label for="itemCostPrice">Item Cost Price: </label> <input type="number" id="itemCostPrice" name="itemCostPrice">
+    <p>
+      <label for="itemCostPrice">Item Cost Price: </label>
+      <input type="number" id="itemCostPrice" name="itemCostPrice">
     </p>
-    <p> <label for="itemQty">Item Qty: </label> <input type="number" id="itemQty" name="itemQty">
+    <p>
+      <label for="itemQty">Item Qty: </label>
+      <input type="number" id="itemQty" name="itemQty">
     </p>
     <p>
       <label for="itemTarget">Item Target</label>
