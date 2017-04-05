@@ -17,9 +17,10 @@ nav a:visited{
 
 /* css for the table in displaystock.php. Note: needs improvement */
 td {
-  max-width : 150px;
+  max-width : 100px;
   white-space : nowrap;
   overflow : hidden;
+  text-overflow: ellipsis;
 }
 
 td:hover {
