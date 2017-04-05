@@ -5,7 +5,7 @@
   // Include functions for editing stock. Could be made part of all functions for stock. eg: stock_func.php
   include 'includes/stock_func_edit.php';
 
-  if (!isset($POST['item_select'])) {
+  if (!isset($_POST['item_select'])) {
 ?>
     <form id="stock_item" action="edit_stock.php" method="post">
       Select stock item to edit, by ID or Name.<br>
