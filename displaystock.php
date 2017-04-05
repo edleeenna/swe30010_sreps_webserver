@@ -29,7 +29,7 @@ echo "<table class=\"stock\" border=\"1\">";
           echo "<td>", $row["stock_directions"], "</td>";
           echo "<td>", $row["stock_ingredients"], "</td>";
           echo "<td>", $row["stock_price"], "</td>";
-          echo "<td>", $row["stock_cost_ptice"], "</td>";
+          echo "<td>", $row["stock_cost_price"], "</td>";
           echo "<td>", $row["stock_qty"], "</td>";
           echo "<td>", $row["stock_target_min_qty"], "</td>";
           echo "<td>", $row["stock_supplier"], "</td>";
