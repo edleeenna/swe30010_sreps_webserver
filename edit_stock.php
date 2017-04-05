@@ -25,8 +25,8 @@
     echo "results<br>".PHP_EOL;
     if ($result->num_rows > 0) {
       // output data of each row
-      //while($row = $result->fetch_assoc()) {
-      while($row = $result->fetch()) {
+      while($row = $result->fetch_assoc()) {
+      //while($row = $result->fetch()) {
         //echo "ID: " . $row["item_id"]. " - Name: " . $row["item_name"]. " - Description: " . $row["item_description"]. "<br>";
         print_r (array_values($row));
         echo "<br><br>".PHP_EOL;
