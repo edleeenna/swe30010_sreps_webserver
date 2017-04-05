@@ -57,9 +57,9 @@
         print_r (array_values($row))
         echo "<br>";
       }*/
-    echo "Result testing completed.<br>".PHP_EOL;
+    echo "Result testing completed.".$result->num_rows."<br>".PHP_EOL;
     //$row = $result->fetch();
-    $row = $results->fetch_assoc();
+    $row = $result->fetch_assoc();
     print_r (array_values($row));
     $php_stock_details = array();
     $php_stock_details[0] = $row['stock_id'];
