@@ -7,12 +7,12 @@ CREATE TABLE IF NOT EXISTS sales(
     PRIMARY KEY(sale_id)
 );
 CREATE TABLE IF NOT EXISTS categories(
-    category_id INT(4),
+    category_id INT(4) NOT NULL AUTO_INCREMENT ,
     category_name VARCHAR(255),
     PRIMARY KEY(category_id)
 );
 CREATE TABLE IF NOT EXISTS stock(
-    stock_id INT(5),
+    stock_id INT(5) NOT NULL AUTO_INCREMENT,
     stock_name VARCHAR(255),
     stock_description LONGTEXT,
     stock_directions LONGTEXT,
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS stock(
 );
 CREATE TABLE IF NOT EXISTS orderlines(
     orderline_sale_id VARCHAR(32),
-    orderline_stock_id INT(5),
+    orderline_stock_id INT(5) AUTO_INCREMENT,
     orderline_qty INT,
     orderline_price DECIMAL(7, 2),
     PRIMARY KEY(orderline_sale_id, orderline_stock_id),
