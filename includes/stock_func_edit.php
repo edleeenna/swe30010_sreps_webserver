@@ -1,4 +1,7 @@
 <?php
+  function cleanInput($input) {
+    return htmlspecialchars(stripslashes(trim($input)));
+  }
   function get_ID_list(){
     //echo "get_ID_list Function called.<br>".PHP_EOL;
     include 'includes/db_connect.php';
@@ -11,7 +14,7 @@
     }
     catch(PDOEXCEPTION $e){
       // Display error message details
-      echo 'Error fetching user login details: '.$e->getMessage();
+      echo 'Error fetching list of stock IDs: '.$e->getMessage();
       // Stop running script
       exit();
     }
@@ -43,7 +46,7 @@
     }
     catch(PDOEXCEPTION $e){
       // Display error message details
-      echo 'Error fetching user login details: '.$e->getMessage();
+      echo 'Error fetching stock item details: '.$e->getMessage();
       // Stop running script
       exit();
     }
@@ -69,5 +72,42 @@
 
     $conn->close();
     return $php_stock_details;
+  }
+  function update_stock() {
+    if (isset($_POST['html_item_update'])) {
+      //echo "update_stock Function called.<br>".PHP_EOL;
+      include 'includes/db_connect.php';
+
+      try{
+        // Test if any records match the supplied username and password
+        $sql = "UPDATE stock SET stock_id = :stock_id, stock_name = :stock_name, stock_description = :stock_description;";
+        
+        // Prepare sql statement
+        $statement = $pdo->prepare($sql);
+        
+        // create bindinds to place holders.
+        $statement->bindValue(':stock_id', cleanInput($_POST['html_stock_id']));
+        $statement->bindValue(':stock_name', cleanInput($_POST['html_stock_name']));
+        $statement->bindValue(':stock_description', cleanInput($_POST['html_stock_description']));
+        //$statement->bindValue(':', cleanInput($_POST['']));
+        // Send update query to database, store results in $success.
+        //$success = $statement->execute();
+      }
+      catch(PDOEXCEPTION $e){
+        // Display error message details
+        echo 'Error updating stock item details: '.$e->getMessage();
+        // Stop running script
+        exit();
+      }
+      
+      // Create user feedback messages for success or failure to update.
+      if ($success) {
+        echo '<script type="text/javascript">alert("Successfully updated stock item details.");</script>';
+      }
+      else {
+        echo '<script type="text/javascript">alert("Failed to update stock item details.");</script>';
+      }
+      $conn->close();
+    }
   }
 ?>
