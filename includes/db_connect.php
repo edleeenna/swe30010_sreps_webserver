@@ -16,7 +16,7 @@
   if ($conn->connect_error) {
     die("Connection failed: ".$conn->connect_error.PHP_EOL);
   }
-  else {
+  /*else {
     echo "connection successful<br/>".PHP_EOL;
-  }
+  }*/
 ?>
