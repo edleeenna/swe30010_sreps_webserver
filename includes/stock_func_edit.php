@@ -83,7 +83,7 @@
         $sql = "UPDATE stock SET stock_id = :stock_id, stock_name = :stock_name, stock_description = :stock_description;";
         
         // Prepare sql statement
-        $statement = $pdo->prepare($sql);
+        $statement = $conn->prepare($sql);
         
         // create bindinds to place holders.
         $statement->bindValue(':stock_id', cleanInput($_POST['html_stock_id']));
