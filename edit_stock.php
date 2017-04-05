@@ -1,7 +1,7 @@
 <?php
-  echo "Start<br>".PHP_EOL;
+  //echo "Start<br>".PHP_EOL;
   include 'includes/head.php';
-  echo "connect<br>".PHP_EOL;
+  //echo "connect<br>".PHP_EOL;
   // Include functions for editing stock. Could be made part of all functions for stock. eg: stock_func.php
   include 'includes/stock_func_edit.php';
 
