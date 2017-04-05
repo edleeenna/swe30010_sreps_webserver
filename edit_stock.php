@@ -2,8 +2,10 @@
   echo "Start<br>".PHP_EOL;
   include 'includes/head.php';
   echo "connect<br>".PHP_EOL;
+  /*
   include 'includes/db_connect.php';
   echo "SQL<br>".PHP_EOL;
+  
   try{
     echo "try<br>".PHP_EOL;
     // Test if any records match the supplied username and password
@@ -31,7 +33,7 @@
     echo "0 results";
   }
   echo "Close<br>".PHP_EOL;
-  $conn->close();
+  $conn->close();*/
 ?>
     Edit Stock Item<br>
     Item<br>
