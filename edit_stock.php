@@ -4,7 +4,7 @@
   //echo "connect<br>".PHP_EOL;
   // Include functions for editing stock. Could be made part of all functions for stock. eg: stock_func.php
   include 'includes/stock_func_edit.php';
-
+  update_stock();
   if (!isset($_POST['html_item_select'])) {
 ?>
     <form id="stock_item" action="edit_stock.php" method="post">
@@ -31,7 +31,7 @@
         Item ID: <input class="stock_edit" type="text" name="item_id" value="<?php echo $php_stock_details[0];?>"><br>
         Item Name: <input class="stock_edit" type="text" name="item_name" value="<?php echo $php_stock_details[1];?>"><br>
         Item Description: <input class="stock_edit" type="text" name="item_description" value="<?php echo $php_stock_details[2];?>"><br>
-        <input type="submit" name="item_update" value="Update Stock Item"> <input type="reset" value="Clear fields.">
+        <input type="submit" name="html_item_update" value="Update Stock Item"> <input type="reset" value="Clear fields.">
 <?php
   }
 ?>
