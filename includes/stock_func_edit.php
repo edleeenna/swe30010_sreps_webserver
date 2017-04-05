@@ -32,7 +32,7 @@
     $conn->close();
   }
   function get_stock_item_details($php_stock_id) {
-    echo "get_stock_item_details() called.".PHP_EOL;
+    //echo "get_stock_item_details() called.".PHP_EOL;
     include 'includes/db_connect.php';
 
     try{
@@ -47,7 +47,7 @@
       // Stop running script
       exit();
     }
-    echo "SQL Query completed.<br>".PHP_EOL;
+    //echo "SQL Query completed.<br>".PHP_EOL;
     if ($result->num_rows == 0) echo "0 results";
     if ($result->num_rows > 1) echo "Too many results";
     //if ($result->num_rows = 1) {
@@ -57,9 +57,10 @@
         print_r (array_values($row))
         echo "<br>";
       }*/
-    //$row = $results->fetch();
-    $row = $results->fetch_assoc();
-    print_r (array_values($row));
+    echo "Result testing completed.<br>".PHP_EOL;
+    $row = $results->fetch();
+    //$row = $results->fetch_assoc();
+    //print_r (array_values($row));
     $php_stock_details = array();
     $php_stock_details[0] = $row['stock_id'];
     $php_stock_details[1] = $row['stock_name'];
