@@ -41,7 +41,7 @@
     $conn->close();
   }
   //get_stock_item();
-  if (!isset($POST['stock_select'])) {
+  if (!isset($POST['item_select'])) {
 ?>
     <form id="stock_item" action="edit_stock.php" method="post">
       Select stock item to edit, by ID or Name.<br>
