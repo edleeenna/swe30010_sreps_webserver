@@ -40,7 +40,8 @@
     // output data of each row
     while($row = $result->fetch_assoc()) {
       //echo "ID: " . $row["item_id"]. " - Name: " . $row["item_name"]. " - Description: " . $row["item_description"]. "<br>";
-      echo $row."<br>";
+      print_r (array_values($row))
+      echo "<br>";
     }
   }
   else {
