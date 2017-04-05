@@ -23,6 +23,7 @@
     echo "DB_USERNAME: $username<br/>";
     echo "DB_PASSWORD: $password<br/>";
   }
+  /*
   try{
     // Test if any records match the supplied username and password
     $sql = "SELECT * FROM stock;";
@@ -48,5 +49,5 @@
     echo "0 results";
   }
   
-  $conn->close();
+  $conn->close();*/
 ?>
