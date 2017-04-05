@@ -18,7 +18,8 @@
       // output data of each row
       foreach ($result as $row) {
       //while($row = $result->fetch_assoc()) {
-        echo '<option value="'.$row["stock_id"].'>".$row["stock_id"]."</option>";
+        //echo '<option value="'.$row["stock_id"].'>".$row["stock_id"]."</option>";
+        echo '<option value="'.$row.'>'.$row.'</option>';
       }
     }
     else {
