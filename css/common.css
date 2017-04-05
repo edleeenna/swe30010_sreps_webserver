@@ -15,14 +15,13 @@ nav a:visited{
   color: white;
 }
 
-/* css for the table in displaystock.php */
-.stock {
+/* css for the table in displaystock.php. Note: needs improvement */
+td {
   max-width : 150px;
   white-space : nowrap;
   overflow : hidden;
 }
 
-.stock:hover {
+td:hover {
   max-width : initial;
-  max-height: initial;
 }
