@@ -75,7 +75,7 @@
   }
   function update_stock() {
     if (isset($_POST['html_item_update'])) {
-      //echo "update_stock Function called.<br>".PHP_EOL;
+      echo "update_stock Function called.<br>".PHP_EOL;
       include 'includes/db_connect.php';
 
       try{
@@ -99,7 +99,7 @@
         // Stop running script
         exit();
       }
-      
+      echo "SQL section completed.<br>".PHP_EOL;      
       // Create user feedback messages for success or failure to update.
       if ($success) {
         echo '<script type="text/javascript">alert("Successfully updated stock item details.");</script>';
@@ -107,6 +107,7 @@
       else {
         echo '<script type="text/javascript">alert("Failed to update stock item details.");</script>';
       }
+      echo "Success test completed.<br>".PHP_EOL;
       $conn->close();
     }
   }
