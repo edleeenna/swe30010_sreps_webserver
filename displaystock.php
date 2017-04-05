@@ -10,7 +10,6 @@ echo "<table border=\"1\">";
         ."<th scope=\"col\">Stock Id</th>"
         ."<th scope=\"col\">Stock Name</th>"
         ."<th scope=\"col\">Stock Description</th>"
-        ."<th scope=\"col\">stock directions</th>"
         ."<th scope=\"col\">Stock Directions</th>"
         ."<th scope=\"col\">Ingredients</th>"
         ."<th scope=\"col\">Price</th>"
