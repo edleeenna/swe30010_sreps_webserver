@@ -1,5 +1,6 @@
 <?php
   function get_ID_list(){
+    echo "get_ID_list Function called.<br>".PHP_EOL;
     include 'includes/db_connect.php';
 
     try{
@@ -14,6 +15,7 @@
       // Stop running script
       exit();
     }
+    echo "get_ID_list Function finished SQL.<br>".PHP_EOL;
     if ($result->num_rows > 0) {
       // output data of each row
       foreach ($result as $row) {
