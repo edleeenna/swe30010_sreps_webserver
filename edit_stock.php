@@ -45,7 +45,7 @@
 ?>
     <form id="stock_item" action="edit_stock.php" method="post">
       Select stock item to edit, by ID or Name.<br>
-      <select name="ID_list">
+      <select name="html_selected_id">
 <?php
         get_ID_list();
 ?>
@@ -59,14 +59,14 @@
 <?php
   }
   else{
-    $stock_details = get_stock_item_details($_POST['ID_list']);
+    $php_stock_details = get_stock_item_details($_POST['html_selected_id']);
     //$stock_details = get_stock_item_details($_POST['name_list']);
     // onsubmit="return check_stock_details(this)"
 ?>
       <form id="stock_item" action="edit_stock.php" method="post">
-        Item ID: <input class="stock_edit" type="text" name="item_id" value="<?php echo $php_stock_details['item_id'];?>"><br>
-        Item Name: <input class="stock_edit" type="text" name="item_name" value="<?php echo $php_stock_details['item_name'];?>"><br>
-        Item Description: <input class="stock_edit" type="text" name="item_description" value="<?php echo $php_stock_details['item_description'];?>"><br>
+        Item ID: <input class="stock_edit" type="text" name="item_id" value="<?php echo $php_stock_details[0];?>"><br>
+        Item Name: <input class="stock_edit" type="text" name="item_name" value="<?php echo $php_stock_details[1];?>"><br>
+        Item Description: <input class="stock_edit" type="text" name="item_description" value="<?php echo $php_stock_details[2];?>"><br>
         <input type="submit" name="item_update" value="Update Stock Item"> <input type="reset" value="Clear fields.">
 <?php
   }
