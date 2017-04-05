@@ -30,13 +30,13 @@
 
     $conn->close();
   }
-  /*function get_stock_item_details($_POST['stock_id']) {
+  function get_stock_item_details($php_stock_id) {
     
     include 'includes/db_connect.php';
 
     try{
       // Test if any records match the supplied username and password
-      $sql = "SELECT * FROM stock WHERE stock_id = ".$_POST['stock_id'].";";
+      $sql = "SELECT stock_id, stock_name, stock_description FROM stock WHERE stock_id = ".$php_stock_id.";";
       // Query the database to acquire results and hand them to resultSet
       $result = $conn->query($sql);
     }
@@ -46,19 +46,23 @@
       // Stop running script
       exit();
     }
-
-    if ($result->num_rows > 0) {
+    if ($result->num_rows = 0) echo "0 results";
+    if ($result->num_rows > 1) echo "Too many results";
+    if ($result->num_rows = 1) {
       // output data of each row
-      while($row = $result->fetch_assoc()) {
+      /*while($row = $result->fetch_assoc()) {
         //echo "ID: " . $row["item_id"]. " - Name: " . $row["item_name"]. " - Description: " . $row["item_description"]. "<br>";
         print_r (array_values($row))
         echo "<br>";
-      }
-    }
-    else {
-      echo "0 results";
+      }*/
+      $row = $results->fetch();
+      $stock_details = array();
+      $stock_details[0] = $row['stock_id'];
+      $stock_details[1] = $row['stock_name'];
+      $stock_details[2] = $row['stock_description'];
     }
 
     $conn->close();
-  }*/
+    return $stock_details;
+  }
 ?>
