@@ -56,13 +56,13 @@
         echo "<br>";
       }*/
       $row = $results->fetch();
-      $stock_details = array();
-      $stock_details[0] = $row['stock_id'];
-      $stock_details[1] = $row['stock_name'];
-      $stock_details[2] = $row['stock_description'];
+      $php_stock_details = array();
+      $php_stock_details[0] = $row['stock_id'];
+      $php_stock_details[1] = $row['stock_name'];
+      $php_stock_details[2] = $row['stock_description'];
     }
 
     $conn->close();
-    return $stock_details;
+    return $php_stock_details;
   }
 ?>
