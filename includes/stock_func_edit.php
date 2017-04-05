@@ -48,7 +48,7 @@
       exit();
     }
     echo "SQL Query completed.<br>".PHP_EOL;
-    if ($result->num_rows = 0) echo "0 results";
+    if ($result->num_rows == 0) echo "0 results";
     if ($result->num_rows > 1) echo "Too many results";
     //if ($result->num_rows = 1) {
       // output data of each row
