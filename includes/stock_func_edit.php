@@ -21,7 +21,7 @@
       foreach ($result as $row) {
       //while($row = $result->fetch_assoc()) {
         //echo '<option value="'.$row["stock_id"].'>".$row["stock_id"]."</option>";
-        echo '<option value="'.$row.'>'.$row.'</option>';
+        echo '<option value="'.$row['stock_id'].'>'.$row['stock_id'].'</option>';
       }
     }
     else {
@@ -30,8 +30,8 @@
 
     $conn->close();
   }
-  function get_stock_item_details($_POST['stock_id']) {
-    /*
+  /*function get_stock_item_details($_POST['stock_id']) {
+    
     include 'includes/db_connect.php';
 
     try{
@@ -59,6 +59,6 @@
       echo "0 results";
     }
 
-    $conn->close();*/
-  }
+    $conn->close();
+  }*/
 ?>
