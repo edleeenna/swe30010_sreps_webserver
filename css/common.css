@@ -16,12 +16,12 @@ nav a:visited{
 }
 
 /* css for the table in displaystock.php */
-.adress {
+.stock {
   max-width : 150px;
   white-space : nowrap;
   overflow : hidden;
 }
 
-.adress:hover {
+.stock:hover {
   max-width : initial;
 }
