@@ -58,7 +58,7 @@
         echo "<br>";
       }*/
     echo "Result testing completed.<br>".PHP_EOL;
-    $row = $results->fetch();
+    $row = $result->fetch();
     //$row = $results->fetch_assoc();
     //print_r (array_values($row));
     $php_stock_details = array();
