@@ -46,7 +46,9 @@
     <form id="stock_item" action="edit_stock.php" method="post">
       Select stock item to edit, by ID or Name.<br>
       <select name="ID_list">
+<?php
         get_ID_list();
+?>
       </select>
 <?php /*
       <select name="name_list">
