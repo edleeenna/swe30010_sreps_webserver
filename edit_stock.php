@@ -28,14 +28,16 @@
     // onsubmit="return check_stock_details(this)"
 ?>
       <form id="stock_item" action="edit_stock.php" method="post">
-        Item ID: <input class="stock_edit" type="text" name="item_id" value="<?php echo $php_stock_details[0];?>"><br>
-        Item Name: <input class="stock_edit" type="text" name="item_name" value="<?php echo $php_stock_details[1];?>"><br>
-        Item Description: <input class="stock_edit" type="text" name="item_description" value="<?php echo $php_stock_details[2];?>"><br>
+        Item ID: <input class="stock_edit" type="text" name="html_stock_id" value="<?php echo $php_stock_details[0];?>"><br>
+        Item Name: <input class="stock_edit" type="text" name="html_stock_name" value="<?php echo $php_stock_details[1];?>"><br>
+        Item Description: <input class="stock_edit" type="text" name="html_stock_description" value="<?php echo $php_stock_details[2];?>"><br>
         <input type="submit" name="html_item_update" value="Update Stock Item"> <input type="reset" value="Clear fields.">
 <?php
   }
 ?>
     </form>
+<?php
+    /*
     Edit Stock Item<br>
     Item<br>
     ID:<br>
@@ -43,7 +45,6 @@
     Cost Price<br>
     Price <br>
     Quantity <br>
-    Minimm Target Quantity:<br>
-<?php
+    Minimm Target Quantity:<br>*/
   include 'includes/tail.php';
 ?>
