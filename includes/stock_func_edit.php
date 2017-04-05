@@ -81,14 +81,17 @@
       try{
         // Test if any records match the supplied username and password
         $sql = "UPDATE stock SET stock_id = :stock_id, stock_name = :stock_name, stock_description = :stock_description;";
+      echo "SQL completed.<br>".PHP_EOL;
         
         // Prepare sql statement
         $statement = $conn->prepare($sql);
+      echo "Statement prepared.<br>".PHP_EOL;
         
         // create bindinds to place holders.
         $statement->bindValue(':stock_id', cleanInput($_POST['html_stock_id']));
         $statement->bindValue(':stock_name', cleanInput($_POST['html_stock_name']));
         $statement->bindValue(':stock_description', cleanInput($_POST['html_stock_description']));
+      echo "Statement value binding completed.<br>".PHP_EOL;
         //$statement->bindValue(':', cleanInput($_POST['']));
         // Send update query to database, store results in $success.
         //$success = $statement->execute();
@@ -99,7 +102,7 @@
         // Stop running script
         exit();
       }
-      echo "SQL section completed.<br>".PHP_EOL;      
+      echo "SQL section completed.<br>".PHP_EOL;
       // Create user feedback messages for success or failure to update.
       if ($success) {
         echo '<script type="text/javascript">alert("Successfully updated stock item details.");</script>';
