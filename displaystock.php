@@ -5,7 +5,7 @@
 
 $listAllQuery = "select * FROM stock";
       $listResult = mysqli_query($conn, $listAllQuery);
-echo "<table border=\"1\">";
+echo "<table class=\"stock\" border=\"1\">";
       echo "<tr>"
         ."<th scope=\"col\">Stock Id</th>"
         ."<th scope=\"col\">Stock Name</th>"
