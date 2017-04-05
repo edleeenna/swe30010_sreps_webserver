@@ -18,7 +18,6 @@ nav a:visited{
 /* css for the table in displaystock.php */
 .stock {
   max-width : 150px;
-  max-height: 150px;
   white-space : nowrap;
   overflow : hidden;
 }
