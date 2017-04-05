@@ -19,11 +19,16 @@
  $stock_bar_code = $_SESSION['stock_bar_code'];// barcode ID
 
     if (!$conn) { //If Cannot Connect Display Error Message
-        echo "Unable to connect to the Booking database"; 
+        echo "Unable to connect to the stock database"; 
     } 
     else { 
         $sqltable="stock"; 
-        $query = "INSERT INTO $sqltable (stock_id, stock_name, stock_description, stock_directions, stock_ingredients, stock_price, stock_cost_ptice, stock_qty, stock_target_min_qty, stock_supplier, stock_supplier_order_code, stock_category_id, stock_bar_code) VALUES ('$stock_id', '$stock_name', '$stock_description', '$stock_directions', '$stock_ingredients', '$stock_price', '$stock_cost_ptice', '$stock_qty', '$stock_target_min_qty', '$stock_supplier', '$stock_supplier_order_code', '$stock_category_id', '$stock_bar_code');"; 
+        $query = "INSERT INTO $sqltable (stock_id, stock_name, stock_description, stock_directions,
+        stock_ingredients, stock_price, stock_cost_ptice, stock_qty, stock_target_min_qty, stock_supplier, 
+        stock_supplier_order_code, stock_category_id, stock_bar_code) 
+        VALUES ('$stock_id', '$stock_name', '$stock_description', '$stock_directions', '$stock_ingredients',
+        '$stock_price', '$stock_cost_ptice', '$stock_qty', '$stock_target_min_qty', '$stock_supplier',
+        '$stock_supplier_order_code', '$stock_category_id', '$stock_bar_code');"; 
 
         $result = mysqli_query($conn, $query); //execute query to insert user entered values into stock table
         }
