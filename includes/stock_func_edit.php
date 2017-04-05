@@ -56,6 +56,7 @@
         echo "<br>";
       }*/
     $row = $results->fetch();
+    print_r (array_values($row));
     $php_stock_details = array();
     $php_stock_details[0] = $row['stock_id'];
     $php_stock_details[1] = $row['stock_name'];
