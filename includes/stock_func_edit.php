@@ -41,7 +41,7 @@
 
     try{
       // Test if any records match the supplied username and password
-      $sql = "SELECT stock_id, stock_name, stock_description FROM stock WHERE stock_id = ".$php_stock_id.";";
+      $sql = "SELECT * FROM stock WHERE stock_id = ".$php_stock_id.";";
       // Query the database to acquire results and hand them to resultSet
       $result = $conn->query($sql);
     }
