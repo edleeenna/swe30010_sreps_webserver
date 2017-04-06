@@ -1,11 +1,13 @@
 html{
   background-color: black;
 }
+
 body{
   background-color: navy;
   color: cyan;
   margin: 90px 5px 40px;
 }
+
 header{
   text-align: center;
   left: 0px;
@@ -13,18 +15,22 @@ header{
   height: 60px;
   position: fixed;
 }
+
 nav{
   left: 0px;
   top: 60px;
   height: 30px;
   position: fixed;
 }
+
 nav a:hover{
   color: yellow;
 }
+
 nav a:link{
   color: pink;
 }
+
 nav a:visited{
   color: white;
 }
@@ -40,6 +46,7 @@ td {
 td:hover {
   max-width : initial;
 }
+
 footer {
   text-align: center;
   position: fixed;
