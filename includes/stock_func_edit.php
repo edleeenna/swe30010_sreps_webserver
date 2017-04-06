@@ -1,6 +1,7 @@
 <?php
   function cleanInput($input) {
     return htmlspecialchars(stripslashes(trim($input)));
+    echo "Cleaned $input.<br>".PHP_EOL;
   }
   function get_ID_list(){
     //echo "get_ID_list Function called.<br>".PHP_EOL;
