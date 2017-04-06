@@ -28,9 +28,19 @@
     // onsubmit="return check_stock_details(this)"
 ?>
       <form id="stock_item" action="edit_stock.php" method="post">
-        Item ID: <input class="stock_edit" type="text" name="html_stock_id" value="<?php echo $php_stock_details['id'];?>" disabled><br>
+        Item Id: <input class="stock_edit" type="text" name="html_stock_id" value="<?php echo $php_stock_details['id'];?>" disabled><br>
         Item Name: <input class="stock_edit" type="text" name="html_stock_name" value="<?php echo $php_stock_details['name'];?>"><br>
         Item Description: <input class="stock_edit" type="text" name="html_stock_description" value="<?php echo $php_stock_details['description'];?>"><br>
+        Item Directions: <input class="stock_edit" type="text" name="html_stock_directions" value="<?php echo $php_stock_details['directions'];?>"><br>
+        Item Ingredients: <input class="stock_edit" type="text" name="html_stock_ingredients" value="<?php echo $php_stock_details['ingredients'];?>"><br>
+        Item Price: <input class="stock_edit" type="text" name="html_stock_price" value="<?php echo $php_stock_details['price'];?>"><br>
+        Item Cost Price: <input class="stock_edit" type="text" name="html_stock_cost_price" value="<?php echo $php_stock_details['cost_price'];?>"><br>
+        Item Quantity: <input class="stock_edit" type="text" name="html_stock_qty" value="<?php echo $php_stock_details['qty'];?>"><br>
+        Item Target Minimum Quantity: <input class="stock_edit" type="text" name="html_stock_target_min_qty" value="<?php echo $php_stock_details['target_min_qty'];?>"><br>
+        Item Supplier: <input class="stock_edit" type="text" name="html_stock_supplier" value="<?php echo $php_stock_details['supplier'];?>"><br>
+        Item Supplier Order Code: <input class="stock_edit" type="text" name="html_stock_supplier_order_code" value="<?php echo $php_stock_details['supplier_order_code'];?>"><br>
+        Item Category ID: <input class="stock_edit" type="text" name="html_stock_category_id" value="<?php echo $php_stock_details['category_id'];?>"><br>
+        Item Bar Code: <input class="stock_edit" type="text" name="html_stock_bar_code" value="<?php echo $php_stock_details['bar_code'];?>"><br>
         <input type="submit" name="html_item_update" value="Update Stock Item"> <input type="reset" value="Clear fields.">
 <?php
   }
