@@ -32,8 +32,6 @@
   <body>
 <?php
   include 'header.php';
-?>
-    <hr>
-<?php
   include 'nav.php';
 ?>
+    <hr>
