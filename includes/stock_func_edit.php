@@ -76,17 +76,20 @@
   }
   function update_stock() {
     if (isset($_POST['html_item_update'])) {
-      echo "update_stock Function called.<br>".PHP_EOL;
+      //echo "update_stock Function called.<br>".PHP_EOL;
       include 'includes/db_connect.php';
 
       try{
         // Test if any records match the supplied username and password
         $sql = "UPDATE stock SET stock_id = :stock_id, stock_name = :stock_name, stock_description = :stock_description;";
-      echo "SQL completed.<br>".PHP_EOL;
+      //echo "SQL completed.<br>".PHP_EOL;
         
         // Prepare sql statement
         $statement = $conn->prepare($sql);
-      echo "Statement prepared.<br>".PHP_EOL;
+      //echo "Statement prepared.<br>".PHP_EOL;
+      echo $_POST['html_stock_id']".<br>".PHP_EOL;
+      echo $_POST['html_stock_name']".<br>".PHP_EOL;
+      echo $_POST['html_stock_description']".<br>".PHP_EOL;
         
         // create bindinds to place holders.
         $statement->bindValue(':stock_id', cleanInput($_POST['html_stock_id']));
