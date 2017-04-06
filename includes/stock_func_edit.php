@@ -69,6 +69,16 @@
     $php_stock_details['id'] = $row['stock_id'];
     $php_stock_details['name'] = $row['stock_name'];
     $php_stock_details['description'] = $row['stock_description'];
+    $php_stock_details['directions'] = $row['stock_directions'];
+    $php_stock_details['ingredients'] = $row['stock_ingredients'];
+    $php_stock_details['price'] = $row['stock_price'];
+    $php_stock_details['cost_price'] = $row['stock_cost_price'];
+    $php_stock_details['qty'] = $row['stock_qty'];
+    $php_stock_details['target_min_qty'] = $row['stock_target_min_qty'];
+    $php_stock_details['supplier'] = $row['stock_supplier'];
+    $php_stock_details['supplier_order_code'] = $row['stock_supplier_order_code'];
+    $php_stock_details['category_id'] = $row['stock_category_id'];
+    $php_stock_details['bar_code'] = $row['stock_bar_code'];
     //}
 
     $conn->close();
