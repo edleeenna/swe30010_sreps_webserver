@@ -66,9 +66,9 @@
     $row = $result->fetch_assoc();
     print_r (array_values($row));
     $php_stock_details = array();
-    $php_stock_details[0] = $row['stock_id'];
-    $php_stock_details[1] = $row['stock_name'];
-    $php_stock_details[2] = $row['stock_description'];
+    $php_stock_details['id'] = $row['stock_id'];
+    $php_stock_details['name'] = $row['stock_name'];
+    $php_stock_details['description'] = $row['stock_description'];
     //}
 
     $conn->close();
