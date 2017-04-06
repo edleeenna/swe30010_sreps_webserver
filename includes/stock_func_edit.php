@@ -87,9 +87,9 @@
         // Prepare sql statement
         $statement = $conn->prepare($sql);
       //echo "Statement prepared.<br>".PHP_EOL;
-      echo $_POST['html_stock_id']".<br>".PHP_EOL;
-      echo $_POST['html_stock_name']".<br>".PHP_EOL;
-      echo $_POST['html_stock_description']".<br>".PHP_EOL;
+      echo $_POST['html_stock_id'].".<br>".PHP_EOL;
+      echo $_POST['html_stock_name'].".<br>".PHP_EOL;
+      echo $_POST['html_stock_description'].".<br>".PHP_EOL;
         
         // create bindinds to place holders.
         $statement->bindValue(':stock_id', cleanInput($_POST['html_stock_id']));
