@@ -28,7 +28,7 @@
     // onsubmit="return check_stock_details(this)"
 ?>
       <form id="stock_item" action="edit_stock.php" method="post">
-        Item ID: <input class="stock_edit" type="text" name="html_stock_id" value="<?php echo $php_stock_details[0];?>"><br>
+        Item ID: <input class="stock_edit" type="text" name="html_stock_id" value="<?php echo $php_stock_details[0];?>" disabled><br>
         Item Name: <input class="stock_edit" type="text" name="html_stock_name" value="<?php echo $php_stock_details[1];?>"><br>
         Item Description: <input class="stock_edit" type="text" name="html_stock_description" value="<?php echo $php_stock_details[2];?>"><br>
         <input type="submit" name="html_item_update" value="Update Stock Item"> <input type="reset" value="Clear fields.">
