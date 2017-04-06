@@ -5,6 +5,19 @@ body{
   background-color: navy;
   color: cyan;
 }
+header{
+  text-align: center;
+  left: 0px;
+  top: 0px;
+  height: 120px;
+  position: fixed;
+}
+nav{
+  left: 0px;
+  top: 0px;
+  height: 50px;
+  position: fixed;
+}
 nav a:hover{
   color: yellow;
 }
@@ -25,4 +38,11 @@ td {
 
 td:hover {
   max-width : initial;
+}
+footer {
+  text-align: center;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  height: 50px;
 }
