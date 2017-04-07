@@ -22,7 +22,7 @@ echo "<table  class=\"striped\" border=\"1\">";
         ."<th scope=\"col\">Category</th>"
         ."<th scope=\"col\">Barcode</th>"
         ."</tr>";
-     
+
         while ($row = mysqli_fetch_assoc($listResult)) {
           echo "<tr>";
           echo "<td>", $row["stock_id"], "</td>";
@@ -40,7 +40,7 @@ echo "<table  class=\"striped\" border=\"1\">";
           echo "<td>", $row["stock_bar_code"], "</td>";
 
           echo "</tr>";
-          
+
         }
         echo "</table>";
 
