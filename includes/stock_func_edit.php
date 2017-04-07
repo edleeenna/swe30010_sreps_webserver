@@ -105,13 +105,14 @@
         $sql .= ", stock_supplier_order_code = ".cleanInput($_POST['html_stock_supplier_order_code']);
         $sql .= ", stock_category_id = ".cleanInput($_POST['html_stock_category_id']);
         $sql .= ", stock_bar_code = ".cleanInput($_POST['html_stock_bar_code']);
-        $sql .= " WHERE stock_id = ".ltrim(cleanInput($_POST['html_stock_id']), '0').";";
-      echo "SQL completed.<br>".PHP_EOL;
+        $sql .= " WHERE stock_id = ".cleanInput($_POST['html_stock_id']).";";
+        //$sql .= " WHERE stock_id = ".ltrim(cleanInput($_POST['html_stock_id']), '0').";";
+      //echo "SQL completed.<br>".PHP_EOL;
         
         // Prepare sql statement
         //$statement = $conn->prepare($sql);
         $success = $conn->query($sql);
-      //echo "Statement prepared. ".$sql."<br>".PHP_EOL;
+      echo "SQL prepared. ".$sql."<br>".PHP_EOL;
       //echo cleanInput($_POST['html_stock_id']).".<br>".PHP_EOL;
       //echo cleanInput($_POST['html_stock_name']).".<br>".PHP_EOL;
       //echo cleanInput($_POST['html_stock_description']).".<br>".PHP_EOL;
