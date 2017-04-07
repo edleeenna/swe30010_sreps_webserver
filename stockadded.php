@@ -55,7 +55,7 @@
 include 'includes/db_connect.php';
 $sqltable = "stock";
 $query = "INSERT INTO $sqltable (stock_id, stock_name, stock_description, stock_directions,
-        stock_ingredients, stock_price, stock_cost_ptice, stock_qty, stock_target_min_qty, stock_supplier,
+        stock_ingredients, stock_price, stock_cost_price, stock_qty, stock_target_min_qty, stock_supplier,
         stock_supplier_order_code, stock_category_id, stock_bar_code)
         VALUES ('$itemName', '$itemDescription', '$directions', '$ingredients', '$itemprice', '$itemCostPrice', '$itemQty', '$itemTarget', '$itemSupplier', '$itemSupplierCode', '$itemCategoryId', '$itemBarcode')";
 
