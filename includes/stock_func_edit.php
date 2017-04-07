@@ -11,7 +11,7 @@
 
     try{
       // SQL to select stock_id's from the Stock Database;
-      $sql = "SELECT stock_id FROM stock ORDER BY stock_id ASC;";
+      $sql = "SELECT stock_id, stock_name FROM stock ORDER BY stock_id ASC;";
       // Query the database to acquire results and hand them to resultSet
       $result = $conn->query($sql);
     }
@@ -21,13 +21,19 @@
       // Stop running script
       exit();
     }
+    $php_id_list = '';
+    $php_name_list = '';
     // See if there are results to process.
     if ($result->num_rows > 0) {
       // work through each row returned, add to the option list for selection.
       foreach ($result as $row) {
-        echo '<option value="'.$row['stock_id'].'">'.$row['stock_id'].'</option>';
+        $php_id_list .= '<option value="'.$row['stock_id'].'">'.$row['stock_id'].'</option>';
+        $php_name_list .= '<option value="'.$row['stock_name'].'">'.$row['stock_name'].'</option>';
       }
-      echo "<br>".PHP_EOL;
+      echo $php_id_list."<br>".PHP_EOL;
+      echo "</select>".PHP_EOL;
+      echo "<select name="html_selected_name">'.PHP_EOL;
+      echo $php_name_list."<br>".PHP_EOL;
     }
     else {
       echo "0 results";
@@ -58,7 +64,7 @@
     if ($result->num_rows > 1) echo "Too many results";
 
     $row = $result->fetch_assoc();
-    print_r (array_values($row));
+
     $php_stock_details = array();
     $php_stock_details['id'] = $row['stock_id'];
     $php_stock_details['name'] = $row['stock_name'];
