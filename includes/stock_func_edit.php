@@ -124,7 +124,7 @@
         // Send update query to database, store results in $success.
         $success = $statement->execute();
       }
-      echo "SQL Statement executed.<br>".PHP_EOL;
+      //echo "SQL Statement executed.<br>".PHP_EOL;
       catch(PDOEXCEPTION $e){
         // Display error message details
         echo 'Error updating stock item details: '.$e->getMessage();
