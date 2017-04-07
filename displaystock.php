@@ -7,7 +7,7 @@ $listAllQuery = "select * FROM stock";
       $listResult = mysqli_query($conn, $listAllQuery);
 echo "<table  class=\"striped\" border=\"1\">";
   echo "<thread>"
-      echo "<tr>"
+      ."<tr>"
         ."<th scope=\"col\">Stock Id</th>"
         ."<th scope=\"col\">Stock Name</th>"
         ."<th scope=\"col\">Stock Description</th>"
@@ -40,7 +40,7 @@ echo "<table  class=\"striped\" border=\"1\">";
           echo "<td>", $row["stock_category_id"], "</td>";
           echo "<td>", $row["stock_bar_code"], "</td>";
 
-          echo "</tr>"
+          echo "</tr>";
           echo "</tbody>";
         }
         echo "</table>";
