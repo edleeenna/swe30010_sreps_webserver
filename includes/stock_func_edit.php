@@ -106,7 +106,7 @@
         $sql .= ", stock_category_id = ".cleanInput($_POST['html_stock_category_id']);
         $sql .= ", stock_bar_code = ".cleanInput($_POST['html_stock_bar_code']);
         $sql .= " WHERE stock_id = ".cleanInput($_POST['html_stock_id']).";";*/
-        $sql = "UPDATE stock SET stock_name = ?, stock_description = ?, stock_directions = ?, stock_ingredients = ?, stock_price = ?, stock_cost_price = ?, stock_qty = ?, stock_target_min_qty = ?, stock_supplier = ?, stock_supplier_order_code = ?, stock_category_id = ?, stock_bar_code = ? WHERE stock_id = ?"
+        $sql = "UPDATE stock SET stock_name = ?, stock_description = ?, stock_directions = ?, stock_ingredients = ?, stock_price = ?, stock_cost_price = ?, stock_qty = ?, stock_target_min_qty = ?, stock_supplier = ?, stock_supplier_order_code = ?, stock_category_id = ?, stock_bar_code = ? WHERE stock_id = ?";
         //$sql .= " WHERE stock_id = ".ltrim(cleanInput($_POST['html_stock_id']), '0').";";
       //echo "SQL completed.<br>".PHP_EOL;
         
@@ -114,7 +114,7 @@
         $statement = $conn->prepare($sql);
         //$success = $conn->query($sql);
       echo "SQL prepared. ".$sql."<br>".PHP_EOL;
-        $statement->bind_param("ssssddiissisi", cleanInput($_POST['html_stock_name']), cleanInput($_POST['html_stock_description']), cleanInput($_POST['html_stock_directions']), cleanInput($_POST['html_stock_ingredients']), cleanInput($_POST['html_stock_price']), cleanInput($_POST['html_stock_cost_price']), cleanInput($_POST['html_stock_qty']), cleanInput($_POST['html_stock_target_min_qty']), cleanInput($_POST['html_stock_supplier']), cleanInput($_POST['html_stock_supplier_order_code']), cleanInput($_POST['html_stock_category_id']), cleanInput($_POST['html_stock_bar_code']), cleanInput($_POST['html_stock_id']));
+        $statement->bind_param('ssssddiissisi', cleanInput($_POST['html_stock_name']), cleanInput($_POST['html_stock_description']), cleanInput($_POST['html_stock_directions']), cleanInput($_POST['html_stock_ingredients']), cleanInput($_POST['html_stock_price']), cleanInput($_POST['html_stock_cost_price']), cleanInput($_POST['html_stock_qty']), cleanInput($_POST['html_stock_target_min_qty']), cleanInput($_POST['html_stock_supplier']), cleanInput($_POST['html_stock_supplier_order_code']), cleanInput($_POST['html_stock_category_id']), cleanInput($_POST['html_stock_bar_code']), cleanInput($_POST['html_stock_id']));
       //echo cleanInput($_POST['html_stock_id']).".<br>".PHP_EOL;
       //echo cleanInput($_POST['html_stock_name']).".<br>".PHP_EOL;
       //echo cleanInput($_POST['html_stock_description']).".<br>".PHP_EOL;
