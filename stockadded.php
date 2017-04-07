@@ -6,11 +6,9 @@
     $itemName = $_POST["itemName"];
   }
 
- /* Syntax error??
-if (isset ($_POST["itemDescription"])) {
-    itemDescription = $_POST["itemDescription"];
-  } */
-
+ if (isset ($_POST["itemDescription"])) {
+    $itemDescription = $_POST["itemDescription"];
+  }
 
   if (isset ($_POST["directions"])) {
     $directions = $_POST["directions"];
@@ -51,7 +49,7 @@ $query = "insert into stock (stock_name, stock_description, stock_directions, st
     $result = mysqli_query($conn, $query);
 
     if(!$result) {
-    echo "<p> Something is wrong with", $query, "</p>";
+    echo "<p> Something is wrong with ", $query, "</p>";
     }
 
     else {
