@@ -109,8 +109,9 @@
       echo "SQL completed.<br>".PHP_EOL;
         
         // Prepare sql statement
-        $statement = $conn->prepare($sql);
-      echo "Statement prepared. ".$sql."<br>".PHP_EOL;
+        //$statement = $conn->prepare($sql);
+        $success = $conn->query($sql);
+      //echo "Statement prepared. ".$sql."<br>".PHP_EOL;
       //echo cleanInput($_POST['html_stock_id']).".<br>".PHP_EOL;
       //echo cleanInput($_POST['html_stock_name']).".<br>".PHP_EOL;
       //echo cleanInput($_POST['html_stock_description']).".<br>".PHP_EOL;
@@ -122,7 +123,7 @@
       //echo "Statement value binding completed.<br>".PHP_EOL;
         //$statement->bindValue(':', cleanInput($_POST['']));
         // Send update query to database, store results in $success.
-        $success = $statement->execute();
+        //$success = $statement->execute();
       }
       //echo "SQL Statement executed.<br>".PHP_EOL;
       catch(PDOEXCEPTION $e){
@@ -132,6 +133,7 @@
         exit();
       }
       echo "SQL section completed.<br>".PHP_EOL;
+      echo "Success = ".$success.".<br>".PHP_EOL;
       // Create user feedback messages for success or failure to update.
       if ($success) {
         echo '<script type="text/javascript">alert("Successfully updated stock item details.");</script>';
