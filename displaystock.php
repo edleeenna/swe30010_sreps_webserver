@@ -6,8 +6,7 @@
 $listAllQuery = "select * FROM stock";
       $listResult = mysqli_query($conn, $listAllQuery);
 echo "<table  class=\"striped\" border=\"1\">";
-  echo "<thread>"
-      ."<tr>"
+     echo "<tr>"
         ."<th scope=\"col\">Stock Id</th>"
         ."<th scope=\"col\">Stock Name</th>"
         ."<th scope=\"col\">Stock Description</th>"
@@ -21,10 +20,9 @@ echo "<table  class=\"striped\" border=\"1\">";
         ."<th scope=\"col\">Supplier Code</th>"
         ."<th scope=\"col\">Category</th>"
         ."<th scope=\"col\">Barcode</th>"
-        ."</tr>"
-     ."</thread>";
+        ."</tr>";
+     
         while ($row = mysqli_fetch_assoc($listResult)) {
-          echo "<tbody>";
           echo "<tr>";
           echo "<td>", $row["stock_id"], "</td>";
           echo "<td>", $row["stock_name"], "</td>";
@@ -41,7 +39,7 @@ echo "<table  class=\"striped\" border=\"1\">";
           echo "<td>", $row["stock_bar_code"], "</td>";
 
           echo "</tr>";
-          echo "</tbody>";
+          
         }
         echo "</table>";
 
