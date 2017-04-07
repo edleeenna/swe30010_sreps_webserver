@@ -23,19 +23,19 @@
     </p>
     <p>
       <label for="itemprice">Item Price: </label>
-      <input type="number" id="itemprice" name="itemprice">
+      <input type="text" id="itemprice" name="itemprice">
     </p>
     <p>
       <label for="itemCostPrice">Item Cost Price: </label>
-      <input type="number" id="itemCostPrice" name="itemCostPrice">
+      <input type="text" id="itemCostPrice" name="itemCostPrice">
     </p>
     <p>
       <label for="itemQty">Item Qty: </label>
-      <input type="number" id="itemQty" name="itemQty">
+      <input type="text" id="itemQty" name="itemQty">
     </p>
     <p>
       <label for="itemTarget">Item Target</label>
-      <input type="number" id="itemTarget" name="itemTarget">
+      <input type="text" id="itemTarget" name="itemTarget">
     </p>
     <p>
       <label for="itemSupplier">Item Supplier</label>
@@ -43,15 +43,15 @@
     </p>
     <p>
       <label for="itemSuppliercode">Item Supplier Code</label>
-      <input type="number" id="itemSuppliercode" name="itemSuppliercode">
+      <input type="text" id="itemSuppliercode" name="itemSuppliercode">
     </p>
     <p>
       <label for="itemCategoryId">Item Category Id</label>
-      <input type="number" id="itemCategoryId" name="itemCategoryId">
+      <input type="text" id="itemCategoryId" name="itemCategoryId">
     </p>
     <p>
       <label for="itemBarcode">Item Barcode</label>
-      <input type="number" id="itemBarcode" name="itemBarcode">
+      <input type="text" id="itemBarcode" name="itemBarcode">
     </p>
     </fieldset>
     <p>
