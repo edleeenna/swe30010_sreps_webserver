@@ -93,7 +93,7 @@
         // Test if any records match the supplied username and password
         //$sql = "UPDATE stock SET stock_id = :stock_id, stock_name = :stock_name, stock_description = :stock_description;";
         $sql = "UPDATE stock SET";
-        $sql .= "stock_id = ".cleanInput($_POST['html_stock_id']);
+        $sql .= " stock_id = ".cleanInput($_POST['html_stock_id']);
         $sql .= ", stock_name = ".cleanInput($_POST['html_stock_name']);
         $sql .= ", stock_description = ".cleanInput($_POST['html_stock_description']);
         $sql .= ", stock_directions = ".cleanInput($_POST['html_stock_directions']);
@@ -107,11 +107,11 @@
         $sql .= ", stock_category_id = ".cleanInput($_POST['html_stock_category_id']);
         $sql .= ", stock_bar_code = ".cleanInput($_POST['html_stock_bar_code']);
         $sql .= ";";
-      //echo "SQL completed.<br>".PHP_EOL;
+      echo "SQL completed.<br>".PHP_EOL;
         
         // Prepare sql statement
         $statement = $conn->prepare($sql);
-      //echo "Statement prepared.<br>".PHP_EOL;
+      echo "Statement prepared.<br>".PHP_EOL;
       //echo cleanInput($_POST['html_stock_id']).".<br>".PHP_EOL;
       //echo cleanInput($_POST['html_stock_name']).".<br>".PHP_EOL;
       //echo cleanInput($_POST['html_stock_description']).".<br>".PHP_EOL;
