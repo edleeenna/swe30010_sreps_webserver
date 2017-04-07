@@ -32,7 +32,7 @@
       }
       echo $php_id_list."<br>".PHP_EOL;
       echo "</select>".PHP_EOL;
-      echo '<select name="html_selected_name">'.PHP_EOL;
+      echo '<select class="browser-default" name="html_selected_name">'.PHP_EOL;
       echo $php_name_list."<br>".PHP_EOL;
     }
     else {
