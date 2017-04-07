@@ -9,11 +9,14 @@
 ?>
     <form id="stock_item" action="edit_stock.php" method="post">
       Select stock item to edit, by ID or Name.<br>
+      <div class="input-field col s12">
       <select name="html_selected_id">
+       <option value="" disabled selected>Choose your option</option>
 <?php
         get_ID_list();
 ?>
       </select>
+      </div>
 <?php /*
       <select name="name_list">
         get_name_list();
