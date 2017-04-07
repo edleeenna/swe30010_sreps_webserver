@@ -15,7 +15,7 @@
     </p>
     <p>
       <label for="directions">Directions: </label>
-      <input name="directions" id="directions">
+      <input name="directions" id="directions" name="directions">
     </p>
     <p>
       <label for="ingredients">Ingredients: </label>
@@ -53,11 +53,12 @@
       <label for="itemBarcode">Item Barcode</label>
       <input type="number" id="itemBarcode" name="itemBarcode">
     </p>
+    </fieldset>
     <p>
       <input type="reset" id="reset">
       <input type="submit" id="submit" value="Add Stock">
     </p>
-  </fieldset>
+
 </form>
 <?php echo '<p>SWE30010 - Development Project 2</p>'; ?>
 Page content End<br>
