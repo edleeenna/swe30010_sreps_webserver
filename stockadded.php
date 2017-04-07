@@ -1,6 +1,6 @@
 <?php
   include 'includes/head.php';
-
+  include 'includes/db_connect';
 
   if (isset ($_POST["itemName"])) {
     $itemName = $_POST["itemName"];
@@ -40,11 +40,10 @@
   if(isset ($_POST["itemCategoryId"])) {
     $itemCategoryId = $_POST["itemCategoryId"];
   }
-  //phone
-  if(isset ($_POST["itemBarcode"])) {
+   if(isset ($_POST["itemBarcode"])) {
     $itemBarcode = $_POST["itemBarcode"];
   }
-include 'includes/db_connect';
+
 
 $query = "insert into stock (stock_name, stock_description, stock_directions, stock_ingredients, stock_price, stock_cost_price, stock_qty, stock_target_min_qty, stock_supplier, stock_supplier_order_code, stock_category_id, stock_bar_code) values ('$itemName', '$itemDescription', '$directions', '$ingredients', '$itemprice', '$itemCostPrice', '$itemQty', '$itemTarget', '$itemSupplier', '$itemSupplierCode', '$itemCategoryId', '$itemBarcode')";
 
