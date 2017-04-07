@@ -110,7 +110,7 @@
         
         // Prepare sql statement
         $statement = $conn->prepare($sql);
-      echo "Statement prepared. ".$statement."<br>".PHP_EOL;
+      echo "Statement prepared. ".$sql."<br>".PHP_EOL;
       //echo cleanInput($_POST['html_stock_id']).".<br>".PHP_EOL;
       //echo cleanInput($_POST['html_stock_name']).".<br>".PHP_EOL;
       //echo cleanInput($_POST['html_stock_description']).".<br>".PHP_EOL;
