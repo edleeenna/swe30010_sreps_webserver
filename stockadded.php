@@ -29,7 +29,7 @@
     $itemCostPrice = $_POST["itemCostPrice"];
   }
 
-  if(isset ($_POST["itemOty"])) {
+  if(isset ($_POST["itemQty"])) {
     $itemQty = $_POST["itemQty"];
   }
 

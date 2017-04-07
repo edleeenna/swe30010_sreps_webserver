@@ -42,8 +42,8 @@
       <input type="text" id="itemSupplier" name="itemSupplier">
     </p>
     <p>
-      <label for="itemSuppliercode">Item Supplier Code</label>
-      <input type="text" id="itemSuppliercode" name="itemSuppliercode">
+      <label for="itemSupplierCode">Item Supplier Code</label>
+      <input type="text" id="itemSupplierCode" name="itemSupplierCode">
     </p>
     <p>
       <label for="itemCategoryId">Item Category Id</label>
