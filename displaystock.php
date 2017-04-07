@@ -1,5 +1,6 @@
 <?php
   include 'includes/head.php';
+  echo '<link type="text/css" rel="stylesheet" href="css/tablecss.css"  media="screen,projection"/>';
   include 'includes/db_connect.php';
 
 

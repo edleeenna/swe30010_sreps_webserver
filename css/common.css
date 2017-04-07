@@ -3,12 +3,7 @@ html{
 }
 
 /* css for the table in displaystock.php. Note: needs improvement */
-td {
-  max-width : 100px;
-  white-space : nowrap;
-  overflow : hidden;
-  text-overflow: ellipsis;
-}
+
 
 body{
   background-color: navy;
