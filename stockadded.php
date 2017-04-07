@@ -6,9 +6,10 @@
     $itemName = $_POST["itemName"];
   }
 
-  if (isset ($_POST["itemDescription"])) {
+ /* Syntax error??
+if (isset ($_POST["itemDescription"])) {
     itemDescription = $_POST["itemDescription"];
-  }
+  } */
 
 
   if (isset ($_POST["directions"])) {
