@@ -109,7 +109,7 @@
       //echo "Statement value binding completed.<br>".PHP_EOL;
         //$statement->bindValue(':', cleanInput($_POST['']));
         // Send update query to database, store results in $success.
-        //$success = $statement->execute();
+        $success = $statement->execute();
       }
       catch(PDOEXCEPTION $e){
         // Display error message details
