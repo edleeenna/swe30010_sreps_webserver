@@ -44,7 +44,8 @@ nav{
   position: fixed;
   top: 60px;
   left: 0px;
-  height: 30px;
+  width: 95%;
+  height: 40px;
 }
 
 nav a:hover{
