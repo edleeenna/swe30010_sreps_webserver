@@ -53,6 +53,11 @@
     $itemBarcode = $_POST["itemBarcode"];
   }
 include 'includes/db_connect';
+
+ if (!$conn) { //If Cannot Connect Display Error Message
+        echo "Unable to connect to the stock database";
+    }
+    else {
 $sqltable = "stock";
 $query = "INSERT INTO $sqltable (stock_id, stock_name, stock_description, stock_directions,
         stock_ingredients, stock_price, stock_cost_ptice, stock_qty, stock_target_min_qty, stock_supplier,
@@ -60,7 +65,7 @@ $query = "INSERT INTO $sqltable (stock_id, stock_name, stock_description, stock_
         VALUES ('$itemName', '$itemDescription', '$directions', '$ingredients', '$itemprice', '$itemCostPrice', '$itemQty', '$itemTarget', '$itemSupplier', '$itemSupplierCode', '$itemCategoryId', '$itemBarcode')";
 
     $result = mysqli_query($conn, $query);
-
+    }
     if(!$result) {
     echo "<p> Something is wrong with ", $query, "</p>";
     }
