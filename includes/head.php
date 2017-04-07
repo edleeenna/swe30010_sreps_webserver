@@ -20,7 +20,7 @@
     <meta name="author" content="Adaptive Silicon">
 
     <title>Pharmacy</title>
-    <!--<link rel="stylesheet" href="css/common.css" type="text/css">-->
+    <link rel="stylesheet" href="css/common.css" type="text/css">
     <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
