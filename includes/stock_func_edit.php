@@ -110,7 +110,7 @@
         
         // Prepare sql statement
         $statement = $conn->prepare($sql);
-      echo "Statement prepared.<br>".PHP_EOL;
+      echo "Statement prepared. ".$statement."<br>".PHP_EOL;
       //echo cleanInput($_POST['html_stock_id']).".<br>".PHP_EOL;
       //echo cleanInput($_POST['html_stock_name']).".<br>".PHP_EOL;
       //echo cleanInput($_POST['html_stock_description']).".<br>".PHP_EOL;
@@ -124,6 +124,7 @@
         // Send update query to database, store results in $success.
         $success = $statement->execute();
       }
+      echo "SQL Statement executed.<br>".PHP_EOL;
       catch(PDOEXCEPTION $e){
         // Display error message details
         echo 'Error updating stock item details: '.$e->getMessage();
