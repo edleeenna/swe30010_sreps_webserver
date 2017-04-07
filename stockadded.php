@@ -52,24 +52,19 @@
    if(isset ($_POST["itemBarcode"])) {
     $itemBarcode = $_POST["itemBarcode"];
   }
-
 include 'includes/db_connect';
-
- if (!$conn) { //If Cannot Connect Display Error Message
-        echo "Unable to connect to the stock database";
-    }
-    else {
-     echo "<p>Connected to database</p>"
-    }
-      /*
 $sqltable = "stock";
-$query = "INSERT INTO $sqltable (stock_id, stock_name, stock_description, stock_directions,
+$query = "INSERT INTO '$sqltable' (stock_id, stock_name, stock_description, stock_directions,
         stock_ingredients, stock_price, stock_cost_ptice, stock_qty, stock_target_min_qty, stock_supplier,
         stock_supplier_order_code, stock_category_id, stock_bar_code)
         VALUES ('$itemName', '$itemDescription', '$directions', '$ingredients', '$itemprice', '$itemCostPrice', '$itemQty', '$itemTarget', '$itemSupplier', '$itemSupplierCode', '$itemCategoryId', '$itemBarcode')";
 
     $result = mysqli_query($conn, $query);
-    }
+if (!$conn) {
+
+    echo "<p> Database connection failure</p>";
+  }
+  else {
     if(!$result) {
     echo "<p> Something is wrong with ", $query, "</p>";
     }
@@ -77,8 +72,8 @@ $query = "INSERT INTO $sqltable (stock_id, stock_name, stock_description, stock_
     else {
       echo "<p > Successfully added Stock to the database!! </p>";
 
-    } */
-
+    }
+    }
       mysqli_close($conn);
 
   include 'includes/tail.php';
