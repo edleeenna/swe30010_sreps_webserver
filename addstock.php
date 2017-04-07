@@ -2,14 +2,10 @@
   include 'includes/head.php';
   ?>
 <h2>Add Stock</h2>
-<form method="" action="">
+<form method="post" action="stockadded.php">
   <fieldset>
     <legend>Add Stock</legend>
-    <p>
-      <label for="itemId">Item Id: </label>
-      <input type="number" id="itemId" name="itemId">
-    </p>
-    <p>
+      <p>
       <label for="itemName">Item Name: </label>
       <input type="text" id="itemName" name="itemName">
     </p>
@@ -50,7 +46,7 @@
       <input type="number" id="itemSuppliercode" name="itemSuppliercode">
     </p>
     <p>
-      <label for="itemCategoryId">Item Supplier Code</label>
+      <label for="itemCategoryId">Item Category Id</label>
       <input type="number" id="itemCategoryId" name="itemCategoryId">
     </p>
     <p>
