@@ -1,4 +1,5 @@
     <nav>
+       <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
       <a href="./index.php">Home</a>,
       <a href="./addstock.php">Add Stock Item</a>,
       <a href="./edit_stock.php">Edit Stock Item</a>,
