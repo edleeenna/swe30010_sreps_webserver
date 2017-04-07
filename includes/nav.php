@@ -6,5 +6,6 @@
       <a href="">Delete Stock Item</a>,
       <a href="">Add Sale</a>,
       <a href="">Edit Sale</a>,
-      <a href="">Display Sale</a>.
+      <a href="">Display Sale</a>.<br>
+      <hr>
     </nav>
