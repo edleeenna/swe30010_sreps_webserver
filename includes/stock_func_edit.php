@@ -92,7 +92,7 @@
       try{
         // Test if any records match the supplied username and password
         //$sql = "UPDATE stock SET stock_id = :stock_id, stock_name = :stock_name, stock_description = :stock_description;";
-        $sql = "UPDATE stock SET";
+        /*$sql = "UPDATE stock SET";
         $sql .= " stock_name = ".cleanInput($_POST['html_stock_name']);
         $sql .= ", stock_description = ".cleanInput($_POST['html_stock_description']);
         $sql .= ", stock_directions = ".cleanInput($_POST['html_stock_directions']);
@@ -105,14 +105,16 @@
         $sql .= ", stock_supplier_order_code = ".cleanInput($_POST['html_stock_supplier_order_code']);
         $sql .= ", stock_category_id = ".cleanInput($_POST['html_stock_category_id']);
         $sql .= ", stock_bar_code = ".cleanInput($_POST['html_stock_bar_code']);
-        $sql .= " WHERE stock_id = ".cleanInput($_POST['html_stock_id']).";";
+        $sql .= " WHERE stock_id = ".cleanInput($_POST['html_stock_id']).";";*/
+        $sql = "UPDATE stock SET stock_name = ?, stock_description = ?, stock_directions = ?, stock_ingredients = ?, stock_price = ?, stock_cost_price = ?, stock_qty = ?, stock_target_min_qty = ?, stock_supplier = ?, stock_supplier_order_code = ?, stock_category_id = ?, stock_bar_code = ? WHERE stock_id = ?"
         //$sql .= " WHERE stock_id = ".ltrim(cleanInput($_POST['html_stock_id']), '0').";";
       //echo "SQL completed.<br>".PHP_EOL;
         
         // Prepare sql statement
-        //$statement = $conn->prepare($sql);
-        $success = $conn->query($sql);
+        $statement = $conn->prepare($sql);
+        //$success = $conn->query($sql);
       echo "SQL prepared. ".$sql."<br>".PHP_EOL;
+        $statement->bind_param("ssssddiissisi", cleanInput($_POST['html_stock_name']), cleanInput($_POST['html_stock_description']), cleanInput($_POST['html_stock_directions']), cleanInput($_POST['html_stock_ingredients']), cleanInput($_POST['html_stock_price']), cleanInput($_POST['html_stock_cost_price']), cleanInput($_POST['html_stock_qty']), cleanInput($_POST['html_stock_target_min_qty']), cleanInput($_POST['html_stock_supplier']), cleanInput($_POST['html_stock_supplier_order_code']), cleanInput($_POST['html_stock_category_id']), cleanInput($_POST['html_stock_bar_code']), cleanInput($_POST['html_stock_id']));
       //echo cleanInput($_POST['html_stock_id']).".<br>".PHP_EOL;
       //echo cleanInput($_POST['html_stock_name']).".<br>".PHP_EOL;
       //echo cleanInput($_POST['html_stock_description']).".<br>".PHP_EOL;
@@ -124,7 +126,7 @@
       //echo "Statement value binding completed.<br>".PHP_EOL;
         //$statement->bindValue(':', cleanInput($_POST['']));
         // Send update query to database, store results in $success.
-        //$success = $statement->execute();
+        $success = $statement->execute();
       }
       //echo "SQL Statement executed.<br>".PHP_EOL;
       catch(PDOEXCEPTION $e){
