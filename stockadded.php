@@ -15,6 +15,16 @@
 
   }
 
+  if (isset ($_POST["ingredients"])) {
+    $ingredients = $_POST["ingredients"];
+
+  }
+
+  if (isset ($_POST["itemprice"])) {
+    $itemprice = $_POST["itemprice"];
+
+  }
+
   if (isset ($_POST["itemCostPrice"])){
     $itemCostPrice = $_POST["itemCostPrice"];
   }
