@@ -21,7 +21,7 @@
 
     <title>Pharmacy</title>
     <!--<link rel="stylesheet" href="css/common.css" type="text/css">-->
-    <link href="fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
 
@@ -30,7 +30,7 @@
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <!--<script type="text/javascript" src="js/scripts.js">-->
-    <script type="text/javascript" src="code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
    
     <!--</script>-->
