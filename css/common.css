@@ -41,6 +41,10 @@ nav{
   font-size: 20px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
+  position: fixed;
+  top: 60px;
+  left: 0px;
+  height: 30px;
 }
 
 nav a:hover{
