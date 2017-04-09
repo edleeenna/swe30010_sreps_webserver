@@ -11,7 +11,7 @@
       Select stock item to edit, by ID or Name.<br>
       <select name="html_selected_id">
 <?php
-        get_ID_list();
+        get_limited_stock_list();
 ?>
       </select>
 <?php /*
