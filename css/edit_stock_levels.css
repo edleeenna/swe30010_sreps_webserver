@@ -20,17 +20,17 @@
 }
 /* Price */
 .TC:nth-child(3) {
-  width: 10em;
+  width: 8em;
 }
 /* Cost Price */
 .TC:nth-child(4) {
-  width: 12em;
+  width: 10em;
 }
 /* Quantity */
 .TC:nth-child(5) {
-  width: 8em;
+  width: 7em;
 }
 /* Target Quantity */
 .TC:nth-child(6) {
-  width: 16em;
+  width: 14em;
 }
