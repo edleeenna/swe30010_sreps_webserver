@@ -138,7 +138,7 @@
 
     try{
       // SQL to select stock_id's from the Stock Database;
-      $sql = "SELECT stock_id, stock_name, price, cost_price, qty, target_min_qty FROM stock ORDER BY stock_id ASC;";
+      $sql = "SELECT stock_id, stock_name, stock_price, stock_cost_price, stock_qty, stock_target_min_qty FROM stock ORDER BY stock_id ASC;";
       // Query the database to acquire results and hand them to resultSet
       $result = $conn->query($sql);
     }
