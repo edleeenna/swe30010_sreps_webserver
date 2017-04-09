@@ -160,7 +160,7 @@
         $php_row_list .= '<div class="TC" name="stock_cost_price">Cost Price: '.$row['stock_cost_price'].'</div>';
         $php_row_list .= '<div class="TC" name="stock_qty">Quantity: '.$row['stock_qty'].'</div>';
         $php_row_list .= '<div class="TC" name="stock_target_min_qty">Target Minimum Qantity: '.$row['stock_target_min_qty'].'</div>';
-        $php_row_list .= '</div><br>/r/n'.PHP_EOL;
+        $php_row_list .= '</div><br>'.PHP_EOL;
       }
       echo $php_row_list."<br>".PHP_EOL;
     }
