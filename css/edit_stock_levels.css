@@ -10,21 +10,27 @@
   border: 1px solid black;
   padding: 5px;
 }
+/* ID */
 .TC:nth-child(1) {
-  width: 6em;
+  width: 8em;
 }
+/* Name */
 .TC:nth-child(2) {
-  width: 250em;
+  width: 60em;
 }
+/* Price */
 .TC:nth-child(3) {
-  width: 10em;
-}
-.TC:nth-child(4) {
   width: 15em;
 }
-.TC:nth-child(5) {
-  width: 6em;
+/* Cost Price */
+.TC:nth-child(4) {
+  width: 20em;
 }
+/* Quantity */
+.TC:nth-child(5) {
+  width: 10em;
+}
+/* Target Quantity */
 .TC:nth-child(6) {
   width: 20em;
 }
