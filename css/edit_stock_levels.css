@@ -12,7 +12,7 @@
 }
 /* ID */
 .TC:nth-child(1) {
-  width: 8em;
+  width: 7em;
 }
 /* Name */
 .TC:nth-child(2) {
@@ -20,17 +20,17 @@
 }
 /* Price */
 .TC:nth-child(3) {
-  width: 15em;
+  width: 10em;
 }
 /* Cost Price */
 .TC:nth-child(4) {
-  width: 20em;
+  width: 15em;
 }
 /* Quantity */
 .TC:nth-child(5) {
-  width: 10em;
+  width: 8em;
 }
 /* Target Quantity */
 .TC:nth-child(6) {
-  width: 20em;
+  width: 18em;
 }
