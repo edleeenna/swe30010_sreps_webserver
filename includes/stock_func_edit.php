@@ -131,4 +131,41 @@
       $conn->close();
     }
   }
+
+  function get_limited_stock_list() {
+    // Connect to database.
+    include 'includes/db_connect.php';
+
+    try{
+      // SQL to select stock_id's from the Stock Database;
+      $sql = "SELECT stock_id, stock_name, price, cost_price, qty, target_min_qty FROM stock ORDER BY stock_id ASC;";
+      // Query the database to acquire results and hand them to resultSet
+      $result = $conn->query($sql);
+    }
+    catch(PDOEXCEPTION $e){
+      // Display error message details
+      echo 'Error fetching list of stock IDs: '.$e->getMessage();
+      // Stop running script
+      exit();
+    }
+    $php_row_list = '';
+    $php_cell_list = '';
+    // See if there are results to process.
+    if ($result->num_rows > 0) {
+      // work through each row returned, add to the option list for selection.
+      foreach ($result as $row) {
+        $php_cell_list .= '<div value="html_stock_name'">'.$row['stock_name'].'</div>';
+        $php_row_list .= '<div value="'.$row['stock_id'].'">'.$row['stock_id'].'</option>';
+      }
+      echo $php_id_list."<br>".PHP_EOL;
+      echo "</select>".PHP_EOL;
+      echo '<select class="browser-default" name="html_selected_name">'.PHP_EOL;
+      echo $php_name_list."<br>".PHP_EOL;
+    }
+    else {
+      echo "0 results";
+    }
+    // Close connection to database.
+    $conn->close();
+  }
 ?>
