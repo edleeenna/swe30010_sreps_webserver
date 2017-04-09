@@ -156,10 +156,10 @@
         $php_row_list .= '<div class="TR" id="stock_id">';
         $php_row_list .= '<div class="TC" name="stock_id">'.$row['stock_id'].'</div>';
         $php_row_list .= '<div class="TC" name="stock_name">'.$row['stock_name'].'</div>';
-        $php_row_list .= '<div class="TC" name="stock_price>'.$row['stock_price'].'</div>';
-        $php_row_list .= '<div class="TC" name="stock_cost_price>'.$row['stock_cost_price'].'</div>';
-        $php_row_list .= '<div class="TC" name="stock_qty>'.$row['stock_qty'].'</div>';
-        $php_row_list .= '<div class="TC" name="stock_target_min_qty>'.$row['stock_target_min_qty'].'"</div>';
+        $php_row_list .= '<div class="TC" name="stock_price">'.$row['stock_price'].'</div>';
+        $php_row_list .= '<div class="TC" name="stock_cost_price">'.$row['stock_cost_price'].'</div>';
+        $php_row_list .= '<div class="TC" name="stock_qty">'.$row['stock_qty'].'</div>';
+        $php_row_list .= '<div class="TC" name="stock_target_min_qty">'.$row['stock_target_min_qty'].'"</div>';
         $php_row_list .= '</div><br>';
       }
       echo $php_row_list."<br>".PHP_EOL;
