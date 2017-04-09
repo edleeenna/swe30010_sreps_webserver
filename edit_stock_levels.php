@@ -1,6 +1,6 @@
 <?php
   //echo "Start<br>".PHP_EOL;
-  $secondCSS = 'edit_stock_levels.php';
+  $secondCSS = 'edit_stock_levels.css';
   include 'includes/head.php';
   echo "Page specifically for editing stock levels and minimum target levels.<br>".PHP_EOL;
   // Include functions for editing stock. Could be made part of all functions for stock. eg: stock_func.php
