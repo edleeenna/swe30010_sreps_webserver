@@ -154,12 +154,12 @@
       // work through each row returned, add to the option list for selection.
       foreach ($result as $row) {
         $php_row_list .= '<div class="TR" id="'.$row['stock_id'].'">';
-        $php_row_list .= '<div class="TC" name="stock_id">ID: '.$row['stock_id'].'</div>';
-        $php_row_list .= '<div class="TC" name="stock_name">Name: '.$row['stock_name'].'</div>';
-        $php_row_list .= '<div class="TC" name="stock_price">Price: '.$row['stock_price'].'</div>';
-        $php_row_list .= '<div class="TC" name="stock_cost_price">Cost Price: '.$row['stock_cost_price'].'</div>';
-        $php_row_list .= '<div class="TC" name="stock_qty">Quantity: '.$row['stock_qty'].'</div>';
-        $php_row_list .= '<div class="TC" name="stock_target_min_qty">Target Minimum Qantity: '.$row['stock_target_min_qty'].'</div>';
+        $php_row_list .= '<div class="TC" name="stock_id" contenteditable>ID: '.$row['stock_id'].'</div>';
+        $php_row_list .= '<div class="TC" name="stock_name" contenteditable>Name: '.$row['stock_name'].'</div>';
+        $php_row_list .= '<div class="TC" name="stock_price" contenteditable>Price: '.$row['stock_price'].'</div>';
+        $php_row_list .= '<div class="TC" name="stock_cost_price" contenteditable>Cost Price: '.$row['stock_cost_price'].'</div>';
+        $php_row_list .= '<div class="TC" name="stock_qty" contenteditable>Quantity: '.$row['stock_qty'].'</div>';
+        $php_row_list .= '<div class="TC" name="stock_target_min_qty" contenteditable>Target Minimum Qantity: '.$row['stock_target_min_qty'].'</div>';
         $php_row_list .= '</div><br>'.PHP_EOL;
       }
       echo $php_row_list."<br>".PHP_EOL;
