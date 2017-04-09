@@ -1,10 +1,11 @@
 .TR {
-  background-color: lime;
+  /* background-color: lime; */
   display: table-row;
-  padding: 2px;
+  /* padding: 2px; */
 }
 .TC {
   background-color: lightskyblue;
   display: table-cell;
-  margin: 2px;
+  border: 2px solid lime;
+  padding: 5px;
 }
