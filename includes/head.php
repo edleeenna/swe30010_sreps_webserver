@@ -24,7 +24,9 @@
     <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-
+<?php
+  if ($secondCSS != "") echo '<link type="text/css" rel="stylesheet" href="css/'.$secondCSS.'"/>'.PHP_EOL;
+?>
     <!-- A script developed by John Resig that magically makes the new HTML5 elements visible to older versions of IE -->
     <!--[if lt IE 9]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
