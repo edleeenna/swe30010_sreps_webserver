@@ -1,12 +1,13 @@
 <?php
   include 'includes/head.php';
 
+//TO DO: sanitise input, input validation?
 
   if (isset ($_POST["itemName"])) {
     $itemName = $_POST["itemName"];
   }
 
- if (isset ($_POST["itemDescription"])) {
+  if (isset ($_POST["itemDescription"])) {
     $itemDescription = $_POST["itemDescription"];
   }
 
@@ -52,20 +53,20 @@
    if(isset ($_POST["itemBarcode"])) {
     $itemBarcode = $_POST["itemBarcode"];
   }
-include 'includes/db_connect.php';
-$sqltable = "stock";
+  include 'includes/db_connect.php';
+  $sqltable = "stock";
 
       $query = "INSERT INTO $sqltable (stock_name, stock_description, stock_directions, stock_ingredients, stock_price, stock_cost_price, stock_qty, stock_target_min_qty, stock_supplier, stock_supplier_order_code, stock_category_id, stock_bar_code)
         VALUES ('$itemName', '$itemDescription', '$directions', '$ingredients', '$itemprice', '$itemCostPrice', '$itemQty', '$itemTarget', '$itemSupplier', '$itemSupplierCode', '$itemCategoryId', '$itemBarcode')";
 
     $result = mysqli_query($conn, $query);
-if (!$conn) {
+  if (!$conn) {
 
     echo "<p> Database connection failure</p>";
   }
   else {
     if(!$result) {
-    echo "<p> Something is wrong with ", $query, "</p>";
+   echo("Error description: " . mysqli_error($conn));
     }
 
     else {
@@ -76,4 +77,4 @@ if (!$conn) {
       mysqli_close($conn);
 
   include 'includes/tail.php';
-?>
+  ?>
