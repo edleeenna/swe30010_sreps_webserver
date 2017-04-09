@@ -4,8 +4,27 @@
   /* padding: 2px; */
 }
 .TC {
-  background-color: lightskyblue;
+  /* background-color: lightskyblue; */
   display: table-cell;
-  border: 2px solid lime;
+  /* border: 2px solid lime; */
+  border: 1px solid black;
   padding: 5px;
+}
+.TC:nth-child(1) {
+  width: 4em;
+}
+.TC:nth-child(2) {
+  width: 10em;
+}
+.TC:nth-child(3) {
+  width: 4em;
+}
+.TC:nth-child(4) {
+  width: 5em;
+}
+.TC:nth-child(5) {
+  width: 4em;
+}
+.TC:nth-child(6) {
+  width: 10em;
 }
