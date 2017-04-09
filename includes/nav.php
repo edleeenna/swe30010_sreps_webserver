@@ -5,6 +5,7 @@
         <li><a href="./index.php">Home</a></li>
         <li><a href="./addstock.php">Add Stock</a></li>
         <li><a href="./edit_stock.php">Edit Stock</a></li>
+        <li><a href="./edit_stock_levels.php">Edit Stock Levels</a></li>
         <li><a href="./displaystock.php">Display Stock</a></li>
         <li><a href="">Delete Stock</a></li>
         <li><a href="">Add Sale</a></li>
