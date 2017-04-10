@@ -68,3 +68,7 @@
 .TCR:nth-child(12) {
   width: 3em;
 }
+/* for selecting cell */
+.focused {
+  outline: 2px solid green;
+}
