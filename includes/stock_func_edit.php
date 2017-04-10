@@ -153,7 +153,7 @@
     if ($result->num_rows > 0) {
       // work through each row returned, add to the option list for selection.
       foreach ($result as $row) {
-        $php_row_list .= '        <div class="TR" id="'.$row['stock_id'].'">';
+        $php_row_list .= '      <div class="TR" id="'.$row['stock_id'].'">';
         $php_row_list .= '<div class="TC" name="stock_id">ID: '.$row['stock_id'].'</div>';
         $php_row_list .= '<div class="TC" name="stock_name" contenteditable="true">Name: '.$row['stock_name'].'</div>';
         $php_row_list .= '<div class="TC" name="stock_price" contenteditable="true">Price: '.$row['stock_price'].'</div>';
