@@ -45,7 +45,7 @@ else {
 
   $date = date("Y-m-d");
 
-  header("Content-type: text/csv");
+  header("Content-type: application/octet-stream");
   header("Content-Disposition: attachment; filename=".$date.".xls");
   header("Pragma: no-cache");
   header("Expires: 0");
