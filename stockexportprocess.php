@@ -52,7 +52,8 @@ else {
   print "$header\n$data";
   }
 }
-  mysqli_close($conn);
+
+mysqli_close($conn);
 
   include 'includes/tail.php';
 ?>
