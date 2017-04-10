@@ -3,34 +3,68 @@
   display: table-row;
   /* padding: 2px; */
 }
-.TC {
+.TCL {
   /* background-color: lightskyblue; */
   display: table-cell;
   /* border: 2px solid lime; */
   border: 1px solid black;
+  border-right: none;
   padding: 5px;
 }
 /* ID */
-.TC:nth-child(1) {
-  width: 6em;
+.TCL:nth-child(1) {
+  width: 2em;
 }
 /* Name */
-.TC:nth-child(2) {
-  width: 60em;
+.TCL:nth-child(2) {
+  width: 4em;
 }
 /* Price */
-.TC:nth-child(3) {
-  width: 8em;
+.TCL:nth-child(3) {
+  width: 4em;
 }
 /* Cost Price */
-.TC:nth-child(4) {
-  width: 10em;
+.TCL:nth-child(4) {
+  width: 6em;
 }
 /* Quantity */
-.TC:nth-child(5) {
-  width: 7em;
+.TCL:nth-child(5) {
+  width: 5em;
 }
 /* Target Quantity */
-.TC:nth-child(6) {
-  width: 14em;
+.TCL:nth-child(6) {
+  width: 12em;
+}
+
+.TCR {
+  /* background-color: lightskyblue; */
+  display: table-cell;
+  /* border: 2px solid lime; */
+  border: 1px solid black;
+  border-left: none;
+  padding: 5px;
+}
+/* ID */
+.TCR:nth-child(1) {
+  width: 4em;
+}
+/* Name */
+.TCR:nth-child(2) {
+  width: 56em;
+}
+/* Price */
+.TCR:nth-child(3) {
+  width: 4em;
+}
+/* Cost Price */
+.TCR:nth-child(4) {
+  width: 4em;
+}
+/* Quantity */
+.TCR:nth-child(5) {
+  width: 2em;
+}
+/* Target Quantity */
+.TCR:nth-child(6) {
+  width: 2em;
 }
