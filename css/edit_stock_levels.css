@@ -9,7 +9,7 @@
   /* border: 2px solid lime; */
   border: 1px solid black;
   border-right: none;
-  padding: 5px 2px 5px 5px;
+  padding: 5px 1px 5px 5px;
 }
 /* ID */
 .TCL:nth-child(1) {
@@ -21,7 +21,7 @@
 }
 /* Price */
 .TCL:nth-child(5) {
-  width: 4em;
+  width: 3em;
 }
 /* Cost Price */
 .TCL:nth-child(7) {
@@ -33,7 +33,7 @@
 }
 /* Target Quantity */
 .TCL:nth-child(11) {
-  width: 13em;
+  width: 12em;
 }
 
 .TCR {
@@ -42,7 +42,7 @@
   /* border: 2px solid lime; */
   border: 1px solid black;
   border-left: none;
-  padding: 5px 5px 5px 2px;
+  padding: 5px 5px 5px 1px;
 }
 /* ID */
 .TCR:nth-child(2) {
