@@ -8,7 +8,7 @@
     echo '<p>SWE30010 - Development Project 2</p>'; 
   ?>
 
-  <a class="waves-effect waves-light btn">button</a>
+  <a class="waves-effect waves-light btn-large">button</a>
 
   Page content End<br>
 <?php
