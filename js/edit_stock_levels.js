@@ -13,8 +13,8 @@ var pieces = document.getElementsByClassName("TCR");
 //alert(pieces);
 var mylist ='';
 for (var i = 0; i < pieces.length; i++) {
-  mylist += pieces[1];
-  pieces[i].addEventListener('focus', focusgain(), true);
-  pieces[i].addEventListener('blur', focusgone(), true);
+  mylist += pieces[i];
+  pieces[i].addEventListener('focus', focusgain(this), true);
+  pieces[i].addEventListener('blur', focusgone(this), true);
 }
 alert(mylist);
