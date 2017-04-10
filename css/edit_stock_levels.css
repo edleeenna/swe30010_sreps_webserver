@@ -9,31 +9,31 @@
   /* border: 2px solid lime; */
   border: 1px solid black;
   border-right: none;
-  padding: 5px 5px 5px 25px;
+  padding: 5px 25px 5px 5px;
 }
 /* ID */
 .TCL:nth-child(1) {
-  width: 1em;
+  width: 2em;
 }
 /* Name */
 .TCL:nth-child(3) {
-  width: 3em;
+  width: 4em;
 }
 /* Price */
 .TCL:nth-child(5) {
-  width: 3em;
+  width: 4em;
 }
 /* Cost Price */
 .TCL:nth-child(7) {
-  width: 6em;
+  width: 7em;
 }
 /* Quantity */
 .TCL:nth-child(9) {
-  width: 5em;
+  width: 6em;
 }
 /* Target Quantity */
 .TCL:nth-child(11) {
-  width: 12em;
+  width: 13em;
 }
 
 .TCR {
@@ -42,7 +42,7 @@
   /* border: 2px solid lime; */
   border: 1px solid black;
   border-left: none;
-  padding: 5px 5px 25px 5px;
+  padding: 25px 5px 5px 5px;
 }
 /* ID */
 .TCR:nth-child(2) {
@@ -62,9 +62,9 @@
 }
 /* Quantity */
 .TCR:nth-child(10) {
-  width: 2em;
+  width: 3em;
 }
 /* Target Quantity */
 .TCR:nth-child(12) {
-  width: 2em;
+  width: 3em;
 }
