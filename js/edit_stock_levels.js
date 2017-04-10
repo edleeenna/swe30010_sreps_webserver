@@ -1,4 +1,4 @@
-alert('edit_stock_level.js loaded');
+//alert('edit_stock_level.js loaded');
 
 function focusgain(e){
   alert('gained focus');
