@@ -9,19 +9,19 @@
   /* border: 2px solid lime; */
   border: 1px solid black;
   border-right: none;
-  padding: 5px;
+  padding: 5px 5px 5px 25px;
 }
 /* ID */
 .TCL:nth-child(1) {
-  width: 2em;
+  width: 1em;
 }
 /* Name */
 .TCL:nth-child(3) {
-  width: 4em;
+  width: 3em;
 }
 /* Price */
 .TCL:nth-child(5) {
-  width: 4em;
+  width: 3em;
 }
 /* Cost Price */
 .TCL:nth-child(7) {
@@ -42,7 +42,7 @@
   /* border: 2px solid lime; */
   border: 1px solid black;
   border-left: none;
-  padding: 5px;
+  padding: 5px 5px 25px 5px;
 }
 /* ID */
 .TCR:nth-child(2) {
