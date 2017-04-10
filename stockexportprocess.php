@@ -43,8 +43,10 @@ else {
     $data = "\n(0) Records Found!\n";                        
   }
 
+  $date = date("Y-m-d");
+
   header("Content-type: application/octet-stream");
-  header("Content-Disposition: attachment; filename=your_desired_name.csv");
+  header("Content-Disposition: attachment; filename=".$date."xls");
   header("Pragma: no-cache");
   header("Expires: 0");
   print "$header\n$data";
