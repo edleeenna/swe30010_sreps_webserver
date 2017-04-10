@@ -25,7 +25,7 @@
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
 <?php
-  if ($secondCSS != "") echo '<link type="text/css" rel="stylesheet" href="css/'.$secondCSS.'"/>'.PHP_EOL;
+  if ($secondCSS != "") echo '    <link type="text/css" rel="stylesheet" href="css/'.$secondCSS.'"/>'.PHP_EOL;
 ?>
     <!-- A script developed by John Resig that magically makes the new HTML5 elements visible to older versions of IE -->
     <!--[if lt IE 9]>
@@ -34,7 +34,9 @@
     <!--<script type="text/javascript" src="js/scripts.js">-->
     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
-   
+<?php   
+  if ($extra_js != "") echo '    <script type="text/javascript" src="js/'.$secondCSS.'"></script>'.PHP_EOL;
+?>
     <!--</script>-->
 
   </head>
