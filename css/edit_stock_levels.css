@@ -25,15 +25,15 @@
 }
 /* Cost Price */
 .TCL:nth-child(7) {
-  width: 7em;
+  width: 6em;
 }
 /* Quantity */
 .TCL:nth-child(9) {
-  width: 6em;
+  width: 5em;
 }
 /* Target Quantity */
 .TCL:nth-child(11) {
-  width: 14em;
+  width: 13em;
 }
 
 .TCR {
