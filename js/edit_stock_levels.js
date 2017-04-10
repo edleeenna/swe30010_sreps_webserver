@@ -2,12 +2,12 @@
 
 function focusgain(e){
   //alert('gained focus');
-  e.classList.add('focused'), true);
+  e.classList.add('focused', true);
 }
 
 function focusgone(e){
   //alert('focus lost');
-  e.classList.remove('focused'), true);
+  e.classList.remove('focused', true);
 }
 var pieces = document.getElementsByClassName("TCR");
 //alert(pieces);
