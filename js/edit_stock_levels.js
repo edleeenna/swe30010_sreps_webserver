@@ -12,6 +12,6 @@ var pieces = document.getElementsByClassName("TCR");
 //alert(pieces);
 
 for (var i = 0; i < pieces.length; i++) {
-  pieces[i].addEventListener('focus', focusgain());
-  pieces[i].addEventListener('blur', focuslost());
+  pieces[i].addEventListener('focus', focusgain(), true);
+  pieces[i].addEventListener('blur', focuslost(), true);
 }
