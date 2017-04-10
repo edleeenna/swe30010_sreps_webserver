@@ -6,7 +6,7 @@ function focusgain(e){
 function focuslost(e){
   e.classList.remove('focused'), true);
 } */
-var pieces document.getElementsByClassName("TCR");
+var pieces = document.getElementsByClassName("TCR");
 alert(pieces);
 /*
 for (var i = 0; i < pieces.length; i++) {
