@@ -1,11 +1,15 @@
 <?php
   include 'includes/head.php';
   echo '<link type="text/css" rel="stylesheet" href="css/tablecss.css"  media="screen,projection"/>';
-  include 'includes/db_connect.php';
+?>
 
-
+<?php
+include 'includes/db_connect.php';
 $listAllQuery = "select * FROM stock";
       $listResult = mysqli_query($conn, $listAllQuery);
+echo "<form method='post' action='stockexportprocess.php'>";
+echo " <p><input type='submit' id='submit' value='Export'></p>";
+echo "</form>";
 echo "<table  class=\"striped\" border=\"1\">";
      echo "<tr>"
         ."<th scope=\"col\">Stock Id</th>"
