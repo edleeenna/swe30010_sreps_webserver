@@ -3,7 +3,7 @@
   include 'includes/head.php';
   ?>
 <h2>Add Stock</h2>
-<form method="post" action="stockadded.php">
+<form  id="addStockForm" method="post" action="stockadded.php">
   <fieldset>
     <legend>Add Stock</legend>
       <p>
