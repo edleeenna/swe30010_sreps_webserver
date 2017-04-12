@@ -52,7 +52,6 @@ function validate() {
 
 //checking if input is a number
 function notNumber(number,errMsg) {
-  var result = true;
 
   if (isNaN(number)){
     errMsg.innerHTML = "*Must enter a number*";
