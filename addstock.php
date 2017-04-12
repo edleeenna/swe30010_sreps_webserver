@@ -1,3 +1,4 @@
+
 <?php
   include 'includes/head.php';
   ?>
@@ -19,22 +20,26 @@
     </p>
     <p>
       <label for="ingredients">Ingredients: </label>
-      <input type="text" id="ingredients" name="ingredients">
+    <input type="text" id="ingredients" name="ingredients">
     </p>
     <p>
       <label for="itemprice">Item Price: </label>
+	  <span id="itemPriceValidation"></span>
       <input type="text" id="itemprice" name="itemprice">
     </p>
     <p>
       <label for="itemCostPrice">Item Cost Price: </label>
+	  <span id="itemCostPriceValidation"></span>
       <input type="text" id="itemCostPrice" name="itemCostPrice">
     </p>
     <p>
       <label for="itemQty">Item Qty: </label>
+	  <span id="itemQtyValidation"></span>
       <input type="text" id="itemQty" name="itemQty">
     </p>
     <p>
       <label for="itemTarget">Item Target</label>
+	  <span id="itemTargetValidation"></span>
       <input type="text" id="itemTarget" name="itemTarget">
     </p>
     <p>
@@ -47,6 +52,7 @@
     </p>
     <p>
       <label for="itemCategoryId">Item Category Id</label>
+	  <span id="categoryIdValidation"></span>
       <input type="text" id="itemCategoryId" name="itemCategoryId">
     </p>
     <p>
@@ -60,6 +66,7 @@
     </p>
 
 </form>
+<script src="js/addstockvalidation.js"></script>
 <?php echo '<p>SWE30010 - Development Project 2</p>'; ?>
 Page content End<br>
 <?php
