@@ -65,6 +65,7 @@
     </p>
 
 </form>
+<script src="js/addstockvalidation.js"></script>
 <?php echo '<p>SWE30010 - Development Project 2</p>'; ?>
 Page content End<br>
 <?php
