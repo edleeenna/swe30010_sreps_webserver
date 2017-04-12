@@ -19,7 +19,7 @@
     </p>
     <p>
       <label for="ingredients">Ingredients: </label>
-
+      <input type="text" id="ingredients" name="ingredients">
     </p>
     <p>
       <label for="itemprice">Item Price: </label>
