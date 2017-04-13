@@ -1,7 +1,10 @@
 
 <?php
+  // Following two lines can be used to pass needed filenames to variables.
+  //$extra_css = "";
+  //$extra_js = "";
   include 'includes/head.php';
-  ?>
+?>
 <h2>Add Stock</h2>
 <form  id="addStockForm" method="post" action="stockadded.php">
   <fieldset>
@@ -67,8 +70,6 @@
 
 </form>
 <script src="js/addstockvalidation.js"></script>
-<?php echo '<p>SWE30010 - Development Project 2</p>'; ?>
-Page content End<br>
 <?php
   include 'includes/tail.php';
-  ?>
+?>
