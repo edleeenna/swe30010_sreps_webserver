@@ -1,6 +1,8 @@
 <?php
+  // Line 3 should take care of Line 5. Line 5 can be removed later if proved to be stable.
+  $extra_css = 'tablecss.css';
   include 'includes/head.php';
-  echo '<link type="text/css" rel="stylesheet" href="css/tablecss.css"  media="screen,projection"/>';
+  //echo '<link type="text/css" rel="stylesheet" href="css/tablecss.css"  media="screen,projection"/>';
 ?>
 
 <?php
