@@ -23,9 +23,9 @@
     <!-- <link rel="stylesheet" href="css/common.css" type="text/css">-->
     <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
 <?php
-  if ($extra_css != "") echo '    <link type="text/css" rel="stylesheet" href="css/materialize.min.css'.$extra_css.'"/>'.PHP_EOL;
+  if ($extra_css != "") echo '    <link type="text/css" rel="stylesheet" href="css/materialize.css'.$extra_css.'"/>'.PHP_EOL;
 ?>
     <!-- A script developed by John Resig that magically makes the new HTML5 elements visible to older versions of IE -->
     <!--[if lt IE 9]>
