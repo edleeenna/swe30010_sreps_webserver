@@ -25,7 +25,7 @@
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
 <?php
-  if ($secondCSS != "") echo '    <link type="text/css" rel="stylesheet" href="css/'.$secondCSS.'"/>'.PHP_EOL;
+  if ($extra_css != "") echo '    <link type="text/css" rel="stylesheet" href="css/'.$extra_css.'"/>'.PHP_EOL;
 ?>
     <!-- A script developed by John Resig that magically makes the new HTML5 elements visible to older versions of IE -->
     <!--[if lt IE 9]>
