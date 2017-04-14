@@ -5,7 +5,7 @@
 	<title>PHP - SRePS</title>
 	<nav class="nav-extended">
 		<?php
-		include $_SERVER[ 'DOCUMENT_ROOT' ] . '/wwwroot/includes/head.php';
+		include '/includes/head.php';
 		?>
 	</nav>
 </header>
