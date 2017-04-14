@@ -14,7 +14,7 @@
 					</li>
 					<li><a class="grey-text text-lighten-3" href="#!">Disclaimer</a>
 					</li>
-					<li><a class="grey-text text-lighten-3" href="../copyright.php">Copyright</a>
+					<li><a class="grey-text text-lighten-3" href="/copyright.php">Copyright</a>
 					</li>
 					<li><a class="grey-text text-lighten-3" href="#!">Contact Us</a>
 					</li>

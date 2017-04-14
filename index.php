@@ -26,7 +26,7 @@
 
 <footer>
 	<?php
-	include $_SERVER[ 'DOCUMENT_ROOT' ] . '/wwwroot/includes/tail.php';
+	include $_SERVER[ 'DOCUMENT_ROOT' ] . '/includes/tail.php';
 	?>
 </footer>
 
