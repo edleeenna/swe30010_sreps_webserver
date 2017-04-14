@@ -5,8 +5,8 @@
 	<title>Copywrite - PHP - SRePS</title>
 	<nav class="nav-extended">
 		<?php
-		include $_SERVER[ 'DOCUMENT_ROOT' ] . '/wwwroot/includes/head.php';
-		include $_SERVER[ 'DOCUMENT_ROOT' ] . '/wwwroot/includes/nav.php';
+		include $_SERVER[ 'DOCUMENT_ROOT' ] . '/includes/head.php';
+		include $_SERVER[ 'DOCUMENT_ROOT' ] . '/includes/nav.php';
 		?>
 	</nav>
 </header>
@@ -22,7 +22,7 @@
 
 <footer>
 	<?php
-	include $_SERVER[ 'DOCUMENT_ROOT' ] . '/wwwroot/includes/tail.php';
+	include $_SERVER[ 'DOCUMENT_ROOT' ] . '/includes/tail.php';
 	?>
 </footer>
 

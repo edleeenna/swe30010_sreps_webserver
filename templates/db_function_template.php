@@ -6,7 +6,7 @@
   function <function_name>(){
 
     // Include the "db_connect.php" file to connect to the database.
-    include 'includes/db_connect.php';
+    include '../includes/db_connect.php';
 
     try{
       // Place your SQL Code here and amend this comment to reflecty purpose.
