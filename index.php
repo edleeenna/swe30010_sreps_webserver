@@ -1,33 +1,19 @@
-<!DOCTYPE html>
-<html>
+<?php
+  include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/head.php';
+/*<main>
 
-<header>
-	<title>PHP - SRePS</title>
-	<nav class="nav-extended">
-		<?php
-		include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/head.php';
-		?>
-	</nav>
-</header>
-
-<main>
-
-	<body>
-		<div style="text-align:center">
-			<p>
-				<a class="waves-effect waves-light btn-large disabled" href="sales/quick_sale.php">Quick Sale</a>
-				<a class="waves-effect waves-light btn-large" href="search.php">Search</a>
-				<a class="waves-effect waves-light btn-large" href="stock/manage.php">Manage Stock</a>
-			</p>
-			<p> <a class="waves-effect waves-light btn-large disabled" href="stock/predictions.php">Predictions</a> <a class="waves-effect waves-light btn-large disabled" href="support.php">Support</a> </p>
-		</div>
-	</body>
-</main>
-
-<footer>
-	<?php
-	include $_SERVER[ 'DOCUMENT_ROOT' ] . '/includes/tail.php';
-	?>
-</footer>
-
-</html>
+  <body>*/
+?>
+    <div style="text-align:center">
+      <p>
+        <a class="waves-effect waves-light btn-large disabled" href="sales/quick_sale.php">Quick Sale</a>
+        <a class="waves-effect waves-light btn-large" href="search.php">Search</a>
+        <a class="waves-effect waves-light btn-large" href="stock/manage.php">Manage Stock</a>
+      </p>
+      <p> <a class="waves-effect waves-light btn-large disabled" href="stock/predictions.php">Predictions</a> <a class="waves-effect waves-light btn-large disabled" href="support.php">Support</a> </p>
+    </div>
+<?php
+/*  </body>
+</main>*/
+  include $_SERVER[ 'DOCUMENT_ROOT' ] . '/includes/tail.php';
+?>
