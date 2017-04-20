@@ -1,4 +1,4 @@
-    <nav>
+    <nav class="nav-extended">
       <div class="container">
         <div class="nav-wrapper">
           <ul id="nav-mobile" class="right hide-on-med-and-down">
