@@ -20,7 +20,6 @@
     <meta name="keywords" content="SIG Managment System">
     <meta name="author" content="Adaptive Silicon">
 
-    <title>PHP - SRePS</title>
     <title><?php if ($pageTitle <> "") echo $pageTitle." - "; echo $siteTitle;?></title>
 
     <link rel="icon" type="image/png" href="/images/medicine-32x32.png" sizes="32x32"/>
