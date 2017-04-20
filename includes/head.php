@@ -19,6 +19,7 @@
     <meta name="keywords" content="SIG Managment System">
     <meta name="author" content="Adaptive Silicon">
 
+    <title>PHP - SRePS</title>
 
     <link rel="icon" type="image/png" href="/images/medicine-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="/images/medicine-16x16.png" sizes="16x16" />
