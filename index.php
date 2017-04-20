@@ -4,6 +4,12 @@
   <body>
 */
 ?>
+<?php
+  // Nav would go here .. not on Index Page.
+  //include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/nav.php';
+?>
+    
+    </nav>
     <main>
       <div style="text-align:center">
         <p>
