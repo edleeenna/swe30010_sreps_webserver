@@ -53,6 +53,20 @@
    if(isset ($_POST["itemBarcode"])) {
     $itemBarcode = $_POST["itemBarcode"];
   }
+
+  htmlspecialchars($itemName);
+  htmlspecialchars($itemDescription);
+  htmlspecialchars($directions);
+  htmlspecialchars($ingredients);
+  htmlspecialchars($itemprice);
+  htmlspecialchars($itemCostPrice);
+  htmlspecialchars($itemQty);
+  htmlspecialchars($itemTarget);
+  htmlspecialchars($itemSupplier);
+  htmlspecialchars($itemSupplierCode);
+  htmlspecialchars($itemCategoryId);
+  htmlspecialchars($itemBarcode);
+
   include 'includes/db_connect.php';
   $sqltable = "stock";
 
