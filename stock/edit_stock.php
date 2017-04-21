@@ -4,22 +4,27 @@
 
   // Variable to assign extra css files into the head of the page. just the file name needs to go in the quotes.
   // All files should reside in the "css" folder. 
-  //$extra_css = "";
+  $extra_css = "";
   
   // Variable to assign extra javascript files into the head of the page. just the file name needs to go in the quotes.
   // All files should reside in the "js" folder.
-  //$extra_ja = "";
+  $extra_js = "";
 
-  //echo "Start<br>".PHP_EOL;
-  include 'includes/head.php';
-  include 'includes/nav.php';
+  include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/head.php';
+/*
+  <body>
+*/
+?>
+<?php
+  // Nav would go here .. not on Index Page.
+  include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/nav.php';
 ?>
     </nav>
     <main>
 <?php
   //echo "connect<br>".PHP_EOL;
   // Include functions for editing stock. Could be made part of all functions for stock. eg: stock_func.php
-  include 'includes/stock_func_edit.php';
+  include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/stock_func_edit.php';
   update_stock();
   if (!isset($_POST['html_item_select'])) {
 ?>
@@ -76,5 +81,5 @@
     Price <br>
     Quantity <br>
     Minimm Target Quantity:<br>*/
-  include 'includes/tail.php';
+  include $_SERVER[ 'DOCUMENT_ROOT' ] . '/includes/tail.php';
 ?>
