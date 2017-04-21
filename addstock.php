@@ -12,6 +12,8 @@
 
   include 'includes/head.php';
 ?>
+    </nav>
+    <main>
 <h2>Add Stock</h2>
 <form  id="addStockForm" method="post" action="stockadded.php">
   <fieldset>
@@ -77,6 +79,7 @@
 
 </form>
 <script src="js/addstockvalidation.js"></script>
+    </main>
 <?php
   include 'includes/tail.php';
 ?>
