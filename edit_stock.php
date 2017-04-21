@@ -1,6 +1,21 @@
 <?php
+  // Variable to set the local (current) page title [NOT Site Title].
+  $pageTitle = "Edit Stock Item";
+
+  // Variable to assign extra css files into the head of the page. just the file name needs to go in the quotes.
+  // All files should reside in the "css" folder. 
+  //$extra_css = "";
+  
+  // Variable to assign extra javascript files into the head of the page. just the file name needs to go in the quotes.
+  // All files should reside in the "js" folder.
+  //$extra_ja = "";
+
   //echo "Start<br>".PHP_EOL;
   include 'includes/head.php';
+  include 'includes/nav.php';
+?>
+    </nav>
+<?php
   //echo "connect<br>".PHP_EOL;
   // Include functions for editing stock. Could be made part of all functions for stock. eg: stock_func.php
   include 'includes/stock_func_edit.php';
