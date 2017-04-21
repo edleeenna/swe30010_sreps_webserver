@@ -7,10 +7,9 @@
             </li>
             <!--<li><a href="/sales/quick_sale.php">Quick Sale</a></li>-->
             <!-- <li><a href="/search.php">Search</a> -->
-            <li><a href="displaystock.php">Search</a>
+            <li><a href="/stock/view_all_stock.php">Search</a>
             </li>
-            <!-- <li><a href="/stock/manage.php">Manage Stock</a> -->
-            <li><a href="edit_stock.php">Manage Stock</a>
+            <li><a href="/stock/manage.php">Manage Stock</a>
             </li>
             <li><a href="#!">Predictions</a>
             </li>
