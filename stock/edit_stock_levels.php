@@ -9,7 +9,7 @@
   update_stock();
   if (!isset($_POST['html_item_select'])) {
 ?>
-    <form id="stock_item" action="edit_stock.php" method="post">
+    <form id="stock_item" action="../edit_stock.php" method="post">
       Select stock item to edit, by ID or Name.<br>
 
 <?php
@@ -29,7 +29,7 @@
     //$stock_details = get_stock_item_details($_POST['name_list']);
     // onsubmit="return check_stock_details(this)"
 ?>
-      <form id="stock_item" action="edit_stock.php" method="post">
+      <form id="stock_item" action="../edit_stock.php" method="post">
         Item Id: <input class="stock_edit" type="text" name="html_stock_id" value="<?php echo $php_stock_details['id'];?>" readonly><br>
         Item Name: <input class="stock_edit" type="text" name="html_stock_name" value="<?php echo $php_stock_details['name'];?>"><br>
         Item Description: <input class="stock_edit" type="text" name="html_stock_description" value="<?php echo $php_stock_details['description'];?>"><br>
