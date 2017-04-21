@@ -12,9 +12,10 @@
 
   // Line 3 should take care of Line 5. Line 5 can be removed later if proved to be stable.
   include 'includes/head.php';
+  include 'includes/nav.php';
   //echo '<link type="text/css" rel="stylesheet" href="css/tablecss.css"  media="screen,projection"/>';
 ?>
-
+    </nav>
 <?php
 include 'includes/db_connect.php';
 $listAllQuery = "select * FROM stock";
