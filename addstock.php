@@ -11,6 +11,7 @@
   //$extra_ja = "";
 
   include 'includes/head.php';
+  include 'includes/nav.php';
 ?>
     </nav>
     <main>
