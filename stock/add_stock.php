@@ -1,22 +1,29 @@
 <?php
   // Variable to set the local (current) page title [NOT Site Title].
-  //$pageTitle = "";
+  $pageTitle = "Add Stock Item";
 
   // Variable to assign extra css files into the head of the page. just the file name needs to go in the quotes.
   // All files should reside in the "css" folder. 
-  //$extra_css = "";
+  $extra_css = "";
   
   // Variable to assign extra javascript files into the head of the page. just the file name needs to go in the quotes.
   // All files should reside in the "js" folder.
-  $extra_ja = "addstockvalidation.js";
+  $extra_js = "addstockvalidation.js";
 
-  include 'includes/head.php';
-  include 'includes/nav.php';
+
+  include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/head.php';
+/*
+  <body>
+*/
 ?>
+<?php
+	include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/nav.php';
+?>
+    
     </nav>
     <main>
 <h2>Add Stock</h2>
-<form  id="addStockForm" method="post" action="stockadded.php">
+<form  id="addStockForm" method="post" action="../stockadded.php">
   <fieldset>
     <legend>Add Stock</legend>
       <p>
@@ -79,8 +86,11 @@
     </p>
 
 </form>
-<script src="js/addstockvalidation.js"></script>
+<script src="../js/addstockvalidation.js"></script>
     </main>
 <?php
-  include 'includes/tail.php';
+/*
+  </body>
+*/
+  include $_SERVER[ 'DOCUMENT_ROOT' ] . '/includes/tail.php';
 ?>
