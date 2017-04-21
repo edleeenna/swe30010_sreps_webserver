@@ -7,7 +7,7 @@
 
   function get_ID_list(){
     // Connect to database.
-    include 'includes/db_connect.php';
+    include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
 
     try{
       // SQL to select stock_id's from the Stock Database;
@@ -45,7 +45,7 @@
   // Function to retreive stock item details and return them to the web interface.
   function get_stock_item_details($php_stock_id) {
     // Connect to database.
-    include 'includes/db_connect.php';
+    include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
 
     try{
       // SQL to select all fields from the stock table, matching the specified stock_id.
@@ -91,7 +91,7 @@
     //Only run if Update Stock Item has been clicked.
     if (isset($_POST['html_item_update'])) {
       // Connect to the database.
-      include 'includes/db_connect.php';
+      include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
 
       try{
         // SQL to update the record that matches the stock_id;
@@ -134,7 +134,7 @@
 
   function get_limited_stock_list() {
     // Connect to database.
-    include 'includes/db_connect.php';
+    include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
 
     try{
       // SQL to select stock_id's from the Stock Database;
