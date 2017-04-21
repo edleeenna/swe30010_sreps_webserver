@@ -25,10 +25,37 @@ PHP-SRePS
 |  |--materialize.js  
 |  
 |--index.php  
-|--/stock  
-|  |--add.php  
-|  |--edit.php  
+|--/stock
+|  |--view_all_stock.php // view all stock items
+|  |--add_stock.php      // single stock items 
+|  |--edit_stock.php     // single stock items 
+|  |--view_stock.php     // single stock items 
 |--/sales  
-|  |--add.php  
-|  |--edit.php  
+|  |--view_all_sales.php // view all sales items
+|  |--add_stock.php      // single sale 
+|  |--edit_stock.php     // single sale 
+|  |--view_stock.php     // single sale 
+|--/search 
+|  |--search_stock.php   // single sale 
+|  |--search_sales.php   // single sale 
+|--/help
+|--prediction.php
 ~~~
+
+
+# nav links
+manage_stock <-> view_stock
+             <-> edit_stock
+             <-> add_stock
+             
+view_stock <->  edit_stock
+
+view_all_stock <-> view_stock
+               <-> edit_stock
+               
+view_all_sale <-> view_sale
+              <-> edit_sale
+              <-> add_stock
+              
+view_sale     <-> edit_sale
+  
