@@ -8,7 +8,7 @@
   
   // Variable to assign extra javascript files into the head of the page. just the file name needs to go in the quotes.
   // All files should reside in the "js" folder.
-  //$extra_ja = "";
+  $extra_ja = "addstockvalidation.js";
 
   include 'includes/head.php';
   include 'includes/nav.php';
