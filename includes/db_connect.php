@@ -1,4 +1,10 @@
 <?php
+    
+    $servername = "localhost:3306";
+    $dbname = "localdb";
+    $username = "root";
+    $password = "";
+
   // Parsing connnection string
   foreach ($_SERVER as $key => $value) {
     if (strpos($key, "MYSQLCONNSTR_") !== 0) {
