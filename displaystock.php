@@ -1,6 +1,16 @@
 <?php
+  // Variable to set the local (current) page title [NOT Site Title].
+  //$pageTitle = "";
+
+  // Variable to assign extra css files into the head of the page. just the file name needs to go in the quotes.
+  // All files should reside in the "css" folder. 
+  $extra_css = 'tablecss.css';
+  
+  // Variable to assign extra javascript files into the head of the page. just the file name needs to go in the quotes.
+  // All files should reside in the "js" folder.
+  //$extra_ja = "";
+
   // Line 3 should take care of Line 5. Line 5 can be removed later if proved to be stable.
-  $extra_css = 'css/tablecss.css';
   include 'includes/head.php';
   //echo '<link type="text/css" rel="stylesheet" href="css/tablecss.css"  media="screen,projection"/>';
 ?>
