@@ -16,9 +16,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="description" content="SIG Managment System">
-    <meta name="keywords" content="SIG Managment System">
-    <meta name="author" content="Adaptive Silicon">
+    <meta name="description" content="Peoples Health Pharmacy">
+    <meta name="keywords" content="Peoples Health Pharmacy Sales Reporting and Prediction System">
+    <meta name="author" content="Development Project 2 2017 Semester 1 Group 0">
 
     <title><?php if ($pageTitle <> "") echo $pageTitle." - "; echo $siteTitle;?></title>
 
