@@ -4,11 +4,11 @@
 
   // Variable to assign extra css files into the head of the page. just the file name needs to go in the quotes.
   // All files should reside in the "css" folder. 
-  $extra_css = "";
+  $extra_css = "test.css";
   
   // Variable to assign extra javascript files into the head of the page. just the file name needs to go in the quotes.
   // All files should reside in the "js" folder.
-  $extra_js = "";
+  $extra_js = "test.js";
 
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/head.php';
 /*
