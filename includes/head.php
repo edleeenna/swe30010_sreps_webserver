@@ -33,19 +33,28 @@
   // Handle extra css files.
   if (isset($extra_css)) {
     //echo '$extra_css set<br>'.PHP_EOL;
-    echo '    <!-- extra css entries -->'.PHP_EOL;
+    $filesPresent=false;
+    $fileList = "";
     if (is_array($extra_css)) {
       //echo '$extra_css is an array with '.sizeof($extra_css).' entries.<br>'.PHP_EOL;
       foreach ($extra_css as $entry) {
         //echo "    $entry.<br>".PHP_EOL;
-        if ($entry != "") echo '    <link rel="stylesheet" href="css/'.$entry.'" type="text/css">'.PHP_EOL;
+        if ($entry != "") {
+          if (!$filesPresent) $filesPresent = True;
+          $fileList += '    <link rel="stylesheet" href="css/'.$entry.'" type="text/css">'.PHP_EOL;
+        }
       }
     }
     else {
       //echo '$extra_css is NOT an array.<br>'.PHP_EOL;
       //echo "    $extra_css.<br>".PHP_EOL;
-      if ($extra_css != "") echo '    <link rel="stylesheet" href="css/'.$extra_css.'" type="text/css">'.PHP_EOL;
+      if ($extra_css != "") {
+        if (!$filesPresent) $filesPresent = True;
+        $fileList += '    <link rel="stylesheet" href="css/'.$extra_css.'" type="text/css">'.PHP_EOL;
+      }
     }
+    echo '    <!-- extra css entries -->'.PHP_EOL;
+    echo $fileList;
     //echo PHP_EOL;
   }
 ?>
@@ -56,20 +65,30 @@
   // This section enables each page to add it's own extra javascript file(s), for page specific components or functionality.
   // Handle extra javascript files.
   if (isset($extra_js)) {
-    echo '    <!-- extra javascript entries -->'.PHP_EOL;
     //echo '$extra_js set<br>'.PHP_EOL;
+    $filesPresent=false;
+    $fileList = "";
     if (is_array($extra_js)) {
       //echo '$extra_js is an array with '.sizeof($extra_js).' entries.<br>'.PHP_EOL;
       foreach ($extra_js as $entry) {
         //echo "    $entry.<br>".PHP_EOL;
-        if ($entry != "") echo '    <script type="text/javascript" src="js/'.$entry.'"></script>'.PHP_EOL;
+        if ($entry != "") {
+          if (!$filesPresent) $filesPresent = True;
+          $fileList += '    <script type="text/javascript" src="js/'.$entry.'"></script>'.PHP_EOL;
+        }
       }
     }
     else {
       //echo '$extra_js is NOT an array.<br>'.PHP_EOL;
       //echo "    $extra_js.<br>".PHP_EOL;
-      if ($extra_js != "") echo '    <script type="text/javascript" src="js/'.$extra_js.'"></script>'.PHP_EOL;
+      if ($extra_js != "") {
+        if (!$filesPresent) $filesPresent = True;
+        $fileList += '    <script type="text/javascript" src="js/'.$extra_js.'"></script>'.PHP_EOL;
+      }
     }
+    if ($fileList != "") {
+    echo '    <!-- extra javascript entries -->'.PHP_EOL;
+    echo $fileList;
     //echo PHP_EOL;
   }
 ?>
