@@ -53,8 +53,10 @@
         $fileList += '    <link rel="stylesheet" href="css/'.$extra_css.'" type="text/css">'.PHP_EOL;
       }
     }
-    echo '    <!-- extra css entries -->'.PHP_EOL;
-    echo $fileList;
+    if ($fileList != "") {
+      echo '    <!-- extra css entries -->'.PHP_EOL;
+      echo $fileList;
+    }
     //echo PHP_EOL;
   }
 ?>
@@ -87,8 +89,9 @@
       }
     }
     if ($fileList != "") {
-    echo '    <!-- extra javascript entries -->'.PHP_EOL;
-    echo $fileList;
+      echo '    <!-- extra javascript entries -->'.PHP_EOL;
+      echo $fileList;
+    }
     //echo PHP_EOL;
   }
 ?>
