@@ -41,7 +41,7 @@
         //echo "    $entry.<br>".PHP_EOL;
         if ($entry != "") {
           if (!$filesPresent) $filesPresent = True;
-          $fileList += '    <link rel="stylesheet" href="css/'.$entry.'" type="text/css">'.PHP_EOL;
+          $fileList .= '    <link rel="stylesheet" href="css/'.$entry.'" type="text/css">'.PHP_EOL;
         }
       }
     }
@@ -50,7 +50,7 @@
       //echo "    $extra_css.<br>".PHP_EOL;
       if ($extra_css != "") {
         if (!$filesPresent) $filesPresent = True;
-        $fileList += '    <link rel="stylesheet" href="css/'.$extra_css.'" type="text/css">'.PHP_EOL;
+        $fileList .= '    <link rel="stylesheet" href="css/'.$extra_css.'" type="text/css">'.PHP_EOL;
       }
     }
     if ($fileList != "") {
@@ -76,7 +76,7 @@
         //echo "    $entry.<br>".PHP_EOL;
         if ($entry != "") {
           if (!$filesPresent) $filesPresent = True;
-          $fileList += '    <script type="text/javascript" src="js/'.$entry.'"></script>'.PHP_EOL;
+          $fileList .= '    <script type="text/javascript" src="js/'.$entry.'"></script>'.PHP_EOL;
         }
       }
     }
@@ -85,7 +85,7 @@
       //echo "    $extra_js.<br>".PHP_EOL;
       if ($extra_js != "") {
         if (!$filesPresent) $filesPresent = True;
-        $fileList += '    <script type="text/javascript" src="js/'.$extra_js.'"></script>'.PHP_EOL;
+        $fileList .= '    <script type="text/javascript" src="js/'.$extra_js.'"></script>'.PHP_EOL;
       }
     }
     if ($fileList != "") {
