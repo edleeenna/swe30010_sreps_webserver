@@ -1,5 +1,6 @@
 <?php
   include 'includes/head.php';
+  include 'includes/nav.php';
 
 //TO DO: sanitise input, input validation?
 
