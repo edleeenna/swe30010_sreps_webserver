@@ -11,6 +11,8 @@
             </li>
             <li><a href="/stock/manage.php">Manage Stock</a>
             </li>
+            <li><a href="/sales/manage.php">Manage Sales</a>
+            </li>
             <li><a href="#!">Predictions</a>
             </li>
             <!--<li><a href="/stock/predictions.php">Predictions</a></li>-->
