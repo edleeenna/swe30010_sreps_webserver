@@ -35,7 +35,7 @@
 	      <input type="text" id="itemDescription" name="itemDescription" >
 	    </p>
 	    <p>
-	      <label for="directions">Directions: </label>
+	      <label for="directions">Directions/Dose: </label>
 	      <input type="text" id="directions" name="directions">
 	    </p>
 	    <p>
@@ -43,12 +43,12 @@
 	    <input type="text" id="ingredients" name="ingredients">
 	    </p>
 	    <p>
-	      <label for="itemprice">Item Price: </label>
+	      <label for="itemprice">Item Price(must be decimal): </label>
 		  <span id="itemPriceValidation"></span>
 	      <input type="text" id="itemprice" name="itemprice">
 	    </p>
 	    <p>
-	      <label for="itemCostPrice">Item Cost Price: </label>
+	      <label for="itemCostPrice">Item Cost Price(must be decimal): </label>
 		  <span id="itemCostPriceValidation"></span>
 	      <input type="text" id="itemCostPrice" name="itemCostPrice">
 	    </p>
