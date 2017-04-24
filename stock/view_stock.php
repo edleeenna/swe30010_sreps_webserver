@@ -1,6 +1,6 @@
 <?php
   // Variable to set the local (current) page title [NOT Site Title].
-  $pageTitle = "Manage Sales";
+  $pageTitle = "View Stock";
 
   // Variable to assign extra css files into the head of the page. just the file name needs to go in the quotes.
   // All files should reside in the "css" folder. 
@@ -16,19 +16,13 @@
 */
 ?>
 <?php
-  // Nav would go here .. not on Index Page.
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/nav.php';
-?>
-    
-    </nav>
-    <main>
-        <div style="text-align:center">
-      		<a class="waves-effect waves-light btn-large" href="/sales/view_all_sales_.php">View All Sales</a>
-			<a class="waves-effect waves-light btn-large" href="/sales/view_sale.php">View Sale Item</a>
-        	<a class="waves-effect waves-light btn-large" href="/sales/edit_sale.php">Edit Sale Item</a>
-        	<a class="waves-effect waves-light btn-large" href="/sales/add_sale.php">Add Sale Item</a>
-    	</div>
-    </main>
+?>    
+</nav>
+
+<main>
+	Template
+</main>
 <?php
 /*
   </body>

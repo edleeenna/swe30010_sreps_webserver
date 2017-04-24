@@ -7,7 +7,7 @@
             </li>
             <!--<li><a href="/sales/quick_sale.php">Quick Sale</a></li>-->
             <!-- <li><a href="/search.php">Search</a> -->
-            <li><a href="/search/manage.php">Search</a>
+            <li><a href="/search/search.php">Search</a>
             </li>
             <li><a href="/stock/manage_stock.php">Manage Stock</a>
             </li>

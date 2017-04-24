@@ -1,6 +1,6 @@
 <?php
   // Variable to set the local (current) page title [NOT Site Title].
-  $pageTitle = "Search";
+  $pageTitle = "Search Stock";
 
   // Variable to assign extra css files into the head of the page. just the file name needs to go in the quotes.
   // All files should reside in the "css" folder. 
@@ -17,13 +17,15 @@
 ?>
 <?php
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/nav.php';
-?>
-    
+?>    
 </nav>
-    <main>
-      Search
-    </main>
 
+<main>
+	Template
+</main>
 <?php
+/*
+  </body>
+*/
   include $_SERVER[ 'DOCUMENT_ROOT' ] . '/includes/tail.php';
 ?>

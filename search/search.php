@@ -1,7 +1,7 @@
 <?php
   // Variable to set the local (current) page title [NOT Site Title].
-  $pageTitle = "Manage Sales";
-
+  $pageTitle = "Search";
+  
   // Variable to assign extra css files into the head of the page. just the file name needs to go in the quotes.
   // All files should reside in the "css" folder. 
   //$extra_css = "";
@@ -9,7 +9,6 @@
   // Variable to assign extra javascript files into the head of the page. just the file name needs to go in the quotes.
   // All files should reside in the "js" folder.
   //$extra_js = "";
-
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/head.php';
 /*
   <body>
@@ -22,11 +21,9 @@
     
     </nav>
     <main>
-        <div style="text-align:center">
-      		<a class="waves-effect waves-light btn-large" href="/sales/view_all_sales_.php">View All Sales</a>
-			<a class="waves-effect waves-light btn-large" href="/sales/view_sale.php">View Sale Item</a>
-        	<a class="waves-effect waves-light btn-large" href="/sales/edit_sale.php">Edit Sale Item</a>
-        	<a class="waves-effect waves-light btn-large" href="/sales/add_sale.php">Add Sale Item</a>
+ 		<div style="text-align:center">
+      		<a class="waves-effect waves-light btn-large" href="/search/sales_search.php">Search Sales Item</a>
+        	<a class="waves-effect waves-light btn-large" href="/search/stock_search.php">Search Stock Item</a>
     	</div>
     </main>
 <?php
