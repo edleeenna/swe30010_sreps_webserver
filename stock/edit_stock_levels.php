@@ -2,10 +2,10 @@
   //echo "Start<br>".PHP_EOL;
   $extra_css = 'edit_stock_levels.css';
   $extra_js = 'edit_stock_levels.js';
-  include 'includes/head.php';
+  include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/head.php';
   echo "Page specifically for editing stock levels and minimum target levels.<br>".PHP_EOL;
   // Include functions for editing stock. Could be made part of all functions for stock. eg: stock_func.php
-  include 'includes/stock_func_edit.php';
+  include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/stock_func_edit.php';
   update_stock();
   if (!isset($_POST['html_item_select'])) {
 ?>
@@ -46,5 +46,5 @@
 ?>
     </form>
 <?php
-  include 'includes/tail.php';
+  include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/tail.php';
 ?>
