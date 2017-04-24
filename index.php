@@ -25,13 +25,13 @@
       <div style="text-align:center">
         <p>
           <!-- <a class="waves-effect waves-light btn-large" href="/sales/add_sale.php">Quick Sale</a> -->
-          <a class="waves-effect waves-light btn-large" href="/search/search.php">Search</a>
-          <a class="waves-effect waves-light btn-large" href="/stock/manage_stock.php">Manage Stock</a>
-          <a class="waves-effect waves-light btn-large" href="/sales/manage_sales.php">Manage Sales</a>
+          <a class="waves-effect waves-light btn-large" href="/search/">Search</a>
+          <a class="waves-effect waves-light btn-large" href="/stock/">Manage Stock</a>
+          <a class="waves-effect waves-light btn-large" href="/sales/">Manage Sales</a>
         </p>
         <p>
           <a class="waves-effect waves-light btn-large" href="/predictions.php">Predictions</a> 
-          <a class="waves-effect waves-light btn-large" href="/support.php">Support</a> 
+          <a class="waves-effect waves-light btn-large" href="/support/">Support</a> 
         </p>
       </div>
     </main>
