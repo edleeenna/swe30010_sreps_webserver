@@ -8,13 +8,13 @@
           <div class="col l4 offset-l2 s12">
             <h5 class="white-text">Links</h5>
             <ul>
-              <li><a class="grey-text text-lighten-3" href="#!">Privacy Policy</a>
+              <li><a class="grey-text text-lighten-3" href="/privacy.php">Privacy Policy</a>
               </li>
-              <li><a class="grey-text text-lighten-3" href="#!">Disclaimer</a>
+              <li><a class="grey-text text-lighten-3" href="/disclaimer.php">Disclaimer</a>
               </li>
               <li><a class="grey-text text-lighten-3" href="/copyright.php">Copyright</a>
               </li>
-              <li><a class="grey-text text-lighten-3" href="#!">Contact Us</a>
+              <li><a class="grey-text text-lighten-3" href="/contact.php">Contact Us</a>
               </li>
             </ul>
           </div>

@@ -1,6 +1,6 @@
 <?php
   // Variable to set the local (current) page title [NOT Site Title].
-  $pageTitle = "Copywrite";
+  $pageTitle = "Contact Us";
 
   // Variable to assign extra css files into the head of the page. just the file name needs to go in the quotes.
   // All files should reside in the "css" folder. 
@@ -17,15 +17,13 @@
 ?>
 <?php
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/nav.php';
-?>
-    
+?>    
 </nav>
 
 <main>
-	<div class="container"> 
-		<p>Copywrite</p> 
-		<p>Icons made by <a href = "http://www.freepik.com" title = "Freepik" >Freepik </a> from <a href="http://www.flaticon.com"title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></p>
-	</div>
+	<div style="text-align:center">
+        TODO
+    </div>
 </main>
 <?php
 /*
