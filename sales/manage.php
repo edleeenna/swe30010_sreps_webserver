@@ -1,6 +1,6 @@
 <?php
   // Variable to set the local (current) page title [NOT Site Title].
-  $pageTitle = "Manage Stock";
+  $pageTitle = "Manage Sales";
 
   // Variable to assign extra css files into the head of the page. just the file name needs to go in the quotes.
   // All files should reside in the "css" folder. 
@@ -22,10 +22,10 @@
     
     </nav>
     <main>
- 		<a class="waves-effect waves-light btn-large disabled" href="/stock/view_stock.php">View Stock Item</a>
-        <a class="waves-effect waves-light btn-large" href="/stock/view_all_stock.php">View All Stock</a>
-        <a class="waves-effect waves-light btn-large" href="/stock/edit_stock.php">Edit Stock Item</a>
-        <a class="waves-effect waves-light btn-large" href="/stock/add_stock.php">Add Stock Item</a>
+ 		<a class="waves-effect waves-light btn-large disabled" href="">View Sales Item</a>
+        <a class="waves-effect waves-light btn-large disabled" href="">View All Sales</a>
+        <a class="waves-effect waves-light btn-large disabled" href="">Edit Sale Item</a>
+        <a class="waves-effect waves-light btn-large disabled" href="">Add Sale Item</a>
     </main>
 <?php
 /*
