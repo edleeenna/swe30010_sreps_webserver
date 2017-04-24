@@ -26,7 +26,7 @@
         <p>
           <a class="waves-effect waves-light btn-large disabled" href="sales/quick_sale.php">Quick Sale</a>
           <!-- <a class="waves-effect waves-light btn-large" href="search.php">Search</a> -->
-          <a class="waves-effect waves-light btn-large" href="stock/view_all_stock.php">Search</a>
+          <a class="waves-effect waves-light btn-large" href="search/manage.php">Search</a>
           <a class="waves-effect waves-light btn-large" href="stock/manage.php">Manage Stock</a>        </p>
         <p> <a class="waves-effect waves-light btn-large disabled" href="stock/predictions.php">Predictions</a> <a class="waves-effect waves-light btn-large disabled" href="support.php">Support</a> </p>
       </div>
