@@ -9,9 +9,9 @@
             <!-- <li><a href="/search.php">Search</a> -->
             <li><a href="/search/manage.php">Search</a>
             </li>
-            <li><a href="/stock/manage.php">Manage Stock</a>
+            <li><a href="/stock/manage_stock.php">Manage Stock</a>
             </li>
-            <li><a href="/sales/manage.php">Manage Sales</a>
+            <li><a href="/sales/manage_sales.php">Manage Sales</a>
             </li>
             <li><a href="#!">Predictions</a>
             </li>
