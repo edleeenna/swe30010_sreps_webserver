@@ -23,6 +23,7 @@
     </nav>
     <main>
  		<a class="waves-effect waves-light btn-large disabled" href="/stock/view_stock.php">View Stock Item</a>
+        <a class="waves-effect waves-light btn-large" href="/stock/view_stock.php">View All Stock</a>
         <a class="waves-effect waves-light btn-large" href="/stock/edit_stock.php">Edit Stock Item</a>
         <a class="waves-effect waves-light btn-large" href="/stock/add_stock.php">Add Stock Item</a>
     </main>
