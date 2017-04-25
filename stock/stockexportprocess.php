@@ -48,5 +48,5 @@ else {
 }
 $conn->close();
 
-  include 'includes/tail.php';
+  //include 'includes/tail.php';
 ?>
