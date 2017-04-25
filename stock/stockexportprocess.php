@@ -1,7 +1,7 @@
 <?php
 //include 'includes/head.php';
 
-include 'includes/db_connect.php';
+include $_SERVER[ 'DOCUMENT_ROOT' ].'includes/db_connect.php';
   
 $select = "SELECT * FROM stock";
 
@@ -20,6 +20,7 @@ function stockExport($result){
   }
 
   $size = ftell($f);
+  date_default_timezone_set('australia/melbourne');
   $date = date("Y-m-d");
   rewind($f);
   header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
