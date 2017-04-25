@@ -1,7 +1,7 @@
 <?php
-//include 'includes/head.php';
+//include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/head.php';
 
-include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/head.php';
+include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
   
 $select = "SELECT * FROM stock";
 
@@ -49,5 +49,5 @@ else {
 }
 $conn->close();
 
-  include $_SERVER[ 'DOCUMENT_ROOT' ] . '/includes/tail.php';
+//include $_SERVER[ 'DOCUMENT_ROOT' ] . '/includes/tail.php';
 ?>
