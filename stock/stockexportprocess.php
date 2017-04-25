@@ -1,7 +1,7 @@
 <?php
 //include 'includes/head.php';
 
-include $_SERVER[ 'DOCUMENT_ROOT' ].'includes/db_connect.php';
+include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/head.php';
   
 $select = "SELECT * FROM stock";
 
