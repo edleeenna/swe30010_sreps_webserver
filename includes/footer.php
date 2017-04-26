@@ -22,7 +22,7 @@
       </div>
       <div class="footer-copyright">
         <div class="container">
-          &copy; 2017 Swinburne University of Technology
+          &copy; &quote;Group 0&quote; &emdash; Development Project 2. Semester 1, 2017 Swinburne University of Technology
         </div>
       </div>
     </footer>
