@@ -1,6 +1,7 @@
 <?php
   // Variable to set the local (current) page title [NOT Site Title].
   $pageTitle = "Edit Stock Levels";
+  
   // Variable to assign extra css files into the head of the page. just the file name needs to go in the quotes.
   // All files should reside in the "css" folder. 
   //$extra_css = array("test.css", "test2.css");
