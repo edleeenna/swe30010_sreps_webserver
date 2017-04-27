@@ -95,10 +95,20 @@
 	/// stock supplier order code
 	
 	/// stock category
-	// validation done in select field
+	var stock_category_id = document.getElementById("html_stock_category_id").value;
+	var stock_category_id_err = document.getElementById("html_stock_category_id_validation");
 	
-	//var stock_category_id = document.getElementById("html_stock_category_id").value;
-	//var stock_category_id_err = document.getElementById("html_stock_category_id_validation");
+	if (isNull(stock_category_id)) {
+		stock_category_id_err.innerHTML = "*Must select a category*";
+	
+		err = "stock_price";
+		result = false;
+		if (isNull(focus)) { focus = stock_category_id_err; }
+		
+	} else {
+		stock_category_id_err.innerHTML = "";
+	}
+
 	
 	/// stock barcode
 		
