@@ -62,7 +62,7 @@ echo "<table  class=\"striped\" border=\"1\">";
           echo "<td>", $row["stock_supplier_order_code"], "</td>";
           echo "<td>", $row["stock_category_id"], "</td>";
           echo "<td>", $row["stock_bar_code"], "</td>";
-          echo '<td><button href="/stock/edit_stock.php?stock_id='.$row["stock_id"].'" title="Edit item '.$row["stock_id"].'">Edit</button></td>';
+          echo '<td><button onclick="window.location.href=\'/stock/edit_stock.php?stock_id='.$row["stock_id"].'\'" title="Edit item '.$row["stock_id"].'">Edit</button></td>';
           echo "</tr>";
 
         }
