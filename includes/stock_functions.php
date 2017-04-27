@@ -141,7 +141,7 @@ function add_stock($php_stock) {
 			'$php_stock_barcode'
 		)
 SQL;
-	
+	echo $sql.PHP_EOL;
 	try{
 		// Query the database to acquire results and hand them to resultSet
 		$result = $conn->query($sql);

@@ -101,7 +101,7 @@
 	if (isNull(stock_category_id)) {
 		stock_category_id_err.innerHTML = "*Must select a category*";
 	
-		err = "stock_price";
+		err = "stock_category_id";
 		result = false;
 		if (isNull(focus)) { focus = stock_category_id_err; }
 		

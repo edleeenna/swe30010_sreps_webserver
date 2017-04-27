@@ -28,6 +28,7 @@
 	
 	if (isset ($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST) ) {		
 		$stockId = add_stock($_POST);
+		echo $stockId.PHP_EOL;
 		if ($stockId != "") {
 			// jump to item view of newly created stock item
 			header("Location:/stock/view_stock.php?stock_id=".$stockId);
