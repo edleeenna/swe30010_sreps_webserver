@@ -1,7 +1,18 @@
 <?php
-  //echo "Start<br>".PHP_EOL;
+  // Variable to set the local (current) page title [NOT Site Title].
+  $pageTitle = "Edit Stock Levels";
+  
+  // Variable to assign extra css files into the head of the page. just the file name needs to go in the quotes.
+  // All files should reside in the "css" folder. 
+  //$extra_css = array("test.css", "test2.css");
   $extra_css = 'edit_stock_levels.css';
+  
+  // Variable to assign extra javascript files into the head of the page. just the file name needs to go in the quotes.
+  // All files should reside in the "js" folder.
+  //$extra_js = array("test.js", "test2.js");
   $extra_js = 'edit_stock_levels.js';
+
+  //echo "Start<br>".PHP_EOL;
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/head.php';
   echo "Page specifically for editing stock levels and minimum target levels.<br>".PHP_EOL;
   // Include functions for editing stock. Could be made part of all functions for stock. eg: stock_func.php
