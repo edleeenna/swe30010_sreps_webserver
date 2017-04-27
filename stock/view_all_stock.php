@@ -20,6 +20,7 @@
 ?>
     </nav>
     <main>
+	    <h1>List of Stock</h1>
 <?php
 include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
 $listAllQuery = "select * FROM stock";
