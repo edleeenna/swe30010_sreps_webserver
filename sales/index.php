@@ -24,9 +24,9 @@
     <main>
         <div style="text-align:center">
       		<a class="waves-effect waves-light btn-large" href="/sales/view_all_sales_.php">View All Sales</a>
-			<a class="waves-effect waves-light btn-large" href="/sales/view_sale.php">View Sale Item</a>
-        	<a class="waves-effect waves-light btn-large" href="/sales/edit_sale.php">Edit Sale Item</a>
-        	<a class="waves-effect waves-light btn-large" href="/sales/add_sale.php">Add Sale Item</a>
+			<a class="waves-effect waves-light btn-large" href="/sales/view_sale.php">View Sale</a>
+        	<a class="waves-effect waves-light btn-large" href="/sales/edit_sale.php">Edit Sale </a>
+        	<a class="waves-effect waves-light btn-large" href="/sales/add_sale.php">Add Sale</a>
     	</div>
     </main>
 <?php
