@@ -45,6 +45,7 @@ echo "<table  class=\"striped\" border=\"1\">";
         ."<th scope=\"col\">Category</th>"
         ."<th scope=\"col\">Barcode</th>"
         ."<th scope=\"col\"></th>"
+        ."<th scope=\"col\"></th>"
         ."</tr>";
 
         while ($row = mysqli_fetch_assoc($listResult)) {
@@ -62,7 +63,8 @@ echo "<table  class=\"striped\" border=\"1\">";
           echo "<td>", $row["stock_supplier_order_code"], "</td>";
           echo "<td>", $row["stock_category_id"], "</td>";
           echo "<td>", $row["stock_bar_code"], "</td>";
-          echo '<td><button onclick="window.location.href=\'/stock/edit_stock.php?stock_id='.$row["stock_id"].'\'" title="Edit item '.$row["stock_id"].'">Edit</button></td>';
+          echo '<td><button onclick="window.location.href=\'/stock/edit_stock.php?stock_id='.$row["stock_id"].'\'" title="Edit item '.$row["stock_id"].'">Edit&hellip;</button></td>';
+          echo '<td><button onclick="window.location.href=\'/stock/view_stock.php?stock_id='.$row["stock_id"].'\'" title="View item '.$row["stock_id"].'">View&hellip;</button></td>';
           echo "</tr>";
 
         }
