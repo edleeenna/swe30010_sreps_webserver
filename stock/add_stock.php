@@ -1,15 +1,14 @@
 <?php
-  // Variable to set the local (current) page title [NOT Site Title].
-  $pageTitle = "Add Stock Item";
-
-  // Variable to assign extra css files into the head of the page. just the file name needs to go in the quotes.
-  // All files should reside in the "css" folder. 
-  $extra_css = "";
-  
-  // Variable to assign extra javascript files into the head of the page. just the file name needs to go in the quotes.
-  // All files should reside in the "js" folder.
-  $extra_js = "addstockvalidation.js";
-
+	// Variable to set the local (current) page title [NOT Site Title].
+	$pageTitle = "Add Stock Item";
+	
+	// Variable to assign extra css files into the head of the page. just the file name needs to go in the quotes.
+	// All files should reside in the "css" folder.
+	//$extra_css = "";
+	
+	// Variable to assign extra javascript files into the head of the page. just the file name needs to go in the quotes.
+	// All files should reside in the "js" folder.
+	$extra_js = array("add_stock.js", "stock_functions.js");
 
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/head.php';
 /*
@@ -19,73 +18,95 @@
 <?php
 	include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/nav.php';
 ?>
-    
-    </nav>
+</nav>
+
 <main>
-	<h2>Add Stock</h2>
-	<form  id="addStockForm" method="post" action="/stockadded.php">
-	  <fieldset>
-	    <legend>Add Stock</legend>
-	      <p>
-	      <label for="itemName">Item Name: </label>
-	      <input type="text" id="itemName" name="itemName">
-	    </p>
-	    <p>
-	      <label for="itemDescription">Item Description: </label>
-	      <input type="text" id="itemDescription" name="itemDescription" >
-	    </p>
-	    <p>
-	      <label for="directions">Directions: </label>
-	      <input type="text" id="directions" name="directions">
-	    </p>
-	    <p>
-	      <label for="ingredients">Ingredients: </label>
-	    <input type="text" id="ingredients" name="ingredients">
-	    </p>
-	    <p>
-	      <label for="itemprice">Item Price: </label>
-		  <span id="itemPriceValidation"></span>
-	      <input type="text" id="itemprice" name="itemprice">
-	    </p>
-	    <p>
-	      <label for="itemCostPrice">Item Cost Price: </label>
-		  <span id="itemCostPriceValidation"></span>
-	      <input type="text" id="itemCostPrice" name="itemCostPrice">
-	    </p>
-	    <p>
-	      <label for="itemQty">Item Qty: </label>
-		  <span id="itemQtyValidation"></span>
-	      <input type="text" id="itemQty" name="itemQty">
-	    </p>
-	    <p>
-	      <label for="itemTarget">Item Target</label>
-		  <span id="itemTargetValidation"></span>
-	      <input type="text" id="itemTarget" name="itemTarget">
-	    </p>
-	    <p>
-	      <label for="itemSupplier">Item Supplier</label>
-	      <input type="text" id="itemSupplier" name="itemSupplier">
-	    </p>
-	    <p>
-	      <label for="itemSupplierCode">Item Supplier Code</label>
-	      <input type="text" id="itemSupplierCode" name="itemSupplierCode">
-	    </p>
-	    <p>
-	      <label for="itemCategoryId">Item Category Id</label>
-		  <span id="categoryIdValidation"></span>
-	      <input type="text" id="itemCategoryId" name="itemCategoryId">
-	    </p>
-	    <p>
-	      <label for="itemBarcode">Item Barcode</label>
-	      <input type="text" id="itemBarcode" name="itemBarcode">
-	    </p>
-	  </fieldset>
-      <p>
-        <input type="reset" id="reset">
-        <input type="submit" id="submit" value="Add Stock">
-      </p>
-	</form>
-	<script src="/js/addstockvalidation.js"></script>
+ <?php
+	//echo "connect<br>".PHP_EOL;
+	// Include functions for editing stock. Could be made part of all functions for stock. eg: stock_func.php
+	include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/stock_functions.php';
+	
+	if (isset ($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST) ) {		
+		$stockId = add_stock($_POST);
+		if ($stockId != "") {
+			// jump to item view of newly created stock item
+			header("Location:/stock/view_stock.php?stock_id=".$stockId);
+		}
+	}
+	else{
+?>
+		<div class="container">		
+			<form id="add_stock" method="post" action="/stock/add_stock.php">
+				<fieldset>
+					<legend>Add Stock Item</legend>
+					<div class="input-field">						
+						<span id="html_stock_name_validation"></span>
+						<input type="text" id="html_stock_name" name="html_stock_name" class="validate">
+						<label for="html_stock_name">Item Name</label>
+					</div>
+					<div class="input-field">
+						<textarea id="html_stock_description" name="html_stock_description" class="materialize-textarea"></textarea>
+						<label for="html_stock_description">Item Description</label>
+					</div>
+					<div class="input-field">
+		        		<textarea id="html_stock_directions" name="html_stock_directions" class="materialize-textarea"></textarea>
+						<label for="html_stock_directions">Directions</label>
+					</div>
+					<div class="input-field">
+		        		<textarea id="html_stock_ingrediants" name="html_stock_ingrediants" class="materialize-textarea"></textarea>
+						<label for="html_stock_ingrediants">Ingredients</label>
+					</div>
+					<div class="input-field">
+						<span id="html_stock_price_validation"></span>
+						<input type="text" id="html_stock_price" name="html_stock_price" class="validate">
+		       			<label for="html_stock_price">Item Price</label>
+					</div>
+					<div class="input-field">
+						<span id="html_stock_cost_price_validation"></span>
+						<input type="text" id="html_stock_cost_price" name="html_stock_cost_price" class="validate">
+		        		<label for="html_stock_cost_price">Item Cost Price</label>
+					</div>
+					<div class="input-field">
+						<span id="html_stock_qty_validation"></span>
+						<input type="text" id="html_stock_qty" name="html_stock_qty" class="validate">
+		        		<label for="html_stock_qty">Item Qty</label>
+					</div>
+					<div class="input-field">
+						<span id="html_stock_target_min_qty_validation"></span>
+						<input type="text" id="html_stock_target_min_qty" name="html_stock_target_min_qty" class="validate">
+		        		<label for="html_stock_target_min_qty">Item Target</label>
+					</div>
+					<div class="input-field">
+						<input type="text" id="html_stock_supplier" name="html_stock_supplier" class="validate">
+		        		<label for="html_stock_supplier">Item Supplier</label>
+					</div>
+					<div class="input-field">
+						<input type="text" id="html_stock_supplier_code" name="html_stock_supplier_code" class="validate">
+		        		<label for="html_stock_supplier_code">Item Supplier Code</label>
+					</div>
+					<div class="input-field"> 
+						<span id="html_stock_category_id_validation"></span>
+						<select id="html_stock_category_id" name="html_stock_category_id">
+							<option value="" disabled selected>Select category</option>
+								<?php get_cat_list(); ?>
+						</select>
+						<label>Stock Category</label>
+					</div>
+					<div class="input-field">
+						<input type="text" id="html_stock_barcode" name="html_stock_barcode" class="validate">
+		        		<label for="html_stock_barcode">Item Barcode</label>
+					</div> 
+				</fieldset>
+				<p>
+			    	<input type="reset" value="Reset">
+			    	<input type="submit" value="Submit">
+				</p>
+			</form>
+		</div>
+<?php
+	}
+?>
+
 </main>
 <?php
 /*
