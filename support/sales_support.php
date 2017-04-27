@@ -11,21 +11,29 @@
   //$extra_js = "";
 
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/head.php';
-/*
-  <body>
-*/
-?>
-<?php
+  //Start of body and nav tags are in head.php
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/nav.php';
 ?>    
-</nav>
+    </nav>
 
-<main>
-	Template
-</main>
+    <main>
+      Work in progress.
+      <h2>Sales Support</h2>
+      Support for how to use the sections of the sales system.
+	    <h3>Add Sale</h3>
+      Change this text later. Screen shot, with description of what the parts are and for. Description of how you would use them.
+      Perhaps take them through from start to finish, how to do a complete run.
+	    <h3>Edit Sale</h3>
+      Change this text later. Screen shot, with description of what the parts are and for. Description of how you would use them.
+      Perhaps take them through from start to finish, how to do a complete run.
+	    <h3>View Sale Item</h3>
+      Change this text later. Screen shot, with description of what the parts are and for. Description of how you would use them.
+      Perhaps take them through from start to finish, how to do a complete run.
+	    <h3>View All Sale Items</h3>
+      Change this text later. Screen shot, with description of what the parts are and for. Description of how you would use them.
+      Perhaps take them through from start to finish, how to do a complete run.
+    </main>
 <?php
-/*
-  </body>
-*/
+  //Ending of body tag is in tail.php
   include $_SERVER[ 'DOCUMENT_ROOT' ] . '/includes/tail.php';
 ?>
