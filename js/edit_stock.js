@@ -9,8 +9,8 @@
 
 function init(){
 	// initalise form
-	var add_stock = document.getElementById("edit_stock");
-	add_stock.onsubmit = validate_stock;
+	var js_edit_stock = document.getElementById("edit_stock");
+	js_edit_stock.onsubmit = validate_stock;
 	
 	// initialise select fields
 	$(document).ready(function() {
