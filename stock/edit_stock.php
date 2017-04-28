@@ -27,11 +27,12 @@
 	include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/stock_functions.php';
 
 	if (isset ($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {
+	if (isset($_POST['stock_id']) && $_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {
 		$succ = update_stock($_POST);
 		// jump to item view of newly created stock item
 		//if ($succ == true) {
 			//echo $_POST['html_stock_id'];
-			header("Location:/stock/view_stock.php?stock_id=".$_POST['html_stock_id']);
+			header("Location:/stock/view_stock.php?stock_id=".$_POST['stock_id']);
 		//} 
 	} elseif (!(isset ($_GET) && $_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET))) {
 ?>
