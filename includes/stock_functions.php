@@ -166,11 +166,19 @@ SQL;
 
 // Function to update a stock item.
 function update_stock($php_stock) {
-	if ($debug)
-	{  
-		echo "Update Stock Called<br>".PHP_EOL;
-		echo "'<script type="text/javascript">alert("'Stock'"); </script>';".PHP_EOL;
-		   }
+	
+	
+	//if ($debug)
+		
+		
+		function do_alert($msg) 
+    {
+        echo '<script type="text/javascript">alert("' . $msg . '"); </script>';
+    }
+		//{  
+		//echo "Update Stock Called<br>".PHP_EOL;
+		//echo "'<script type="text/javascript">alert("'Stock'"); </script>';".PHP_EOL;
+		 //  }
 	
 	include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
 	
