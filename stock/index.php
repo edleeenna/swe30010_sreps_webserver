@@ -27,6 +27,7 @@
  			    <a class="waves-effect waves-light btn-large" href="/stock/view_stock.php">View Stock</a>
        		<a class="waves-effect waves-light btn-large" href="/stock/edit_stock.php">Edit Stock</a>
         	<a class="waves-effect waves-light btn-large" href="/stock/add_stock.php">Add Stock</a>
+          <a class="waves-effect waves-light btn-large" href="/stock/delete_stock.php">Delete Stock</a>
     	</div>
     </main>
 <?php
