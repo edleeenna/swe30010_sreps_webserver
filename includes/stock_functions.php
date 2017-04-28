@@ -169,7 +169,7 @@ function update_stock($php_stock) {
 	if ($debug)
 	{  
 		echo "Update Stock Called<br>".PHP_EOL;
-		echo "alert();"
+		echo "'<script type="text/javascript">alert("'Stock'"); </script>';".PHP_EOL;
 		   }
 	
 	include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
