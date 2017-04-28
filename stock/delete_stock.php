@@ -25,7 +25,7 @@
 	// Include functions for editing stock. Could be made part of all functions for stock. eg: stock_func.php
 	include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/stock_functions.php';
 	if (isset ($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {
-		$succ = delete_stock($_POST);
+		$succ = update_stock($_POST);
 		// jump to item view of newly created stock item
 		//if ($succ == true) {
 			//echo $_POST['html_stock_id'];
@@ -39,7 +39,7 @@
 				<?php get_ID_list(); ?>
         	</select> 
 			<!-- TODO - Link id and name selection -->
-	        <input type="submit" value="Edit"> 
+	        <input type="submit" value="Select"> 
 	        <input type="reset" value="Reset">
         </form>
 <?php
@@ -122,17 +122,7 @@
 <?php
 	}
 ?>
-    	
-</main>
+      </main>
 <?php
-    /*
-    Edit Stock Item<br>
-    Item<br>
-    ID:<br>
-    Name:<br>
-    Cost Price<br>
-    Price <br>
-    Quantity <br>
-    Minimm Target Quantity:<br>*/
   include $_SERVER[ 'DOCUMENT_ROOT' ] . '/includes/tail.php';
 ?>
