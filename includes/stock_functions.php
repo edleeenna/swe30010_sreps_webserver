@@ -1,5 +1,5 @@
 <?php
-// $debug = true;
+ $debug = true;
 // $debug = false; 
  	
 
@@ -166,6 +166,12 @@ SQL;
 
 // Function to update a stock item.
 function update_stock($php_stock) {
+	if ($debug)
+	{  
+		echo "Update Stock Called<br>".PHP_EOL;
+		echo "alert();"
+		   }
+	
 	include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
 	
     foreach($php_stock as $key => $value) {
