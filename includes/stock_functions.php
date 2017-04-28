@@ -1,4 +1,7 @@
 <?php
+// $debug = true;
+// $debug = false; 
+ 	
 
 // Function to clean data for pushing to the database.
 function cleanInput($input) {
@@ -251,7 +254,7 @@ function get_cat_list($val = ""){
 		echo "0 results";
     }
     // Close connection to database.
-    $conn->close();
+    //$conn->close();
   }
 
 
