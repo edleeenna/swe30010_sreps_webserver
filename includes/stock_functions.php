@@ -199,7 +199,7 @@ function update_stock($php_stock) {
                stock_supplier_order_code = '$php_stock_supplier_code',
                stock_category_id         = '$php_stock_category_id',
                stock_barcode             = '$php_stock_barcode'
-        WHERE  stock_id                  = '$php_stock_id'
+        WHERE  stock_id                  = $php_stock_id
 SQL;
 		
 	try{
