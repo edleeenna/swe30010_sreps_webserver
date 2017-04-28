@@ -1,6 +1,6 @@
 <?php
   // Variable to set the local (current) page title [NOT Site Title].
-  $pageTitle = "Edit Stock Item";
+  $pageTitle = "Delete Stock Item";
   // Variable to assign extra css files into the head of the page. just the file name needs to go in the quotes.
   // All files should reside in the "css" folder. 
   //$extra_css = array("test.css", "test2.css");
@@ -19,12 +19,13 @@
 ?>
     </nav>
 <main>
+	Work In Progress.
 <?php
 	//echo "connect<br>".PHP_EOL;
 	// Include functions for editing stock. Could be made part of all functions for stock. eg: stock_func.php
 	include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/stock_functions.php';
 	if (isset ($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {
-		$succ = update_stock($_POST);
+		$succ = delete_stock($_POST);
 		// jump to item view of newly created stock item
 		//if ($succ == true) {
 			//echo $_POST['html_stock_id'];
@@ -114,7 +115,7 @@
 				</fieldset>
 				<p>
 			    	<input type="reset" value="Reset">
-			    	<input type="submit" value="Submit">
+			    	<input type="submit" value="Delete">
 				</p>
 			</form>
 		</div>
