@@ -26,7 +26,7 @@
 	// Include functions for editing stock. Could be made part of all functions for stock. eg: stock_func.php
 	include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/stock_functions.php';
 
-	if (isset ($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {
+	//if (isset ($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {
 	if (isset($_POST['stock_id']) && $_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {
 		$succ = update_stock($_POST);
 		// jump to item view of newly created stock item
