@@ -254,9 +254,9 @@ SQL;
       // work through each row returned, add to the option list for selection.
   		foreach ($result as $row) {
 	  		if ($val != "" && $val == $row['category_id']) {
-		  		$php_cat_list .= '<option value="'.$row['category_id'].'" selected>'.$row['category_name'].'</option>'.PHP_EOL;
+		  		$php_cat_list .= '                  <option value="'.$row['category_id'].'" selected>'.$row['category_name'].'</option>'.PHP_EOL;
   			} else {
-	  			$php_cat_list .= '<option value="'.$row['category_id'].'">'.$row['category_name'].'</option>'.PHP_EOL;
+	  			$php_cat_list .= '                  <option value="'.$row['category_id'].'">'.$row['category_name'].'</option>'.PHP_EOL;
 		  	}
 		  }
       echo $php_cat_list;
