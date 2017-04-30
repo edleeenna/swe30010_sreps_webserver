@@ -1,16 +1,15 @@
 <?php
- $debug = true;
-// $debug = false; 
- 	
+  $debug = true;
+  // $debug = false;
 
-// Function to clean data for pushing to the database.
-function cleanInput($input) {
-	//echo "Cleaning $input.<br>".PHP_EOL;
-	return htmlspecialchars(stripslashes(trim($input)));
-}
+  // Function to clean data for pushing to the database.
+  function cleanInput($input) {
+    //echo "Cleaning $input.<br>".PHP_EOL;
+    return htmlspecialchars(stripslashes(trim($input)));
+  }
 
-// Function to retreive stock item id list and return them to the web interface.
-function get_ID_list(){
+  // Function to retreive stock item id list and return them to the web interface.
+  function get_ID_list(){
     // Connect to database.
     include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
 
@@ -42,28 +41,28 @@ function get_ID_list(){
     $conn->close();
   }
   
-// Function to retreive stock item details including category name and returns as an array.
-function get_stock($php_stock_id) {
+  // Function to retreive stock item details including category name and returns as an array.
+  function get_stock($php_stock_id) {
     // Connect to database.
     include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
 
-	// SQL to select all fields from the stock table, matching the specified stock_id.
-	$sql = <<<SQL
-		SELECT stock.*, categories.category_name 
-		FROM stock 
-		LEFT JOIN categories ON stock.stock_category_id = categories.category_id  
-		WHERE stock_id = $php_stock_id
+    // SQL to select all fields from the stock table, matching the specified stock_id.
+    $sql = <<<SQL
+      SELECT stock.*, categories.category_name 
+      FROM stock 
+      LEFT JOIN categories ON stock.stock_category_id = categories.category_id  
+      WHERE stock_id = $php_stock_id
 SQL;
 	
     try{
-		// Query the database to acquire results and hand them to resultSet
-		$result = $conn->query($sql);
+      // Query the database to acquire results and hand them to resultSet
+      $result = $conn->query($sql);
     }
     catch(PDOEXCEPTION $e){
-		// Display error message details
-		echo 'Error fetching stock item details: '.$e->getMessage();
-		// Stop running script
-		exit();
+      // Display error message details
+      echo 'Error fetching stock item details: '.$e->getMessage();
+      // Stop running script
+      exit();
     }
 
     if ($result->num_rows == 0) echo "0 results";
@@ -93,12 +92,12 @@ SQL;
     return $php_stock;
   }
   
-function add_stock($php_stock) {
-	include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
-	
-	foreach($php_stock as $key => $value) {
-  		$value = cleanInput($value);
-	}
+  function add_stock($php_stock) {
+    include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
+
+    foreach($php_stock as $key => $value) {
+        $value = cleanInput($value);
+  	}
 	
 	$php_stock_name           = isset($php_stock["html_stock_name"])                ? $php_stock["html_stock_name"]                : "";
 	$php_stock_description    = isset($php_stock["html_stock_description"])         ? $php_stock["html_stock_description"]         : "";
@@ -145,35 +144,33 @@ function add_stock($php_stock) {
 		)
 SQL;
 
-	try{
-		// Query the database to acquire results and hand them to resultSet
-		$result = $conn->query($sql);
+    try{
+        // Query the database to acquire results and hand them to resultSet
+        $result = $conn->query($sql);
     }
     catch(PDOEXCEPTION $e){
-		// Display error message details
-		echo 'Error inserting stock item details: '.$e->getMessage();
-		// Stop running script
-		exit();
+      // Display error message details
+      echo 'Error inserting stock item details: '.$e->getMessage();
+      // Stop running script
+      exit();
     }	
 		
-	$php_new_stock_id = mysqli_insert_id($conn);
-	
-	// Close connection to database.
+	  $php_new_stock_id = mysqli_insert_id($conn);
+
+    // Close connection to database.
     $conn->close();
     // return stock item details to calling section.
-	return $php_new_stock_id;
-}
+	  return $php_new_stock_id;
+  }
 
-// Function to update a stock item.
-function update_stock($php_stock) {
-	
-	
-	//if ($debug)
-		
-		
-		function do_alert($msg) 
+  // Function to update a stock item.
+  function update_stock($php_stock) {
+
+    //if ($debug)
+
+    function do_alert($msg) 
     {
-        echo '<script type="text/javascript">alert("' . $msg . '"); </script>';
+      echo '<script type="text/javascript">alert("' . $msg . '"); </script>';
     }
 		//{  
 		//echo "Update Stock Called<br>".PHP_EOL;
@@ -235,42 +232,39 @@ SQL;
 	//return true;
   }
 
-function get_cat_list($val = ""){
+  function get_cat_list($val = ""){
     // Connect to database.
     include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
 
     try{
-		// SQL to select stock_id's from the Stock Database;
-		$sql = "SELECT category_id, category_name FROM categories ORDER BY category_id ASC;";
-		// Query the database to acquire results and hand them to resultSet
-		$result = $conn->query($sql);
+      // SQL to select stock_id's from the Stock Database;
+      $sql = "SELECT category_id, category_name FROM categories ORDER BY category_id ASC;";
+      // Query the database to acquire results and hand them to resultSet
+      $result = $conn->query($sql);
     }
     catch(PDOEXCEPTION $e){
-		// Display error message details
-		echo 'Error fetching list of stock IDs: '.$e->getMessage();
-		// Stop running script
-		exit();
+      // Display error message details
+      echo 'Error fetching list of stock IDs: '.$e->getMessage();
+      // Stop running script
+      exit();
     }
     $php_cat_list = '';
     // See if there are results to process.
     if ($result->num_rows > 0) {
       // work through each row returned, add to the option list for selection.
-		foreach ($result as $row) {
-			if ($val != "" && $val == $row['category_id']) {
-				$php_cat_list .= '<option value="'.$row['category_id'].'" selected>'.$row['category_name'].'</option>'.PHP_EOL;
-			} else {
-				$php_cat_list .= '<option value="'.$row['category_id'].'">'.$row['category_name'].'</option>'.PHP_EOL;
-			}
-		}
-       echo $php_cat_list;
+  		foreach ($result as $row) {
+	  		if ($val != "" && $val == $row['category_id']) {
+		  		$php_cat_list .= '<option value="'.$row['category_id'].'" selected>'.$row['category_name'].'</option>'.PHP_EOL;
+  			} else {
+	  			$php_cat_list .= '<option value="'.$row['category_id'].'">'.$row['category_name'].'</option>'.PHP_EOL;
+		  	}
+		  }
+      echo $php_cat_list;
     }
     else {
-		echo "0 results";
+		  echo "0 results";
     }
     // Close connection to database.
     //$conn->close();
   }
-
-
-  
 ?>
