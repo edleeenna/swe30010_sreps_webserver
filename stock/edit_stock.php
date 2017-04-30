@@ -32,7 +32,8 @@
       //echo $_POST['html_stock_id'];
       header("Location:/stock/view_stock.php?stock_id=".$_POST['stock_id']);
     //} 
-  } elseif (!(isset ($_GET) && $_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET))) {
+  //} elseif (!(isset ($_GET) && $_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET))) {
+  } elseif (!isset($_POST['stock_id']) && !isset($_GET['stock_id'])) {
     echo 'if NOT isset($_GET) section.<br>'.PHP_EOL;
 ?>
     <form id="stock_item" action="edit_stock.php" method="get">
@@ -46,7 +47,8 @@
         </form>
 <?php
   }
-  else{
+  //else{
+  elseif (isset($_GET['stock_id'])) {
     echo 'if NOT isset($_GET) section.<br>'.PHP_EOL;
     $php_stock = get_stock($_GET['stock_id']);
     // onsubmit="return check_stock_details(this)"
