@@ -17,39 +17,41 @@
     </nav>
     <main>
 <?php
-	//echo "connect<br>".PHP_EOL;
-	// Include functions for editing stock. Could be made part of all functions for stock. eg: stock_func.php
-	include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/stock_functions.php';
-
-	//if (isset ($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {
-	if (isset($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {
+  //echo "connect<br>".PHP_EOL;
+  // Include functions for editing stock. Could be made part of all functions for stock. eg: stock_func.php
+  include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/stock_functions.php';
+  if (isset($_POST['stock_id'])) echo '$_POST[\'stock_id\'] is set.'.PHP_EOL;
+  if (isset($_GET['stock_id'])) echo '$_GET[\'stock_id\'] is set.'.PHP_EOL;
+  if (!isset($_POST['stock_id']) && !isset($_GET['stock_id'])) echo 'Neither $_POST[\'stock_id\'] or $_GET[\'stock_id\'] set.'.PHP_EOL;
+  //if (isset ($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {
+  if (isset($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {
     echo 'if isset($_POST) section.<br>'.PHP_EOL;
-		$succ = update_stock($_POST);
-		// jump to item view of newly created stock item
-		//if ($succ == true) {
-			//echo $_POST['html_stock_id'];
-			header("Location:/stock/view_stock.php?stock_id=".$_POST['stock_id']);
-		//} 
-	} elseif (!(isset ($_GET) && $_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET))) {
+    $succ = update_stock($_POST);
+    // jump to item view of newly created stock item
+    //if ($succ == true) {
+      //echo $_POST['html_stock_id'];
+      header("Location:/stock/view_stock.php?stock_id=".$_POST['stock_id']);
+    //} 
+  } elseif (!(isset ($_GET) && $_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET))) {
     echo 'if NOT isset($_GET) section.<br>'.PHP_EOL;
 ?>
-		<form id="stock_item" action="edit_stock.php" method="get">
-        	<label>Select stock item to edit, by ID or Name.</label><br>
-        	<select class="browser-default" name="stock_id">      
-				<?php get_ID_list(); ?>
-        	</select> 
-			<!-- TODO - Link id and name selection -->
-	        <input type="submit" value="Edit"> 
-	        <input type="reset" value="Reset">
+    <form id="stock_item" action="edit_stock.php" method="get">
+          <label>Select stock item to edit, by ID or Name.</label><br>
+          <select class="browser-default" name="stock_id">      
+        <?php get_ID_list(); ?>
+          </select> 
+      <!-- TODO - Link id and name selection -->
+          <input type="submit" value="Edit"> 
+          <input type="reset" value="Reset">
         </form>
 <?php
-	}
-	else{
+  }
+  else{
     echo 'if NOT isset($_GET) section.<br>'.PHP_EOL;
     $php_stock = get_stock($_GET['stock_id']);
     // onsubmit="return check_stock_details(this)"
 ?>
-      <div class="container">  		
+      <div class="container">      
         <form id="edit_stock" action="\stock\edit_stock.php" method="post">
           <fieldset>
             <legend>Edit Stock Item</legend>
@@ -121,7 +123,7 @@
         </form>
       </div>
 <?php
-	}
+  }
 ?>
     </main>
 <?php
