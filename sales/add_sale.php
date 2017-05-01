@@ -21,7 +21,22 @@
 </nav>
 
 <main>
-	Template
+	<div class="container">
+      <form id="add_sales" method="post" action="/stock/add_sale.php">
+        <fieldset>
+          <legend>Add Sales Item</legend>
+          <div class="input-field">
+            <input type="text" id="html_sales_datetime" name="html_sales_datetime" class="validate">
+            <label for="html_stock_name">Sales Date/Time</label>
+          </div>
+        </fieldset>
+        <p>
+            <input type="reset" value="Reset">
+            <input type="submit" value="Submit">
+        </p>
+      </form>
+    </div>
+
 </main>
 <?php
 /*
