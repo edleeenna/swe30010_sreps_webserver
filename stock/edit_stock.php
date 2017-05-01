@@ -51,7 +51,7 @@
           <fieldset>
             <legend>Edit Stock Item</legend>
             <div class="input-field">
-              <input readonly type="text" id="html_stock_id" name="stock_id" class="validate" value="<?php echo $php_stock['id'];?>">
+              <input readonly type="text" id="html_stock_id" name="html_stock_id" class="validate" value="<?php echo $php_stock['id'];?>">
               <label for="html_stock_id">Item ID</label>
             </div>
             <div class="input-field">
@@ -122,8 +122,9 @@
   //else{
   //elseif (isset($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {
   elseif (isset($_POST['stock_id'])) {
-    if ($debug) echo '3) if isset($_POST[\'stock_id\']) section.<br>'.PHP_EOL;
-    $succ = update_stock($_POST);
+    if ($debug) echo '3) if isset($_POST[\'html_stock_id\']) section.<br>'.PHP_EOL;
+    //$succ = update_stock($_POST);
+    $succ = update_stock();
     // jump to item view of newly created stock item
     if ($succ == true) {
       echo $_POST['stock_id'];
