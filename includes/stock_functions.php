@@ -238,7 +238,7 @@ SQL;
     }  
     echo '<script type="text/javascript">alert("sql result processing finished.");</script>'.PHP_EOL;
     echo '$result: '.$result.'<br>'.PHP_EOL;
-    echo '$result->info: ' . $result->info . '<br>'.PHP_EOL;
+    echo '$conn->info: ' . $conn->info . '<br>'.PHP_EOL;
     echo '$conn->affected_rows: '.$conn->affected_rows.'<br>'.PHP_EOL;
     $success = false;
     
@@ -247,7 +247,7 @@ SQL;
     //if ($result == "" ) $success = false;
 
     //if ($result->affected_rows == 1) $success = true;
-    //if ($result == 1) $success = true;
+    if ($result == 1) $success = true;
     // Close connection to database.
     $conn->close();
     return $success;
