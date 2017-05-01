@@ -51,7 +51,7 @@
 					</div>
 					<div class="input-field">
 		        		<textarea id="html_stock_directions" name="html_stock_directions" class="materialize-textarea"></textarea>
-						<label for="html_stock_directions">Directions</label>
+						<label for="html_stock_directions">Directions/Dose</label>
 					</div>
 					<div class="input-field">
 		        		<textarea id="html_stock_ingrediants" name="html_stock_ingrediants" class="materialize-textarea"></textarea>
@@ -60,12 +60,12 @@
 					<div class="input-field">
 						<span id="html_stock_price_validation"></span>
 						<input type="text" id="html_stock_price" name="html_stock_price" class="validate">
-		       			<label for="html_stock_price">Item Price</label>
+		       			<label for="html_stock_price">Item Price(decimal)</label>
 					</div>
 					<div class="input-field">
 						<span id="html_stock_cost_price_validation"></span>
 						<input type="text" id="html_stock_cost_price" name="html_stock_cost_price" class="validate">
-		        		<label for="html_stock_cost_price">Item Cost Price</label>
+		        		<label for="html_stock_cost_price">Item Cost Price (decimal)</label>
 					</div>
 					<div class="input-field">
 						<span id="html_stock_qty_validation"></span>
