@@ -169,38 +169,36 @@ SQL;
 
     if ($debug) echo "update_stock() called.<br>".PHP_EOL;
 
-    function do_alert($msg) 
-    {
+    //function do_alert($msg) 
+    //{
       echo '<script type="text/javascript">alert("update_stock() called."); </script>';
-    }
+    //}
     //{  
     //echo "Update Stock Called<br>".PHP_EOL;
     //echo "'<script type="text/javascript">alert("'Stock'"); </script>';".PHP_EOL;
      //  }
   
-    include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
-  
     foreach($php_stock as $key => $value) {
       $value = cleanInput($value);
     }
   
-  $php_stock_id             = isset($php_stock["html_stock_id"])                  ? $php_stock["html_stock_id"]                  : "";
-  $php_stock_name           = isset($php_stock["html_stock_name"])                ? $php_stock["html_stock_name"]                : "";
-  $php_stock_description    = isset($php_stock["html_stock_description"])         ? $php_stock["html_stock_description"]         : "";
-  $php_stock_directions     = isset($php_stock["html_stock_directions"])          ? $php_stock["html_stock_directions"]          : "";
-  $php_stock_ingredients    = isset($php_stock["html_stock_ingredients"])         ? $php_stock["html_stock_ingredients"]         : "";
-  $php_stock_price          = isset($php_stock["html_stock_price"])               ? $php_stock["html_stock_price"]               : "";
-  $php_stock_cost_price     = isset($php_stock["html_stock_cost_price"])          ? $php_stock["html_stock_cost_price"]          : "";
-  $php_stock_qty            = isset($php_stock["html_stock_qty"])                 ? $php_stock["html_stock_qty"]                 : "";
-  $php_stock_target_min_qty = isset($php_stock["html_stock_target_min_qty"])      ? $php_stock["html_stock_target_min_qty"]      : "";
-  $php_stock_supplier       = isset($php_stock["html_stock_supplier"])            ? $php_stock["html_stock_supplier"]            : "";
-  $php_stock_supplier_code  = isset($php_stock["html_stock_supplier_order_code"]) ? $php_stock["html_stock_supplier_order_code"] : "";
-  $php_stock_category_id    = isset($php_stock["html_stock_category_id"])         ? $php_stock["html_stock_category_id"]         : "";
-  $php_stock_barcode        = isset($php_stock["html_stock_barcode"])             ? $php_stock["html_stock_barcode"]             : "";
+    $php_stock_id             = isset($php_stock["html_stock_id"])                  ? $php_stock["html_stock_id"]                  : "";
+    $php_stock_name           = isset($php_stock["html_stock_name"])                ? $php_stock["html_stock_name"]                : "";
+    $php_stock_description    = isset($php_stock["html_stock_description"])         ? $php_stock["html_stock_description"]         : "";
+    $php_stock_directions     = isset($php_stock["html_stock_directions"])          ? $php_stock["html_stock_directions"]          : "";
+    $php_stock_ingredients    = isset($php_stock["html_stock_ingredients"])         ? $php_stock["html_stock_ingredients"]         : "";
+    $php_stock_price          = isset($php_stock["html_stock_price"])               ? $php_stock["html_stock_price"]               : "";
+    $php_stock_cost_price     = isset($php_stock["html_stock_cost_price"])          ? $php_stock["html_stock_cost_price"]          : "";
+    $php_stock_qty            = isset($php_stock["html_stock_qty"])                 ? $php_stock["html_stock_qty"]                 : "";
+    $php_stock_target_min_qty = isset($php_stock["html_stock_target_min_qty"])      ? $php_stock["html_stock_target_min_qty"]      : "";
+    $php_stock_supplier       = isset($php_stock["html_stock_supplier"])            ? $php_stock["html_stock_supplier"]            : "";
+    $php_stock_supplier_code  = isset($php_stock["html_stock_supplier_order_code"]) ? $php_stock["html_stock_supplier_order_code"] : "";
+    $php_stock_category_id    = isset($php_stock["html_stock_category_id"])         ? $php_stock["html_stock_category_id"]         : "";
+    $php_stock_barcode        = isset($php_stock["html_stock_barcode"])             ? $php_stock["html_stock_barcode"]             : "";
 
-  $sqltable = "stock";
-  
-  $sql = <<<SQL
+    $sqltable = "stock";
+
+    $sql = <<<SQL
         UPDATE $sqltable 
         SET    stock_name                = '$php_stock_name',
                stock_description         = '$php_stock_description',
@@ -217,20 +215,23 @@ SQL;
         WHERE  stock_id                  =  $php_stock_id
 SQL;
     
-  try{
-    // Query the database to acquire results and hand them to resultSet
-    $result = $conn->query($sql);
+    include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
+  
+    try{
+      // Query the database to acquire results and hand them to resultSet
+      $result = $conn->query($sql);
     }
     catch(PDOEXCEPTION $e){
-    // Display error message details
-    echo 'Error updateding stock item details: '.$e->getMessage();
-    // Stop running script
-    exit();
+      // Display error message details
+      echo 'Error updateding stock item details: '.$e->getMessage();
+      // Stop running script
+      exit();
     }  
-  
+    echo $result.'<br>'.PHP_EOL;
+    $success = true;
   // Close connection to database.
     $conn->close();
-  //return true;
+    return $success;
   }
 
   function get_cat_list($val = ""){
