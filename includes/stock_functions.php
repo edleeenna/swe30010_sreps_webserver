@@ -171,7 +171,7 @@ SQL;
 
     //function do_alert($msg) 
     //{
-      echo '<script type="text/javascript">alert("update_stock() called."); </script>';
+      echo '<script type="text/javascript">alert("update_stock() called.");</script>'.PHP_EOL;
     //}
     //{  
     //echo "Update Stock Called<br>".PHP_EOL;
@@ -181,7 +181,7 @@ SQL;
     foreach($php_stock as $key => $value) {
       $value = cleanInput($value);
     }
-    echo '<script type="text/javascript">alert("foreach cleanInput completed."); </script>';
+    echo '<script type="text/javascript">alert("foreach cleanInput completed.");</script>'.PHP_EOL;
   
     $php_stock_id             = isset($php_stock["html_stock_id"])                  ? $php_stock["html_stock_id"]                  : "";
     $php_stock_name           = isset($php_stock["html_stock_name"])                ? $php_stock["html_stock_name"]                : "";
@@ -196,10 +196,10 @@ SQL;
     $php_stock_supplier_code  = isset($php_stock["html_stock_supplier_order_code"]) ? $php_stock["html_stock_supplier_order_code"] : "";
     $php_stock_category_id    = isset($php_stock["html_stock_category_id"])         ? $php_stock["html_stock_category_id"]         : "";
     $php_stock_barcode        = isset($php_stock["html_stock_barcode"])             ? $php_stock["html_stock_barcode"]             : "";
-    echo '<script type="text/javascript">alert("SQL variables assigned."); </script>';
+    echo '<script type="text/javascript">alert("SQL variables assigned.");</script>'.PHP_EOL;
 
     $sqltable = "stock";
-    echo '<script type="text/javascript">alert("sqltable set."); </script>';
+    echo '<script type="text/javascript">alert("sqltable set.");</script>'.PHP_EOL;
 
     $sql = <<<SQL
         UPDATE $sqltable 
@@ -215,12 +215,12 @@ SQL;
                stock_supplier_order_code = '$php_stock_supplier_code',
                stock_category_id         = '$php_stock_category_id',
                stock_barcode             = '$php_stock_barcode'
-        WHERE  stock_id                  =  $php_stock_id
+        WHERE  stock_id                  = '$php_stock_id'
 SQL;
-    echo '<script type="text/javascript">alert("SQL Statment assembled."); </script>';
+    echo '<script type="text/javascript">alert("SQL Statment assembled.");</script>'.PHP_EOL;
     
     include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
-    echo '<script type="text/javascript">alert("connected with database."); </script>';
+    echo '<script type="text/javascript">alert("connected with database.");</script>'.PHP_EOL;
   
     try{
       // Query the database to acquire results and hand them to resultSet
@@ -232,7 +232,7 @@ SQL;
       // Stop running script
       exit();
     }  
-    echo '<script type="text/javascript">alert("sql result processing finished."); </script>';
+    echo '<script type="text/javascript">alert("sql result processing finished.");</script>'.PHP_EOL;
     echo $result.'<br>'.PHP_EOL;
     $success = true;
   // Close connection to database.
