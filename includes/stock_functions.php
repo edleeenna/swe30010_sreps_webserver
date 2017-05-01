@@ -237,13 +237,14 @@ SQL;
       exit();
     }  
     echo '<script type="text/javascript">alert("sql result processing finished.");</script>'.PHP_EOL;
+    echo '$result: '.$result.'<br>'.PHP_EOL;
     $success = false;
-    if ($result->num_rows == 0) $success = false;
-    if ($result->num_rows > 1) $success = false;
-    if ($result == "" ) $success = false;
-    echo "$result: ".$result.'<br>'.PHP_EOL;
+    
+    //if ($result->num_rows == 0) $success = false;
+    //if ($result->num_rows > 1) $success = false;
+    //if ($result == "" ) $success = false;
 
-    if ($result->num_rows = 1) $success = true;
+    if ($result->num_rows == 1) $success = true;
     if ($result == 1) $success = true;
     // Close connection to database.
     $conn->close();
