@@ -178,7 +178,7 @@ SQL;
     //echo "Update Stock Called<br>".PHP_EOL;
     //echo "'<script type="text/javascript">alert("'Stock'"); </script>';".PHP_EOL;
      //  }
-  
+  /*
     foreach($php_stock as $key => $value) {
       $value = cleanInput($value);
     }
@@ -197,11 +197,12 @@ SQL;
     $php_stock_supplier_code  = isset($php_stock["html_stock_supplier_order_code"]) ? $php_stock["html_stock_supplier_order_code"] : "";
     $php_stock_category_id    = isset($php_stock["html_stock_category_id"])         ? $php_stock["html_stock_category_id"]         : "";
     $php_stock_barcode        = isset($php_stock["html_stock_barcode"])             ? $php_stock["html_stock_barcode"]             : "";
+    */
     //echo '<script type="text/javascript">alert("SQL variables assigned.");</script>'.PHP_EOL;
 
     $sqltable = "stock";
     //echo '<script type="text/javascript">alert("sqltable set.");</script>'.PHP_EOL;
-
+/*
     $sql = <<<SQL
       UPDATE $sqltable 
       SET    stock_name                = '$php_stock_name',
@@ -217,16 +218,32 @@ SQL;
              stock_category_id         = '$php_stock_category_id',
              stock_barcode             = '$php_stock_barcode'
       WHERE  stock_id                  = '$php_stock_id';
+SQL; */
+    $sql = <<<SQL
+      UPDATE $sqltable 
+      SET    stock_name                = 'cleanInput($_POST['html_stock_name']),
+             stock_description         = 'cleanInput($_POST['html_stock_description']),
+             stock_directions          = 'cleanInput($_POST['html_stock_directions']),
+             stock_ingredients         = 'cleanInput($_POST['html_stock_ingredients']),
+             stock_price               = 'cleanInput($_POST['html_stock_price']),
+             stock_cost_price          = 'cleanInput($_POST['html_stock_cost_price']),
+             stock_qty                 = 'cleanInput($_POST['html_stock_qty']),
+             stock_target_min_qty      = 'cleanInput($_POST['html_stock_target_min_qty']),
+             stock_supplier            = 'cleanInput($_POST['html_stock_supplier']),
+             stock_supplier_order_code = 'cleanInput($_POST['html_stock_supplier_code']),
+             stock_category_id         = 'cleanInput($_POST['html_stock_category_id']),
+             stock_barcode             = 'cleanInput($_POST['html_stock_barcode'])
+      WHERE  stock_id                  = 'cleanInput($_POST['html_stock_id']);
 SQL;
     //echo '<script type="text/javascript">alert("SQL Statment assembled.");</script>'.PHP_EOL;
-    echo "Stock Id: ".$php_stock_id."<br> SQL: ".$sql.'<br>'.PHP_EOL;
+    echo "Stock Id: ".$_POST['html_stock_id']."<br> SQL: ".$sql.'<br>'.PHP_EOL;
     
     include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
     //echo '<script type="text/javascript">alert("connected with database.");</script>'.PHP_EOL;
-  
+    
     try{
       // Query the database to acquire results and hand them to resultSet
-      $result = $conn->query($sql);
+      //$result = $conn->query($sql);
     }
     //catch(PDOEXCEPTION $e){
     catch(Exception $e) { 
@@ -239,19 +256,29 @@ SQL;
     }  
     //echo '<script type="text/javascript">alert("sql result processing finished.");</script>'.PHP_EOL;
     //$success = false;
-    if ($result != 1){
-      $success = false;
-      echo '$result: '.$result.'<br>'.PHP_EOL;
-      echo '$conn->info: ' . $conn->info . '<br>'.PHP_EOL;
-      echo '$conn->affected_rows: '.$conn->affected_rows.'<br>'.PHP_EOL;
-    }
+    // if ($result != 1){
+    //   $success = false;
+    //   echo '$result: '.$result.'<br>'.PHP_EOL;
+    //   echo '$conn->info: ' . $conn->info . '<br>'.PHP_EOL;
+    //   echo '$conn->affected_rows: '.$conn->affected_rows.'<br>'.PHP_EOL;
+    // }
     
     //if ($result->num_rows == 0) $success = false;
     //if ($result->num_rows > 1) $success = false;
     //if ($result == "" ) $success = false;
 
     //if ($result->affected_rows == 1) $success = true;
-    if ($result == 1) $success = true;
+    //if ($result == 1) $success = true;
+
+    if ($conn->query($sql) === true) {
+      echo "Record updated successfully";
+      $success = true;
+    }
+    else {
+      echo "Error updating record: (" . $mysqli->connect_errno . ") " . $conn->connect_error . PHP_EOL;
+      $success = false;
+    }
+    
     // Close connection to database.
     $conn->close();
     return $success;
