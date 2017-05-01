@@ -32,7 +32,7 @@
       foreach ($result as $row) {
         $php_id_list .= '<option value="'.$row['stock_id'].'">'.$row['stock_id'].'</option>';
       }
-      echo $php_id_list."<br>".PHP_EOL;
+      echo $php_id_list.PHP_EOL;
     }
     else {
       echo "0 results";
