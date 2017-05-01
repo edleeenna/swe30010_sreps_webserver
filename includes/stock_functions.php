@@ -14,28 +14,28 @@
     include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
 
     try{
-    // SQL to select stock_id's from the Stock Database;
-    $sql = "SELECT stock_id FROM stock ORDER BY stock_id ASC;";
-    // Query the database to acquire results and hand them to resultSet
-    $result = $conn->query($sql);
+      // SQL to select stock_id's from the Stock Database;
+      $sql = "SELECT stock_id FROM stock ORDER BY stock_id ASC;";
+      // Query the database to acquire results and hand them to resultSet
+      $result = $conn->query($sql);
     }
     catch(PDOEXCEPTION $e){
-    // Display error message details
-    echo 'Error fetching list of stock IDs: '.$e->getMessage();
-    // Stop running script
-    exit();
+      // Display error message details
+      echo 'Error fetching list of stock IDs: '.$e->getMessage();
+      // Stop running script
+      exit();
     }
     $php_id_list = '';
     // See if there are results to process.
     if ($result->num_rows > 0) {
-    // work through each row returned, add to the option list for selection.
-    foreach ($result as $row) {
-      $php_id_list .= '<option value="'.$row['stock_id'].'">'.$row['stock_id'].'</option>';
-    }
-    echo $php_id_list."<br>".PHP_EOL;
+      // work through each row returned, add to the option list for selection.
+      foreach ($result as $row) {
+        $php_id_list .= '<option value="'.$row['stock_id'].'">'.$row['stock_id'].'</option>';
+      }
+      echo $php_id_list."<br>".PHP_EOL;
     }
     else {
-    echo "0 results";
+      echo "0 results";
     }
     // Close connection to database.
     $conn->close();
@@ -181,6 +181,7 @@ SQL;
     foreach($php_stock as $key => $value) {
       $value = cleanInput($value);
     }
+    echo '<script type="text/javascript">alert("foreach cleanInput completed."); </script>';
   
     $php_stock_id             = isset($php_stock["html_stock_id"])                  ? $php_stock["html_stock_id"]                  : "";
     $php_stock_name           = isset($php_stock["html_stock_name"])                ? $php_stock["html_stock_name"]                : "";
@@ -195,8 +196,10 @@ SQL;
     $php_stock_supplier_code  = isset($php_stock["html_stock_supplier_order_code"]) ? $php_stock["html_stock_supplier_order_code"] : "";
     $php_stock_category_id    = isset($php_stock["html_stock_category_id"])         ? $php_stock["html_stock_category_id"]         : "";
     $php_stock_barcode        = isset($php_stock["html_stock_barcode"])             ? $php_stock["html_stock_barcode"]             : "";
+    echo '<script type="text/javascript">alert("SQL variables assigned."); </script>';
 
     $sqltable = "stock";
+    echo '<script type="text/javascript">alert("sqltable set."); </script>';
 
     $sql = <<<SQL
         UPDATE $sqltable 
@@ -214,8 +217,10 @@ SQL;
                stock_barcode             = '$php_stock_barcode'
         WHERE  stock_id                  =  $php_stock_id
 SQL;
+    echo '<script type="text/javascript">alert("SQL Statment assembled."); </script>';
     
     include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
+    echo '<script type="text/javascript">alert("connected with database."); </script>';
   
     try{
       // Query the database to acquire results and hand them to resultSet
@@ -227,6 +232,7 @@ SQL;
       // Stop running script
       exit();
     }  
+    echo '<script type="text/javascript">alert("sql result processing finished."); </script>';
     echo $result.'<br>'.PHP_EOL;
     $success = true;
   // Close connection to database.
