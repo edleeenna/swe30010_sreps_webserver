@@ -241,7 +241,7 @@ SQL;
     if ($result->num_rows == 0) $success = false;
     if ($result->num_rows > 1) $success = false;
     if ($result == "" ) $success = false;
-    echo $result.'<br>'.PHP_EOL;
+    echo "$result: ".$result.'<br>'.PHP_EOL;
 
     if ($result->num_rows = 1) $success = true;
     if ($result == 1) $success = true;
