@@ -219,19 +219,19 @@ SQL;
              stock_barcode             = '$php_stock_barcode'
       WHERE  stock_id                  = '$php_stock_id';
 SQL; */
-    $php_stock_name           = cleanInput($_POST['html_stock_name']);
-    $php_stock_description    = cleanInput($_POST['html_stock_description']);
-    $php_stock_directions     = cleanInput($_POST['html_stock_directions']);
-    $php_stock_ingredients    = cleanInput($_POST['html_stock_ingredients']);
-    $php_stock_price          = cleanInput($_POST['html_stock_price']);
-    $php_stock_cost_price     = cleanInput($_POST['html_stock_cost_price']);
-    $php_stock_qty            = cleanInput($_POST['html_stock_qty']);
-    $php_stock_target_min_qty = cleanInput($_POST['html_stock_target_min_qty']);
-    $php_stock_supplier       = cleanInput($_POST['html_stock_supplier']);
-    $php_stock_supplier_code  = cleanInput($_POST['html_stock_supplier_code']);
-    $php_stock_category_id    = cleanInput($_POST['html_stock_category_id']);
-    $php_stock_barcode        = cleanInput($_POST['html_stock_barcode']);
-    $php_stock_id             = cleanInput($_POST['html_stock_id']);
+    $php_stock_name           = $conn->real_escape_string(cleanInput($_POST['html_stock_name']));
+    $php_stock_description    = $conn->real_escape_string(cleanInput($_POST['html_stock_description']));
+    $php_stock_directions     = $conn->real_escape_string(cleanInput($_POST['html_stock_directions']));
+    $php_stock_ingredients    = $conn->real_escape_string(cleanInput($_POST['html_stock_ingredients']));
+    $php_stock_price          = $conn->real_escape_string(cleanInput($_POST['html_stock_price']));
+    $php_stock_cost_price     = $conn->real_escape_string(cleanInput($_POST['html_stock_cost_price']));
+    $php_stock_qty            = $conn->real_escape_string(cleanInput($_POST['html_stock_qty']));
+    $php_stock_target_min_qty = $conn->real_escape_string(cleanInput($_POST['html_stock_target_min_qty']));
+    $php_stock_supplier       = $conn->real_escape_string(cleanInput($_POST['html_stock_supplier']));
+    $php_stock_supplier_code  = $conn->real_escape_string(cleanInput($_POST['html_stock_supplier_code']));
+    $php_stock_category_id    = $conn->real_escape_string(cleanInput($_POST['html_stock_category_id']));
+    $php_stock_barcode        = $conn->real_escape_string(cleanInput($_POST['html_stock_barcode']));
+    $php_stock_id             = $conn->real_escape_string(cleanInput($_POST['html_stock_id']));
     /*
     $sql = <<<SQL
       UPDATE $sqltable 
