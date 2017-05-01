@@ -181,7 +181,7 @@ SQL;
     foreach($php_stock as $key => $value) {
       $value = cleanInput($value);
     }
-    echo '<script type="text/javascript">alert("foreach cleanInput completed.");</script>'.PHP_EOL;
+    //echo '<script type="text/javascript">alert("foreach cleanInput completed.");</script>'.PHP_EOL;
   
     $php_stock_id             = isset($php_stock["html_stock_id"])                  ? $php_stock["html_stock_id"]                  : "";
     $php_stock_name           = isset($php_stock["html_stock_name"])                ? $php_stock["html_stock_name"]                : "";
@@ -196,10 +196,10 @@ SQL;
     $php_stock_supplier_code  = isset($php_stock["html_stock_supplier_order_code"]) ? $php_stock["html_stock_supplier_order_code"] : "";
     $php_stock_category_id    = isset($php_stock["html_stock_category_id"])         ? $php_stock["html_stock_category_id"]         : "";
     $php_stock_barcode        = isset($php_stock["html_stock_barcode"])             ? $php_stock["html_stock_barcode"]             : "";
-    echo '<script type="text/javascript">alert("SQL variables assigned.");</script>'.PHP_EOL;
+    //echo '<script type="text/javascript">alert("SQL variables assigned.");</script>'.PHP_EOL;
 
     $sqltable = "stock";
-    echo '<script type="text/javascript">alert("sqltable set.");</script>'.PHP_EOL;
+    //echo '<script type="text/javascript">alert("sqltable set.");</script>'.PHP_EOL;
 
     $sql = <<<SQL
         UPDATE $sqltable 
@@ -217,18 +217,22 @@ SQL;
                stock_barcode             = '$php_stock_barcode'
         WHERE  stock_id                  = '$php_stock_id'
 SQL;
-    echo '<script type="text/javascript">alert("SQL Statment assembled.");</script>'.PHP_EOL;
+    //echo '<script type="text/javascript">alert("SQL Statment assembled.");</script>'.PHP_EOL;
+    echo "Stock Id:".$php_stock_id."<br>".PHP_EOL;
     
     include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
-    echo '<script type="text/javascript">alert("connected with database.");</script>'.PHP_EOL;
+    //echo '<script type="text/javascript">alert("connected with database.");</script>'.PHP_EOL;
   
     try{
       // Query the database to acquire results and hand them to resultSet
       $result = $conn->query($sql);
     }
-    catch(PDOEXCEPTION $e){
+    //catch(PDOEXCEPTION $e){
+    catch(mysqli_sql_exception $e) { 
       // Display error message details
-      echo 'Error updateding stock item details: '.$e->getMessage();
+      //echo 'Error updating stock item details: '.$e->getMessage();
+      echo 'Error updating stock item details: '.$e->errorMessage();
+
       // Stop running script
       exit();
     }  
