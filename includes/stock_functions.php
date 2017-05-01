@@ -5,7 +5,7 @@
   // Function to clean data for pushing to the database.
   function cleanInput($input) {
     //echo "Cleaning $input.<br>".PHP_EOL;
-    $input = $conn->real_escape_string($input);
+    //$input = $conn->real_escape_string($input);
     return htmlspecialchars(stripslashes(trim($input)));
   }
 
