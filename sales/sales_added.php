@@ -35,20 +35,15 @@
 
     $insertQuery = "insert into sales (sale_datetime) values ('$salesDateTime')";
 
-    $selectQuery = "SELECT `sale_id` FROM `sales` WHERE `sale_datetime`= '$salesDateTime'";
-
-    //insert sale into database
+       //insert sale into database
     $insertResult = mysqli_query($conn, $insertQuery);
 
-    $selectResult = mysqli_query($conn, $selectQuery);
-
-    if(!$insertResult) {
+     if(!$insertResult) {
       echo("Error description: " . mysqli_error($conn));
     }
 
     else {
       echo "<p> Successfully added sale to database </p>";
-      echo "<p> Sale id: $selectResult. </p>";
       echo "<p>Sale Date/Time: $salesDateTime.  </p>";
 
     }
