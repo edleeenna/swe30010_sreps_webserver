@@ -22,7 +22,7 @@
 
 <main>
 	<div class="container">
-      <form id="add_sales" method="post" >
+      <form id="add_sales" method="post" action="sales_added.php">
         <fieldset>
           <legend>Add Sales Item</legend>
           <div class="input-field">
@@ -42,33 +42,5 @@
 /*
   </body>
 */
- if (isset ($_POST["html_sales_datetime"])){
-    $salesDateTime = $_POST["jobNo"];
-  }
-
-  include "includes/db_connect.php";
-
-    $insertQuery = "insert into sales (sale_datetime) values ('$salesDateTime')";
-
-    $selectQuery = "SELECT `sale_id` FROM `sales` WHERE `sale_datetime`= '$salesDateTime';";
-
-    //insert sale into database
-    $insertResult = mysqli_query($conn, $insertQuery);
-
-    $selectResult = mysqli_query($conn, $selectQuery);
-
-    if(!$insertResult || !$selectResult) {
-    echo "<p class=\"wrong\"> Something is wrong with", $query, "</p>";
-    }
-
-    else {
-      echo "<p> Successfully added sale to database </p>";
-      echo "<p> Sale id: $selectResult. </p>";
-      echo "<p>Sale Date/Time: $salesDateTime.  </p>";
-
-    }
-
-      mysqli_close($conn);
-
-  include $_SERVER[ 'DOCUMENT_ROOT' ] . '/includes/tail.php';
+   include $_SERVER[ 'DOCUMENT_ROOT' ] . '/includes/tail.php';
 ?>
