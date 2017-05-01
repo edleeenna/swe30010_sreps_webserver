@@ -167,7 +167,7 @@ SQL;
   function update_stock($php_stock) {
   //function update_stock() {
 
-    if $debug echo "update_stock() called.<br>".PHP_EOL;
+    if ($debug) echo "update_stock() called.<br>".PHP_EOL;
 
     //function do_alert($msg) 
     //{
@@ -215,7 +215,7 @@ SQL;
              stock_supplier_order_code = '$php_stock_supplier_code',
              stock_category_id         = '$php_stock_category_id',
              stock_barcode             = '$php_stock_barcode'
-      WHERE  stock_id                  = '$php_stock_id'
+      WHERE  stock_id                  = '$php_stock_id';
 SQL;
     //echo '<script type="text/javascript">alert("SQL Statment assembled.");</script>'.PHP_EOL;
     echo "Stock Id: ".$php_stock_id."<br> SQL: ".$sql.'<br>'.PHP_EOL;
@@ -238,8 +238,8 @@ SQL;
     }  
     echo '<script type="text/javascript">alert("sql result processing finished.");</script>'.PHP_EOL;
     echo '$result: '.$result.'<br>'.PHP_EOL;
-    //echo '$conn->info: ' . $conn->info . '<br>'.PHP_EOL;
-    //echo '$result->affected_rows: '.$result->affected_rows.'<br>'.PHP_EOL;
+    echo '$conn->info: ' . $conn->info . '<br>'.PHP_EOL;
+    echo '$result->affected_rows: '.$result->affected_rows.'<br>'.PHP_EOL;
     $success = false;
     
     //if ($result->num_rows == 0) $success = false;
