@@ -14,28 +14,28 @@
     include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
 
     try{
-		// SQL to select stock_id's from the Stock Database;
-		$sql = "SELECT stock_id FROM stock ORDER BY stock_id ASC;";
-		// Query the database to acquire results and hand them to resultSet
-		$result = $conn->query($sql);
+    // SQL to select stock_id's from the Stock Database;
+    $sql = "SELECT stock_id FROM stock ORDER BY stock_id ASC;";
+    // Query the database to acquire results and hand them to resultSet
+    $result = $conn->query($sql);
     }
     catch(PDOEXCEPTION $e){
-		// Display error message details
-		echo 'Error fetching list of stock IDs: '.$e->getMessage();
-		// Stop running script
-		exit();
+    // Display error message details
+    echo 'Error fetching list of stock IDs: '.$e->getMessage();
+    // Stop running script
+    exit();
     }
     $php_id_list = '';
     // See if there are results to process.
     if ($result->num_rows > 0) {
-		// work through each row returned, add to the option list for selection.
-		foreach ($result as $row) {
-			$php_id_list .= '<option value="'.$row['stock_id'].'">'.$row['stock_id'].'</option>';
-		}
-		echo $php_id_list."<br>".PHP_EOL;
+    // work through each row returned, add to the option list for selection.
+    foreach ($result as $row) {
+      $php_id_list .= '<option value="'.$row['stock_id'].'">'.$row['stock_id'].'</option>';
+    }
+    echo $php_id_list."<br>".PHP_EOL;
     }
     else {
-		echo "0 results";
+    echo "0 results";
     }
     // Close connection to database.
     $conn->close();
@@ -53,7 +53,7 @@
       LEFT JOIN categories ON stock.stock_category_id = categories.category_id  
       WHERE stock_id = $php_stock_id
 SQL;
-	
+  
     try{
       // Query the database to acquire results and hand them to resultSet
       $result = $conn->query($sql);
@@ -97,51 +97,51 @@ SQL;
 
     foreach($php_stock as $key => $value) {
         $value = cleanInput($value);
-  	}
-	
-	$php_stock_name           = isset($php_stock["html_stock_name"])                ? $php_stock["html_stock_name"]                : "";
-	$php_stock_description    = isset($php_stock["html_stock_description"])         ? $php_stock["html_stock_description"]         : "";
-	$php_stock_directions     = isset($php_stock["html_stock_directions"])          ? $php_stock["html_stock_directions"]          : "";
-	$php_stock_ingredients    = isset($php_stock["html_stock_ingredients"])         ? $php_stock["html_stock_ingredients"]         : "";
-	$php_stock_price          = isset($php_stock["html_stock_price"])               ? $php_stock["html_stock_price"]               : "";
-	$php_stock_cost_price     = isset($php_stock["html_stock_cost_price"])          ? $php_stock["html_stock_cost_price"]          : "";
-	$php_stock_qty            = isset($php_stock["html_stock_qty"])                 ? $php_stock["html_stock_qty"]                 : "";
-	$php_stock_target_min_qty = isset($php_stock["html_stock_target_min_qty"])      ? $php_stock["html_stock_target_min_qty"]      : "";
-	$php_stock_supplier       = isset($php_stock["html_stock_supplier"])            ? $php_stock["html_stock_supplier"]            : "";
-	$php_stock_supplier_code  = isset($php_stock["html_stock_supplier_order_code"]) ? $php_stock["html_stock_supplier_order_code"] : "";
-	$php_stock_category_id    = isset($php_stock["html_stock_category_id"])         ? $php_stock["html_stock_category_id"]         : "";
-	$php_stock_barcode        = isset($php_stock["html_stock_barcode"])             ? $php_stock["html_stock_barcode"]             : "";
-	
-	$sqltable = "stock";
-	
-	$sql = <<<SQL
-		INSERT INTO $sqltable (
-			stock_name,
-			stock_description,
-			stock_directions,
-			stock_ingredients,
-			stock_price,
-			stock_cost_price,
-			stock_qty,
-			stock_target_min_qty,
-			stock_supplier,
-			stock_supplier_order_code,
-			stock_category_id,
-			stock_barcode
-		) VALUES (
-			'$php_stock_name',
-			'$php_stock_description',
-			'$php_stock_directions',
-			'$php_stock_ingredients',
-			'$php_stock_price',
-			'$php_stock_cost_price',
-			'$php_stock_qty',
-			'$php_stock_target_min_qty',
-			'$php_stock_supplier',
-			'$php_stock_supplier_code',
-			'$php_stock_category_id',
-			'$php_stock_barcode'
-		)
+    }
+  
+  $php_stock_name           = isset($php_stock["html_stock_name"])                ? $php_stock["html_stock_name"]                : "";
+  $php_stock_description    = isset($php_stock["html_stock_description"])         ? $php_stock["html_stock_description"]         : "";
+  $php_stock_directions     = isset($php_stock["html_stock_directions"])          ? $php_stock["html_stock_directions"]          : "";
+  $php_stock_ingredients    = isset($php_stock["html_stock_ingredients"])         ? $php_stock["html_stock_ingredients"]         : "";
+  $php_stock_price          = isset($php_stock["html_stock_price"])               ? $php_stock["html_stock_price"]               : "";
+  $php_stock_cost_price     = isset($php_stock["html_stock_cost_price"])          ? $php_stock["html_stock_cost_price"]          : "";
+  $php_stock_qty            = isset($php_stock["html_stock_qty"])                 ? $php_stock["html_stock_qty"]                 : "";
+  $php_stock_target_min_qty = isset($php_stock["html_stock_target_min_qty"])      ? $php_stock["html_stock_target_min_qty"]      : "";
+  $php_stock_supplier       = isset($php_stock["html_stock_supplier"])            ? $php_stock["html_stock_supplier"]            : "";
+  $php_stock_supplier_code  = isset($php_stock["html_stock_supplier_order_code"]) ? $php_stock["html_stock_supplier_order_code"] : "";
+  $php_stock_category_id    = isset($php_stock["html_stock_category_id"])         ? $php_stock["html_stock_category_id"]         : "";
+  $php_stock_barcode        = isset($php_stock["html_stock_barcode"])             ? $php_stock["html_stock_barcode"]             : "";
+  
+  $sqltable = "stock";
+  
+  $sql = <<<SQL
+    INSERT INTO $sqltable (
+      stock_name,
+      stock_description,
+      stock_directions,
+      stock_ingredients,
+      stock_price,
+      stock_cost_price,
+      stock_qty,
+      stock_target_min_qty,
+      stock_supplier,
+      stock_supplier_order_code,
+      stock_category_id,
+      stock_barcode
+    ) VALUES (
+      '$php_stock_name',
+      '$php_stock_description',
+      '$php_stock_directions',
+      '$php_stock_ingredients',
+      '$php_stock_price',
+      '$php_stock_cost_price',
+      '$php_stock_qty',
+      '$php_stock_target_min_qty',
+      '$php_stock_supplier',
+      '$php_stock_supplier_code',
+      '$php_stock_category_id',
+      '$php_stock_barcode'
+    )
 SQL;
 
     try{
@@ -153,53 +153,54 @@ SQL;
       echo 'Error inserting stock item details: '.$e->getMessage();
       // Stop running script
       exit();
-    }	
-		
-	  $php_new_stock_id = mysqli_insert_id($conn);
+    }  
+    
+    $php_new_stock_id = mysqli_insert_id($conn);
 
     // Close connection to database.
     $conn->close();
     // return stock item details to calling section.
-	  return $php_new_stock_id;
+    return $php_new_stock_id;
   }
 
   // Function to update a stock item.
-  function update_stock($php_stock) {
+  //function update_stock($php_stock) {
+  function update_stock() {
 
-    //if ($debug)
+    if ($debug) echo "update_stock() called.<br>".PHP_EOL;
 
     function do_alert($msg) 
     {
-      echo '<script type="text/javascript">alert("' . $msg . '"); </script>';
+      echo '<script type="text/javascript">alert("update_stock() called."); </script>';
     }
-		//{  
-		//echo "Update Stock Called<br>".PHP_EOL;
-		//echo "'<script type="text/javascript">alert("'Stock'"); </script>';".PHP_EOL;
-		 //  }
-	
-	include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
-	
-    foreach($php_stock as $key => $value) {
-  		$value = cleanInput($value);
-	}
-	
-	$php_stock_id             = isset($php_stock["html_stock_id"])                  ? $php_stock["html_stock_id"]                  : "";
-	$php_stock_name           = isset($php_stock["html_stock_name"])                ? $php_stock["html_stock_name"]                : "";
-	$php_stock_description    = isset($php_stock["html_stock_description"])         ? $php_stock["html_stock_description"]         : "";
-	$php_stock_directions     = isset($php_stock["html_stock_directions"])          ? $php_stock["html_stock_directions"]          : "";
-	$php_stock_ingredients    = isset($php_stock["html_stock_ingredients"])         ? $php_stock["html_stock_ingredients"]         : "";
-	$php_stock_price          = isset($php_stock["html_stock_price"])               ? $php_stock["html_stock_price"]               : "";
-	$php_stock_cost_price     = isset($php_stock["html_stock_cost_price"])          ? $php_stock["html_stock_cost_price"]          : "";
-	$php_stock_qty            = isset($php_stock["html_stock_qty"])                 ? $php_stock["html_stock_qty"]                 : "";
-	$php_stock_target_min_qty = isset($php_stock["html_stock_target_min_qty"])      ? $php_stock["html_stock_target_min_qty"]      : "";
-	$php_stock_supplier       = isset($php_stock["html_stock_supplier"])            ? $php_stock["html_stock_supplier"]            : "";
-	$php_stock_supplier_code  = isset($php_stock["html_stock_supplier_order_code"]) ? $php_stock["html_stock_supplier_order_code"] : "";
-	$php_stock_category_id    = isset($php_stock["html_stock_category_id"])         ? $php_stock["html_stock_category_id"]         : "";
-	$php_stock_barcode        = isset($php_stock["html_stock_barcode"])             ? $php_stock["html_stock_barcode"]             : "";
+    //{  
+    //echo "Update Stock Called<br>".PHP_EOL;
+    //echo "'<script type="text/javascript">alert("'Stock'"); </script>';".PHP_EOL;
+     //  }
+  
+    include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
+  
+    //foreach($php_stock as $key => $value) {
+    //  $value = cleanInput($value);
+    //}
+  
+  $php_stock_id             = isset($_POST["html_stock_id"])                  ? cleanInput($_POST["html_stock_id"])                  : "";
+  $php_stock_name           = isset($_POST["html_stock_name"])                ? cleanInput($_POST["html_stock_name"])                : "";
+  $php_stock_description    = isset($_POST["html_stock_description"])         ? cleanInput($_POST["html_stock_description"])         : "";
+  $php_stock_directions     = isset($_POST["html_stock_directions"])          ? cleanInput($_POST["html_stock_directions"])          : "";
+  $php_stock_ingredients    = isset($_POST["html_stock_ingredients"])         ? cleanInput($_POST["html_stock_ingredients"])         : "";
+  $php_stock_price          = isset($_POST["html_stock_price"])               ? cleanInput($_POST["html_stock_price"])               : "";
+  $php_stock_cost_price     = isset($_POST["html_stock_cost_price"])          ? cleanInput($_POST["html_stock_cost_price"])          : "";
+  $php_stock_qty            = isset($_POST["html_stock_qty"])                 ? cleanInput($_POST["html_stock_qty"])                 : "";
+  $php_stock_target_min_qty = isset($_POST["html_stock_target_min_qty"])      ? cleanInput($_POST["html_stock_target_min_qty"])      : "";
+  $php_stock_supplier       = isset($_POST["html_stock_supplier"])            ? cleanInput($_POST["html_stock_supplier"])            : "";
+  $php_stock_supplier_code  = isset($_POST["html_stock_supplier_order_code"]) ? cleanInput($_POST["html_stock_supplier_order_code"]) : "";
+  $php_stock_category_id    = isset($_POST["html_stock_category_id"])         ? cleanInput($_POST["html_stock_category_id"])         : "";
+  $php_stock_barcode        = isset($_POST["html_stock_barcode"])             ? cleanInput($_POST["html_stock_barcode"])             : "";
 
-	$sqltable = "stock";
-	
-	$sql = <<<SQL
+  $sqltable = "stock";
+  
+  $sql = <<<SQL
         UPDATE $sqltable 
         SET    stock_name                = '$php_stock_name',
                stock_description         = '$php_stock_description',
@@ -213,23 +214,23 @@ SQL;
                stock_supplier_order_code = '$php_stock_supplier_code',
                stock_category_id         = '$php_stock_category_id',
                stock_barcode             = '$php_stock_barcode'
-        WHERE  stock_id                  = $php_stock_id
+        WHERE  stock_id                  =  $php_stock_id
 SQL;
-		
-	try{
-		// Query the database to acquire results and hand them to resultSet
-		$result = $conn->query($sql);
+    
+  try{
+    // Query the database to acquire results and hand them to resultSet
+    $result = $conn->query($sql);
     }
     catch(PDOEXCEPTION $e){
-		// Display error message details
-		echo 'Error updateding stock item details: '.$e->getMessage();
-		// Stop running script
-		exit();
-    }	
-	
-	// Close connection to database.
+    // Display error message details
+    echo 'Error updateding stock item details: '.$e->getMessage();
+    // Stop running script
+    exit();
+    }  
+  
+  // Close connection to database.
     $conn->close();
-	//return true;
+  //return true;
   }
 
   function get_cat_list($val = ""){
@@ -252,17 +253,17 @@ SQL;
     // See if there are results to process.
     if ($result->num_rows > 0) {
       // work through each row returned, add to the option list for selection.
-  		foreach ($result as $row) {
-	  		if ($val != "" && $val == $row['category_id']) {
-		  		$php_cat_list .= '                  <option value="'.$row['category_id'].'" selected>'.$row['category_name'].'</option>'.PHP_EOL;
-  			} else {
-	  			$php_cat_list .= '                  <option value="'.$row['category_id'].'">'.$row['category_name'].'</option>'.PHP_EOL;
-		  	}
-		  }
+      foreach ($result as $row) {
+        if ($val != "" && $val == $row['category_id']) {
+          $php_cat_list .= '                  <option value="'.$row['category_id'].'" selected>'.$row['category_name'].'</option>'.PHP_EOL;
+        } else {
+          $php_cat_list .= '                  <option value="'.$row['category_id'].'">'.$row['category_name'].'</option>'.PHP_EOL;
+        }
+      }
       echo $php_cat_list;
     }
     else {
-		  echo "0 results";
+      echo "0 results";
     }
     // Close connection to database.
     //$conn->close();
