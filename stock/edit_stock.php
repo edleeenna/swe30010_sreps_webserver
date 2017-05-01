@@ -23,13 +23,13 @@
   //echo "connect<br>".PHP_EOL;
   // Include functions for editing stock. Could be made part of all functions for stock. eg: stock_func.php
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/stock_functions.php';
-  if (!isset($_POST['stock_id']) && !isset($_GET['stock_id'])) echo 'Neither $_POST[\'stock_id\'] or $_GET[\'stock_id\'] set.<br>'.PHP_EOL;
+  if (!isset($_POST['html_stock_id']) && !isset($_GET['stock_id'])) echo 'Neither $_POST[\'html_stock_id\'] or $_GET[\'stock_id\'] set.<br>'.PHP_EOL;
   if (isset($_GET['stock_id'])) echo '$_GET[\'stock_id\'] is set.<br>'.PHP_EOL;
-  if (isset($_POST['stock_id'])) echo '$_POST[\'stock_id\'] is set.<br>'.PHP_EOL;
+  if (isset($_POST['html_stock_id'])) echo '$_POST[\'html_stock_id\'] is set.<br>'.PHP_EOL;
 
   //if (isset ($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {
-  if (!isset($_POST['stock_id']) && !isset($_GET['stock_id'])) {
-    if ($debug) echo '1) if NOT isset($_POST[\'stock_id\']) AND NOT isset($_GET[\'stock_id\']) section.<br>'.PHP_EOL;
+  if (!isset($_POST['html_stock_id']) && !isset($_GET['stock_id'])) {
+    if ($debug) echo '1) if NOT isset($_POST[\'html_stock_id\']) AND NOT isset($_GET[\'stock_id\']) section.<br>'.PHP_EOL;
 ?>
     <form id="stock_item" action="edit_stock.php" method="get">
       <label>Select stock item to edit, by ID or Name.</label><br>
@@ -127,7 +127,7 @@
     $succ = update_stock();
     // jump to item view of newly created stock item
     if ($succ == true) {
-      echo $_POST['stock_id'];
+      echo $_POST['html_stock_id'];
 //      header("Location:/stock/view_stock.php?stock_id=".$_POST['stock_id']);
     } 
   //} elseif (!(isset ($_GET) && $_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET))) {
