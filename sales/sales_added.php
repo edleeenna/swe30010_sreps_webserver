@@ -49,8 +49,6 @@
 
     else {
       echo "<p> Successfully added sale to database </p>";
-      echo "<p>Sale Date/Time: $salesDateTime.  </p>";
-
     }
   }
       mysqli_close($conn);
