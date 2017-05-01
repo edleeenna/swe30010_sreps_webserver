@@ -19,9 +19,9 @@
       // Query the database to acquire results and hand them to resultSet
       $result = $conn->query($sql);
     }
-    catch(PDOEXCEPTION $e){
+    catch(Exception $e){
       // Display error message details
-      echo 'Error fetching list of stock IDs: '.$e->getMessage();
+      echo 'Error fetching list of stock IDs: '.$e->errorMessage();
       // Stop running script
       exit();
     }
@@ -58,9 +58,9 @@ SQL;
       // Query the database to acquire results and hand them to resultSet
       $result = $conn->query($sql);
     }
-    catch(PDOEXCEPTION $e){
+    catch(Exception $e){
       // Display error message details
-      echo 'Error fetching stock item details: '.$e->getMessage();
+      echo 'Error fetching stock item details: '.$e->errorMessage();
       // Stop running script
       exit();
     }
@@ -148,9 +148,9 @@ SQL;
         // Query the database to acquire results and hand them to resultSet
         $result = $conn->query($sql);
     }
-    catch(PDOEXCEPTION $e){
+    catch(Exception $e){
       // Display error message details
-      echo 'Error inserting stock item details: '.$e->getMessage();
+      echo 'Error inserting stock item details: '.$e->errorMessage();
       // Stop running script
       exit();
     }  
@@ -218,7 +218,7 @@ SQL;
         WHERE  stock_id                  = '$php_stock_id'
 SQL;
     //echo '<script type="text/javascript">alert("SQL Statment assembled.");</script>'.PHP_EOL;
-    echo "Stock Id:".$php_stock_id."<br>".PHP_EOL;
+    echo "Stock Id: ".$php_stock_id."<br> SQL: ".$sql.'<br>'.PHP_EOL;
     
     include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
     //echo '<script type="text/javascript">alert("connected with database.");</script>'.PHP_EOL;
@@ -228,7 +228,7 @@ SQL;
       $result = $conn->query($sql);
     }
     //catch(PDOEXCEPTION $e){
-    catch(mysqli_sql_exception $e) { 
+    catch(Exception $e) { 
       // Display error message details
       //echo 'Error updating stock item details: '.$e->getMessage();
       echo 'Error updating stock item details: '.$e->errorMessage();
@@ -237,9 +237,15 @@ SQL;
       exit();
     }  
     echo '<script type="text/javascript">alert("sql result processing finished.");</script>'.PHP_EOL;
+    $success = false;
+    if ($result->num_rows == 0) $success = false;
+    if ($result->num_rows > 1) $success = false;
+    if ($result == "" ) $success = false;
     echo $result.'<br>'.PHP_EOL;
-    $success = true;
-  // Close connection to database.
+
+    if ($result->num_rows = 1) $success = true;
+    if ($result == 1) $success = true;
+    // Close connection to database.
     $conn->close();
     return $success;
   }
@@ -254,9 +260,9 @@ SQL;
       // Query the database to acquire results and hand them to resultSet
       $result = $conn->query($sql);
     }
-    catch(PDOEXCEPTION $e){
+    catch(Exception $e){
       // Display error message details
-      echo 'Error fetching list of stock IDs: '.$e->getMessage();
+      echo 'Error fetching list of stock IDs: '.$e->errorMessage();
       // Stop running script
       exit();
     }
