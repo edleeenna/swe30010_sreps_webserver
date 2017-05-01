@@ -28,7 +28,7 @@
   </body>
 */
  if (isset ($_POST["html_sales_datetime"])){
-    $salesDateTime = $_POST["jobNo"];
+    $salesDateTime = $_POST["html_sales_datetime"];
   }
 
   include "includes/db_connect.php";
