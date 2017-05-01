@@ -23,9 +23,9 @@
   //echo "connect<br>".PHP_EOL;
   // Include functions for editing stock. Could be made part of all functions for stock. eg: stock_func.php
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/stock_functions.php';
-  if (!isset($_POST['html_stock_id']) && !isset($_GET['stock_id'])) echo 'Neither $_POST[\'html_stock_id\'] or $_GET[\'stock_id\'] set.<br>'.PHP_EOL;
-  if (isset($_GET['stock_id'])) echo '$_GET[\'stock_id\'] is set.<br>'.PHP_EOL;
-  if (isset($_POST['html_stock_id'])) echo '$_POST[\'html_stock_id\'] is set.<br>'.PHP_EOL;
+  //if (!isset($_POST['html_stock_id']) && !isset($_GET['stock_id'])) echo 'Neither $_POST[\'html_stock_id\'] or $_GET[\'stock_id\'] set.<br>'.PHP_EOL;
+  //if (isset($_GET['stock_id'])) echo '$_GET[\'stock_id\'] is set.<br>'.PHP_EOL;
+  //if (isset($_POST['html_stock_id'])) echo '$_POST[\'html_stock_id\'] is set.<br>'.PHP_EOL;
 
   //if (isset ($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {
   if (!isset($_POST['html_stock_id']) && !isset($_GET['stock_id'])) {
@@ -35,7 +35,7 @@
       <label>Select stock item to edit, by ID or Name.</label><br>
       <select class="browser-default" name="stock_id">      
         <?php get_ID_list(); ?>
-      </select> 
+      </select>
       <!-- TODO - Link id and name selection -->
       <input type="submit" value="Edit"> 
       <input type="reset" value="Reset">
