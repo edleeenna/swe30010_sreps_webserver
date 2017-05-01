@@ -35,7 +35,7 @@
 
     $insertQuery = "insert into sales (sale_datetime) values ('$salesDateTime')";
 
-    $selectQuery = "SELECT `sale_id` FROM `sales` WHERE `sale_datetime`= '$salesDateTime';";
+    $selectQuery = "SELECT `sale_id` FROM `sales` WHERE `sale_datetime`= '$salesDateTime'";
 
     //insert sale into database
     $insertResult = mysqli_query($conn, $insertQuery);
@@ -43,6 +43,7 @@
     $selectResult = mysqli_query($conn, $selectQuery);
 
     if(!$insertResult && !$selectResult) {
+    echo "<p class=\"wrong\"> Insert error: ", mysqli_error($conn, $i), "</p>";
     echo "<p class=\"wrong\"> There is an error. The error is: ", mysqli_error($conn), "</p>";
     }
 
