@@ -22,7 +22,7 @@
 
 <main>
 	<div class="container">
-      <form id="add_sales" method="post" action="/stock/add_sale.php">
+      <form id="add_sales" method="post" >
         <fieldset>
           <legend>Add Sales Item</legend>
           <div class="input-field">
