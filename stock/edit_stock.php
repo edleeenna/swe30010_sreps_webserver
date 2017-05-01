@@ -1,4 +1,7 @@
 <?php
+  $debug = true;
+  //$debug = false;
+
   // Variable to set the local (current) page title [NOT Site Title].
   $pageTitle = "Edit Stock Item";
 
@@ -26,7 +29,7 @@
 
   //if (isset ($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {
   if (!isset($_POST['stock_id']) && !isset($_GET['stock_id'])) {
-    echo '1) if NOT isset($_POST[\'stock_id\']) AND NOT isset($_GET[\'stock_id\']) section.<br>'.PHP_EOL;
+    if ($debug) echo '1) if NOT isset($_POST[\'stock_id\']) AND NOT isset($_GET[\'stock_id\']) section.<br>'.PHP_EOL;
 ?>
     <form id="stock_item" action="edit_stock.php" method="get">
       <label>Select stock item to edit, by ID or Name.</label><br>
@@ -39,7 +42,7 @@
     </form>
 <?php
   } elseif (isset($_GET['stock_id'])) {
-    echo '2) if isset($_GET[\'stock_id\']) section.<br>'.PHP_EOL;
+    if ($debug) echo '2) if isset($_GET[\'stock_id\']) section.<br>'.PHP_EOL;
     $php_stock = get_stock($_GET['stock_id']);
     // onsubmit="return check_stock_details(this)"
 ?>
@@ -48,7 +51,7 @@
           <fieldset>
             <legend>Edit Stock Item</legend>
             <div class="input-field">
-              <input readonly type="text" id="html_stock_id" name="html_stock_id" class="validate" value="<?php echo $php_stock['id'];?>">
+              <input readonly type="text" id="html_stock_id" name="stock_id" class="validate" value="<?php echo $php_stock['id'];?>">
               <label for="html_stock_id">Item ID</label>
             </div>
             <div class="input-field">
@@ -117,8 +120,9 @@
 <?php
   }
   //else{
-  elseif (isset($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {
-    echo '3) if isset($_POST) section.<br>'.PHP_EOL;
+  //elseif (isset($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {
+  elseif (isset($_POST['stock_id'])) {
+    if ($debug) echo '3) if isset($_POST[\'stock_id\']) section.<br>'.PHP_EOL;
 //    $succ = update_stock($_POST);
     // jump to item view of newly created stock item
     //if ($succ == true) {
