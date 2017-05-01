@@ -178,7 +178,7 @@ SQL;
   function update_stock($php_stock) {
   //function update_stock() {
     //mysqli_query($conn , "UNLOCK TABLES;");
-    if ($GLOBALS['debug']) echo "update_stock() called.".$_POST['html_stock_name']."<br>".PHP_EOL;
+    if ($GLOBALS['debug']) echo "update_stock() called.".mysql_escape_mimic($_POST['html_stock_supplier'])."<br>".PHP_EOL;
 
     //function do_alert($msg) 
     //{
