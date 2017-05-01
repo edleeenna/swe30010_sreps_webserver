@@ -38,6 +38,10 @@
        //insert sale into database
     $insertResult = mysqli_query($conn, $insertQuery);
 
+  if (!$conn) {
+    echo "<p> Database connection failure</p>";
+  }
+  else {
      if(!$insertResult) {
       echo("Error description: " . mysqli_error($conn));
     }
@@ -47,7 +51,7 @@
       echo "<p>Sale Date/Time: $salesDateTime.  </p>";
 
     }
-
+  }
       mysqli_close($conn);
 echo "</main>";
   include $_SERVER[ 'DOCUMENT_ROOT' ] . '/includes/tail.php';
