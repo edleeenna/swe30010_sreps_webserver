@@ -121,7 +121,7 @@
   }
   //else{
   //elseif (isset($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {
-  elseif (isset($_POST['stock_id'])) {
+  elseif (isset($_POST['html_stock_id'])) {
     if ($debug) echo '3) if isset($_POST[\'html_stock_id\']) section.<br>'.PHP_EOL;
     //$succ = update_stock($_POST);
     $succ = update_stock();
