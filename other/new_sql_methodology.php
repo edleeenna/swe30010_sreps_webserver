@@ -21,12 +21,20 @@
   if ($conn->connect_errno) {
     echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $conn->connect_error . PHP_EOL;
   }
-  $sql = "SELECT * FROM stock";
-  $result = $conn->query($sql);
-  // Point to start of result set again.
-  // $result->data_seek(0);
-  while ($row = $result->fetch_assoc()) {
-    echo " Stock Id = " . $row['stock_id'] . "<br>".PHP_EOL;
+  // $sql = "SELECT * FROM stock";
+  // $result = $conn->query($sql);
+  // // Point to start of result set again.
+  // // $result->data_seek(0);
+  // while ($row = $result->fetch_assoc()) {
+  //   echo " Stock Id = " . $row['stock_id'] . "<br>".PHP_EOL;
+  // }
+  // //echo $row['stock_id'];
+
+  $sql = "UPDATE stock SET stock_qty = 26 WHERE stock_id = 000001";
+  if ($conn->query($sql) === true) {
+    echo "Record updated successfully";
   }
-  //echo $row['stock_id'];
+  else {
+    echo "Error updating record: (" . $mysqli->connect_errno . ") " . $conn->connect_error . PHP_EOL;
+  }
 ?>
