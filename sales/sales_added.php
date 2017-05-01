@@ -1,6 +1,6 @@
 <?php
   // Variable to set the local (current) page title [NOT Site Title].
-  $pageTitle = "Webpage Template";
+  $pageTitle = "Sale Added";
 
   // Variable to assign extra css files into the head of the page. just the file name needs to go in the quotes.
   // All files should reside in the "css" folder.
