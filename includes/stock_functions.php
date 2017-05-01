@@ -219,21 +219,35 @@ SQL;
              stock_barcode             = '$php_stock_barcode'
       WHERE  stock_id                  = '$php_stock_id';
 SQL; */
+    $_POST['html_stock_name']           = cleanInput($_POST['html_stock_name']);
+    $_POST['html_stock_description']    = cleanInput($_POST['html_stock_description']);
+    $_POST['html_stock_directions']     = cleanInput($_POST['html_stock_directions']);
+    $_POST['html_stock_ingredients']    = cleanInput($_POST['html_stock_ingredients']);
+    $_POST['html_stock_price']          = cleanInput($_POST['html_stock_price']);
+    $_POST['html_stock_cost_price']     = cleanInput($_POST['html_stock_cost_price']);
+    $_POST['html_stock_qty']            = cleanInput($_POST['html_stock_qty']);
+    $_POST['html_stock_target_min_qty'] = cleanInput($_POST['html_stock_target_min_qty']);
+    $_POST['html_stock_supplier']       = cleanInput($_POST['html_stock_supplier']);
+    $_POST['html_stock_supplier_code']  = cleanInput($_POST['html_stock_supplier_code']);
+    $_POST['html_stock_category_id']    = cleanInput($_POST['html_stock_category_id']);
+    $_POST['html_stock_barcode']        = cleanInput($_POST['html_stock_barcode']);
+    $_POST['html_stock_id']             = cleanInput($_POST['html_stock_id']);
+    
     $sql = <<<SQL
       UPDATE $sqltable 
-      SET    stock_name                = 'cleanInput($_POST['html_stock_name']),
-             stock_description         = 'cleanInput($_POST['html_stock_description']),
-             stock_directions          = 'cleanInput($_POST['html_stock_directions']),
-             stock_ingredients         = 'cleanInput($_POST['html_stock_ingredients']),
-             stock_price               = 'cleanInput($_POST['html_stock_price']),
-             stock_cost_price          = 'cleanInput($_POST['html_stock_cost_price']),
-             stock_qty                 = 'cleanInput($_POST['html_stock_qty']),
-             stock_target_min_qty      = 'cleanInput($_POST['html_stock_target_min_qty']),
-             stock_supplier            = 'cleanInput($_POST['html_stock_supplier']),
-             stock_supplier_order_code = 'cleanInput($_POST['html_stock_supplier_code']),
-             stock_category_id         = 'cleanInput($_POST['html_stock_category_id']),
-             stock_barcode             = 'cleanInput($_POST['html_stock_barcode'])
-      WHERE  stock_id                  = 'cleanInput($_POST['html_stock_id']);
+      SET    stock_name                = '$_POST['html_stock_name']',
+             stock_description         = '$_POST['html_stock_description']',
+             stock_directions          = '$_POST['html_stock_directions']',
+             stock_ingredients         = '$_POST['html_stock_ingredients']',
+             stock_price               = '$_POST['html_stock_price']',
+             stock_cost_price          = '$_POST['html_stock_cost_price']',
+             stock_qty                 = '$_POST['html_stock_qty']',
+             stock_target_min_qty      = '$_POST['html_stock_target_min_qty']',
+             stock_supplier            = '$_POST['html_stock_supplier']',
+             stock_supplier_order_code = '$_POST['html_stock_supplier_code']',
+             stock_category_id         = '$_POST['html_stock_category_id']',
+             stock_barcode             = '$_POST['html_stock_barcode']'
+      WHERE  stock_id                  = '$_POST['html_stock_id']';
 SQL;
     //echo '<script type="text/javascript">alert("SQL Statment assembled.");</script>'.PHP_EOL;
     echo "Stock Id: ".$_POST['html_stock_id']."<br> SQL: ".$sql.'<br>'.PHP_EOL;
