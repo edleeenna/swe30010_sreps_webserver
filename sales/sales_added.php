@@ -42,7 +42,7 @@
 
     $selectResult = mysqli_query($conn, $selectQuery);
 
-    if(!$insertResult && !$selectResult) {
+    if(!$insertResult) {
       echo("Error description: " . mysqli_error($conn));
     }
 
