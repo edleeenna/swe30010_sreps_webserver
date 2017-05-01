@@ -239,15 +239,15 @@ SQL; */
              stock_description='$php_stock_description',
              stock_directions='$php_stock_directions',
              stock_ingredients='$php_stock_ingredients',
-             stock_price='$php_stock_price',
-             stock_cost_price='$php_stock_cost_price',
-             stock_qty='$php_stock_qty',
-             stock_target_min_qty='$php_stock_target_min_qty',
+             stock_price=$php_stock_price,
+             stock_cost_price=$php_stock_cost_price,
+             stock_qty=$php_stock_qty,
+             stock_target_min_qty=$php_stock_target_min_qty,
              stock_supplier='$php_stock_supplier',
              stock_supplier_order_code='$php_stock_supplier_code',
-             stock_category_id='$php_stock_category_id',
+             stock_category_id=$php_stock_category_id,
              stock_barcode='$php_stock_barcode'
-      WHERE  stock_id='$php_stock_id';
+      WHERE  stock_id=$php_stock_id;
 SQL;
     //echo '<script type="text/javascript">alert("SQL Statment assembled.");</script>'.PHP_EOL;
     echo "Stock Id: ".$_POST['html_stock_id']."<br> SQL: ".$sql.'<br>'.PHP_EOL;
