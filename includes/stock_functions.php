@@ -215,7 +215,7 @@ SQL;
              stock_supplier_order_code = '$php_stock_supplier_code',
              stock_category_id         = '$php_stock_category_id',
              stock_barcode             = '$php_stock_barcode'
-      WHERE  stock_id                  = '$php_stock_id';
+      WHERE  stock_id                  = '$php_stock_id'
 SQL;
     //echo '<script type="text/javascript">alert("SQL Statment assembled.");</script>'.PHP_EOL;
     echo "Stock Id: ".$php_stock_id."<br> SQL: ".$sql.'<br>'.PHP_EOL;
