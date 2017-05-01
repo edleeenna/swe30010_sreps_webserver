@@ -33,7 +33,7 @@
 
   include "includes/db_connect.php";
 
-    $insertQuery = "insert into sales (sale_datetime) values ('$salesDateTime')";
+    $insertQuery = "INSERT INTO sales (sale_datetime) VALUES ('$salesDateTime')";
 
        //insert sale into database
     $insertResult = mysqli_query($conn, $insertQuery);
