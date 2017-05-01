@@ -1,11 +1,21 @@
 <?php
   $debug = true;
   // $debug = false;
+  function mysql_escape_mimic($inp) {
+    if(is_array($inp))
+        return array_map(__METHOD__, $inp);
 
+    if(!empty($inp) && is_string($inp)) {
+        return str_replace(array('\\', "\0", "\n", "\r", "'", '"', "\x1a"), array('\\\\', '\\0', '\\n', '\\r', "\\'", '\\"', '\\Z'), $inp);
+    }
+
+    return $inp;
+  }
   // Function to clean data for pushing to the database.
   function cleanInput($input) {
     //echo "Cleaning $input.<br>".PHP_EOL;
     //$input = $conn->real_escape_string($input);
+    $input = mysql_escape_mimic($input);
     return htmlspecialchars(stripslashes(trim($input)));
   }
 
@@ -219,19 +229,19 @@ SQL;
              stock_barcode             = '$php_stock_barcode'
       WHERE  stock_id                  = '$php_stock_id';
 SQL; */
-    $php_stock_name           = $conn->real_escape_string(cleanInput($_POST['html_stock_name']));
-    $php_stock_description    = $conn->real_escape_string(cleanInput($_POST['html_stock_description']));
-    $php_stock_directions     = $conn->real_escape_string(cleanInput($_POST['html_stock_directions']));
-    $php_stock_ingredients    = $conn->real_escape_string(cleanInput($_POST['html_stock_ingredients']));
-    $php_stock_price          = $conn->real_escape_string(cleanInput($_POST['html_stock_price']));
-    $php_stock_cost_price     = $conn->real_escape_string(cleanInput($_POST['html_stock_cost_price']));
-    $php_stock_qty            = $conn->real_escape_string(cleanInput($_POST['html_stock_qty']));
-    $php_stock_target_min_qty = $conn->real_escape_string(cleanInput($_POST['html_stock_target_min_qty']));
-    $php_stock_supplier       = $conn->real_escape_string(cleanInput($_POST['html_stock_supplier']));
-    $php_stock_supplier_code  = $conn->real_escape_string(cleanInput($_POST['html_stock_supplier_code']));
-    $php_stock_category_id    = $conn->real_escape_string(cleanInput($_POST['html_stock_category_id']));
-    $php_stock_barcode        = $conn->real_escape_string(cleanInput($_POST['html_stock_barcode']));
-    $php_stock_id             = $conn->real_escape_string(cleanInput($_POST['html_stock_id']));
+    $php_stock_name           = cleanInput($_POST['html_stock_name']);
+    $php_stock_description    = cleanInput($_POST['html_stock_description']);
+    $php_stock_directions     = cleanInput($_POST['html_stock_directions']);
+    $php_stock_ingredients    = cleanInput($_POST['html_stock_ingredients']);
+    $php_stock_price          = cleanInput($_POST['html_stock_price']);
+    $php_stock_cost_price     = cleanInput($_POST['html_stock_cost_price']);
+    $php_stock_qty            = cleanInput($_POST['html_stock_qty']);
+    $php_stock_target_min_qty = cleanInput($_POST['html_stock_target_min_qty']);
+    $php_stock_supplier       = cleanInput($_POST['html_stock_supplier']);
+    $php_stock_supplier_code  = cleanInput($_POST['html_stock_supplier_code']);
+    $php_stock_category_id    = cleanInput($_POST['html_stock_category_id']);
+    $php_stock_barcode        = cleanInput($_POST['html_stock_barcode']);
+    $php_stock_id             = cleanInput($_POST['html_stock_id']);
     /*
     $sql = <<<SQL
       UPDATE $sqltable 
