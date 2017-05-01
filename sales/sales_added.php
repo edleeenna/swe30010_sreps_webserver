@@ -43,7 +43,7 @@
     $selectResult = mysqli_query($conn, $selectQuery);
 
     if(!$insertResult || !$selectResult) {
-    echo "<p class=\"wrong\"> There is an error. The error is: ", mysqli_error($conn) "</p>";
+    echo "<p class=\"wrong\"> There is an error. The error is: ", mysqli_error($conn), "</p>";
     }
 
     else {
