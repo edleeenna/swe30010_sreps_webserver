@@ -31,7 +31,7 @@
     $salesDateTime = $_POST["html_sales_datetime"];
   }
 
-  include "includes/db_connect.php";
+  include $_SERVER[ 'DOCUMENT_ROOT' ] "/includes/db_connect.php";
 
     $insertQuery = "INSERT INTO sales (sale_datetime) VALUES ('$salesDateTime')";
 
