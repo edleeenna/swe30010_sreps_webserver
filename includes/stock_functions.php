@@ -229,19 +229,19 @@ SQL;
              stock_barcode             = '$php_stock_barcode'
       WHERE  stock_id                  = '$php_stock_id';
 SQL; */
-    $php_stock_name           = cleanInput($_POST['html_stock_name']);
-    $php_stock_description    = cleanInput($_POST['html_stock_description']);
-    $php_stock_directions     = cleanInput($_POST['html_stock_directions']);
-    $php_stock_ingredients    = cleanInput($_POST['html_stock_ingredients']);
-    $php_stock_price          = cleanInput($_POST['html_stock_price']);
-    $php_stock_cost_price     = cleanInput($_POST['html_stock_cost_price']);
-    $php_stock_qty            = cleanInput($_POST['html_stock_qty']);
-    $php_stock_target_min_qty = cleanInput($_POST['html_stock_target_min_qty']);
-    $php_stock_supplier       = cleanInput($_POST['html_stock_supplier']);
-    $php_stock_supplier_code  = cleanInput($_POST['html_stock_supplier_code']);
-    $php_stock_category_id    = cleanInput($_POST['html_stock_category_id']);
-    $php_stock_barcode        = cleanInput($_POST['html_stock_barcode']);
-    $php_stock_id             = cleanInput($_POST['html_stock_id']);
+    $php_stock_name           = mysql_escape_mimic($_POST['html_stock_name']);
+    $php_stock_description    = mysql_escape_mimic($_POST['html_stock_description']);
+    $php_stock_directions     = mysql_escape_mimic($_POST['html_stock_directions']);
+    $php_stock_ingredients    = mysql_escape_mimic($_POST['html_stock_ingredients']);
+    $php_stock_price          = mysql_escape_mimic($_POST['html_stock_price']);
+    $php_stock_cost_price     = mysql_escape_mimic($_POST['html_stock_cost_price']);
+    $php_stock_qty            = mysql_escape_mimic($_POST['html_stock_qty']);
+    $php_stock_target_min_qty = mysql_escape_mimic($_POST['html_stock_target_min_qty']);
+    $php_stock_supplier       = mysql_escape_mimic($_POST['html_stock_supplier']);
+    $php_stock_supplier_code  = mysql_escape_mimic($_POST['html_stock_supplier_code']);
+    $php_stock_category_id    = mysql_escape_mimic($_POST['html_stock_category_id']);
+    $php_stock_barcode        = mysql_escape_mimic($_POST['html_stock_barcode']);
+    $php_stock_id             = mysql_escape_mimic($_POST['html_stock_id']);
     /*
     $sql = <<<SQL
       UPDATE $sqltable 
