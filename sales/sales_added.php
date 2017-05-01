@@ -44,7 +44,7 @@
   else {
      if(!$insertResult) {
       echo("Error description: " . mysqli_error($conn));
-      echo($salesDateTime);
+    
     }
 
     else {
