@@ -44,7 +44,8 @@ if ($conn->connect_error) {
    if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "ID: " . $row["stock_id"]. " - Name: " . $row["stock_name"]. " - Description: " . $row["stock_description"]. " - Catagory ID: " . $row["stock_catagory_id"]. "<br>";
+        //echo "ID: " . $row["stock_id"]. " - Name: " . $row["stock_name"]. " - Description: " . $row["stock_description"]. " - Catagory ID: " . $row["stock_catagory_id"]. "<br>";
+        echo "ID: " . $row["stock_id"]. " - Catagory ID: " . $row["stock_catagory_id"]. "<br>";
     }
 } else {
     echo "0 results";
