@@ -25,16 +25,16 @@
   if (!isset($_POST['stock_id']) && !isset($_GET['stock_id'])) echo 'Neither $_POST[\'stock_id\'] or $_GET[\'stock_id\'] set.'.PHP_EOL;
   //if (isset ($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {
   if (isset($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {
-    echo 'if isset($_POST) section.<br>'.PHP_EOL;
+    echo '1) if isset($_POST) section.<br>'.PHP_EOL;
     $succ = update_stock($_POST);
     // jump to item view of newly created stock item
     //if ($succ == true) {
       //echo $_POST['html_stock_id'];
-      header("Location:/stock/view_stock.php?stock_id=".$_POST['stock_id']);
+//*      //header("Location:/stock/view_stock.php?stock_id=".$_POST['stock_id']);
     //} 
   //} elseif (!(isset ($_GET) && $_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET))) {
   } elseif (!isset($_POST['stock_id']) && !isset($_GET['stock_id'])) {
-    echo 'if NOT isset($_GET) section.<br>'.PHP_EOL;
+    echo '2) if NOT isset($_POST[\'stock_id\']) AND NOT isset($_GET[\'stock_id\']) section.<br>'.PHP_EOL;
 ?>
     <form id="stock_item" action="edit_stock.php" method="get">
           <label>Select stock item to edit, by ID or Name.</label><br>
@@ -49,7 +49,7 @@
   }
   //else{
   elseif (isset($_GET['stock_id'])) {
-    echo 'if NOT isset($_GET) section.<br>'.PHP_EOL;
+    echo '3) if isset($_GET[\'stock_id\']) section.<br>'.PHP_EOL;
     $php_stock = get_stock($_GET['stock_id']);
     // onsubmit="return check_stock_details(this)"
 ?>
