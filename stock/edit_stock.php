@@ -123,12 +123,12 @@
   //elseif (isset($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {
   elseif (isset($_POST['stock_id'])) {
     if ($debug) echo '3) if isset($_POST[\'stock_id\']) section.<br>'.PHP_EOL;
-//    $succ = update_stock($_POST);
+    $succ = update_stock($_POST);
     // jump to item view of newly created stock item
-    //if ($succ == true) {
-      //echo $_POST['html_stock_id'];
+    if ($succ == true) {
+      echo $_POST['stock_id'];
 //      header("Location:/stock/view_stock.php?stock_id=".$_POST['stock_id']);
-    //} 
+    } 
   //} elseif (!(isset ($_GET) && $_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET))) {
   }
 ?>
