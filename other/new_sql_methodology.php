@@ -21,7 +21,8 @@
   if ($conn->connect_errno) {
     echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $conn->connect_error . PHP_EOL;
   }
-  $result = $conn->query("SELECT * FROM stock");
+  $sql = "SELECT * FROM stock";
+  $result = $conn->query($sql);
   // Point to start of result set again.
   // $result->data_seek(0);
   while ($row = $result->fetch_assoc()) {
