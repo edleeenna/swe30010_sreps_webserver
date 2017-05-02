@@ -381,7 +381,7 @@ SQL; /* */
     if ($result->num_rows == 0) echo 'No categories returned!<br>'.PHP_EOL;
     if ($result->num_rows == 1) {
       $php_category = $result->fetch_assoc();
-      echo '<input readonly type="text" id="html_stock_catagory_name" name="html_stock_catagory_name" value="'.$php_category.'">';
+      echo '<input readonly type="text" id="html_stock_catagory_id" name="html_stock_catagory_id" value="'.$php_category.'">';
     }
     if ($result->num_rows > 1) echo 'Too many categories returned!<br>'.PHP_EOL;
     // Close connection to database.
