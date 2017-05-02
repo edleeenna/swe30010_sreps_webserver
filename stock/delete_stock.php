@@ -23,7 +23,7 @@
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/stock_functions.php';
   //if (isset ($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {
   if (!isset($_POST['html_stock_id']) && !isset($_GET['stock_id'])) {
-    if ($debug) echo "1) Select item to delete.<br>".PHP_EOL;
+    if (isset($GLOBALS['debug']) && ($GLOBALS['debug'])) echo "1) Select item to delete.<br>".PHP_EOL;
 ?>
     <form id="stock_item" action="delete_stock.php" method="get">
       <label>Select stock item to delete, by ID.</label><br>
@@ -36,7 +36,7 @@
     </form>
 <?php
   } elseif (isset($_GET['stock_id'])) {
-    if ($debug) {
+    if (isset($GLOBALS['debug']) && ($GLOBALS['debug'])) {
       echo "2) Display selected item prior to delete request.<br>".PHP_EOL;
       echo "Request entry of \"Delete".$_GET['stock_id']."\" to confirm proceeding with delete request.<br>".PHP_EOL;
     }
@@ -109,7 +109,7 @@
 <?php
   }
   elseif (isset($_POST['html_stock_id'])) {
-    if ($debug) echo "3) Display item deleted confirmation message.<br>".PHP_EOL;
+    if (isset($GLOBALS['debug']) && ($GLOBALS['debug'])) echo "3) Display item deleted confirmation message.<br>".PHP_EOL;
       //$succ = delete_stock($_POST);
   }
 ?>
