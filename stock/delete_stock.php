@@ -92,7 +92,7 @@
           </div>
           <div class="input-field">
             <label>Category Name</label>
-            <select id="html_stock_category_id" name="html_stock_category_id">
+            <select readonly id="html_stock_category_id" name="html_stock_category_id">
               <option value="" disabled>Choose your option</option>
               <?php get_cat_list($php_stock['category_id']);?>
             </select>
