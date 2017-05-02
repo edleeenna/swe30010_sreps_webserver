@@ -21,7 +21,7 @@
 </nav>
 
 <main>
-
+<div class="container">
 
 <?php
 /*
@@ -49,10 +49,11 @@
 
     else {
       echo "<p> Successfully added sale to database! </p>";
-      echo "<p>Sale Date/Time". $salesDateTime. "</p>";
+      echo "<p>Sale Date/Time: ". $salesDateTime. "</p>";
     }
   }
       mysqli_close($conn);
+  echo "</div>";
 echo "</main>";
   include $_SERVER[ 'DOCUMENT_ROOT' ] . '/includes/tail.php';
   
