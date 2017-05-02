@@ -91,10 +91,10 @@
             <input readonly type="text" id="html_stock_supplier_code" name="html_stock_supplier_code" class="validate" value="<?php echo $php_stock['supplier_order_code'];?>">
           </div>
           <div class="input-field">
-            <label for="html_stock_category_id">Category Name</label>
+            <label for="html_stock_category_name">Category Name</label>
             <select disabled id="html_stock_category_id" name="html_stock_category_id">
               <option value="" disabled>Choose your option</option>
-              <?php get_cat_list($php_stock['category_id']); // Get Catagory instead of list.?>
+              <?php get_cat_list($php_stock['category_id']); // get_category($php_stock['category_id']);Get Catagory instead of list.?>
             </select>
           </div>
           <div class="input-field">
