@@ -1,6 +1,6 @@
 <?php
-  $debug = true;
-  //$debug = false;
+  //$debug = true;
+  $debug = false;
 
   // Variable to set the local (current) page title [NOT Site Title].
   $pageTitle = "Edit Stock Item";
