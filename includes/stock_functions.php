@@ -361,7 +361,7 @@ SQL; /* */
     //$conn->close();
   }
   function get_category($val = ""){
-    if (isset($GLOBALS['debug']) && ($GLOBALS['debug'])) echo "get_category() called. ".$val."<br>".PHP_EOL;
+    if (isset($GLOBALS['debug']) && ($GLOBALS['debug'])) echo "get_category(".$val.") called.<br>".PHP_EOL;
     // Connect to database.
     include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
 
@@ -377,15 +377,15 @@ SQL; /* */
       // Stop running script
       exit();
     }
-    if (isset($GLOBALS['debug']) && ($GLOBALS['debug'])) echo '$result: '.$result.'<br>'.PHP_EOL;
+    //if (isset($GLOBALS['debug']) && ($GLOBALS['debug'])) echo '$result: '.$result.'<br>'.PHP_EOL;
     // See if there are results to process.
-    if ($result->num_rows == -1) echo 'Error occured fetching categories!<br>'.PHP_EOL;
+    /*if ($result->num_rows == -1) echo 'Error occured fetching categories!<br>'.PHP_EOL;
     if ($result->num_rows == 0) echo 'No categories returned!<br>'.PHP_EOL;
-    if ($result->num_rows == 1) {
-      $php_category = $result->fetch_assoc();
-      echo '<input readonly type="text" id="html_stock_catagory_id" name="html_stock_catagory_id" value="'.$php_category.'">';
-    }
-    if ($result->num_rows > 1) echo 'Too many categories returned!<br>'.PHP_EOL;
+    if ($result->num_rows == 1) { /**/
+      $php_returned_category = $result->fetch_assoc();
+      echo '<input readonly type="text" id="html_stock_catagory_id" name="html_stock_catagory_id" value="'.$php_returned_category.'">';
+    /*}
+    if ($result->num_rows > 1) echo 'Too many categories returned!<br>'.PHP_EOL; /* */
     // Close connection to database.
     //$conn->close();
   }
