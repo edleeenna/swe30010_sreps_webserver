@@ -180,7 +180,7 @@ SQL;
   function update_stock($php_stock) {
   //function update_stock() {
     //mysqli_query($conn , "UNLOCK TABLES;");
-    if ($GLOBALS['debug']) echo "update_stock() called.".mysql_escape_mimic($_POST['html_stock_supplier'])."<br>".PHP_EOL;
+    if (isset($GLOBALS['debug']) && ($GLOBALS['debug'])) echo "update_stock() called.".mysql_escape_mimic($_POST['html_stock_supplier'])."<br>".PHP_EOL;
 
     //function do_alert($msg) 
     //{
@@ -361,7 +361,8 @@ SQL; /* */
     //$conn->close();
   }
   function get_category($val = ""){
-        // Connect to database.
+    if (isset($GLOBALS['debug']) && ($GLOBALS['debug'])) echo "get_category() called.<br>".PHP_EOL;
+    // Connect to database.
     include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
 
     try{
@@ -376,6 +377,7 @@ SQL; /* */
       // Stop running script
       exit();
     }
+    if (isset($GLOBALS['debug']) && ($GLOBALS['debug'])) echo '$result: '.$result.'<br>'.PHP_EOL;
     // See if there are results to process.
     if ($result->num_rows == -1) echo 'Error occured fetching categories!<br>'.PHP_EOL;
     if ($result->num_rows == 0) echo 'No categories returned!<br>'.PHP_EOL;
