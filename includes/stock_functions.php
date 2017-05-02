@@ -311,16 +311,18 @@ SQL; /* */
 
     if ($conn->query($sql) === true) {
       echo "Record updated successfully";
-      $success = true;
+      // Return stock_id if successfully updated stock.
+      $return_stock_id = $php_stock_id;
     }
     else {
       echo "Error updating record: (" . $mysqli->connect_errno . ") " . $conn->connect_error . PHP_EOL;
-      $success = false;
+      // Return 0 if failure to update stock
+      $return_stock_id = 0;
     }
     
     // Close connection to database.
     //$conn->close();
-    return $success;
+    return $return_stock_id;
   }
 
   function get_cat_list($val = ""){
