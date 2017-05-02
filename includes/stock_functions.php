@@ -361,7 +361,7 @@ SQL; /* */
     //$conn->close();
   }
   function get_category($val = ""){
-    if (isset($GLOBALS['debug']) && ($GLOBALS['debug'])) echo "get_category() called.<br>".PHP_EOL;
+    if (isset($GLOBALS['debug']) && ($GLOBALS['debug'])) echo "get_category() called. ".$val."<br>".PHP_EOL;
     // Connect to database.
     include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
 
