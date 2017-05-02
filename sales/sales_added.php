@@ -52,8 +52,8 @@
 
     else {
       echo "<p> Successfully added sale to database </p>";
-      echo "<p> Sale id: ", $selectResult, "</p>";
-      echo "<p>Sale Date/Time", $salesDateTime, "</p>";
+      echo "<p> Sale id: ". $selectResult. "</p>";
+      echo "<p>Sale Date/Time". $salesDateTime. "</p>";
     }
   }
       mysqli_close($conn);
