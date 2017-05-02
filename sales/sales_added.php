@@ -34,21 +34,26 @@
   include $_SERVER[ 'DOCUMENT_ROOT' ]. "/includes/db_connect.php";
 
     $insertQuery = "INSERT INTO sales (sale_datetime) VALUES ('$salesDateTime')";
-
+    
+    $selectQuery = "SELECT `sale_id` FROM `sales` WHERE `sale_datetime`= '$salesDateTime';";
        //insert sale into database
     $insertResult = mysqli_query($conn, $insertQuery);
+    
+    $selectResult = mysqli_query($conn, $selectQuery);
 
   if (!$conn) {
     echo "<p> Database connection failure</p>";
   }
   else {
-     if(!$insertResult) {
+     if(!$insertResult && !$selectResult) {
       echo("Error description: " . mysqli_error($conn));
     
     }
 
     else {
       echo "<p> Successfully added sale to database </p>";
+      echo "<p> Sale id: $selectResult. </p>";
+      echo "<p>Sale Date/Time: $salesDateTime.  </p>";
     }
   }
       mysqli_close($conn);
