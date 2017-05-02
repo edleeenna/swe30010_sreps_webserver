@@ -1,5 +1,7 @@
 <?php
-  $debug = true;
+  // Whilst debug can be set here... it is best to set it in individual pages
+  // so that other working pages are not affected.
+  // $debug = true;
   // $debug = false;
   function mysql_escape_mimic($inp) {
     if(is_array($inp))
