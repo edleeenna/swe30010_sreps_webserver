@@ -1,6 +1,6 @@
 /*
 * Author: Elena Deen, 7353065
-* Target: edit_stock.php
+* Target: orginally edit_stock.php, borrowed by John for augmenting delete_stock.php.
 * Purpose: validate data, because if the user doens't input correct values the insert statement to the database wont work
 * Created: 21/04/2016
 * Last updated: 30/04/2016
@@ -16,7 +16,9 @@ function init(){
 	$(document).ready(function() {
 		$('select').material_select();
 	});
-
+	// 
+	var js_submit_delete = document.getElementById("delete_item");
+	js_submit_delete.onclick = alert("Test button click.");
 }
 
 window.onload = init;
