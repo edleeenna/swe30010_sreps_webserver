@@ -112,19 +112,19 @@ SQL;
         $value = cleanInput($value);
     }
   
-    $php_stock_name           = isset($php_stock["html_stock_name"])                ? $php_stock["html_stock_name"]                : "";
-    $php_stock_description    = isset($php_stock["html_stock_description"])         ? $php_stock["html_stock_description"]         : "";
-    $php_stock_directions     = isset($php_stock["html_stock_directions"])          ? $php_stock["html_stock_directions"]          : "";
-    $php_stock_ingredients    = isset($php_stock["html_stock_ingredients"])         ? $php_stock["html_stock_ingredients"]         : "";
-    $php_stock_price          = isset($php_stock["html_stock_price"])               ? $php_stock["html_stock_price"]               : "";
-    $php_stock_cost_price     = isset($php_stock["html_stock_cost_price"])          ? $php_stock["html_stock_cost_price"]          : "";
-    $php_stock_qty            = isset($php_stock["html_stock_qty"])                 ? $php_stock["html_stock_qty"]                 : "";
-    $php_stock_target_min_qty = isset($php_stock["html_stock_target_min_qty"])      ? $php_stock["html_stock_target_min_qty"]      : "";
-    $php_stock_supplier       = isset($php_stock["html_stock_supplier"])            ? $php_stock["html_stock_supplier"]            : "";
-    $php_stock_supplier_code  = isset($php_stock["html_stock_supplier_order_code"]) ? $php_stock["html_stock_supplier_order_code"] : "";
-    $php_stock_category_id    = isset($php_stock["html_stock_category_id"])         ? $php_stock["html_stock_category_id"]         : "";
-    $php_stock_barcode        = isset($php_stock["html_stock_barcode"])             ? $php_stock["html_stock_barcode"]             : "";
-    
+    $php_stock_name           = isset($php_stock["html_stock_name"])                ? mysql_escape_mimic($php_stock["html_stock_name"])                : "";
+    $php_stock_description    = isset($php_stock["html_stock_description"])         ? mysql_escape_mimic($php_stock["html_stock_description"])         : "";
+    $php_stock_directions     = isset($php_stock["html_stock_directions"])          ? mysql_escape_mimic($php_stock["html_stock_directions"])          : "";
+    $php_stock_ingredients    = isset($php_stock["html_stock_ingredients"])         ? mysql_escape_mimic($php_stock["html_stock_ingredients"])         : "";
+    $php_stock_price          = isset($php_stock["html_stock_price"])               ? mysql_escape_mimic($php_stock["html_stock_price"])               : "";
+    $php_stock_cost_price     = isset($php_stock["html_stock_cost_price"])          ? mysql_escape_mimic($php_stock["html_stock_cost_price"])          : "";
+    $php_stock_qty            = isset($php_stock["html_stock_qty"])                 ? mysql_escape_mimic($php_stock["html_stock_qty"])                 : "";
+    $php_stock_target_min_qty = isset($php_stock["html_stock_target_min_qty"])      ? mysql_escape_mimic($php_stock["html_stock_target_min_qty"])      : "";
+    $php_stock_supplier       = isset($php_stock["html_stock_supplier"])            ? mysql_escape_mimic($php_stock["html_stock_supplier"])            : "";
+    $php_stock_supplier_code  = isset($php_stock["html_stock_supplier_order_code"]) ? mysql_escape_mimic($php_stock["html_stock_supplier_order_code"]) : "";
+    $php_stock_category_id    = isset($php_stock["html_stock_category_id"])         ? mysql_escape_mimic($php_stock["html_stock_category_id"])         : "";
+    $php_stock_barcode        = isset($php_stock["html_stock_barcode"])             ? mysql_escape_mimic($php_stock["html_stock_barcode"])             : "";
+
     $sqltable = "stock";
     
     $sql = <<<SQL
