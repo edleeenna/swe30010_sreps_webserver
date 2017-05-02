@@ -56,8 +56,8 @@
       echo "<p>Sale Date/Time", $salesDateTime, "</p>";
     }
   }
-      
+      mysqli_close($conn);
 echo "</main>";
   include $_SERVER[ 'DOCUMENT_ROOT' ] . '/includes/tail.php';
-  mysqli_close($conn);
+  
 ?>
