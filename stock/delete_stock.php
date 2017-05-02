@@ -36,8 +36,11 @@
     </form>
 <?php
   } elseif (isset($_GET['stock_id'])) {
-    if ($debug) echo "2) Display selected item prior to delete request.<br>".PHP_EOL;
-      $php_stock = get_stock($_GET['stock_id']);
+    if ($debug) {
+      echo "2) Display selected item prior to delete request.<br>".PHP_EOL;
+      echo "Request entry of \"Delete".$_GET['stock_id']."\" to confirm proceeding with delete request.<br>".PHP_EOL;
+    }
+    $php_stock = get_stock($_GET['stock_id']);
 ?>
     <div class="container">      
       <form id="delete_stock" action="\stock\delete_stock.php" method="post">
