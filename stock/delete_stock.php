@@ -1,6 +1,6 @@
 <?php
-  $debug = true;
-  //$debug = false;
+  //$debug = true;
+  $debug = false;
   // Variable to set the local (current) page title [NOT Site Title].
   $pageTitle = "Delete Stock Item";
   // Variable to assign extra css files into the head of the page. just the file name needs to go in the quotes.
@@ -16,14 +16,16 @@
 ?>
     </nav>
     <main>
-      Work In Progress.
 <?php
   //echo "connect<br>".PHP_EOL;
   // Include functions for deleting stock. Could be made part of all functions for stock. eg: stock_func.php
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/stock_functions.php';
   //if (isset ($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {
   if (!isset($_POST['html_stock_id']) && !isset($_GET['stock_id'])) {
-    if (isset($GLOBALS['debug']) && ($GLOBALS['debug'])) echo "1) Select item to delete.<br>".PHP_EOL;
+    if (isset($GLOBALS['debug']) && ($GLOBALS['debug'])) {
+      echo "Work In Progress.<br>".PHP_EOL;
+      echo "1) Select item to delete.<br>".PHP_EOL;
+    }
 ?>
     <form id="stock_item" action="delete_stock.php" method="get">
       <label>Select stock item to delete, by ID.</label><br>
