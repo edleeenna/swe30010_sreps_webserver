@@ -11,7 +11,7 @@
   
   // Variable to assign extra javascript files into the head of the page. just the file name needs to go in the quotes.
   // All files should reside in the "js" folder.
-  //$extra_js = array("edit_stock.js", "stock_functions.js");
+  $extra_js = array("edit_stock.js", "stock_functions.js");
 
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/head.php';
   //start of body and nav are in the head.php section.
