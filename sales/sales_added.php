@@ -21,7 +21,7 @@
 </nav>
 
 <main>
-
+<div class="container">
 
 <?php
 /*
@@ -53,6 +53,7 @@
     }
   }
       mysqli_close($conn);
+  echo "</div>";
 echo "</main>";
   include $_SERVER[ 'DOCUMENT_ROOT' ] . '/includes/tail.php';
   
