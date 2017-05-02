@@ -18,16 +18,38 @@
 
 
 
+
 <?php
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/nav.php';
 ?>    
     </nav>
     <main>
-      <h1>List of all Sales</h1>
+      
 
 
 
 <?php
+
+if(isset($_GET['datepicker']) && isset($_GET['datepicker1'])){
+
+date_default_timezone_set('australia/melbourne');
+ // $datepicker = date('Y-m-d', strtotime($_GET['datepicker']));
+  //$datepicker1 = date('Y-m-d', strtotime($_GET['datepicker1']));
+
+$datepicker = $_GET['datepicker'];
+$datepicker1 = $_GET['datepicker1'];
+
+
+
+$datepicker1x = date('y/m/d',strtotime(str_replace('-', '/', $_GET['datepicker1']) . "+1 days"));
+
+
+session_start();
+$_SESSION["datepicker"] = $datepicker;
+$_SESSION["datepicker1"] = $datepicker1x;
+
+echo "<h2>List of Sales from ".$datepicker." to ".$datepicker1." </h1>";
+
 
 //echo "<link rel='stylesheet' href='/resources/demos/style.css'>";
 echo "<script>
@@ -48,7 +70,9 @@ echo "<script>
 include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
 $allSaleQuery = "select sale_id, sale_datetime, ol.orderline_stock_id, st.stock_name, ol.orderline_qty, ol.orderline_price FROM sales sl
 INNER JOIN orderlines ol ON ol.orderline_sale_id = sl.sale_id
-INNER JOIN stock st ON st.stock_id = ol.orderline_stock_id";
+INNER JOIN stock st ON st.stock_id = ol.orderline_stock_id WHERE sale_datetime >= '".$datepicker."' AND sale_datetime < '".$datepicker1x."'";
+
+//print($allSaleQuery);
 $allSale = mysqli_query($conn, $allSaleQuery);
 
 echo "<div id='selectdate' class='selectdate'>";
@@ -57,6 +81,11 @@ echo " Select date from &#9; <input type='text' id='datepicker' name='datepicker
 echo "&#9; to <input type='text' id='datepicker1' name='datepicker' class='j-datepicker' placeholder='Select' value=''>";
 echo " &#9; <input type='button' id='submit' value='View Report' onClick='formValidation()' >";
 echo "</form>";
+
+/*
+echo "<form method='post' action='saleexportprocess.php'>";
+echo " <p><input type='submit' id='submit' value='Export to CSV'></p>";
+echo "</form>";*/
 echo "<br>";
 echo "</div>";
 
@@ -97,6 +126,7 @@ echo "<table  class=\"striped\" border=\"1\">";
         mysqli_free_result($allSale);
 
         mysqli_close($conn);
+}
 ?>
 </main>
 <?php
