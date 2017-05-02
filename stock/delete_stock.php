@@ -102,7 +102,7 @@
         </fieldset>
         <p>
           <input type="reset" value="Reset">
-          <input type="submit" value="Delete">
+          <input id="delete_item" type="submit" value="Delete">
         </p>
       </form>
     </div>
