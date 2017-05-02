@@ -360,4 +360,31 @@ SQL; /* */
     // Close connection to database.
     //$conn->close();
   }
+  function get_category($val = ""){
+        // Connect to database.
+    include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
+
+    try{
+      // SQL to select stock_id's from the Stock Database;
+      $sql = "SELECT category_name FROM categories WHERE category_id = $val;";
+      // Query the database to acquire results and hand them to resultSet
+      $result = $conn->query($sql);
+    }
+    catch(Exception $e){
+      // Display error message details
+      echo 'Error fetching list of stock IDs: '.$e->errorMessage();
+      // Stop running script
+      exit();
+    }
+    // See if there are results to process.
+    if ($result->num_rows == -1) echo 'Error occured fetching categories!<br>'.PHP_EOL;
+    if ($result->num_rows == 0) echo 'No categories returned!<br>'.PHP_EOL;
+    if ($result->num_rows == 1) {
+      $php_category = $result->fetch_assoc();
+      echo '<input readonly type="text" id="html_stock_catagory_name" name="html_stock_catagory_name" value="'.$php_category.'">';
+    }
+    if ($result->num_rows > 1) echo 'Too many categories returned!<br>'.PHP_EOL;
+    // Close connection to database.
+    //$conn->close();
+  }
 ?>
