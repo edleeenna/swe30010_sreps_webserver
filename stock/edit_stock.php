@@ -127,8 +127,8 @@
     //$succ = update_stock();
     // jump to item view of newly created stock item
     if ($succ == true) {
-      echo 'Success! $_POST[\'html_stock_id\']: '.$_POST['html_stock_id'].'<br>'.PHP_EOL;
-//      header("Location:/stock/view_stock.php?stock_id=".$_POST['stock_id']);
+      //echo 'Success! $_POST[\'html_stock_id\']: '.$_POST['html_stock_id'].'<br>'.PHP_EOL;
+      header("Location:/stock/view_stock.php?stock_id=".$_POST['stock_id']);
     }
     else echo 'Failed!<br>'.PHP_EOL;
   //} elseif (!(isset ($_GET) && $_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET))) {
