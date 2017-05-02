@@ -27,7 +27,7 @@
 ?>
     <form id="stock_item" action="delete_stock.php" method="get">
       <label>Select stock item to delete, by ID.</label><br>
-      <select class="browser-default" name="html_selected_id">
+      <select class="browser-default" name="stock_id">
         <?php get_ID_list(); ?>
       </select> 
       <!-- TODO - Link id and name selection -->
