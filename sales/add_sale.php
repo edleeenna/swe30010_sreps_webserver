@@ -59,11 +59,11 @@
               <label for="html_stock_orderlines_name">Item ID</label>
             </div>
 	 <div class="input-field">
-            <input type="text" id="html_orderlines_qty" name="html_orderlines_qty" class="validate">
+            <input type="text" id="html_orderlines_qty" name="html_orderlines_qty" class="validate" onchange="getPrice(<?php echo $php_stock['qty'] . "," . $php_stock['price'];?>)">
             <label for="html_orderlines_qty">Sales Quantity</label>
           </div>
 	 <div class="input-field">
-            <input readonly type="text" id="html_orderlines_price" name="html_orderlines_price" value="getPrice(<?php echo $php_stock['qty'], $php_stock['price'] ?>)" class="validate">
+            <input readonly type="text" id="html_orderlines_price" name="html_orderlines_price" class="validate">
             <label for="html_orderlines_price">Sales Price</label>
           </div>
            
