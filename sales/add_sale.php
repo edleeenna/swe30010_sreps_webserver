@@ -28,7 +28,7 @@
         <fieldset>
           <legend>Add Sales Item</legend>
 		<div class="input-field">
-            <input type="text" id="html_sales_datetime" name="html_sales_datetime" class="validate">
+            <input readonly type="text" id="html_sales_datetime" name="html_sales_datetime" class="validate">
             <label for="html_stock_name">Sales Date/Time</label>
           </div>
          <div>
@@ -38,7 +38,7 @@
       </select>
 	</div>
 	<div class="input-field">
-            <input type="text" id="html_stock_orderlines_name" name="html_orderlines_name_datetime" class="validate">
+            <input readonly type="text" id="html_stock_orderlines_name" name="html_orderlines_name_datetime" class="validate">
             <label for="html_stock_orderlines_name">Stock Name: </label>
           </div>
         </fieldset>
