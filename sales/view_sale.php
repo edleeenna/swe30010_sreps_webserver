@@ -47,7 +47,7 @@
 ?>
     <div class="container">     
       <div class="fixed-action-btn">
-        <a class="btn-floating btn-large" href="\stock\edit_stock.php?stock_id=<?= $php_stock['id'] ?>">
+        <a class="btn-floating btn-large" href="\sales\edit_sale.php?sale_id=<?= $php_sale['id'] ?>">
           <i class="large material-icons">mode_edit</i>
         </a>
       </div>
