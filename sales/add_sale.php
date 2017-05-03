@@ -31,7 +31,7 @@
   if (!isset($_POST['html_stock_id']) && !isset($_GET['stock_id'])) {
     if ($debug) echo '1) if NOT isset($_POST[\'html_stock_id\']) AND NOT isset($_GET[\'stock_id\']) section.<br>'.PHP_EOL;
 ?>
-    <form id="sale_item" action="add_stock.php" method="get">
+    <form id="sale_item" action="add_sale.php" method="get">
       <label>Select stock item to edit, by ID or Name.</label><br>
       <select class="browser-default" name="stock_id">
         <?php get_ID_list(); ?>
