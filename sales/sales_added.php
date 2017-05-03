@@ -30,19 +30,35 @@
  if (isset ($_POST["html_sales_datetime"])){
     $salesDateTime = $_POST["html_sales_datetime"];
   }
+  
+  if (isset ($_POST["html_stock_orderlines_id"])){
+    $stockId = $_POST["html_stock_orderlines_id"];
+  }
+  
+  if (isset ($_POST["html_rderlines_qty"])){
+    $saleQty = $_POST["html_orderlines_qty"];
+  }
+  if (isset ($_POST["html_orderlines_price"])){
+    $salePrice = $_POST["html_orderlines_price"];
+  }
+  
+  
+  
 
   include $_SERVER[ 'DOCUMENT_ROOT' ]. "/includes/db_connect.php";
 
-    $insertQuery = "INSERT INTO sales (sale_datetime) VALUES ('$salesDateTime')";
-    
+    $salesInsertQuery = "INSERT INTO sales (sale_datetime) VALUES ('$salesDateTime')";
+    $selectSalesId = "SELECT `sale_id` FROM `sales` WHERE `sale_datetime` = "$salesDateTime" ";
+    $orderlinesInsert = "INSERT INTO orderlines (orderline_sale_id, orderline_stock_id, orderline_qty, orderline_price) VALUES('$selectSalesId', '$stockId', '$saleQty', '$salePrice' )";
           //insert sale into database
-    $insertResult = mysqli_query($conn, $insertQuery);
+    $salesInsertResult = mysqli_query($conn, $salesInsertQuery);
+    $orderlinesResult = mysqli_query($conn, $orderlinesInsert);
     
   if (!$conn) {
     echo "<p> Database connection failure</p>";
   }
   else {
-     if(!$insertResult) {
+     if(!$salesInsertResult && !$orderlinesResult) {
       echo("Error description: " . mysqli_error($conn));
     
     }
