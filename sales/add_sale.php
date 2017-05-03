@@ -37,6 +37,10 @@
         <?php get_ID_list(); ?>
       </select>
 	</div>
+	<div class="input-field">
+            <input type="text" id="html_stock_orderlines_name" name="html_orderlines_name_datetime" class="validate">
+            <label for="html_stock_orderlines_name">Sales Date/Time</label>
+          </div>
         </fieldset>
         <p>
             <input type="reset" value="Reset">
