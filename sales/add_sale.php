@@ -51,7 +51,7 @@
 ?>
 	
 <div class="container">
-      <form id="add_sales" method="post" action="/stock/add_sale.php">
+      <form id="add_sales" method="post" action="/sale/add_sale.php">
         <fieldset>
           <legend>Add Sales Item</legend>
           <div class="input-field">
@@ -59,9 +59,10 @@
             <label for="html_stock_name">Sales Date/Time</label>
           </div>
 	 <div class="input-field">
-              <input readonly type="text" id="html_stock_id" name="html_stock_id" class="validate" value="<?php echo $php_stock['id'];?>">
+              <input readonly type="text" id="html_stock_orderlines_id" name="html_stock_orderlines_id" class="validate" value="<?php echo $php_stock['id'];?>">
               <label for="html_stock_id">Stock Item ID:</label>
             </div>
+		
         </fieldset>
         <p>
             <input type="reset" value="Reset">
