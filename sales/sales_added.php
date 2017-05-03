@@ -35,7 +35,7 @@
     $stockId = $_POST["html_stock_orderlines_id"];
   }
   
-  if (isset ($_POST["html_rderlines_qty"])){
+  if (isset ($_POST["html_orderlines_qty"])){
     $saleQty = $_POST["html_orderlines_qty"];
   }
   if (isset ($_POST["html_orderlines_price"])){
@@ -56,7 +56,7 @@
     $salesIdResult = mysqli_query($conn, $selectSalesId);
     $salesId = mysqli_fetch_assoc($salesIdResult);
     
-   $orderlinesInsert = "INSERT INTO orderlines (orderline_sale_id, orderline_stock_id, orderline_qty, orderline_price) VALUES('$salesId', '$stockId', '$saleQty', '$salePrice' )";
+   $orderlinesInsert = "INSERT INTO orderlines (orderline_sale_id, orderline_stock_id, orderline_qty, orderline_price) VALUES('$salesId['sale_id']', '$stockId', '$saleQty', '$salePrice' )";
           //insert sale into database
   
     echo "$salesId, $stockId, $saleQty, $salePrice ";
