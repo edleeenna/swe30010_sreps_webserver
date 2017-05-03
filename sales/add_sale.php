@@ -17,7 +17,7 @@
 <?php
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/nav.php';
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/stock_functions.php';
-	$stockArray = {};
+	$stockArray = array();
 	function getStockInfo(){
 		$stockArray = get_stock(this.value);
 	
