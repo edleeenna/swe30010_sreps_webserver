@@ -55,7 +55,7 @@
     
     $salesId = mysqli_query($conn, $selectSalesId);
     
-    //$orderlinesInsert = "INSERT INTO orderlines (orderline_sale_id, orderline_stock_id, orderline_qty, orderline_price) VALUES('$salesId', '$stockId', '$saleQty', '$salePrice' )";
+    $orderlinesInsert = "INSERT INTO orderlines (orderline_sale_id, orderline_stock_id, orderline_qty, orderline_price) VALUES('$salesId', '$stockId', '$saleQty', '$salePrice' )";
           //insert sale into database
     
    // $orderlinesResult = mysqli_query($conn, $orderlinesInsert);
