@@ -48,13 +48,16 @@
   include $_SERVER[ 'DOCUMENT_ROOT' ]. "/includes/db_connect.php";
 
     $salesInsertQuery = "INSERT INTO sales (sale_datetime) VALUES ('$salesDateTime')";
+  
+    $salesInsertResult = mysqli_query($conn, $salesInsertQuery);  
+  
     $selectSalesId = "SELECT `sale_id` FROM `sales` WHERE `sale_datetime` = "$salesDateTime" ";
     
     $salesId = mysqli_query($conn, $selectSalesId);
     
     $orderlinesInsert = "INSERT INTO orderlines (orderline_sale_id, orderline_stock_id, orderline_qty, orderline_price) VALUES('$salesId', '$stockId', '$saleQty', '$salePrice' )";
           //insert sale into database
-    $salesInsertResult = mysqli_query($conn, $salesInsertQuery);
+    
     $orderlinesResult = mysqli_query($conn, $orderlinesInsert);
     
   if (!$conn) {
