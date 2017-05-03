@@ -43,7 +43,7 @@
 		include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
 		$sql="SELECT * FROM sales WHERE id = '".$q."'";
 		$result = mysqli_query($conn,$sql);
-		while ($row = mysqli_fetch_array($result)) {
+		while ($row = mysqli_fetch_assoc($result)) {
 			$row['stock_name'] = $stockName;
 			$row['stock_price'] = $stockPrice;
 		}
