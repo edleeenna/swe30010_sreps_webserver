@@ -27,9 +27,9 @@
         <fieldset>
           <legend>Add Sales Item</legend>
           <div class="input-field">
-            <input type="text" id="html_sales_datetime" name="html_sales_datetime" class="validate">
             <label for="html_sales_name">Sales Date/Time</label>
-          </div>
+		<input type="text" id="html_sales_datetime" name="html_sales_datetime" class="validate">
+           </div>
 	<div>
 	<label>Select stock item for sale, by ID or Name.</label><br>
       <select class="browser-default" name="stock_id">
