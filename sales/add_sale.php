@@ -41,7 +41,7 @@
 		<?php
 		$q = intval($_GET['q']);
 		include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
-		$sql="SELECT * FROM sale WHERE id = '".$q."'";
+		$sql="SELECT * FROM sales WHERE id = '".$q."'";
 		$result = mysqli_query($conn,$sql);
 		while ($row = mysqli_fetch_array($result)) {
 			$row['stock_name'] = $stockName;
