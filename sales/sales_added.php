@@ -51,7 +51,7 @@
   
     $salesInsertResult = mysqli_query($conn, $salesInsertQuery);  
   
-    $selectSalesId = "SELECT `sale_id` FROM `sales` WHERE `sale_datetime` = '$salesDateTime' ";
+    $selectSalesId = "SELECT * FROM `sales` WHERE `sale_datetime` = '$salesDateTime' ";
     
     $salesIdResult = mysqli_query($conn, $selectSalesId);
     $salesId = mysqli_fetch_assoc($salesIdResult);
