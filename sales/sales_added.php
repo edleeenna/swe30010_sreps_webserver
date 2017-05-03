@@ -81,7 +81,7 @@
       echo "<p>Sale Date/Time: ". $salesDateTime. "</p>";
       echo "<p>Stock Name: ". $stockName. "</p>";
       echo "<p>Sale Qty: ". $saleQty. "</p>";
-      echo "<p>Sale Total Price". $salePrice. "</p>";
+      echo "<p>Sale Total Price: ". $salePrice. "</p>";
     }
   }
       mysqli_close($conn);
