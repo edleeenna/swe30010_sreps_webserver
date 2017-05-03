@@ -1,63 +1,89 @@
 <?php
-   $debug = true;
+  $debug = true;
+  //$debug = false;
+
   // Variable to set the local (current) page title [NOT Site Title].
-  $pageTitle = "Add Sale";
+  $pageTitle = "Add Sale Item";
+
   // Variable to assign extra css files into the head of the page. just the file name needs to go in the quotes.
-  // All files should reside in the "css" folder. 
-  //$extra_css = "";
-  
+  // All files should reside in the "css" folder.
+  //$extra_css = array("test.css", "test2.css");
+
   // Variable to assign extra javascript files into the head of the page. just the file name needs to go in the quotes.
   // All files should reside in the "js" folder.
-  $extra_js = "add_sales.js";
+  //$extra_js = array("edit_stock.js", "stock_functions.js");
+
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/head.php';
-/*
-  <body>
-*/
-?>
-<?php
+  //start of body and nav are in the head.php section.
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/nav.php';
+?>
+    </nav>
+    <main>
+<?php
+  //echo "connect<br>".PHP_EOL;
+  // Include functions for editing stock. Could be made part of all functions for stock. eg: stock_func.php
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/stock_functions.php';
-	$stockArray = array();
-	function getStockInfo(id){
-		$stockArray = get_stock(id);
-	
-	}
+  //if (!isset($_POST['html_stock_id']) && !isset($_GET['stock_id'])) echo 'Neither $_POST[\'html_stock_id\'] or $_GET[\'stock_id\'] set.<br>'.PHP_EOL;
+  //if (isset($_GET['stock_id'])) echo '$_GET[\'stock_id\'] is set.<br>'.PHP_EOL;
+  //if (isset($_POST['html_stock_id'])) echo '$_POST[\'html_stock_id\'] is set.<br>'.PHP_EOL;
 
-
-?>    
-</nav>
-
-<main>
-	<p id="error_message" ></p>
-	<div class="container">
-      <form id="add_sales" method="post" action="sales_added.php">
-        <fieldset>
-          <legend>Add Sales Item</legend>
-		<div class="input-field">
-            <input readonly type="text" id="html_sales_datetime" name="html_sales_datetime" class="validate">
+  //if (isset ($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {
+  if (!isset($_POST['html_stock_id']) && !isset($_GET['stock_id'])) {
+    if ($debug) echo '1) if NOT isset($_POST[\'html_stock_id\']) AND NOT isset($_GET[\'stock_id\']) section.<br>'.PHP_EOL;
+?>
+    <form id="sale_item" action="add_stock.php" method="get">
+      <label>Select stock item to edit, by ID or Name.</label><br>
+      <select class="browser-default" name="sale_id">
+        <?php get_ID_list(); ?>
+      </select>
+      <!-- TODO - Link id and name selection -->
+      <input type="submit" value="Edit">
+      <input type="reset" value="Reset">
+    </form>
+<?php
+  } elseif (isset($_GET['stock_id'])) {
+    if ($debug) echo '2) if isset($_GET[\'stock_id\']) section.<br>'.PHP_EOL;
+    $php_stock = get_stock($_GET['stock_id']);
+    // onsubmit="return check_stock_details(this)"
+?>
+      <div class="container">
+        <form id="edit_stock" action="\stock\sale_added.php" method="post">
+          <fieldset>
+            <legend>Add Sale Item</legend>
+		  <div class="input-field">
+            <input type="text" id="html_sales_datetime" name="html_sales_datetime" class="validate">
             <label for="html_stock_name">Sales Date/Time</label>
           </div>
-         <div>
-	<label>Select stock item for sale, by ID or Name.</label><br>
-      <select class="browser-default" name="stock_id" onchange="<?php getStockInfo(this.value)  ?>">
-        <?php get_ID_list();  ?>
-      </select>
-	</div>
-	<div class="input-field">
-            <input readonly type="text" id="html_stock_orderlines_name" name="html_orderlines_name_datetime" value="<?php echo $stockArray['name']; ?>" class="validate">
-            <label for="html_stock_orderlines_name">Stock Name: </label>
-          </div>
-        </fieldset>
-        <p>
+            <div class="input-field">
+              <input readonly type="text" id="html_stock_id" name="html_stock_id" class="validate" value="<?php echo $php_stock['name'];?>">
+              <label for="html_stock_id">Item ID</label>
+            </div>
+           
+          </fieldset>
+          <p>
             <input type="reset" value="Reset">
             <input type="submit" value="Submit">
-        </p>
-      </form>
-    </div>
-</main>
+          </p>
+        </form>
+      </div>
 <?php
-/*
-  </body>
-*/
-   include $_SERVER[ 'DOCUMENT_ROOT' ] . '/includes/tail.php';
+  }
+  //else{
+  //elseif (isset($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {
+  elseif (isset($_POST['html_stock_id'])) {
+    if ($debug) echo '3) if isset($_POST[\'html_stock_id\']) section.<br>'.PHP_EOL;
+    $succ = update_stock($_POST);
+    //$succ = update_stock();
+    // jump to item view of newly created stock item
+    if ($succ == true) {
+      echo 'Success! $_POST[\'html_stock_id\']: '.$_POST['html_stock_id'].'<br>'.PHP_EOL;
+//      header("Location:/stock/view_stock.php?stock_id=".$_POST['stock_id']);
+    }
+    else echo 'Failed!<br>'.PHP_EOL;
+  //} elseif (!(isset ($_GET) && $_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET))) {
+  }
+?>
+    </main>
+<?php
+  include $_SERVER[ 'DOCUMENT_ROOT' ] . '/includes/tail.php';
 ?>
