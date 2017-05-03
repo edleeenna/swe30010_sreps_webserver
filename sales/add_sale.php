@@ -59,7 +59,7 @@
               <label for="html_stock_orderlines_name">Item ID</label>
             </div>
 	 <div class="input-field">
-            <input type="text" id="html_orderlines_qty" name="html_orderlines_qty" value="<?php echo $php_stock['name'];?>" class="validate">
+            <input type="text" id="html_orderlines_qty" name="html_orderlines_qty" value="<?php echo $php_stock['qty'];?>" class="validate">
             <label for="html_orderlines_qty">Sales Quantity</label>
           </div>
            
