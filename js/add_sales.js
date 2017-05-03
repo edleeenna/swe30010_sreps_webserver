@@ -25,6 +25,11 @@ function getDateTime() {
      return dateTime;
 }
 
+function getPrice(qty, price){
+    var total = qty * price;
+    return total;
+    
+}
 
 function showStock(id) {
     if (id == 0) {
