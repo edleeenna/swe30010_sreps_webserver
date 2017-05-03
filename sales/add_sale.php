@@ -59,14 +59,18 @@
               <label for="html_stock_orderlines_name">Item ID</label>
             </div>
 	 <div class="input-field">
-            <input type="text" id="html_orderlines_qty" name="html_orderlines_qty" value="<?php echo $php_stock['qty'];?>" class="validate">
+            <input type="text" id="html_orderlines_qty" name="html_orderlines_qty">" class="validate">
             <label for="html_orderlines_qty">Sales Quantity</label>
+          </div>
+	 <div class="input-field">
+            <input readonly type="text" id="html_orderlines_price" name="html_orderlines_price">" class="validate">
+            <label for="html_orderlines_price">Sales Price</label>
           </div>
            
           </fieldset>
           <p>
             <input type="reset" value="Reset">
-            <input type="submit" value="Submit">
+            <input type="submit" value="Add Sale">
           </p>
         </form>
       </div>
