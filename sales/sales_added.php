@@ -53,13 +53,14 @@
   
     $selectSalesId = "SELECT `sale_id` FROM `sales` WHERE `sale_datetime` = '$salesDateTime' ";
     
-    $salesId = mysqli_query($conn, $selectSalesId);
+    $salesIdResult = mysqli_query($conn, $selectSalesId);
+    $salesId = mysqli_fetch_assoc($salesIdResult);
     
-   // $orderlinesInsert = "INSERT INTO orderlines (orderline_sale_id, orderline_stock_id, orderline_qty, orderline_price) VALUES('$salesId', '$stockId', '$saleQty', '$salePrice' )";
+   $orderlinesInsert = "INSERT INTO orderlines (orderline_sale_id, orderline_stock_id, orderline_qty, orderline_price) VALUES('$salesId', '$stockId', '$saleQty', '$salePrice' )";
           //insert sale into database
   
     echo "$salesId, $stockId, $saleQty, $salePrice ";
-   // $orderlinesResult = mysqli_query($conn, $orderlinesInsert);
+   $orderlinesResult = mysqli_query($conn, $orderlinesInsert);
     
   if (!$conn) {
     echo "<p> Database connection failure</p>";
