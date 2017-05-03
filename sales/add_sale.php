@@ -18,8 +18,8 @@
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/nav.php';
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/stock_functions.php';
 	$stockArray = array();
-	function getStockInfo(){
-		$stockArray = get_stock(this.value);
+	function getStockInfo(id){
+		$stockArray = get_stock(id);
 	
 	}
 
@@ -39,7 +39,7 @@
           </div>
          <div>
 	<label>Select stock item for sale, by ID or Name.</label><br>
-      <select class="browser-default" name="stock_id" onchange="<?php getStockInfo()  ?>">
+      <select class="browser-default" name="stock_id" onchange="<?php getStockInfo(this.value)  ?>">
         <?php get_ID_list();  ?>
       </select>
 	</div>
