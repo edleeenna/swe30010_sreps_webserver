@@ -54,6 +54,10 @@
             <input type="text" id="html_sales_datetime" name="html_sales_datetime" class="validate">
             <label for="html_sales_datetime">Sales Date/Time</label>
           </div>
+		<div class="input-field">
+              <input readonly type="text" id="html_stock_orderlines_id" name="html_stock_orderlines_id" class="validate" value="<?php echo $php_stock['id'];?>">
+              <label for="html_stock_orderlines_id">Stock ID</label>
+            </div>
             <div class="input-field">
               <input readonly type="text" id="html_stock_orderlines_name" name="html_stock_orderlines_name" class="validate" value="<?php echo $php_stock['name'];?>">
               <label for="html_stock_orderlines_name">Stock Name</label>
