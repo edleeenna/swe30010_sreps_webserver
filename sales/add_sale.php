@@ -17,6 +17,13 @@
 <?php
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/nav.php';
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/stock_functions.php';
+	$stockArray = {}
+	function getStockInfo(){
+		$stockArray = get_stock(this.value);
+	
+	}
+
+
 ?>    
 </nav>
 
@@ -32,22 +39,12 @@
           </div>
          <div>
 	<label>Select stock item for sale, by ID or Name.</label><br>
-      <select class="browser-default" name="stock_id" onchange="showStock(this.value)">
-        <?php get_ID_list(); ?>
+      <select class="browser-default" name="stock_id" onchange="<?php getStockInfo()  ?>">
+        <?php get_ID_list();  ?>
       </select>
 	</div>
-		<?php
-		$q = intval($_GET['q']);
-		include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
-		$sql="SELECT * FROM sales WHERE id = '".$q."'";
-		$result = mysqli_query($conn,$sql);
-		while ($row = mysqli_fetch_array($result)) {
-			$row['stock_name'] = $stockName;
-			$row['stock_price'] = $stockPrice;
-		}
-		?>
 	<div class="input-field">
-            <input readonly type="text" id="html_stock_orderlines_name" name="html_orderlines_name_datetime" value="<?php echo $stockName; ?>" class="validate">
+            <input readonly type="text" id="html_stock_orderlines_name" name="html_orderlines_name_datetime" value="<?php echo $stockArray['name']; ?>" class="validate">
             <label for="html_stock_orderlines_name">Stock Name: </label>
           </div>
         </fieldset>
