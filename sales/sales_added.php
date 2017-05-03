@@ -64,7 +64,6 @@
    $orderlinesInsert = "INSERT INTO orderlines (orderline_sale_id, orderline_stock_id, orderline_qty, orderline_price) VALUES('$salesId', '$stockId', '$saleQty', '$salePrice' )";
           //insert sale into database
   
-    echo "$salesId, $stockId, $saleQty, $salePrice ";
    $orderlinesResult = mysqli_query($conn, $orderlinesInsert);
     
   if (!$conn) {
@@ -82,7 +81,7 @@
       echo "<p>Sale Date/Time: ". $salesDateTime. "</p>";
       echo "<p>Stock Name: ". $stockName. "</p>";
       echo "<p>Sale Qty: ". $saleQty. "</p>";
-      echo "<p>Sale Qty: ". $salePrice. "</p>";
+      echo "<p>Sale Total Price". $salePrice. "</p>";
     }
   }
       mysqli_close($conn);
