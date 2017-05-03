@@ -51,11 +51,10 @@
           <i class="large material-icons">mode_edit</i>
         </a>
       </div>
-      
-      <p>View Order</p>          
-      <p>Sale ID: <span><?php echo $php_sale['sale_id']; ?> </span> <p>
-      <p>Sale Date: <span><?php echo $php_sale['sale_datetime'];?> </span> <p>
-
+       <br>       
+      <h5>Sale ID: <span><?php echo $php_sale['sale_id']; ?> </span> </h5>
+      <h5>Sale Date: <span><?php echo $php_sale['sale_datetime'];?> </span> </h5>
+      <br> 
 <?php
 
 echo "<table  class=\"striped\" border=\"1\">";
