@@ -37,7 +37,7 @@
         <?php get_ID_list(); ?>
       </select>
       <!-- TODO - Link id and name selection -->
-      <input type="submit" value="Edit">
+      <input type="submit" value="Choose Stock for Sale">
       <input type="reset" value="Reset">
     </form>
 <?php
