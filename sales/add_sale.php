@@ -30,7 +30,7 @@
 <main>
 	<p id="error_message" ></p>
 	<div class="container">
-      <form id="add_sales" method="post" action="add_sale.php">
+      <form id="add_sales" method="post" action="sales_added.php">
         <fieldset>
           <legend>Add Sales Item</legend>
 		<div class="input-field">
