@@ -56,7 +56,7 @@
           </div>
             <div class="input-field">
               <input readonly type="text" id="html_stock_orderlines_name" name="html_stock_orderlines_name" class="validate" value="<?php echo $php_stock['name'];?>">
-              <label for="html_stock_orderlines_name">Item ID</label>
+              <label for="html_stock_orderlines_name">Stock Name</label>
             </div>
 	 <div class="input-field">
             <input type="text" id="html_orderlines_qty" name="html_orderlines_qty" class="validate" onchange="getPrice(this.value, <?php echo $php_stock['price'];?>)">
