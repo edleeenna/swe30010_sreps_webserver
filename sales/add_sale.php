@@ -37,7 +37,7 @@
       </select>
 	</div>
 	<div class="input-field">
-            <input readonly type="text" id="html_stock_orderlines_name" name="html_orderlines_name_datetime" value="<?php echo $stockName ?>" class="validate">
+            <input readonly type="text" id="html_stock_orderlines_name" name="html_orderlines_name_datetime" value="<?php echo $stockName; ?>" class="validate">
             <label for="html_stock_orderlines_name">Stock Name: </label>
           </div>
         </fieldset>
