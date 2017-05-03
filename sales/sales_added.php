@@ -35,6 +35,10 @@
     $stockId = $_POST["html_stock_orderlines_id"];
   }
   
+   if (isset ($_POST["html_stock_orderlines_name"])){
+    $stockName = $_POST["html_stock_orderlines_name"];
+  }
+  
   if (isset ($_POST["html_orderlines_qty"])){
     $saleQty = $_POST["html_orderlines_qty"];
   }
@@ -74,7 +78,11 @@
 
     else {
       echo "<p> Successfully added sale to database! </p>";
+      echo "<p>Sale Id: ". $salesId. "</p>";
       echo "<p>Sale Date/Time: ". $salesDateTime. "</p>";
+      echo "<p>Stock Name: ". $stockName. "</p>";
+      echo "<p>Sale Qty: ". $saleQty. "</p>";
+      echo "<p>Sale Qty: ". $salePrice. "</p>";
     }
   }
       mysqli_close($conn);
