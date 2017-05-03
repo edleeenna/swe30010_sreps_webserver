@@ -26,7 +26,7 @@ function getDateTime() {
 }
 
 
-function showStock(id) {
+/*function showStock(id) {
     if (id == 0) {
         document.getElementById("error_message").innerHTML = "Something went wrong :(";
         return;
@@ -46,7 +46,7 @@ function showStock(id) {
         xmlhttp.open("GET","add_sale.php?q="+id,true);
         xmlhttp.send();
     }
-}
+} */
 
 function init(){
   'use strict';
