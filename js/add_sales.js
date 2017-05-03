@@ -23,11 +23,12 @@ function getDateTime() {
     }
     var dateTime = year+'/'+month+'/'+day+' '+hour+':'+minute+':'+second;
      return dateTime;
+   
 }
 
 function getPrice(qty, price){
     var total = qty * price;
-    return total;
+     document.getElementById("html_orderlines_price").value = total;
     
 }
 
