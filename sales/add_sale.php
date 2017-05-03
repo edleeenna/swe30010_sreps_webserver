@@ -11,7 +11,7 @@
 
   // Variable to assign extra javascript files into the head of the page. just the file name needs to go in the quotes.
   // All files should reside in the "js" folder.
-  $extra_js = "add_stock.js";
+  $extra_js = "add_sale.js";
 
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/head.php';
   //start of body and nav are in the head.php section.
@@ -32,7 +32,7 @@
     if ($debug) echo '1) if NOT isset($_POST[\'html_stock_id\']) AND NOT isset($_GET[\'stock_id\']) section.<br>'.PHP_EOL;
 ?>
     <form id="sale_item" action="add_sale.php" method="get">
-      <label>Select stock item to edit, by ID or Name.</label><br>
+      <label>Select stock item for Sale.</label><br>
       <select class="browser-default" name="stock_id">
         <?php get_ID_list(); ?>
       </select>
@@ -52,12 +52,16 @@
             <legend>Add Sale Item</legend>
 		  <div class="input-field">
             <input type="text" id="html_sales_datetime" name="html_sales_datetime" class="validate">
-            <label for="html_stock_name">Sales Date/Time</label>
+            <label for="html_sales_datetime">Sales Date/Time</label>
           </div>
             <div class="input-field">
-              <input readonly type="text" id="html_stock_id" name="html_stock_id" class="validate" value="<?php echo $php_stock['name'];?>">
-              <label for="html_stock_id">Item ID</label>
+              <input readonly type="text" id="html_stock_orderlines_name" name="html_stock_orderlines_name" class="validate" value="<?php echo $php_stock['name'];?>">
+              <label for="html_stock_orderlines_name">Item ID</label>
             </div>
+	 <div class="input-field">
+            <input type="text" id="html_orderlines_qty" name="html_orderlines_qty" class="validate">
+            <label for="html_orderlines_qty">Sales Date/Time</label>
+          </div>
            
           </fieldset>
           <p>
