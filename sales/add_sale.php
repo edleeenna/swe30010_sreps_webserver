@@ -34,7 +34,7 @@
           </div>
          <div>
 	<label>Select stock item for sale, by ID or Name.</label><br>
-      <select class="browser-default" name="stock_id">
+      <select class="browser-default" name="stock_id" onchange="showStock(this.value)">
         <?php get_ID_list(); ?>
       </select>
 	</div>
