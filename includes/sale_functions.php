@@ -38,12 +38,15 @@ function getSale($sale_id) {
 
     // SQL to select all fields from the stock table, matching the specified stock_id.
     $saleSQL = <<<SQL
-        select sale_id, sale_datetime, ol.orderline_stock_id, st.stock_name, ol.orderline_qty, ol.orderline_price FROM sales sl
+        select sale_id, sale_datetime, ol.orderline_stock_id, st.stock_name, ol.orderline_qty, ol.orderline_price, SUM(ol.orderline_price*ol.orderline_qty) "total" FROM sales sl
         INNER JOIN orderlines ol ON ol.orderline_sale_id = sl.sale_id
         INNER JOIN stock st ON st.stock_id = ol.orderline_stock_id 
         WHERE sale_id = $sale_id
+        GROUP BY sale_id, ol.orderline_stock_id
 SQL;
     
+
+
     try{
         // Query the database to acquire results and hand them to resultSet
         $result = mysqli_query($conn, $saleSQL);
@@ -84,6 +87,7 @@ while($row = mysqli_fetch_assoc($result)){ // loop to store the data in an assoc
      $php_sale_name[$index] = $row['stock_name'];
      $php_orderline_qty[$index] = $row['orderline_qty'];
      $php_orderline_price[$index] = $row['orderline_price'];
+     $php_orderline_total[$index] = $row['total'];
      $index++;
 }
 
@@ -100,6 +104,7 @@ while($row = mysqli_fetch_assoc($result)){ // loop to store the data in an assoc
     $php_sale['stock_name']          = $php_sale_name;
     $php_sale['orderline_qty']         = $php_orderline_qty;
     $php_sale['orderline_price']               = $php_orderline_price;
+    $php_sale['orderline_total']        = $php_orderline_total;
 
     // Close connection to database.
     $conn->close();

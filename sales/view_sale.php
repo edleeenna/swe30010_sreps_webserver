@@ -82,7 +82,7 @@ echo "<tr>";
 echo "<th> Total </th>";
 echo "<td></td>";
 echo "<td></td>";
-echo "<th>", array_sum($php_sale['orderline_price']),"</th>";
+echo "<th>", array_sum($php_sale['orderline_total']),"</th>";
 
 }
 echo "</table>";
