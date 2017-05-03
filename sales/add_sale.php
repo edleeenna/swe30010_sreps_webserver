@@ -23,6 +23,7 @@
 </nav>
 
 <main>
+	<p id="error_message" ></p>
 	<div class="container">
       <form id="add_sales" method="post" action="add_sale.php">
         <fieldset>
@@ -37,8 +38,18 @@
         <?php get_ID_list(); ?>
       </select>
 	</div>
+		<?php
+		$q = intval($_GET['q']);
+		include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
+		$sql="SELECT * FROM sale WHERE id = '".$q."'";
+		$result = mysqli_query($conn,$sql);
+		while ($row = mysqli_fetch_array($result)) {
+			$row['stock_name'] = $stockName;
+			$row['stock_price'] = $stockPrice;
+		}
+		?>
 	<div class="input-field">
-            <input readonly type="text" id="html_stock_orderlines_name" name="html_orderlines_name_datetime" class="validate">
+            <input readonly type="text" id="html_stock_orderlines_name" name="html_orderlines_name_datetime" value="<?php $stockName ?>" class="validate">
             <label for="html_stock_orderlines_name">Stock Name: </label>
           </div>
         </fieldset>
