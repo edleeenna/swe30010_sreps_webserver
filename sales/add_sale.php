@@ -33,7 +33,7 @@
 ?>
     <form id="sale_item" action="add_stock.php" method="get">
       <label>Select stock item to edit, by ID or Name.</label><br>
-      <select class="browser-default" name="sale_id">
+      <select class="browser-default" name="stock_id">
         <?php get_ID_list(); ?>
       </select>
       <!-- TODO - Link id and name selection -->
