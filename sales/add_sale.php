@@ -17,6 +17,7 @@
 ?>
 <?php
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/nav.php';
+  include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/stock_functions.php';
 ?>    
 </nav>
 
@@ -29,6 +30,12 @@
             <input type="text" id="html_sales_datetime" name="html_sales_datetime" class="validate">
             <label for="html_sales_name">Sales Date/Time</label>
           </div>
+	<div>
+	<label>Select stock item for sale, by ID or Name.</label><br>
+      <select class="browser-default" name="stock_id">
+        <?php get_ID_list(); ?>
+      </select>
+	</div>
         </fieldset>
         <p>
             <input type="reset" value="Reset">
