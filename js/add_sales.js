@@ -27,8 +27,8 @@ function getDateTime() {
 
 
 function showStock(id) {
-    if (id == id) {
-        document.getElementById("error_message").innerHTML = "";
+    if (id == 0) {
+        document.getElementById("error_message").innerHTML = "Something went wrong :(";
         return;
     } else { 
         if (window.XMLHttpRequest) {
