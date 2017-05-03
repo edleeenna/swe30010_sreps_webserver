@@ -35,11 +35,12 @@
          <div>
 	<label>Select stock item for sale, by ID or Name.</label><br>
       <select class="browser-default" name="stock_id" onchange="<?php $stockName = get_stock(this.value) ?>">
-        <?php get_ID_list(); ?>
+        <?php get_ID_list();  ?>
       </select>
 	</div>
+		<?php $stock_name = array_search() ?>
 	<div class="input-field">
-            <input readonly type="text" id="html_stock_orderlines_name" name="html_orderlines_name_datetime" value="<?php $stockName ?>" class="validate">
+            <input readonly type="text" id="html_stock_orderlines_name" name="html_orderlines_name_datetime" value="<?php echo $stockName['name'] ?>" class="validate">
             <label for="html_stock_orderlines_name">Stock Name: </label>
           </div>
         </fieldset>
