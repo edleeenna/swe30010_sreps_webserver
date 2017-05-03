@@ -59,7 +59,7 @@
           //insert sale into database
   
     echo "$salesId, $stockId, $saleQty, $salePrice ";
-    $orderlinesResult = mysqli_query($conn, $orderlinesInsert);
+   // $orderlinesResult = mysqli_query($conn, $orderlinesInsert);
     
   if (!$conn) {
     echo "<p> Database connection failure</p>";
