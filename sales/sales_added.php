@@ -54,9 +54,10 @@
     $selectSalesId = "SELECT * FROM `sales` WHERE `sale_datetime` = '$salesDateTime' ";
     
     $salesIdResult = mysqli_query($conn, $selectSalesId);
-    $salesId = mysqli_fetch_assoc($salesIdResult);
+    $salesIdResult2 = mysqli_fetch_assoc($salesIdResult);
+    $salesId = $salesIdResult2['sale_id'];
     
-   $orderlinesInsert = "INSERT INTO orderlines (orderline_sale_id, orderline_stock_id, orderline_qty, orderline_price) VALUES('$salesId['sale_id']', '$stockId', '$saleQty', '$salePrice' )";
+   $orderlinesInsert = "INSERT INTO orderlines (orderline_sale_id, orderline_stock_id, orderline_qty, orderline_price) VALUES('$salesId', '$stockId', '$saleQty', '$salePrice' )";
           //insert sale into database
   
     echo "$salesId, $stockId, $saleQty, $salePrice ";
