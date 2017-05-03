@@ -57,8 +57,9 @@
     
     $orderlinesInsert = "INSERT INTO orderlines (orderline_sale_id, orderline_stock_id, orderline_qty, orderline_price) VALUES('$salesId', '$stockId', '$saleQty', '$salePrice' )";
           //insert sale into database
-    
-   // $orderlinesResult = mysqli_query($conn, $orderlinesInsert);
+  
+    echo "$salesId, $stockId, $saleQty, $salePrice ";
+    $orderlinesResult = mysqli_query($conn, $orderlinesInsert);
     
   if (!$conn) {
     echo "<p> Database connection failure</p>";
