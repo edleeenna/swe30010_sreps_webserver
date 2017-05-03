@@ -47,7 +47,7 @@
     // onsubmit="return check_stock_details(this)"
 ?>
       <div class="container">
-        <form id="edit_stock" action="\stock\sales_added.php" method="post">
+        <form id="edit_stock" action="\sales\sales_added.php" method="post">
           <fieldset>
             <legend>Add Sale Item</legend>
 		  <div class="input-field">
