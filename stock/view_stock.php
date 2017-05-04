@@ -56,9 +56,9 @@
       <p>View Stock Item</p>          
       <p>Item ID: <span><?php echo $php_stock['id']; ?> </span> <p>
       <p>Item Name: <span><?php echo $php_stock['name'];?> </span> <p>
-      <p>Item Description: <textarea id="html_stock_description" name="html_stock_description" class="materialize-textarea" readonly="yes"><?php echo $php_stock['description'];?> </textarea> <p>
-      <p>Directions: <textarea id="html_stock_directions" name="html_stock_directions" class="materialize-textarea" readonly="yes"><?php echo $php_stock['directions'];?> </textarea> <p>
-      <p>Ingredients: <textarea id="html_stock_ingredients" name="html_stock_ingredients" class="materialize-textarea" readonly="yes"><?php echo $php_stock['ingredients'];?> </textarea> <p>
+      <p>Item Description: <textarea readonly="yes"><?php echo $php_stock['description'];?> </textarea> <p>
+      <p>Directions: <textarea readonly="yes"><?php echo $php_stock['directions'];?> </textarea> <p>
+      <p>Ingredients: <textarea readonly="yes"><?php echo $php_stock['ingredients'];?> </textarea> <p>
       <p>Item Price: <span><?php echo $php_stock['price'];?> </span> <p>
       <p>Item Cost Price: <span><?php echo $php_stock['cost_price'];?> </span> <p>
       <p>Item Qty: <span><?php echo $php_stock['qty'];?> </span> <p>
