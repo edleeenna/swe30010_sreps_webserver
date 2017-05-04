@@ -27,19 +27,16 @@
             </div>
           
           <div class="row">
-          <div class="col s3">
+          <div class="col s4">
             <img src="images/navtomanagestock.png" alt="how to nav to managestock"/>
           </div>
-             <div class="col s3">
+             <div class="col s4">
             <img src="images/navtomanagestock.png" alt="how to nav to managestock"/>
           </div>
-             <div class="col s3">
+             <div class="col s4">
             <img src="images/navtomanagestock.png" alt="how to nav to managestock"/>
           </div>
-             <div class="col s3">
-            <img src="images/navtomanagestock.png" alt="how to nav to managestock"/>
-          </div>
-          
+                     
         </div>
      
        
