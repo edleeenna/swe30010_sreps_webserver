@@ -34,6 +34,7 @@
           </div>
              <div class="col s4">
             <img src="/images/navtoviewallstock.png" alt="how to nav to view all stock" height="200" width="300"/>
+               <p>On this page you will see a list of buttons that will take you to various pages of the website related to stock. From here, you will want to click on the first button on the left side: "View All Stock"</p>
           </div>
              <div class="col s4">
             <img src="/images/viewallstock.png" alt="how to view all stock" height="200" width="300"/>
@@ -42,8 +43,6 @@
         </div>
      
        
-      Change this text later. Screen shot, with description of what the parts are and for. Description of how you would use them.
-      Perhaps take them through from start to finish, how to do a complete run.
       <h3>View Stock Item</h3>
       Change this text later. Screen shot, with description of what the parts are and for. Description of how you would use them.
       Perhaps take them through from start to finish, how to do a complete run.
