@@ -70,11 +70,11 @@
              <div class="col s3">
             <img class="responsive-img materialboxed" src="/images/addstockitem1.png" alt="how to add stock" />
                <img class="responsive-img materialboxed" src="/images/addstockitem2.png" alt="how to add stock"/>
-               <p></p>
+               <p>You should now be presented with a form with all the necessary fields to add stock. Enter the prompted details and then click submit at the end of the form to add the stock to the database. If you make a mistake, you can click on reset to reset the form and start again</p>
           </div>
              <div class="col s3">
             <img class="responsive-img materialboxed" src="/images/stockadded.png" alt="stock added"/>
-               <p></p>
+               <p>After clicking submit, the webpage will take you to a page that will show you all the details of the stock item you just added.</p>
           </div>
                      
         </div>
