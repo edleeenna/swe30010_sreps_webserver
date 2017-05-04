@@ -20,7 +20,7 @@
       <div class="container">
       Work in progress.
       <h2>Stock Support</h2>
-      Support for how to use the sections of the sales system.
+      Support for how to use the sections of the sales system. Click on an image to enlarge it for easier viewing.
         <div class="row">
           <div class="col s12">
              <h3>View All Stock Items</h3>
@@ -65,20 +65,16 @@
           </div>
              <div class="col s3">
             <img class="responsive-img materialboxed" src="/images/navtoaddstock.png" alt="how to nav to add stock" />
-               <p>On this page you will see a list of buttons that will take you to various pages of the website related to stock. From here, you will want to click on the second button from the right as seen in the image above: "View All Stock"</p>
+               <p>On this page you will see a list of buttons that will take you to various pages of the website related to stock. From here, you will want to click on the second button from the right as seen in the image above: "Add Stock"</p>
           </div>
              <div class="col s3">
             <img class="responsive-img materialboxed" src="/images/addstockitem1.png" alt="how to add stock" />
                <img class="responsive-img materialboxed" src="/images/addstockitem2.png" alt="how to add stock"/>
-               <p>You should now be able to view all stock from the database. Underneath the heading is the button "Export to CSV", this will export the stock table in CSV format in an excel spreadsheeet.
-                You should be able to view all fields related to stock as well as two buttons for "edit" and "view". Clicking on "edit" will allow you edit the details of that stock item and clicking "view" will 
-                 allow you to view the details of only that item.</p>
+               <p></p>
           </div>
              <div class="col s3">
             <img class="responsive-img materialboxed" src="/images/stockadded.png" alt="stock added"/>
-               <p>You should now be able to view all stock from the database. Underneath the heading is the button "Export to CSV", this will export the stock table in CSV format in an excel spreadsheeet.
-                You should be able to view all fields related to stock as well as two buttons for "edit" and "view". Clicking on "edit" will allow you edit the details of that stock item and clicking "view" will 
-                 allow you to view the details of only that item.</p>
+               <p></p>
           </div>
                      
         </div>
