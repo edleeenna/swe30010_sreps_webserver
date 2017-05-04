@@ -31,10 +31,10 @@
             <img src="images/navtomanagestock.png" alt="how to nav to managestock"/>
           </div>
              <div class="col s4">
-            <img src="images/navtomanagestock.png" alt="how to nav to managestock"/>
+            <img src="images/navtoviewallstock.png" alt="how to nav to view all stock"/>
           </div>
              <div class="col s4">
-            <img src="images/navtomanagestock.png" alt="how to nav to managestock"/>
+            <img src="images/navtoviewallstock.png" alt="how to view all stock"/>
           </div>
                      
         </div>
