@@ -1,19 +1,10 @@
-
-<head>
-<style type="text/css">
-.auto-style1 {
-	text-align: right;
-}
-</style>
-</head>
-
 <?php
   // Variable to set the local (current) page title [NOT Site Title].
   $pageTitle = "View Stock Item";
 
   // Variable to assign extra css files into the head of the page. just the file name needs to go in the quotes.
   // All files should reside in the "css" folder. 
-  //$extra_css = "";
+  $extra_css = "view_stock.css";
   
   // Variable to assign extra javascript files into the head of the page. just the file name needs to go in the quotes.
   // All files should reside in the "js" folder.
