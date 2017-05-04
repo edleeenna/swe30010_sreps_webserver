@@ -43,7 +43,7 @@
     $php_stock = get_stock($_GET['stock_id']);
 ?>
     <div class="container">      
-      <form id="delete_stock" action="\stock\delete_stock.php" method="post" onsubmit="confirm_del(<?php echo $php_stock['id'];?>);">
+      <form id="delete_stock" action="\stock\delete_stock.php" method="post" onsubmit="return confirm_del(<?php echo $php_stock['id'];?>)">
         <fieldset>
           <legend>Edit Stock Item</legend>
           <div class="input-field">
