@@ -17,10 +17,32 @@
     </nav>
 
     <main>
+      <div class="container">
       Work in progress.
       <h2>Stock Support</h2>
       Support for how to use the sections of the sales system.
-      <h3>View All Stock Items</h3>
+        <div class="row">
+          <div class="col s12">
+             <h3>View All Stock Items</h3>
+            </div>
+          
+          <div class="row">
+          <div class="col s3">
+            <img src="images/navtomanagestock.png" alt="how to nav to managestock"/>
+          </div>
+             <div class="col s3">
+            <img src="images/navtomanagestock.png" alt="how to nav to managestock"/>
+          </div>
+             <div class="col s3">
+            <img src="images/navtomanagestock.png" alt="how to nav to managestock"/>
+          </div>
+             <div class="col s3">
+            <img src="images/navtomanagestock.png" alt="how to nav to managestock"/>
+          </div>
+          
+        </div>
+     
+       
       Change this text later. Screen shot, with description of what the parts are and for. Description of how you would use them.
       Perhaps take them through from start to finish, how to do a complete run.
       <h3>View Stock Item</h3>
@@ -35,7 +57,8 @@
       <h3>Delete Stock Item</h3>
       Change this text later. Screen shot, with description of what the parts are and for. Description of how you would use them.
       Perhaps take them through from start to finish, how to do a complete run.
-    </main>
+      </div>
+        </main>
 <?php
   //Ending of body tag is in tail.php
   include $_SERVER[ 'DOCUMENT_ROOT' ] . '/includes/tail.php';
