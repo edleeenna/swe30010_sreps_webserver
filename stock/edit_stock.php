@@ -59,15 +59,15 @@
               <label for="html_stock_name">Item Name</label>
             </div>
             <div class="input-field">
-              <span><textarea id="html_stock_description" name="html_stock_description" class="materialize-textarea"><?php echo $php_stock['description'];?></textarea></span>
+              <textarea id="html_stock_description" name="html_stock_description" class="materialize-textarea"><?php echo $php_stock['description'];?></textarea>
               <label for="html_stock_description">Item Description</label>
             </div>
             <div class="input-field">
-              <span><textarea id="html_stock_directions" name="html_stock_directions" class="materialize-textarea"><?php echo $php_stock['directions'];?></textarea></span>
+              <textarea id="html_stock_directions" name="html_stock_directions" class="materialize-textarea"><?php echo $php_stock['directions'];?></textarea>
               <label for="html_stock_directions">Directions</label>
             </div>
             <div class="input-field">
-              <span><textarea id="html_stock_ingredients" name="html_stock_ingredients" class="materialize-textarea"><?php echo $php_stock['ingredients'];?></textarea></span>
+              <textarea id="html_stock_ingredients" name="html_stock_ingredients" class="materialize-textarea"><?php echo $php_stock['ingredients'];?></textarea>
               <label for="html_stock_ingredients">Ingredients</label>
             </div>
             <div class="input-field">
