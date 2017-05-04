@@ -69,7 +69,7 @@
           </div>
              <div class="col s3">
             <img class="responsive-img" src="/images/addstockitem1.png" alt="how to add stock" />
-               <img class="responsive-img" src="images/addstockitem2.png" alt="how to add stock"/>
+               <img class="responsive-img" src="/images/addstockitem2.png" alt="how to add stock"/>
                <p>You should now be able to view all stock from the database. Underneath the heading is the button "Export to CSV", this will export the stock table in CSV format in an excel spreadsheeet.
                 You should be able to view all fields related to stock as well as two buttons for "edit" and "view". Clicking on "edit" will allow you edit the details of that stock item and clicking "view" will 
                  allow you to view the details of only that item.</p>
