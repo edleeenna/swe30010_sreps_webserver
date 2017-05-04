@@ -24,7 +24,7 @@
         <div class="row">
           <div class="col s12">
              <h3>View All Stock Items</h3>
-            <p>This will take you through how to navigate how to view all stock from the database</p>
+            <p>This will take you through how to navigate how to view all stock from the database.</p>
             </div>
           
           <div class="row">
@@ -38,6 +38,9 @@
           </div>
              <div class="col s4">
             <img src="/images/viewallstock.png" alt="how to view all stock" height="200" width="300"/>
+               <p>You should now be able to view all stock from the database. Underneath the heading is the button "Export to CSV", this will export the stock table in CSV format in an excel spreadsheeet.
+                You should be able to view all fields related to stock as well as two buttons for "edit" and "view". Clicking on "edit" will allow you edit the details of that stock item and clicking "view" will 
+                 allow you to view the details of only that item.</p>
           </div>
                      
         </div>
