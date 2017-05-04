@@ -13,11 +13,11 @@
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/head.php';
 ?>
 <?php
-	include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/nav.php';
+  include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/nav.php';
 ?>
     </nav>
     <main>
-	    <h1>List of Stock</h1>
+      <h1>List of Stock</h1>
 <?php
 include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
 $listAllQuery = "select * FROM stock";
@@ -42,7 +42,7 @@ echo "<table  class=\"striped\" border=\"1\">".PHP_EOL;
         ."<th scope=\"col\">Barcode</th>"
         ."<th scope=\"col\"></th>"
         ."<th scope=\"col\"></th>"
-        ."</tr>".PHP_EOL;
+        ."</tr>".PHP_EOL.PHP_EOL;
 
         while ($row = mysqli_fetch_assoc($listResult)) {
           echo "<tr>";
@@ -61,8 +61,7 @@ echo "<table  class=\"striped\" border=\"1\">".PHP_EOL;
           echo "<td>", $row["stock_bar_code"], "</td>";
           echo '<td><button onclick="window.location.href=\'/stock/edit_stock.php?stock_id='.$row["stock_id"].'\'" title="Edit item '.$row["stock_id"].'">Edit&hellip;</button></td>';
           echo '<td><button onclick="window.location.href=\'/stock/view_stock.php?stock_id='.$row["stock_id"].'\'" title="View item '.$row["stock_id"].'">View&hellip;</button></td>';
-          echo "</tr>".PHP_EOL;
-
+          echo "</tr>".PHP_EOL.PHP_EOL;
         }
         echo "</table>".PHP_EOL;
 
