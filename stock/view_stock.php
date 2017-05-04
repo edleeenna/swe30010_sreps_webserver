@@ -54,10 +54,10 @@
       </div>
       
       <p>View Stock Item</p>          
-      <p>Item ID: <span><?php echo $php_stock['id']; ?> </span> <p>
-      <p>Item Name: <span><?php echo $php_stock['name'];?> </span> <p>
-      <p>Item Description: <textarea readonly="yes"><?php echo $php_stock['description'];?> </textarea> <p>
-      <p>Directions: <textarea readonly="yes"><?php echo $php_stock['directions'];?> </textarea> <p>
+      <p>Item ID: <span><?php echo $php_stock['id']; ?> </span><p>
+      <p>Item Name: <span><?php echo $php_stock['name'];?> </span><p>
+      <p>Item Description: <textarea readonly="yes"><?php echo $php_stock['description'];?> </textarea><p>
+      <p>Directions: <pre><?php echo $php_stock['directions'];?> </pre><p>
       <p>Ingredients: <textarea readonly="yes"><?php echo $php_stock['ingredients'];?> </textarea> <p>
       <p>Item Price: <span><?php echo $php_stock['price'];?> </span> <p>
       <p>Item Cost Price: <span><?php echo $php_stock['cost_price'];?> </span> <p>
