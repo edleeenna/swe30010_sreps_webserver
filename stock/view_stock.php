@@ -53,8 +53,8 @@
       <p>View Stock Item</p>          
       <p>Item ID: <span><?php echo $php_stock['id']; ?> </span><p>
       <p>Item Name: <span><?php echo $php_stock['name'];?> </span><p>
-      <p>Item Description: <div class="white"><?php echo $php_stock['description'];?> </div><p>
-      <p>Directions: <div class="white"><?php echo $php_stock['directions'];?> </div><p>
+      <p>Item Description: <span><?php echo $php_stock['description'];?> </span><p>
+      <p>Directions: <span><?php echo $php_stock['directions'];?> </span><p>
       <p>Ingredients: <div class="white"><?php echo $php_stock['ingredients'];?> </div> <p>
       <p>Item Price: <span><?php echo $php_stock['price'];?> </span> <p>
       <p>Item Cost Price: <span><?php echo $php_stock['cost_price'];?> </span> <p>
