@@ -24,11 +24,13 @@
         <div class="row">
           <div class="col s12">
              <h3>View All Stock Items</h3>
+            <p>This will take you through how to navigate how to view all stock from the database</p>
             </div>
           
           <div class="row">
           <div class="col s4">
             <img src="/images/navtomanagestock.png" alt="how to nav to managestock" height="200" width="300"/>
+            <p>From the home page, click on "Manage Stock" as shown in the image above. This will take you to the "Manage Stock" page and will present you with a few options to choose from</p>
           </div>
              <div class="col s4">
             <img src="/images/navtoviewallstock.png" alt="how to nav to view all stock" height="200" width="300"/>
