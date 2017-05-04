@@ -8,23 +8,29 @@
 */
 
 function init(){
-	// initalise form
-	var js_delete_stock = document.getElementById("delete_stock");
-	js_delete_stock.onsubmit = validate_stock;
-	
-	// initialise select fields
-	$(document).ready(function() {
-		$('select').material_select();
-	});
-	// 
-	//var js_submit_delete = document.getElementById("delete_item");
-	//js_submit_delete.onclick = alert("Test button click.");
+  // initalise form
+  var js_delete_stock = document.getElementById("delete_stock");
+  js_delete_stock.onsubmit = validate_stock;
+  
+  // initialise select fields
+  $(document).ready(function() {
+    $('select').material_select();
+  });
+  // 
+  //var js_submit_delete = document.getElementById("delete_item");
+  //js_submit_delete.onclick = alert("Test button click.");
 }
 
 window.onload = init;
 
-function confirm_del(js_stock_id = ""){
+function confirm_del(js_stock_id){
   var confirmation = prompt("Please enter \"DELETE "+js_stock_id+"\" to proceed with deleting this item.", "");
-  if (confirmation == "DELETE "+js_stock_id) alert("Stock item "+js_stock_id+" will be deleted.");
-  if (confirmation != "DELETE "+js_stock_id) alert("Stock item "+js_stock_id+" will NOT be deleted.");
+  if (confirmation == "DELETE "+js_stock_id){
+    alert("Stock item "+js_stock_id+" will be deleted.");
+    return true;
+  }
+  else {
+    alert("Stock item "+js_stock_id+" will NOT be deleted.");
+    return false;
+  }
 }
