@@ -21,55 +21,55 @@
     </nav>
 <main>
 <?php
-	//echo "connect<br>".PHP_EOL;
-	// Include functions for editing stock. Could be made part of all functions for stock. eg: stock_func.php
-	include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/stock_functions.php';
-	if (isset ($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {  // no ?stock_id= present
-		header("Location:/stock/view_stock.php?stock_id=".$_POST['html_stock_id']);
-	} 
-	elseif (!(isset ($_GET) && $_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET))) { // change post to get and display as ?stock_id= not ?html_stock_id=
+  //echo "connect<br>".PHP_EOL;
+  // Include functions for editing stock. Could be made part of all functions for stock. eg: stock_func.php
+  include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/stock_functions.php';
+  if (isset ($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {  // no ?stock_id= present
+    header("Location:/stock/view_stock.php?stock_id=".$_POST['html_stock_id']);
+  } 
+  elseif (!(isset ($_GET) && $_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET))) { // change post to get and display as ?stock_id= not ?html_stock_id=
 ?>
-		<form id="stock_item" action="view_stock.php" method="post">
-			<label>
-				Select stock item to view by ID.
-			</label><br>
-			
-			<select class="browser-default" name="html_stock_id">
-				<option value="" disabled selected>Select a stock item</option>
-				<?php get_ID_list(); ?>
-			</select>			
-			<input type="submit" value="Submit"> 
-			<input type="reset" value="Reset">
-		</form>
+    <form id="stock_item" action="view_stock.php" method="post">
+      <label>
+        Select stock item to view by ID.
+      </label><br>
+      
+      <select class="browser-default" name="html_stock_id">
+        <option value="" disabled selected>Select a stock item</option>
+        <?php get_ID_list(); ?>
+      </select>      
+      <input type="submit" value="Submit"> 
+      <input type="reset" value="Reset">
+    </form>
 <?php
-	} 
-	else {
-		$php_stock = get_stock($_GET['stock_id']);
+  } 
+  else {
+    $php_stock = get_stock($_GET['stock_id']);
 ?>
-		<div class="container">  		
-			<div class="fixed-action-btn">
-				<a class="btn-floating btn-large" href="\stock\edit_stock.php?stock_id=<?= $php_stock['id'] ?>">
-					<i class="large material-icons">mode_edit</i>
-				</a>
-			</div>
-			
-			<p>View Stock Item</p>					
-			<p>Item ID: <span><?php echo $php_stock['id']; ?> </span> <p>
-			<p>Item Name: <span><?php echo $php_stock['name'];?> </span> <p>
-			<p>Item Description: <span><?php echo $php_stock['description'];?> </span> <p>
-			<p>Directions: <span><?php echo $php_stock['directions'];?> </span> <p>
-			<p>Ingredients: <span><?php echo $php_stock['ingredients'];?> </span> <p>
-			<p>Item Price: <span><?php echo $php_stock['price'];?> </span> <p>
-			<p>Item Cost Price: <span><?php echo $php_stock['cost_price'];?> </span> <p>
-			<p>Item Qty: <span><?php echo $php_stock['qty'];?> </span> <p>
-			<p>Item Target: <span><?php echo $php_stock['target_min_qty'];?> </span> <p>
-			<p>Item Supplier: <span><?php echo $php_stock['supplier'];?> </span> <p>
-			<p>Item Supplier Code: <span><?php echo $php_stock['supplier_order_code'];?> </span> <p>
-			<p>Item Category Name: <span><?php echo $php_stock['category_name'];?> </span> <p>
-			<p>Item Barcode: <span><?php echo $php_stock['barcode'];?> </span> <p>
-		</div>
+    <div class="container">      
+      <div class="fixed-action-btn">
+        <a class="btn-floating btn-large" href="\stock\edit_stock.php?stock_id=<?= $php_stock['id'] ?>">
+          <i class="large material-icons">mode_edit</i>
+        </a>
+      </div>
+      
+      <p>View Stock Item</p>          
+      <p>Item ID: <span><?php echo $php_stock['id']; ?> </span> <p>
+      <p>Item Name: <span><?php echo $php_stock['name'];?> </span> <p>
+      <p>Item Description: <textarea id="html_stock_description" name="html_stock_description" class="materialize-textarea" readonly="yes"><?php echo $php_stock['description'];?> </textarea> <p>
+      <p>Directions: <textarea id="html_stock_directions" name="html_stock_directions" class="materialize-textarea" readonly="yes"><?php echo $php_stock['directions'];?> </textarea> <p>
+      <p>Ingredients: <textarea id="html_stock_ingredients" name="html_stock_ingredients" class="materialize-textarea" readonly="yes"><?php echo $php_stock['ingredients'];?> </textarea> <p>
+      <p>Item Price: <span><?php echo $php_stock['price'];?> </span> <p>
+      <p>Item Cost Price: <span><?php echo $php_stock['cost_price'];?> </span> <p>
+      <p>Item Qty: <span><?php echo $php_stock['qty'];?> </span> <p>
+      <p>Item Target: <span><?php echo $php_stock['target_min_qty'];?> </span> <p>
+      <p>Item Supplier: <span><?php echo $php_stock['supplier'];?> </span> <p>
+      <p>Item Supplier Code: <span><?php echo $php_stock['supplier_order_code'];?> </span> <p>
+      <p>Item Category Name: <span><?php echo $php_stock['category_name'];?> </span> <p>
+      <p>Item Barcode: <span><?php echo $php_stock['barcode'];?> </span> <p>
+    </div>
 <?php
-	}
+  }
 ?>
 </main>
 <?php
