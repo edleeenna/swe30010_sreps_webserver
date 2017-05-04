@@ -89,7 +89,7 @@
 						<span id="html_stock_category_id_validation"></span>
 						<select id="html_stock_category_id" name="html_stock_category_id">
 							<option value="" disabled selected>Select category</option>
-								<?php get_cat_list(); ?>
+<?php get_cat_list(); ?>
 						</select>
 						<label>Stock Category</label>
 					</div>
