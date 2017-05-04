@@ -33,7 +33,7 @@
       <label>
         Select stock item to view by ID.
       </label><br>
-      
+
       <select class="browser-default" name="html_stock_id">
         <option value="" disabled selected>Select a stock item</option>
         <?php get_ID_list(); ?>
