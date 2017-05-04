@@ -28,13 +28,13 @@
           
           <div class="row">
           <div class="col s4">
-            <img src="/images/navtomanagestock.png" alt="how to nav to managestock" height="100" width="200"/>
+            <img src="/images/navtomanagestock.png" alt="how to nav to managestock" height="200" width="300"/>
           </div>
              <div class="col s4">
-            <img src="/images/navtoviewallstock.png" alt="how to nav to view all stock" height="100" width="200"/>
+            <img src="/images/navtoviewallstock.png" alt="how to nav to view all stock" height="200" width="300"/>
           </div>
              <div class="col s4">
-            <img src="/images/navtoviewallstock.png" alt="how to view all stock" height="100" width="200"/>
+            <img src="/images/viewallstock.png" alt="how to view all stock" height="200" width="300"/>
           </div>
                      
         </div>
