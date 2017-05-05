@@ -29,7 +29,7 @@
 
   //if (isset ($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {
   if (!isset($_POST['html_stock_id']) && !isset($_GET['stock_id'])) {
-    if ($debug) echo '1) if NOT isset($_POST[\'html_stock_id\']) AND NOT isset($_GET[\'stock_id\']) section.<br>'.PHP_EOL;
+    if ($debug) /*echo '1) if NOT isset($_POST[\'html_stock_id\']) AND NOT isset($_GET[\'stock_id\']) section.<br>'.PHP_EOL; */
 ?>
     <form id="sale_item" action="add_sale.php" method="get">
       <label>Select stock item for Sale.</label><br>
