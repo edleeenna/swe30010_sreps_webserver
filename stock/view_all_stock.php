@@ -15,61 +15,74 @@
 <?php
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/nav.php';
 ?>
-    </nav>
-    <main>
-      <h1>List of Stock</h1>
+</nav>
+
+<main>
+
 <?php
 include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
-$listAllQuery = "select * FROM stock";
-      $listResult = mysqli_query($conn, $listAllQuery);
-echo "<form method='post' action='stockexportprocess.php'>".PHP_EOL;
-echo " <p><input type='submit' id='submit' value='Export to CSV'></p>".PHP_EOL;
-echo "</form><br>".PHP_EOL;
-echo "<table  class=\"striped\" border=\"1\">".PHP_EOL;
-     echo "<tr>"
-        ."<th scope=\"col\">Stock Id</th>"
-        ."<th scope=\"col\">Stock Name</th>"
-        ."<th scope=\"col\">Stock Description</th>"
-        ."<th scope=\"col\">Stock Directions</th>"
-        ."<th scope=\"col\">Ingredients</th>"
-        ."<th scope=\"col\">Price</th>"
-        ."<th scope=\"col\">Stock Cost Price</th>"
-        ."<th scope=\"col\">Stock Qty</th>"
-        ."<th scope=\"col\">Target</th>"
-        ."<th scope=\"col\">Supplier</th>"
-        ."<th scope=\"col\">Supplier Code</th>"
-        ."<th scope=\"col\">Category</th>"
-        ."<th scope=\"col\">Barcode</th>"
-        ."<th scope=\"col\"></th>"
-        ."<th scope=\"col\"></th>"
-        ."</tr>".PHP_EOL.PHP_EOL;
+include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/stock_functions.php';
+include $_SERVER['DOCUMENT_ROOT'].'/includes/Paginator.class.php';
 
-        while ($row = mysqli_fetch_assoc($listResult)) {
-          echo "<tr>";
-          echo "<td>", $row["stock_id"], "</td>";
-          echo "<td>", $row["stock_name"], "</td>";
-          echo "<td>", $row["stock_description"], "</td>";
-          echo "<td>", $row["stock_directions"], "</td>";
-          echo "<td>", $row["stock_ingredients"], "</td>";
-          echo "<td>", $row["stock_price"], "</td>";
-          echo "<td>", $row["stock_cost_price"], "</td>";
-          echo "<td>", $row["stock_qty"], "</td>";
-          echo "<td>", $row["stock_target_min_qty"], "</td>";
-          echo "<td>", $row["stock_supplier"], "</td>";
-          echo "<td>", $row["stock_supplier_order_code"], "</td>";
-          echo "<td>", $row["stock_category_id"], "</td>";
-          echo "<td>", $row["stock_bar_code"], "</td>";
-          echo '<td><button onclick="window.location.href=\'/stock/edit_stock.php?stock_id='.$row["stock_id"].'\'" title="Edit item '.$row["stock_id"].'">Edit&hellip;</button></td>';
-          echo '<td><button onclick="window.location.href=\'/stock/view_stock.php?stock_id='.$row["stock_id"].'\'" title="View item '.$row["stock_id"].'">View&hellip;</button></td>';
-          echo "</tr>".PHP_EOL.PHP_EOL;
+    $limit      = ( isset( $_GET['limit'] ) ) ? $_GET['limit'] : 10;
+    $page       = ( isset( $_GET['page'] ) ) ? $_GET['page'] : 1;
+    $links      = ( isset( $_GET['links'] ) ) ? $_GET['links'] : 3;
+    $query      ="SELECT stock.stock_id, stock.stock_name, stock.stock_price, stock.stock_qty, stock.stock_supplier, categories.category_name FROM stock LEFT JOIN categories ON stock.stock_category_id = categories.category_id";    
+
+    $Paginator  = new Paginator( $conn, $query );
+ 
+    $results    = $Paginator->getData( $limit, $page );
+
+?>
+
+<form method='post' action='stockexportprocess.php'>
+	<p><input type='submit' id='submit' value='Export to CSV'></p>
+</form>
+
+<?php
+  echo "<table  class=\"striped\" border=\"1\">".PHP_EOL;
+    echo "<tr>";
+   
+    foreach($results->fields as $field)    {
+	  echo "<th>".get_column_name($field)."</th>";
+    }
+	    
+	  echo "<th></th>";
+	  echo "<th></th>";  
+	    
+    echo "</tr>".PHP_EOL.PHP_EOL;
+
+        for( $i = 0; $i < count( $results->data ); $i++ ) {
+	        echo "<tr>";
+				foreach($results->data[$i] as $cell) {
+		          echo "<td>".$cell."</td>";
+		        }
+				
+				echo '<td><button onclick="window.location.href=\'/stock/edit_stock.php?stock_id='.$results->data[$i]["stock_id"].'\'" title="Edit item '.$results->data[$i]["stock_id"].'">Edit&hellip;</button></td>';
+				echo '<td><button onclick="window.location.href=\'/stock/view_stock.php?stock_id='.$results->data[$i]["stock_id"].'\'" title="View item '.$results->data[$i]["stock_id"].'">View&hellip;</button></td>'; 
+	        		        
+				echo "</tr>";        
         }
+        //while ($row = mysqli_fetch_assoc($listResult)) {
+          //echo "<tr>";
+            // $row is array... foreach( .. ) puts every element
+            // of $row to $cell variable
+            //foreach($row as $cell)
+              //echo "<td>$cell</td>";
+//
+//          echo '<td><button onclick="window.location.href=\'/stock/edit_stock.php?stock_id='.$row["stock_id"].'\'" title="Edit item '.$row["stock_id"].'">Edit&hellip;</button></td>';
+//	        echo '<td><button onclick="window.location.href=\'/stock/view_stock.php?stock_id='.$row["stock_id"].'\'" title="View item '.$row["stock_id"].'">View&hellip;</button></td>';
+          
+  //        echo "</tr>".PHP_EOL.PHP_EOL;
+   //     }
         echo "</table>".PHP_EOL;
 
-        mysqli_free_result($listResult);
-
-        mysqli_close($conn);
+//        mysqli_free_result($listResult);
+        
+        echo $Paginator->createLinks( $links, 'pagination pagination-sm' );
 ?>
-    </main>
+</main>
+
 <?php
   include $_SERVER[ 'DOCUMENT_ROOT' ] . '/includes/tail.php';
 ?>
