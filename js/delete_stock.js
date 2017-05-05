@@ -9,8 +9,8 @@
 
 function init(){
   // initalise form
-  var js_delete_stock = document.getElementById("delete_stock");
-  js_delete_stock.onsubmit = validate_stock;
+  //var js_delete_stock = document.getElementById("delete_stock");
+  //js_delete_stock.onsubmit = validate_stock;
   
   // initialise select fields
   $(document).ready(function() {
