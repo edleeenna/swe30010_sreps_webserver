@@ -29,7 +29,7 @@
 
 <?php
 
-//echo "<link rel='stylesheet' href='/resources/demos/style.css'>";
+echo "<link rel='stylesheet' href='/resources/demos/style.css'>";
 echo "<script>
   $( function() {
     $( '#datepicker' ).datepicker();
@@ -60,7 +60,14 @@ echo "</form>";
 echo "<br>";
 echo "</div>";
 
-
+while($row = mysqli_fetch_assoc($allSale)){ // loop to store the data in an associative array.
+     $php_sale_id[$index] = $row['orderline_stock_id'];
+     $php_sale_name[$index] = $row['stock_name'];
+     $php_orderline_qty[$index] = $row['orderline_qty'];
+     $php_orderline_price[$index] = $row['orderline_price'];
+     $php_orderline_total[$index] = $row['total'];
+     $index++;
+}
 
 
 
@@ -73,6 +80,9 @@ echo "<table  class=\"striped\" border=\"1\">";
         ."<th scope=\"col\">Stock Name</th>"
         ."<th scope=\"col\">Qty</th>"
         ."<th scope=\"col\">Price</th>"
+        ."<th scope=\"col\">Total</th>"
+        ."<th scope=\"col\">Edit</th>"
+        ."<th scope=\"col\">View</th>"
         //."<th scope=\"col\">Total</th>"
         ."</tr>";
 
@@ -86,9 +96,10 @@ echo "<table  class=\"striped\" border=\"1\">";
           echo "<td>", $row["stock_name"], "</td>";
           echo "<td>", $row["orderline_qty"], "</td>";
           echo "<td>", $row["orderline_price"], "</td>";
+          echo "<td>", "", "</td>";
 
-          /*echo '<td><button onclick="window.location.href=\'/stock/edit_stock.php?stock_id='.$row["stock_id"].'\'" title="Edit item '.$row["stock_id"].'">Edit&hellip;</button></td>';
-          echo '<td><button onclick="window.location.href=\'/stock/view_stock.php?stock_id='.$row["stock_id"].'\'" title="View item '.$row["stock_id"].'">View&hellip;</button></td>';*/
+          echo '<td><button onclick="window.location.href=\'/sales/edit_sale.php?sale_id='.$row["sale_id"].'\'" title="Edit item '.$row["sale_id"].'">Edit&hellip;</button></td>';
+          echo '<td><button onclick="window.location.href=\'/sales/view_sale.php?sale_id='.$row["sale_id"].'\'" title="View item '.$row["sale_id"].'">View&hellip;</button></td>';
           echo "</tr>";
 
         }
