@@ -42,7 +42,7 @@
     </form>
 <?php
   } elseif (isset($_GET['stock_id'])) {
-    if ($debug) echo '2) if isset($_GET[\'stock_id\']) section.<br>'.PHP_EOL;
+    if ($debug) echo /*'2) if isset($_GET[\'stock_id\']) section.<br>'.PHP_EOL; */
     $php_stock = get_stock($_GET['stock_id']);
     // onsubmit="return check_stock_details(this)"
 ?>
