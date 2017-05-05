@@ -1,13 +1,30 @@
-      <div class="container">
-        <div class="nav-wrapper">
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
+<div class="container">
+    <!-- Dropdown Structure -->
+    <ul id='StockDown' class='dropdown-content'>
+        <li><a href="/stock/" data-constrainwidth="false"><i class="material-icons">reorder</i>Manage Stock</a></li>
+        <li><a href="/stock/view_all_stock.php"><i class="material-icons">view_list</i>All Stock</a></li>
+        <li><a href="/stock/view_stock.php"><i class="material-icons">view_array</i>View Stock</a></li>
+        <li><a href="/stock/add_stock.php"><i class="material-icons">note_add</i>Add Stock</a></li>
+        <li><a href="/stock/edit_stock.php"><i class="material-icons">mode_edit</i>Edit Stock</a></li>
+        <li><a href="/stock/delete_stock.php" data-constrainwidth="false"><i class="material-icons">delete</i>Delete Stock</a></li>
+    </ul>
+    <ul id='SaleDown' class='dropdown-content'>
+        <li><a href="/Sale/" data-constrainwidth="false"><i class="material-icons">receipt</i>Manage Sales</a></li>
+        <li><a href="/stock/view_all_sales.php"><i class="material-icons">view_list</i>All Sales</a></li>
+        <li><a href="/stock/view_sale.php"><i class="material-icons">view_array</i>View Sale</a></li>
+        <li><a href="/stock/add_sale.php"><i class="material-icons">note_add</i>Add Sale</a></li>
+        <li><a href="/stock/edit_sale.php"><i class="material-icons">mode_edit</i>Edit Sale</a></li>
+    </ul>
+    <div class="nav-wrapper">
+        <!-- Dropdown Trigger -->
+        <ul class="right hide-on-med-and-down">
             <li><a href="/">Home</a></li>
-            <!-- <li><a href="/sales/add_sale.php">Quick Sale</a></li> -->
+            <li><a href='/stock/add_sales.php'>Quick Sale</a></li>
             <li><a href="/search/">Search</a></li>
-            <li><a href="/stock/">Manage Stock</a></li>
-            <li><a href="/sales/">Manage Sales</a></li>
+            <li><a class='dropdown-button'data-constrainwidth="false" data-hover="true" href='#' data-activates='StockDown'>Manage Stock<i class="material-icons right">arrow_drop_down</i></a></li>
+            <li><a class='dropdown-button'data-constrainwidth="false" data-hover="true" href='#' data-activates='SaleDown'>Manage Sales<i class="material-icons right">arrow_drop_down</i></a></li>
             <li><a href="/predictions.php">Predictions</a></li>
             <li><a href="/support/">Support</a></li>
-          </ul>
-        </div>
-      </div>
+        </ul>
+    </div>
+</div>
