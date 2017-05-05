@@ -32,10 +32,6 @@ function getPrice(qty, price){
     
 }
 
-$(document).ready(function() {
-    Materialize.updateTextFields();
-  });
-
 function init(){
   'use strict';
 
