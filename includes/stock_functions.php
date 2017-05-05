@@ -423,4 +423,35 @@ SQL;
     // return stock item details to calling section. Should be the Web Interface.
     return $php_stock;
   }
+
+  function delete_stock_item($php_stock_id) {
+    // Connect to database.
+    include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
+
+    // SQL to select all fields from the stock table, matching the specified stock_id.
+    $sql = <<<SQL
+      DELETE * FROM stock WHERE stock_id = $php_stock_id
+SQL;
+  
+    try{
+      // Query the database to acquire results and hand them to resultSet
+      $result = $conn->query($sql);
+    }
+    catch(Exception $e){
+      // Display error message details
+      echo 'Error fetching stock item details: '.$e->errorMessage();
+      // Stop running script
+      exit();
+    }
+
+    if ($result->num_rows == 0) echo "0 results";
+    if ($result->num_rows > 1) echo "Too many results";
+
+    $row = $result->fetch_assoc();
+
+    // Close connection to database.
+    $conn->close();
+    // return stock item details to calling section. Should be the Web Interface.
+    return $php_stock;
+  }
 ?>
