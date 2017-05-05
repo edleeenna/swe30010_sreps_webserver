@@ -52,7 +52,7 @@
             <legend>Add Sale Item</legend>
 		  <div class="input-field">
             <input type="text" id="html_sales_datetime" name="html_sales_datetime" class="validate">
-            <label for="html_sales_datetime">Sales Date/Time</label>
+            <label class="active" for="html_sales_datetime">Sales Date/Time</label>
           </div>
 		<div class="input-field">
               <input readonly type="text" id="html_stock_orderlines_id" name="html_stock_orderlines_id" class="validate" value="<?php echo $php_stock['id'];?>">
@@ -68,7 +68,7 @@
           </div>
 	 <div class="input-field">
             <input readonly type="text" id="html_orderlines_price" name="html_orderlines_price" class="validate">
-            <label for="html_orderlines_price">Sales Price</label>
+            <label class="active" for="html_orderlines_price">Sales Price. (Automatically calculated by quantity</label>
           </div>
            
           </fieldset>
