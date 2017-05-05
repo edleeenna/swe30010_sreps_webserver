@@ -60,6 +60,7 @@ echo "</form>";
 echo "<br>";
 echo "</div>";
 
+/*
 while($row = mysqli_fetch_assoc($allSale)){ // loop to store the data in an associative array.
      $php_sale_id[$index] = $row['orderline_stock_id'];
      $php_sale_name[$index] = $row['stock_name'];
@@ -68,7 +69,7 @@ while($row = mysqli_fetch_assoc($allSale)){ // loop to store the data in an asso
      $php_orderline_total[$index] = $row['total'];
      $index++;
 }
-
+*/
 
 
 
