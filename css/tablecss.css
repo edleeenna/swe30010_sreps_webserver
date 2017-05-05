@@ -1,10 +1,14 @@
-td {
-  max-width : 100px;
-  white-space : nowrap;
-  overflow : hidden;
-  text-overflow: ellipsis;
+table {
+    border-collapse: collapse;
+    width:100%;
 }
 
-td:hover {
-  max-width : initial;
+table td {
+}
+
+table td.shrink {
+    white-space:nowrap
+}
+table td.expand {
+    width: 99%
 }
