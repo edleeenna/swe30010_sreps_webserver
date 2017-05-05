@@ -16,7 +16,7 @@ function init(){
   $(document).ready(function() {
     $('select').material_select();
   });
-  // 
+ 
   //var js_submit_delete = document.getElementById("delete_item");
   //js_submit_delete.onclick = alert("Test button click.");
 }
