@@ -337,7 +337,7 @@ SQL;
 
     // SQL to select all fields from the stock table, matching the specified stock_id.
     $sql = <<<SQL
-      DELETE * FROM stock WHERE stock_id = $php_stock_id
+      DELETE FROM stock WHERE stock_id = $php_stock_id
 SQL;
   
     try{
@@ -351,14 +351,9 @@ SQL;
       exit();
     }
 
-    if ($result->num_rows == 0) echo "0 results";
-    if ($result->num_rows > 1) echo "Too many results";
-
-    $row = $result->fetch_assoc();
-
     // Close connection to database.
     $conn->close();
     // return stock item details to calling section. Should be the Web Interface.
-    return $php_stock;
+    //return $php_stock;
   }
 ?>
