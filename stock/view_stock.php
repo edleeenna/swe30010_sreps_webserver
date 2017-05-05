@@ -43,18 +43,22 @@
   else {
     $php_stock = get_stock($_GET['stock_id']);
 ?>
-    <div class="container">      
-      <div class="fixed-action-btn">
-        <a class="btn-floating btn-large" href="\stock\edit_stock.php?stock_id=<?= $php_stock['id'] ?>">
-          <i class="large material-icons">mode_edit</i>
-        </a>
-      </div>
+    <div class="container">  
+		
+		<div class="fixed-action-btn horizontal">
+		    <a class="btn-floating btn-large red" title="Menu"><i class="large material-icons">menu</i></a>
+		    <ul>
+		      <li><a class="btn-floating red darken-1" title="Delete" href="\stock\delete_stock.php?stock_id=<?= $php_stock['id'] ?>"><i class="material-icons">delete</i></a></li>
+		      <li><a class="btn-floating yellow" title="Edit" href="\stock\edit_stock.php?stock_id=<?= $php_stock['id'] ?>"><i class="material-icons">edit</i></a></li>
+		      <li><a class="btn-floating green" title="Export"><i class="material-icons">file_download</i></a></li>
+		    </ul>
+		  </div>    
              
       <p>Item ID: <span><?php echo $php_stock['id']; ?> </span><p>
       <p>Item Name: <span><?php echo $php_stock['name'];?> </span><p>
       <p>Item Description: <span><?php echo $php_stock['description'];?> </span><p>
       <p>Directions: <span><?php echo $php_stock['directions'];?> </span><p>
-      <p>Ingredients: <div class="white"><?php echo $php_stock['ingredients'];?> </div> <p>
+      <p>Ingredients: <?php echo $php_stock['ingredients'];?> <p>
       <p>Item Price: <span><?php echo $php_stock['price'];?> </span> <p>
       <p>Item Cost Price: <span><?php echo $php_stock['cost_price'];?> </span> <p>
       <p>Item Qty: <span><?php echo $php_stock['qty'];?> </span> <p>
