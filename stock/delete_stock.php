@@ -43,7 +43,7 @@
     $php_stock = get_stock($_GET['stock_id']);
 ?>
     <div class="container">      
-      <form id="delete_stock" action="\stock\delete_stock.php" method="post" onsubmit="return(confirm_del(<?php echo $php_stock['id'];?>));">
+      <form id="delete_stock" action="\stock\delete_stock.php" method="post" onsubmit="return confirm_del('<?php echo $php_stock['id'];?>');">
         <fieldset>
           <legend>Edit Stock Item</legend>
           <div class="input-field">
@@ -111,7 +111,9 @@
   elseif (isset($_POST['html_stock_id'])) {
     if (isset($GLOBALS['debug']) && ($GLOBALS['debug'])) echo "3) Display item deleted confirmation message.<br>".PHP_EOL;
       //$succ = delete_stock($_POST);
+    //$success = delete_stock_item($_POST['html_stock_id'])
     echo "Stock item with stock id: ".$php_stock['id']." was deleted.<br>".PHP_EOL;
+    echo "Stock item with stock id: ".$_POST['html_stock_id']." was deleted.<br>".PHP_EOL;
   }
 ?>
       </main>

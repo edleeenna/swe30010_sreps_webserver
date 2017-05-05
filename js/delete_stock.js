@@ -9,14 +9,14 @@
 
 function init(){
   // initalise form
-  var js_delete_stock = document.getElementById("delete_stock");
-  js_delete_stock.onsubmit = validate_stock;
+  //var js_delete_stock = document.getElementById("delete_stock");
+  //js_delete_stock.onsubmit = validate_stock;
   
   // initialise select fields
   $(document).ready(function() {
     $('select').material_select();
   });
-  // 
+ 
   //var js_submit_delete = document.getElementById("delete_item");
   //js_submit_delete.onclick = alert("Test button click.");
 }
