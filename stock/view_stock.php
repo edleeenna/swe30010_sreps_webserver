@@ -49,8 +49,7 @@
           <i class="large material-icons">mode_edit</i>
         </a>
       </div>
-      
-      <p>View Stock Item</p>          
+             
       <p>Item ID: <span><?php echo $php_stock['id']; ?> </span><p>
       <p>Item Name: <span><?php echo $php_stock['name'];?> </span><p>
       <p>Item Description: <span><?php echo $php_stock['description'];?> </span><p>
