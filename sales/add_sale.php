@@ -29,7 +29,7 @@
 
   //if (isset ($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {
   if (!isset($_POST['html_stock_id']) && !isset($_GET['stock_id'])) {
-    if ($debug) echo '1) if NOT isset($_POST[\'html_stock_id\']) AND NOT isset($_GET[\'stock_id\']) section.<br>'.PHP_EOL;
+    if ($debug) /*echo '1) if NOT isset($_POST[\'html_stock_id\']) AND NOT isset($_GET[\'stock_id\']) section.<br>'.PHP_EOL; */
 ?>
     <form id="sale_item" action="add_sale.php" method="get">
       <label>Select stock item for Sale.</label><br>
@@ -42,7 +42,7 @@
     </form>
 <?php
   } elseif (isset($_GET['stock_id'])) {
-    if ($debug) echo '2) if isset($_GET[\'stock_id\']) section.<br>'.PHP_EOL;
+    if ($debug) echo /*'2) if isset($_GET[\'stock_id\']) section.<br>'.PHP_EOL; */
     $php_stock = get_stock($_GET['stock_id']);
     // onsubmit="return check_stock_details(this)"
 ?>
@@ -52,7 +52,7 @@
             <legend>Add Sale Item</legend>
 		  <div class="input-field">
             <input type="text" id="html_sales_datetime" name="html_sales_datetime" class="validate">
-            <label for="html_sales_datetime">Sales Date/Time</label>
+            <label class="active" for="html_sales_datetime">Sales Date/Time</label>
           </div>
 		<div class="input-field">
               <input readonly type="text" id="html_stock_orderlines_id" name="html_stock_orderlines_id" class="validate" value="<?php echo $php_stock['id'];?>">
@@ -68,7 +68,7 @@
           </div>
 	 <div class="input-field">
             <input readonly type="text" id="html_orderlines_price" name="html_orderlines_price" class="validate">
-            <label for="html_orderlines_price">Sales Price</label>
+            <label class="active" for="html_orderlines_price">Sales Price. (Automatically calculated by quantity</label>
           </div>
            
           </fieldset>

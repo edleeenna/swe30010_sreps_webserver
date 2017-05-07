@@ -9,11 +9,11 @@
         <li><a href="/stock/delete_stock.php" data-constrainwidth="false"><i class="material-icons">delete</i>Delete Stock</a></li>
     </ul>
     <ul id='SaleDown' class='dropdown-content'>
-        <li><a href="/Sale/" data-constrainwidth="false"><i class="material-icons">receipt</i>Manage Sales</a></li>
-        <li><a href="/stock/view_all_sales.php"><i class="material-icons">view_list</i>All Sales</a></li>
-        <li><a href="/stock/view_sale.php"><i class="material-icons">view_array</i>View Sale</a></li>
-        <li><a href="/stock/add_sale.php"><i class="material-icons">note_add</i>Add Sale</a></li>
-        <li><a href="/stock/edit_sale.php"><i class="material-icons">mode_edit</i>Edit Sale</a></li>
+        <li><a href="/sales/" data-constrainwidth="false"><i class="material-icons">receipt</i>Manage Sales</a></li>
+        <li><a href="/sales/view_all_sales_.php"><i class="material-icons">view_list</i>All Sales</a></li>
+        <li><a href="/sales/view_sale.php"><i class="material-icons">view_array</i>View Sale</a></li>
+        <li><a href="/sales/add_sale.php"><i class="material-icons">note_add</i>Add Sale</a></li>
+        <li><a href="/sales/edit_sale.php"><i class="material-icons">mode_edit</i>Edit Sale</a></li>
     </ul>
     <div class="nav-wrapper">
         <!-- Dropdown Trigger -->
