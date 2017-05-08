@@ -61,7 +61,7 @@ while($row = mysqli_fetch_assoc($allSale)){ // loop to store the data in an asso
         <tr><th scope="col">Sale Id</th><th scope="col">Sale Date</th><th scope="col">Stock Id</th><th scope="col">Stock Name</th><th scope="col">Qty</th><th scope="col">Price</th><th scope="col">Total</th><th scope="col">Edit</th><th scope="col">View</th><th scope="col">Total</th></tr>
 <?php
   while ($row = mysqli_fetch_assoc($allSale)) {
-    echo "<tr>";
+    echo "        <tr>";
     echo "<td>", $row["sale_id"], "</td>";
     echo "<td>", $row["sale_datetime"], "</td>";
     echo "<td>", $row["orderline_stock_id"], "</td>";
