@@ -57,15 +57,15 @@
           </div>
              <div class="col s3">
             <img class="responsive-img materialboxed" src="/images/viewsinglestock.png" alt="how to nav to view all stock" />
-               <p>"</p>
+               <p>You should now be presented with options related to managing stock. From here you want to click on "View Stock".</p>
           </div>
              <div class="col s3">
             <img class="responsive-img materialboxed" src="/images/viewsinglestockitem.png" alt="how to view all stock" />
-               <p>.</p>
+               <p>On this page you will be able to select the item ID of the stock you want to view. Choose and item and click "submit". If you make a mistake, you can click on "reset" and start again</p>
           </div>
               <div class="col s3">
             <img class="responsive-img materialboxed" src="/images/viewsinglestockitem2.png" alt="how to view all stock" />
-               <p>.</p>
+               <p>You should now be able to view the details of the selected stock item</p>
           </div>
                      
         </div>
