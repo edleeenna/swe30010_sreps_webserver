@@ -25,7 +25,7 @@
       <div style="text-align:center">
         <p>
           <!-- <a class="waves-effect waves-light btn-large" href="/sales/add_sale.php">Quick Sale</a> -->
-          <a class="waves-effect waves-light btn-large" href="/search/">Search</a>
+          <a class="waves-effect waves-light btn-large" href="/search.php">Search</a>
           <a class="waves-effect waves-light btn-large" href="/stock/">Manage Stock</a>
           <a class="waves-effect waves-light btn-large" href="/sales/">Manage Sales</a>
         </p>

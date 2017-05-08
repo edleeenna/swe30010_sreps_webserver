@@ -33,7 +33,7 @@
 	if (!(isset ($_GET) && $_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET))) { // check if ?q= set
 ?>
      <div class="container"> 
-	     <form id="search" action="stock_search.php" method="get">
+	     <form id="search" action="search.php" method="get">
 	    	<div class="input-field">
 				<input id="q" type="text" name="q">
 				<label for="q">Enter Search Query</label>
@@ -71,7 +71,7 @@ SQL;
 ?>
 	<div class="container"> 	 
 	  	<p>
-	  		<a class="btn-floating btn-large waves-effect waves-light" href="stock_search.php" title="Return to Search Home"><i class="material-icons">keyboard_backspace</i></a>
+	  		<a class="btn-floating btn-large waves-effect waves-light" href="search.php" title="Return to Search Home"><i class="material-icons">keyboard_backspace</i></a>
 	  		<a>Search: <?php echo $_GET['q'] ?></a>
 	  	</p>
 	  	
