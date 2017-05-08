@@ -8,7 +8,10 @@
   
   // Variable to assign extra javascript files into the head of the page. just the file name needs to go in the quotes.
   // All files should reside in the "js" folder.
-  $extra_js = array("jquery-1.12.4.js", "jquery-ui.js", "display_sale.js");
+  //$extra_js = array("jquery-1.12.4.js", "jquery-ui.js", "display_sale.js");
+  $extra_js = array("jquery-ui.js", "display_sale.js");
+  //$extra_js = array("jquery-1.12.4.js", "display_sale.js");
+  //$extra_js = array("jquery-1.12.4.js", "jquery-ui.js");
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/head.php';
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/nav.php';
 ?>    
