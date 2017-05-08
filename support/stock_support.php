@@ -129,23 +129,23 @@
             </div>
           
           <div class="row">
-          <div class="col s2.5">
+          <div class="col s2">
             <img class="responsive-img materialboxed" src="/images/navtomanagestock.png" alt="how to nav to managestock" />
             <p>From the home page, click on "Manage Stock" as shown in the image above. This will take you to the "Manage Stock" page and will present you with a few options to choose from</p>
           </div>
-             <div class="col s2.5">
+             <div class="col s2">
             <img class="responsive-img materialboxed" src="/images/navtodeletestock.png" alt="how to nav to view all stock" />
                <p>You should now be presented with options related to managing stock. From here you want to click on "Delete Stock".</p>
           </div>
-             <div class="col s2.5">
+             <div class="col s2">
             <img class="responsive-img materialboxed" src="/images/selectitemtodelete.png" alt="how to view all stock" />
                <p>On this page you will be able to select the item ID of the stock you want to Delete. Choose and item and click "submit". If you make a mistake, you can click on "reset" and start again</p>
           </div>
-              <div class="col s2.5">
+              <div class="col s2">
             <img class="responsive-img materialboxed" src="/images/ConfirmDelete.png" alt="how to view all stock" />
                <p>You should now be able to view the details of the selected stock item</p>
           </div>
-             <div class="col s2.5">
+             <div class="col s2">
             <img class="responsive-img materialboxed" src="/images/ConfirmDelete.png" alt="how to view all stock" />
                <p>You should now be able to view the details of the selected stock item</p>
           </div>
