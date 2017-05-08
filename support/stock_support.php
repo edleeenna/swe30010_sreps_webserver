@@ -142,12 +142,12 @@
                <p>On this page you will be able to select the item ID of the stock you want to Delete. Choose and item and click "submit". If you make a mistake, you can click on "reset" and start again</p>
           </div>
               <div class="col s2">
-            <img class="responsive-img materialboxed" src="/images/ConfirmDelete.png" alt="how to view all stock" />
-               <p>You should now be able to view the details of the selected stock item</p>
+            <img class="responsive-img materialboxed" src="/images/deleteitem.png" alt="how to view all stock" />
+               <p>Here you should be able to view the item details of the stock you would like to delete. Click on "deleete" to delete the stock item or "reset" if you make a mistake</p>
           </div>
              <div class="col s2">
             <img class="responsive-img materialboxed" src="/images/ConfirmDelete.png" alt="how to view all stock" />
-               <p>You should now be able to view the details of the selected stock item</p>
+               <p>After clicking on the delete button, an alert will appear to confirm deletion. Click "ok" to confirm or "cancel" to cancel.</p>
           </div>
                      
         </div>
