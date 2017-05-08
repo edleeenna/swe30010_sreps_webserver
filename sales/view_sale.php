@@ -1,4 +1,7 @@
 <?php
+  //$debug = true;
+  $debug = false;
+  
   // Variable to set the local (current) page title [NOT Site Title].
   $pageTitle = "View Sale";
 
@@ -21,6 +24,7 @@
     header("Location:/sales/view_sale.php?sale_id=".$_POST['html_sale_id']);
   } 
   elseif (!(isset ($_GET) && $_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET))) { // change post to get and display as ?stock_id= not ?html_stock_id=
+    if (isset($GLOBALS['debug']) && ($GLOBALS['debug'])) echo "Get Stock Item to view"<br>".PHP_EOL;
 ?>
     <form id="stock_item" action="view_sale.php" method="post">
       <label>
@@ -37,11 +41,12 @@
 <?php
   } 
   else {
+    if (isset($GLOBALS['debug']) && ($GLOBALS['debug'])) echo "View a sale<br>".PHP_EOL;
     $php_sale = getSale($_GET['sale_id']);
 ?>
     <div class="container">     
       <div class="fixed-action-btn">
-        <a class="btn-floating btn-large" href="\sales\edit_sale.php?sale_id=<? echo $php_sale['id'];?>">
+        <a class="btn-floating btn-large" href="\sales\edit_sale.php?sale_id=<?php echo $php_sale['id'];?>">
           <i class="large material-icons">mode_edit</i>
         </a>
       </div>
