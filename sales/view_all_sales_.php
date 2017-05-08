@@ -30,14 +30,11 @@
 <?php
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
   // Older query
-  $allSaleQuery = "select sale_id, sale_datetime, ol.orderline_stock_id, st.stock_name, ol.orderline_qty, ol.orderline_price FROM sales sl
+  /* $allSaleQuery = "select sale_id, sale_datetime, ol.orderline_stock_id, st.stock_name, ol.orderline_qty, ol.orderline_price FROM sales sl
   INNER JOIN orderlines ol ON ol.orderline_sale_id = sl.sale_id
   INNER JOIN stock st ON st.stock_id = ol.orderline_stock_id"; /* */
   // Newer query
-  /*
-  $allSaleQuery = "select sale_id, sale_datetime,  FROM sales
-  INNER JOIN orderlines ol ON ol.orderline_sale_id = sl.sale_id
-  INNER JOIN stock st ON st.stock_id = ol.orderline_stock_id"; /* */
+  $allSaleQuery = "SELECT sale_id, sale_datetime, SUM(orderline_qty * orderline_price) AS Total FROM sales INNER JOIN orderlines ON sale_id = orderline_sale_id GROUP BY sale_id"; /* */
   $allSale = mysqli_query($conn, $allSaleQuery);
 ?>
       <div id='selectdate' class='selectdate'>
@@ -61,17 +58,18 @@ while($row = mysqli_fetch_assoc($allSale)){ // loop to store the data in an asso
 */
 ?>
       <table  class="striped" border="1">
-        <tr><th scope="col">Sale Id</th><th scope="col">Sale Date</th><th scope="col">Stock Id</th><th scope="col">Stock Name</th><th scope="col">Qty</th><th scope="col">Price</th><th scope="col">Total</th><th scope="col">Edit</th><th scope="col">View</th><th scope="col">Total</th></tr>
+        <tr><th scope="col">Sale Id</th><th scope="col">Sale Date</th><th scope="col">Total</th><th scope="col">Edit</th><th scope="col">View</th></tr>
 <?php
+  //      <tr><th scope="col">Sale Id</th><th scope="col">Sale Date</th><th scope="col">Stock Id</th><th scope="col">Stock Name</th><th scope="col">Qty</th><th scope="col">Price</th><th scope="col">Total</th><th scope="col">Edit</th><th scope="col">View</th><th scope="col">Total</th></tr>
   while ($row = mysqli_fetch_assoc($allSale)) {
     echo "        <tr>";
     echo "<td>", $row["sale_id"], "</td>";
     echo "<td>", $row["sale_datetime"], "</td>";
-    echo "<td>", $row["orderline_stock_id"], "</td>";
-    echo "<td>", $row["stock_name"], "</td>";
-    echo "<td>", $row["orderline_qty"], "</td>";
-    echo "<td>", $row["orderline_price"], "</td>";
-    echo "<td>", "", "</td>";
+    //echo "<td>", $row["orderline_stock_id"], "</td>";
+    //echo "<td>", $row["stock_name"], "</td>";
+    //echo "<td>", $row["orderline_qty"], "</td>";
+    //echo "<td>", $row["orderline_price"], "</td>";
+    echo "<td>", $row["Total"], "</td>";
 
     echo '<td><button onclick="window.location.href=\'/sales/edit_sale.php?sale_id='.$row["sale_id"].'\'" title="Edit item '.$row["sale_id"].'">Edit&hellip;</button></td>';
     echo '<td><button onclick="window.location.href=\'/sales/view_sale.php?sale_id='.$row["sale_id"].'\'" title="View item '.$row["sale_id"].'">View&hellip;</button></td>';
