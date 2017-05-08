@@ -1,5 +1,5 @@
 <?php
-  $debug = true;
+  //$debug = true;
   //$debug = false;
   
   // Variable to set the local (current) page title [NOT Site Title].
