@@ -89,6 +89,7 @@ SQL;
       $php_sale_name[$index] = $row['stock_name'];
       $php_orderline_qty[$index] = $row['orderline_qty'];
       $php_orderline_price[$index] = $row['orderline_price'];
+      $php_orderline_subtotal[$index] = $row['subtotal'];
       $php_orderline_total[$index] += $row['subtotal'];
       $index++;
     }
@@ -104,6 +105,7 @@ SQL;
     $php_sale['stock_name']          = $php_sale_name;
     $php_sale['orderline_qty']       = $php_orderline_qty;
     $php_sale['orderline_price']     = $php_orderline_price;
+    $php_sale['orderline_subtotal']  = $php_orderline_subtotal;
     $php_sale['orderline_total']     = $php_orderline_total;
 
     // Close connection to database.
