@@ -8,6 +8,7 @@ class Paginator {
 	private $_query;
 	private $_total;
 
+	// executes an initial query to the database to obtain the total number of rows returned in the query
 	public function __construct( $conn, $query ) { 
 	    $this->_conn = $conn;
 	    $this->_query = $query;
@@ -47,40 +48,48 @@ class Paginator {
 	    return $result;
 	}
 	
-	public function createLinks( $links, $list_class ) {
+	public function createLinks( $links, $list_class, $query = '' ) {
 	    if ( $this->_limit == 'all' ) {
 	        return '';
 	    }
+	 
+	 	$class_default = 'waves-effect';
+	 	$class_disabled = 'disabled';
+	 	$class_active = 'active';
 	 
 	    $last       = ceil( $this->_total / $this->_limit );
 	 
 	    $start      = ( ( $this->_page - $links ) > 0 ) ? $this->_page - $links : 1;
 	    $end        = ( ( $this->_page + $links ) < $last ) ? $this->_page + $links : $last;
 	 
-	    $html       = '<ul class="' . $list_class . '">';
+	 	$html       = '<!-- Pagination links -->'.PHP_EOL;
+	    $html       .= '<ul class="' . $list_class . '">'.PHP_EOL;
 	 
-	    $class      = ( $this->_page == 1 ) ? "disabled" : "";
-	    $html       .= '<li class="' . $class . '"><a href="?limit=' . $this->_limit . '&page=' . ( $this->_page - 1 ) . '">&laquo;</a></li>';
+	    $class      = ( $this->_page == 1 ) ? $class_disabled : $class_default;
+	    $html       .= '<li class="'.$class.'"><a href="?'.(( $query != '' ) ? ($query.'&amp;') : '').'page='.( 1 ).'"><i class="material-icons">first_page</i></a></li>'.PHP_EOL;	                // jump to start
+	    $html       .= '<li class="'.$class.'"><a href="?'.(( $query != '' ) ? ($query.'&amp;') : '').'page='.( $this->_page - 1 ).'"><i class="material-icons">chevron_left</i></a></li>'.PHP_EOL;    // back one page
 	 
 	    if ( $start > 1 ) {
-	        $html   .= '<li><a href="?limit=' . $this->_limit . '&page=1">1</a></li>';
-	        $html   .= '<li class="disabled"><span>...</span></li>';
+	        $html   .= '<li class="'.$class.'"><a href="?'.(( $query != '' ) ? ($query.'&amp;') : '').'page=1">1</a></li>'.PHP_EOL;
+	        $html   .= '<li class="disabled"><span>...</span></li>'.PHP_EOL;
 	    }
 	 
 	    for ( $i = $start ; $i <= $end; $i++ ) {
-	        $class  = ( $this->_page == $i ) ? "active" : "";
-	        $html   .= '<li class="' . $class . '"><a href="?limit=' . $this->_limit . '&page=' . $i . '">' . $i . '</a></li>';
+	        $class  = ( $this->_page == $i ) ? $class_active : $class_default;
+	        $html   .= '<li class="'.$class.'"><a href="?'.(( $query != '' ) ? ($query.'&amp;') : '').'page='.$i.'">'.$i.'</a></li>'.PHP_EOL;
 	    }
 	 
 	    if ( $end < $last ) {
-	        $html   .= '<li class="disabled"><span>...</span></li>';
-	        $html   .= '<li><a href="?limit=' . $this->_limit . '&page=' . $last . '">' . $last . '</a></li>';
+	        $html   .= '<li class="disabled"><span>...</span></li>'.PHP_EOL;
+	        $html   .= '<li class="'.$class.'"><a href="?'.(( $query != '' ) ? ($query.'&amp;') : '').'page='.$last.'">'.$last.'</a></li>'.PHP_EOL;
 	    }
 	 
-	    $class      = ( $this->_page == $last ) ? "disabled" : "";
-	    $html       .= '<li class="' . $class . '"><a href="?limit=' . $this->_limit . '&page=' . ( $this->_page + 1 ) . '">&raquo;</a></li>';
+	    $class      = ( $this->_page == $last ) ? $class_disabled : $class_default;
+	    $html       .= '<li class="'.$class.'"><a href="?'.(( $query != '' ) ? ($query.'&amp;') : '').'page='.( $this->_page + 1 ).'"><i class="material-icons">chevron_right</i></a></li>'.PHP_EOL;        // forward one page  
+	    $html       .= '<li class="'.$class.'"><a href="?'.(( $query != '' ) ? ($query.'&amp;') : '').'page='.( $last ).'"><i class="material-icons">last_page</i></a></li>'.PHP_EOL;                    // jump to end
+
 	 
-	    $html       .= '</ul>';
+	    $html       .= '</ul>'.PHP_EOL;
 	 
 	    return $html;
 	}
