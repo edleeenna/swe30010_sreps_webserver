@@ -1,6 +1,6 @@
 <?php
-  //$debug = true;
-  $debug = false;
+  $debug = true;
+  //$debug = false;
   
   // Variable to set the local (current) page title [NOT Site Title].
   $pageTitle = "View Sale";
@@ -19,6 +19,8 @@
     </nav>
     <main>
 <?php
+  if (isset($GLOBALS['debug']) && ($GLOBALS['debug'])) echo "Debug check 1<br>".PHP_EOL;
+
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/sale_functions.php';
   if (isset ($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {  // no ?stock_id= present
     header("Location:/sales/view_sale.php?sale_id=".$_POST['html_sale_id']);
@@ -27,10 +29,7 @@
     if (isset($GLOBALS['debug']) && ($GLOBALS['debug'])) echo "Get Stock Item to view<br>".PHP_EOL;
 ?>
     <form id="stock_item" action="view_sale.php" method="post">
-      <label>
-        Select an Order to view.
-      </label><br>
-      
+      <label>Select an Order to view.</label><br>
       <select class="browser-default" name="html_sale_id">
         <option value="" disabled selected>Select an Order</option>
         <?php getSaleID(); ?>
@@ -54,29 +53,30 @@
       <h5>Sale ID: <span><?php echo $php_sale['sale_id']; ?> </span> </h5>
       <h5>Sale Date: <span><?php echo $php_sale['sale_datetime'];?> </span> </h5>
       <br> 
-      <table  class="striped" border="1">
+      <table class="striped" border="1">
         <tr><th scope="col">Stock ID</th><th scope="col">Stock Name</th><th scope="col">Qty</th><th scope="col">Price</th><th scope="col">Subtotal</th></tr>
 <?php
-  if (!empty($php_sale['orderline_stock_id'])){
-    foreach( $php_sale['orderline_stock_id'] as $index => $php_sale_id ) {
-//   print($php_sale_id.$php_sale_name[$index]);
-  // echo "<p>Stock ID: ".$php_sale_id." Stock Name: ".$php_sale['stock_name'][$index]."</p>";
-      echo "<tr>";
-      echo "<td>", $php_sale_id, "</td>";
-      echo "<td>", $php_sale['stock_name'][$index], "</td>";
-      echo "<td>", $php_sale['orderline_qty'][$index], "</td>";
-      echo "<td>", $php_sale['orderline_price'][$index], "</td>";
-      echo "<td>", $php_sale['subtotal'][$index], "</td>";
-    }
+    if (!empty($php_sale['orderline_stock_id'])){
+      foreach( $php_sale['orderline_stock_id'] as $index => $php_sale_id ) {
+  //   print($php_sale_id.$php_sale_name[$index]);
+    // echo "<p>Stock ID: ".$php_sale_id." Stock Name: ".$php_sale['stock_name'][$index]."</p>";
+        echo "<tr>";
+        echo "<td>", $php_sale_id, "</td>";
+        echo "<td>", $php_sale['stock_name'][$index], "</td>";
+        echo "<td>", $php_sale['orderline_qty'][$index], "</td>";
+        echo "<td>", $php_sale['orderline_price'][$index], "</td>";
+        echo "<td>", $php_sale['subtotal'][$index], "</td>";
+      }
 ?>
-        <tr><th> Total </th><td></td><td></td><td></td><th><?php array_sum($php_sale['orderline_total']);?></th></tr>
+        <tr><th>Total</th><td></td><td></td><td></td><th><?php echo array_sum($php_sale['orderline_total']);?></th></tr>
 <?php
-  }
+    }
 ?>
       </table>
     </div>
 <?php
   }
+  if (isset($GLOBALS['debug']) && ($GLOBALS['debug'])) echo "Debug check 2<br>".PHP_EOL;
 ?>
     </main>
 <?php
