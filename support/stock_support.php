@@ -71,10 +71,33 @@
         </div>
        
      
-      <h3>Edit Stock Item</h3>
-      Change this text later. Screen shot, with description of what the parts are and for. Description of how you would use them.
-      Perhaps take them through from start to finish, how to do a complete run.
-     <div class="row">
+    <div class="row">
+          <div class="col s12">
+             <h3>Edit Stock Item</h3>
+            <p>This will take you through how to edit stock</p>
+            </div>
+          
+          <div class="row">
+          <div class="col s3">
+            <img class="responsive-img materialboxed" src="/images/navtomanagestock.png" alt="how to nav to add stock" />
+            <p>From the home page, click on "Manage Stock" as shown in the image above. This will take you to the "Manage Stock" page and will present you with a few options to choose from</p>
+          </div>
+             <div class="col s3">
+            <img class="responsive-img materialboxed" src="/images/navtoeditstock.png" alt="how to nav to add stock" />
+               <p>On this page you will see a list of buttons that will take you to various pages of the website related to stock. From here, you will want to click on the second button from the right as seen in the image above: "Edit Stock"</p>
+          </div>
+             <div class="col s3">
+            <img class="responsive-img materialboxed" src="/images/.png" alt="how to add stock" />
+               <img class="responsive-img materialboxed" src="/images/selectitemtoedit.png" alt="how to add stock"/>
+               <p></p>
+          </div>
+             <div class="col s3">
+            <img class="responsive-img materialboxed" src="/images/editstockitem.png" alt="stock added"/>
+               <p></p>
+          </div>
+                     
+        </div>
+         <div class="row">
           <div class="col s12">
              <h3>Add Stock Item</h3>
             <p>This will take you through how to navigate to "add stock".</p>
@@ -83,7 +106,7 @@
           <div class="row">
           <div class="col s3">
             <img class="responsive-img materialboxed" src="/images/navtomanagestock.png" alt="how to nav to add stock" />
-            <p>From the home page, click on "Add Stock" as shown in the image above. This will take you to the "Manage Stock" page and will present you with a few options to choose from</p>
+            <p>From the home page, click on "Manage Stock" as shown in the image above. This will take you to the "Manage Stock" page and will present you with a few options to choose from</p>
           </div>
              <div class="col s3">
             <img class="responsive-img materialboxed" src="/images/navtoaddstock.png" alt="how to nav to add stock" />
