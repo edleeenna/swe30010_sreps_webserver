@@ -39,7 +39,7 @@ function getSale($sale_id) {
     // SQL to select all fields from the stock table, matching the specified stock_id.
     // New Select
     $saleSQL = <<<SQL
-    SELECT sale_id, sale_datetime, orderline_qty, orderline_price, orderline_qty * orderline_price AS subtotal FROM `sales` INNER JOIN orderlines ON sale_id = orderline_sale_id WHERE sale_id = $sale_id
+    SELECT sale_id, sale_datetime, orderline_stock_id, orderline_qty, orderline_price, orderline_qty * orderline_price AS subtotal FROM `sales` INNER JOIN orderlines ON sale_id = orderline_sale_id WHERE sale_id = $sale_id
 SQL; /* */
     // Old Select
     /* $saleSQL = <<<SQL
