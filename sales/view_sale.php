@@ -64,7 +64,7 @@
       echo "<td>", $php_sale['subtotal'][$index], "</td>";
     }
 ?>
-        <tr><th> Total </th><td></td><td></td><td></td><th><?php array_sum($php_sale['orderline_total'])?></th></tr>
+        <tr><th> Total </th><td></td><td></td><td></td><th><?php array_sum($php_sale['orderline_total']);?></th></tr>
 <?php
   }
 ?>

@@ -84,36 +84,31 @@ foreach( $php_sale_id as $index => $php_sale_id ) {
 }
 */
 
-while($row = mysqli_fetch_assoc($result)){ // loop to store the data in an associative array.
-     $php_sale_id[$index] = $row['orderline_stock_id'];
-     $php_sale_name[$index] = $row['stock_name'];
-     $php_orderline_qty[$index] = $row['orderline_qty'];
-     $php_orderline_price[$index] = $row['orderline_price'];
-     $php_orderline_total[$index] = $row['total'];
-     $index++;
-}
-
-
+  while($row = mysqli_fetch_assoc($result)){ // loop to store the data in an associative array.
+    $php_sale_id[$index] = $row['orderline_stock_id'];
+    $php_sale_name[$index] = $row['stock_name'];
+    $php_orderline_qty[$index] = $row['orderline_qty'];
+    $php_orderline_price[$index] = $row['orderline_price'];
+    $php_orderline_total[$index] = $row['total'];
+    $index++;
+  }
 
     $sale = $conn->query($saleSQL);
     $row = $sale->fetch_assoc();
 
     $php_sale = array();
     //print($php_sale_id);
-    $php_sale['sale_id']                  = $row['sale_id'];
-    $php_sale['sale_datetime']                = $row['sale_datetime'];
-    $php_sale['orderline_stock_id']         = $php_sale_id;
+    $php_sale['sale_id']             = $row['sale_id'];
+    $php_sale['sale_datetime']       = $row['sale_datetime'];
+    $php_sale['orderline_stock_id']  = $php_sale_id;
     $php_sale['stock_name']          = $php_sale_name;
-    $php_sale['orderline_qty']         = $php_orderline_qty;
-    $php_sale['orderline_price']               = $php_orderline_price;
-    $php_sale['orderline_total']        = $php_orderline_total;
+    $php_sale['orderline_qty']       = $php_orderline_qty;
+    $php_sale['orderline_price']     = $php_orderline_price;
+    $php_sale['orderline_total']     = $php_orderline_total;
 
     // Close connection to database.
     $conn->close();
     // return stock item details to calling section. Should be the Web Interface.
     return $php_sale;
   }
-
-
-
 ?>
