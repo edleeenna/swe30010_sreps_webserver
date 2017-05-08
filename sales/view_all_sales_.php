@@ -25,19 +25,6 @@
         } );
       </script>
 <?php
-/*
-echo "<link rel='stylesheet' href='/resources/demos/style.css'>";
-echo "<script>
-  $( function() {
-    $( '#datepicker' ).datepicker();
-  } );
-  </script>";
-echo "<script>
-  $( function() {
-    $( '#datepicker1' ).datepicker();
-  } );
-  </script>"; /* */
-
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
   // Older query
   $allSaleQuery = "select sale_id, sale_datetime, ol.orderline_stock_id, st.stock_name, ol.orderline_qty, ol.orderline_price FROM sales sl
@@ -60,16 +47,6 @@ echo "<script>
       </div>
 <?php
 /*
-echo "<div id='selectdate' class='selectdate'>";
-echo "<form method='get'>";
-echo " Select date from &#9; <input type='text' id='datepicker' name='datepicker' class='j-datepicker' placeholder='Select' value=''>";
-echo "&#9; to <input type='text' id='datepicker1' name='datepicker' class='j-datepicker' placeholder='Select' value=''>";
-echo " &#9; <input type='button' id='submit' value='View Report' onClick='formValidation()' >";
-echo "</form>";
-echo "<br>";
-echo "</div>"; /* */
-
-/*
 while($row = mysqli_fetch_assoc($allSale)){ // loop to store the data in an associative array.
      $php_sale_id[$index] = $row['orderline_stock_id'];
      $php_sale_name[$index] = $row['stock_name'];
@@ -79,20 +56,10 @@ while($row = mysqli_fetch_assoc($allSale)){ // loop to store the data in an asso
      $index++;
 }
 */
-  echo "<table  class=\"striped\" border=\"1\">";
-  echo "<tr>"
-    ."<th scope=\"col\">Sale Id</th>"
-    ."<th scope=\"col\">Sale Date</th>"
-    ."<th scope=\"col\">Stock Id</th>"
-    ."<th scope=\"col\">Stock Name</th>"
-    ."<th scope=\"col\">Qty</th>"
-    ."<th scope=\"col\">Price</th>"
-    ."<th scope=\"col\">Total</th>"
-    ."<th scope=\"col\">Edit</th>"
-    ."<th scope=\"col\">View</th>"
-    //."<th scope=\"col\">Total</th>"
-    ."</tr>";
-
+?>
+      <table  class="striped" border="1">
+        <tr><th scope="col">Sale Id</th><th scope="col">Sale Date</th><th scope="col">Stock Id</th><th scope="col">Stock Name</th><th scope="col">Qty</th><th scope="col">Price</th><th scope="col">Total</th><th scope="col">Edit</th><th scope="col">View</th><th scope="col">Total</th></tr>
+<?php
   while ($row = mysqli_fetch_assoc($allSale)) {
     echo "<tr>";
     echo "<td>", $row["sale_id"], "</td>";
@@ -105,10 +72,11 @@ while($row = mysqli_fetch_assoc($allSale)){ // loop to store the data in an asso
 
     echo '<td><button onclick="window.location.href=\'/sales/edit_sale.php?sale_id='.$row["sale_id"].'\'" title="Edit item '.$row["sale_id"].'">Edit&hellip;</button></td>';
     echo '<td><button onclick="window.location.href=\'/sales/view_sale.php?sale_id='.$row["sale_id"].'\'" title="View item '.$row["sale_id"].'">View&hellip;</button></td>';
-    echo "</tr>";
+    echo "</tr>".PHP_EOL;
   }
-  echo "</table>";
-
+?>
+      </table>
+<?php
   mysqli_free_result($allSale);
 
   mysqli_close($conn);
