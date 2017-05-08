@@ -24,7 +24,7 @@
         <div class="row">
           <div class="col s12">
              <h3>View All Stock Items</h3>
-            <p>This will take you through how to navigate how to view all stock from the database.</p>
+            <p>This will take you through how to navigate to and how to view all stock from the database.</p>
             </div>
           
           <div class="row">
@@ -44,11 +44,33 @@
           </div>
                      
         </div>
-     
+       <div class="row">
+          <div class="col s12">
+             <h3>View Single Stock Item</h3>
+            <p>This will take you through how to navigate to view a single stock and how to select an item to View.</p>
+            </div>
+          
+          <div class="row">
+          <div class="col s3">
+            <img class="responsive-img materialboxed" src="/images/navtomanagestock.png" alt="how to nav to managestock" />
+            <p>From the home page, click on "Manage Stock" as shown in the image above. This will take you to the "Manage Stock" page and will present you with a few options to choose from</p>
+          </div>
+             <div class="col s3">
+            <img class="responsive-img materialboxed" src="/images/viewsinglestock.png" alt="how to nav to view all stock" />
+               <p>"</p>
+          </div>
+             <div class="col s3">
+            <img class="responsive-img materialboxed" src="/images/viewsinglestockitem.png" alt="how to view all stock" />
+               <p>.</p>
+          </div>
+              <div class="col s3">
+            <img class="responsive-img materialboxed" src="/images/viewsinglestockitem2.png" alt="how to view all stock" />
+               <p>.</p>
+          </div>
+                     
+        </div>
        
-      <h3>View Stock Item</h3>
-      Change this text later. Screen shot, with description of what the parts are and for. Description of how you would use them.
-      Perhaps take them through from start to finish, how to do a complete run.
+     
       <h3>Edit Stock Item</h3>
       Change this text later. Screen shot, with description of what the parts are and for. Description of how you would use them.
       Perhaps take them through from start to finish, how to do a complete run.
