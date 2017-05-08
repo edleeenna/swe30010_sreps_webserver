@@ -87,13 +87,12 @@
                <p>On this page you will see a list of buttons that will take you to various pages of the website related to stock. From here, you will want to click on the second button from the right as seen in the image above: "Edit Stock"</p>
           </div>
              <div class="col s3">
-            <img class="responsive-img materialboxed" src="/images/.png" alt="how to add stock" />
                <img class="responsive-img materialboxed" src="/images/selectitemtoedit.png" alt="how to add stock"/>
-               <p></p>
+               <p>From here you will be able select the ID of a stock item you would like to edit. Choose and item and click "edit". If you make a mistake, click "reset" to try again.</p>
           </div>
              <div class="col s3">
             <img class="responsive-img materialboxed" src="/images/editstockitem.png" alt="stock added"/>
-               <p></p>
+               <p>On this page, you will be able to see the fields of the stock item. Click on the field you'd like to change to edit it and click submit. If you make a mistake, "reset" to try again.</p>
           </div>
                      
         </div>
