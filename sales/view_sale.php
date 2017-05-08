@@ -41,11 +41,11 @@
 ?>
     <div class="container">     
       <div class="fixed-action-btn">
-        <a class="btn-floating btn-large" href="\sales\edit_sale.php?sale_id=<?= $php_sale['id'] ?>">
+        <a class="btn-floating btn-large" href="\sales\edit_sale.php?sale_id=<? echo $php_sale['id'];?>">
           <i class="large material-icons">mode_edit</i>
         </a>
       </div>
-       <br>       
+      <br>       
       <h5>Sale ID: <span><?php echo $php_sale['sale_id']; ?> </span> </h5>
       <h5>Sale Date: <span><?php echo $php_sale['sale_datetime'];?> </span> </h5>
       <br> 
