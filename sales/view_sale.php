@@ -24,7 +24,7 @@
     header("Location:/sales/view_sale.php?sale_id=".$_POST['html_sale_id']);
   } 
   elseif (!(isset ($_GET) && $_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET))) { // change post to get and display as ?stock_id= not ?html_stock_id=
-    if (isset($GLOBALS['debug']) && ($GLOBALS['debug'])) echo "Get Stock Item to view"<br>".PHP_EOL;
+    if (isset($GLOBALS['debug']) && ($GLOBALS['debug'])) echo "Get Stock Item to view<br>".PHP_EOL;
 ?>
     <form id="stock_item" action="view_sale.php" method="post">
       <label>
