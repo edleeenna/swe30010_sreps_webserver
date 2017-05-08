@@ -92,19 +92,23 @@ SQL;
 				echo "</tr>".PHP_EOL;
 			
 			echo '  <!-- table data -->'.PHP_EOL;
-			for( $i = 0; $i < count( $results->data ); $i++ ) {
-			echo "  <tr>";
-			
-			foreach($results->data[$i] as $cell) {
-				echo "<td>".$cell."</td>";
+			if ( $results->total > 0) {
+				for( $i = 0; $i < count( $results->data ); $i++ ) {
+				echo "  <tr>";
+				
+				foreach($results->data[$i] as $cell) {
+					echo "<td>".$cell."</td>";
+				}
+				
+				echo '<td><a class="waves-effect waves-light btn" href="/stock/edit_stock.php?stock_id='.$results->data[$i]["stock_id"].'" title="Edit item '.$results->data[$i]["stock_id"].'">Edit</a></td>';
+				echo '<td><a class="waves-effect waves-light btn" href="/stock/view_stock.php?stock_id='.$results->data[$i]["stock_id"].'" title="View item '.$results->data[$i]["stock_id"].'">View</a></td>';
+		
+				echo "</tr>".PHP_EOL;        
+				}
+			} else {
+				echo '<td>Zero results found.</td>';
+				
 			}
-			
-			echo '<td><a class="waves-effect waves-light btn" href="/stock/edit_stock.php?stock_id='.$results->data[$i]["stock_id"].'" title="Edit item '.$results->data[$i]["stock_id"].'">Edit</a></td>';
-			echo '<td><a class="waves-effect waves-light btn" href="/stock/view_stock.php?stock_id='.$results->data[$i]["stock_id"].'" title="View item '.$results->data[$i]["stock_id"].'">View</a></td>';
-	
-			echo "</tr>".PHP_EOL;        
-			}
-
 		echo '</table>'.PHP_EOL.PHP_EOL;
 
 	echo '<div class="center-align">'.PHP_EOL;

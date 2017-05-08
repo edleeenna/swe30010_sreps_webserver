@@ -43,13 +43,14 @@ class Paginator {
 	    $result->total  = $this->_total;
 	    
 	    $result->fields = $fields;
-	    $result->data   = $results;
+	    $result->data   = (isset($results)) ? $results : '';
 	 
 	    return $result;
 	}
 	
 	public function createLinks( $links, $list_class, $query = '' ) {
-	    if ( $this->_limit == 'all' ) {
+		// dont print anything if showing all or zero results
+	    if ( $this->_limit == 'all' || $this->_total == 0) {
 	        return '';
 	    }
 	 
