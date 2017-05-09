@@ -32,14 +32,14 @@ $result = $conn->query($select);
 
       $size = ftell($f);
       date_default_timezone_set('australia/melbourne');
-      //$date = date("Y-m-d");
+      $date = date("Y-m-d");
       rewind($f);
       header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
       header("Content-Length: $size");
       header("Content-type: text/x-csv");
       header("Content-type: text/csv");
       header("Content-type: application/csv");
-      header("Content-Disposition: attachment; filename=Sales-from-".$$_SESSION["datepicker"]."-to-".$_SESSION["datepicker1"].".csv");
+      header("Content-Disposition: attachment; filename=Sales-from-".$_SESSION["datepicker"]."-to-".$_SESSION["datepicker1"].".csv");
       fpassthru($f);
       exit;
     }
