@@ -30,7 +30,7 @@
           <a class="waves-effect waves-light btn-large" href="/sales/">Manage Sales</a>
         </p>
         <p>
-          <a class="waves-effect waves-light btn-large" href="/predictions.php">Predictions</a> 
+          <a class="waves-effect waves-light btn-large" href="/reports.php">Reports</a> 
           <a class="waves-effect waves-light btn-large" href="/support/">Support</a> 
         </p>
       </div>

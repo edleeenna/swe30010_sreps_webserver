@@ -99,8 +99,8 @@
 					</div> 
 				</fieldset>
 				<p>
-			    	<input type="reset" value="Reset">
-			    	<input type="submit" value="Submit">
+					<button class="btn waves-effect waves-light" type="reset">Reset<i class="material-icons right">clear</i></button>
+					<button class="btn waves-effect waves-light" type="submit">Submit<i class="material-icons right">send</i></button>
 				</p>
 			</form>
 		</div>
