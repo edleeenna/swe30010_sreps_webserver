@@ -42,6 +42,16 @@
 				echo "<p>Sales by week report</p>".PHP_EOL;
 				echo "<p>UNIMPLEMENTED</p>".PHP_EOL;
 				
+				// for week dd/mm/yyy to dd/mm/yyy
+				// day | stock id | qty sold | total price per stock ($) | total price per day
+				// ----|----------|----------|-------------              |
+				//  1  | 0000001  | 4        | 32.65                     |
+				//     | 0000130  | 2        | 16.32                     | xxx.xx
+				//  2  |          |          |
+				// ...
+				//
+				// total          |          |                           | xxx.xx
+				
 				// execute appropriate func from report_functions.php
 				
 				// display results
@@ -50,6 +60,17 @@
 			case "sales_by_month":
 				echo "<p>Sales by month report</p>".PHP_EOL;
 				echo "<p>UNIMPLEMENTED</p>".PHP_EOL;
+				
+				// for month dd/mm/yyy to dd/mm/yyy
+				// week starting  | stock id | qty sold | total price per stock ($) | total price per week
+				// ---------------|----------|----------|-------------              |
+				//  dd/mm/yyyy    | 0000001  | 4        | 32.65                     |
+				//                | 0000130  | 2        | 16.32                     | xxx.xx
+				//  dd/mm/yyyy    |          |          |
+				// ...
+				//
+				// total          |          |          |                           | xxx.xx
+
 				
 				// execute appropriate func from report_functions.php
 				
@@ -60,6 +81,17 @@
 				echo "<p>Sales by product report</p>".PHP_EOL;
 				echo "<p>UNIMPLEMENTED</p>".PHP_EOL;
 				
+				// for period dd/mm/yyy to dd/mm/yyy
+				// stock id | qty sold | total price per stock ($) 
+				// ---------|----------|-------------              
+				// 0000001  | 4        | 32.65                     
+				// 0000130  | 2        | 16.32                     
+				//          |          |
+				// ...
+				//
+				// total    |          | xxx.xx
+
+				
 				// execute appropriate func from report_functions.php
 				
 				// display results
@@ -68,6 +100,17 @@
 			case "sales_by_supplier":
 				echo "<p>Sales by supplier report</p>".PHP_EOL;
 				echo "<p>UNIMPLEMENTED</p>".PHP_EOL;
+				
+				// for period dd/mm/yyy to dd/mm/yyy
+				// supplier id | stock id | qty sold | total price per stock ($) | total price per supplier
+				// ------------|----------|----------|-------------              |
+				//  000011     | 0000001  | 4        | 32.65                     |
+				//             | 0000130  | 2        | 16.32                     | xxx.xx
+				//  000022     |          |          |
+				// ...
+				//
+				// total       |          |          |                           | xxx.xx
+
 				
 				// execute appropriate func from report_functions.php
 				
