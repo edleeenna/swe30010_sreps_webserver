@@ -18,8 +18,7 @@
 
     <main>
       <div class="container">
-      Work in progress.
-      <h2>Stock Support</h2>
+        <h2>Stock Support</h2>
       Support for how to use the sections of the sales system. Click on an image to enlarge it for easier viewing.
         <div class="row">
           <div class="col s12">
