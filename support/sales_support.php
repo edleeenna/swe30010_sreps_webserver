@@ -51,7 +51,7 @@
                <p></p>
           </div>
 		    <div class="col s3">
-            <img class="responsive-img materialboxed" src="/images/viewsalefromallsales.png" alt="how to view all stock" />
+            <img class="responsive-img materialboxed" src="/images/viewasalefromallsales.png" alt="how to view all stock" />
                <p></p>
           </div>
                      
