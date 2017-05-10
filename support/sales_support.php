@@ -27,9 +27,29 @@
 	    <h3>Edit Sale</h3>
       Change this text later. Screen shot, with description of what the parts are and for. Description of how you would use them.
       Perhaps take them through from start to finish, how to do a complete run.
-	    <h3>View Sale Item</h3>
-      Change this text later. Screen shot, with description of what the parts are and for. Description of how you would use them.
-      Perhaps take them through from start to finish, how to do a complete run.
+	         <div class="row">
+          <div class="col s12">
+             <h3>View a Single Sale</h3>
+            <p>This will take you through how to navigate to and how to view a single sale from the database.</p>
+            </div>
+          
+          <div class="row">
+          <div class="col s3">
+            <img class="responsive-img materialboxed" src="/images/navtomanagesales.png" alt="how to nav to managesales" />
+            <p>From the home page click on the "Manage Sales" button as shown above to navigate to the "Manage Sales" page</p>
+          </div>
+             <div class="col s3">
+            <img class="responsive-img materialboxed" src="/images/navtoviewsinglesales.png" alt="how to nav to view all stock" />
+               <p>From Manage Sales, click on the "View Sale" button as shown above. It is the second button from the left.</p>
+          </div>
+             <div class="col s3">
+            <img class="responsive-img materialboxed" src="/images/selectsaletoview.png" alt="how to view all stock" />
+               <p>From here you should select an order you'd like to view and click submit. If you make a mistake click "reset" and start again</p>
+          </div>
+		    <div class="col s3">
+            <img class="responsive-img materialboxed" src="/images/viewasalefromallsales.png" alt="how to view all stock" />
+               <p>After clicking on "Submit" button should be taken to a page like above. It should show you all sales for that particular date, including item name, quantity and price</p>
+          </div>
 	 
                <div class="row">
           <div class="col s12">
@@ -56,6 +76,7 @@
           </div>
                      
         </div>
+		     </div>
     </main>
 <?php
   //Ending of body tag is in tail.php
