@@ -39,7 +39,7 @@
             <p>From the home page click on the "Manage Sales" button as shown above to navigate to the "Manage Sales" page</p>
           </div>
              <div class="col s3">
-            <img class="responsive-img materialboxed" src="/images/navtoviewsinglesales.png" alt="how to nav to view all stock" />
+            <img class="responsive-img materialboxed" src="/images/navtoviewsinglesale.png" alt="how to nav to view all stock" />
                <p>From Manage Sales, click on the "View Sale" button as shown above. It is the second button from the left.</p>
           </div>
              <div class="col s3">
