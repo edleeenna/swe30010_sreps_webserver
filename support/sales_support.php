@@ -34,25 +34,25 @@
                <div class="row">
           <div class="col s12">
              <h3>View All Sales</h3>
-            <p>This will take you through how to navigate to and how to view all stock from the database.</p>
+            <p>This will take you through how to navigate to and how to view all sales from the database.</p>
             </div>
           
           <div class="row">
           <div class="col s3">
             <img class="responsive-img materialboxed" src="/images/navtomanagesales.png" alt="how to nav to managesales" />
-            <p></p>
+            <p>From the home page click on the "Manage Sales" button as shown above to navigate to the "Manage Sales" page</p>
           </div>
              <div class="col s3">
             <img class="responsive-img materialboxed" src="/images/navtoviewallsales.png" alt="how to nav to view all stock" />
-               <p></p>
+               <p>From Manage Sales, click on the "View all Sales" button as shown above. It is the first button from the left.</p>
           </div>
              <div class="col s3">
             <img class="responsive-img materialboxed" src="/images/viewallsales.png" alt="how to view all stock" />
-               <p></p>
+               <p>You should now be able to view all sales from the database. You will be able to view certain reports by date by clicking on the options above the table and then the button "View Report". You may also edit a sale by clicking the buttong "edit" from the edit column or view all sales on that sales date by clicking "view" from the view column</p>
           </div>
 		    <div class="col s3">
             <img class="responsive-img materialboxed" src="/images/viewasalefromallsales.png" alt="how to view all stock" />
-               <p></p>
+               <p>By clicking on the "view" button should be taken to a page like above. It should show you all sales for that particular date, including item name, quantity and price</p>
           </div>
                      
         </div>
