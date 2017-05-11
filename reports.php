@@ -59,6 +59,7 @@ SQL;
                 
                 $Paginator  = new Paginator( $conn, $query );
                 $results    = $Paginator->getData( $limit, $page );
+		$lastdate   = "";
 ?>
     <div class="container">
 		  <table class="striped" border="1">
@@ -87,9 +88,9 @@ SQL;
 			  </tr>
 <?php
       }
-      if ($lastdate == "") $lastdate = $results->data['sale_datetime'];
-      elseif ($lastdate != $results->data['sale_datetime']) echo $results->data['sale_datetime']."<br>".PHP_EOL;
-			for ($i = 0; $i < count( $results->data ); $i++ ) {}
+      //if ($lastdate == "") $lastdate = $results->data['sale_datetime'];
+      if ($lastdate != $results->data['sale_datetime']) echo $results->data['sale_datetime']."<br>".PHP_EOL;
+	for ($i = 0; $i < count( $results->data ); $i++ ) {}
 			  /* <tr>
 				  <td></td>
 			  </tr> */
