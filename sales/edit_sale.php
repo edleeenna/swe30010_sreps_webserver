@@ -42,7 +42,7 @@
 					}
 ?>
 				</select>
-				<label>Select stock item to view by ID.</label>			
+				<label>Select sale via its ID and timestamp to edit it.</label>			
 			</div>
 			<div class="center-align">
 				<button class="btn waves-effect waves-light" type="submit">Submit<i class="material-icons right">send</i></button>
