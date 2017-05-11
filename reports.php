@@ -43,23 +43,23 @@
 				echo "<p>UNIMPLEMENTED</p>".PHP_EOL;
 				
 				$allSaleQuery = ""; /* */
-                include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
-                include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/stock_functions.php';
-                include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/Paginator.class.php';
-                include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/utilities.php';
-                $limit      = ( isset( $_GET['limit'] ) ) ? $_GET['limit'] : 10;
-                $page       = ( isset( $_GET['page'] ) )  ? $_GET['page']  : 1;
-                $links      = ( isset( $_GET['links'] ) ) ? $_GET['links'] : 3;
-                $query=<<<SQL
-                SELECT sale_datetime, orderline_stock_id, stock_name, orderline_qty, (orderline_qty * orderline_price) as subtotal FROM orderlines
-                INNER JOIN sales ON orderline_sale_id = sale_id
-                WHERE sale_datetime >= '2017/03/07' AND sale_datetime <= DATE_ADD('2017/03/08', INTERVAL 1 DAY)
-                ORDER BY sale_datetime, orderline_stock_id
+          include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
+          include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/stock_functions.php';
+          include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/Paginator.class.php';
+          include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/utilities.php';
+          $limit      = ( isset( $_GET['limit'] ) ) ? $_GET['limit'] : 10;
+          $page       = ( isset( $_GET['page'] ) )  ? $_GET['page']  : 1;
+          $links      = ( isset( $_GET['links'] ) ) ? $_GET['links'] : 3;
+          $query=<<<SQL
+          SELECT sale_datetime, orderline_stock_id, stock_name, orderline_qty, (orderline_qty * orderline_price) as subtotal FROM orderlines
+          INNER JOIN sales ON orderline_sale_id = sale_id
+          WHERE sale_datetime >= '2017/03/07' AND sale_datetime <= DATE_ADD('2017/03/08', INTERVAL 1 DAY)
+          ORDER BY sale_datetime, orderline_stock_id
 SQL;
                 
-                $Paginator  = new Paginator( $conn, $query );
-                $results    = $Paginator->getData( $limit, $page );
-		$lastdate   = "";
+          $Paginator  = new Paginator( $conn, $query );
+          $results    = $Paginator->getData( $limit, $page );
+      		$lastdate   = "";
 ?>
     <div class="container">
 		  <table class="striped" border="1">
@@ -87,16 +87,17 @@ SQL;
 ?>
 			  </tr>
 <?php
-      }
+      
       //if ($lastdate == "") $lastdate = $results->data['sale_datetime'];
       if ($lastdate != $results->data['sale_datetime']) echo $results->data['sale_datetime']."<br>".PHP_EOL;
-	for ($i = 0; $i < count( $results->data ); $i++ ) {}
+	    //for ($i = 0; $i < count( $results->data ); $i++ ) {}
 			  /* <tr>
 				  <td></td>
 			  </tr> */
+      }  
 ?>
 <?php
-			}
+			//}
 ?>
 		</table>
 </div>
