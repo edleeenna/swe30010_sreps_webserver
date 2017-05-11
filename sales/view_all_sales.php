@@ -39,7 +39,8 @@
     $query      =<<<SQL
     	SELECT sale_id, sale_datetime, SUM(orderline_qty * orderline_price) AS sale_total 
     	FROM sales 
-    	INNER JOIN orderlines ON sale_id = orderline_sale_id GROUP BY sale_id    
+    	INNER JOIN orderlines ON sale_id = orderline_sale_id GROUP BY sale_id
+    	ORDER BY sale_id DESC
 SQL;
 
     $Paginator  = new Paginator( $conn, $query );
