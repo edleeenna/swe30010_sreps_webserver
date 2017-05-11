@@ -8,7 +8,7 @@
   
   // Variable to assign extra javascript files into the head of the page. just the file name needs to go in the quotes.
   // All files should reside in the "js" folder.
-  $extra_js = "view_stock.js";
+  $extra_js = array("utilities.js","view_stock.js");
 
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/head.php';
 ?>
@@ -51,7 +51,9 @@
     $php_stock = get_stock($_GET['stock_id']);
 ?>
     <div class="container">  
-		
+		<div>
+			<a class="waves-effect waves-light btn" onclick="goBack();"><i class="material-icons left">arrow_back</i>Back</a>
+		</div>
 		<div class="fixed-action-btn horizontal">
 		    <a class="btn-floating btn-large red pulse" title="Menu"><i class="large material-icons">menu</i></a>
 		    <ul>

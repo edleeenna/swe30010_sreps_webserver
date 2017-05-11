@@ -11,7 +11,7 @@
   
   // Variable to assign extra javascript files into the head of the page. just the file name needs to go in the quotes.
   // All files should reside in the "js" folder.
-  $extra_js = array("edit_stock.js", "stock_functions.js");
+  $extra_js =array("utilities.js", "edit_stock.js", "stock_functions.js");
 
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/head.php';
   //start of body and nav are in the head.php section.
@@ -24,7 +24,20 @@
 	// Include functions for editing stock. Could be made part of all functions for stock. eg: stock_func.php
 	include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/stock_functions.php';
 	
-	if (!(isset ($_GET) && $_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET))) {
+	if (isset ($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {
+	    $returned_stock_id = update_stock($_POST);
+	    //$succ = update_stock();
+	    // jump to item view of newly created stock item
+	    if ($returned_stock_id > 0) {
+	      //echo 'Success! $_POST[\'html_stock_id\']: '.$_POST['html_stock_id'].'<br>'.PHP_EOL;
+	      header("Location:/stock/view_stock.php?stock_id=".$returned_stock_id);
+	    }
+	    elseif ($returned_stock_id == 0) {
+	      echo 'Failed to update stock!<br>'.PHP_EOL;
+	    }
+	    else echo 'Some other error occured!<br>'.PHP_EOL;
+	  //} elseif (!(isset ($_GET) && $_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET))) {
+	} elseif (!(isset ($_GET) && $_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET))) {
 		$results = getAllStock();
 ?>
 	<div class="container"> 
@@ -51,7 +64,6 @@
 	</div>
 <?php
   } elseif (isset($_GET['stock_id'])) {
-    if ($debug) echo '2) if isset($_GET[\'stock_id\']) section.<br>'.PHP_EOL;
     $php_stock = get_stock($_GET['stock_id']);
     // onsubmit="return check_stock_details(this)"
 ?>
@@ -135,28 +147,12 @@
 				<div class="center-align">
 					<button class="btn waves-effect waves-light" type="submit">Submit<i class="material-icons right">send</i></button>
 					<button class="btn waves-effect waves-light" type="reset">Reset<i class="material-icons right">clear</i></button>
+					<a class="waves-effect waves-light btn" onclick="goBack();"><i class="material-icons left">arrow_back</i>Cancel</a>
 				</div>
 			</fieldset>
         </form>
       </div>
 <?php
-  }
-  //else{
-  //elseif (isset($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {
-  elseif (isset($_POST['html_stock_id'])) {
-    if ($debug) echo '3) if isset($_POST[\'html_stock_id\']) section.<br>'.PHP_EOL;
-    $returned_stock_id = update_stock($_POST);
-    //$succ = update_stock();
-    // jump to item view of newly created stock item
-    if ($returned_stock_id > 0) {
-      //echo 'Success! $_POST[\'html_stock_id\']: '.$_POST['html_stock_id'].'<br>'.PHP_EOL;
-      header("Location:/stock/view_stock.php?stock_id=".$returned_stock_id);
-    }
-    elseif ($returned_stock_id == 0) {
-      echo 'Failed to update stock!<br>'.PHP_EOL;
-    }
-    else echo 'Some other error occured!<br>'.PHP_EOL;
-  //} elseif (!(isset ($_GET) && $_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET))) {
   }
 ?>
     </main>

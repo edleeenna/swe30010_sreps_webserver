@@ -8,7 +8,7 @@
   
   // Variable to assign extra javascript files into the head of the page. just the file name needs to go in the quotes.
   // All files should reside in the "js" folder.
-  $extra_js = "edit_sale.js";
+  $extra_js = array("utilities.js", "edit_sale.js");
 
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/head.php';
 /*
@@ -47,6 +47,7 @@
 			<div class="center-align">
 				<button class="btn waves-effect waves-light" type="submit">Submit<i class="material-icons right">send</i></button>
 				<button class="btn waves-effect waves-light" type="reset">Clear<i class="material-icons right">clear</i></button>
+				<a class="waves-effect waves-light btn" onclick="goBack();"><i class="material-icons left">arrow_back</i>Cancel</a>
 			</div>
 		</form>
 	</div>
@@ -144,6 +145,9 @@
 ?>
 				</tbody>
 			</table>
+			<div class="center-align">
+				<a class="waves-effect waves-light btn" onclick="goBack();"><i class="material-icons left">arrow_back</i>Cancel</a>
+			</div>
 		</fieldset>
 	</div>
 <?php	
