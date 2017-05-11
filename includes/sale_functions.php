@@ -41,7 +41,7 @@
     SELECT sale_id, sale_datetime, orderline_stock_id, stock_name, orderline_qty, orderline_price, orderline_qty * orderline_price AS subtotal FROM `sales`
     INNER JOIN orderlines ON sale_id = orderline_sale_id 
     INNER JOIN stock ON stock_id = orderline_stock_id
-    WHERE sale_id = 000001
+    WHERE sale_id = $sale_id
 SQL;
     /* */
     // Old Select
