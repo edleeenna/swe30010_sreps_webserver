@@ -82,10 +82,9 @@ echo "&#9; to <input type='text' id='datepicker1' name='datepicker' class='j-dat
 echo " &#9; <input type='button' id='submit' value='View Report' onClick='formValidation()' >";
 echo "</form>";
 
-/*
 echo "<form method='post' action='saleexportprocess.php'>";
 echo " <p><input type='submit' id='submit' value='Export to CSV'></p>";
-echo "</form>";*/
+echo "</form>";
 echo "<br>";
 echo "</div>";
 

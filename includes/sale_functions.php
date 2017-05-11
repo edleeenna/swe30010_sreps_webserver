@@ -36,7 +36,6 @@
     include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
 
     // SQL to select all fields from the stock table, matching the specified stock_id.
-
     $sql = <<<SQL
     SELECT orderlines.orderline_stock_id, stock.stock_name, orderlines.orderline_qty, orderlines.orderline_price, orderlines.orderline_qty * orderlines.orderline_price AS orderline_total 
     FROM orderlines 
