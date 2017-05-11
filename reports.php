@@ -51,7 +51,7 @@
                 $page       = ( isset( $_GET['page'] ) )  ? $_GET['page']  : 1;
                 $links      = ( isset( $_GET['links'] ) ) ? $_GET['links'] : 3;
                 $query=<<<SQL
-                SELECT sale_datetime, orderline_stock_id, orderline_qty, (orderline_qty * orderline_price) as subtotal FROM orderlines
+                SELECT sale_datetime, orderline_stock_id, stock_name, orderline_qty, (orderline_qty * orderline_price) as subtotal FROM orderlines
                 INNER JOIN sales ON orderline_sale_id = sale_id
                 WHERE sale_datetime >= '2017/03/07' AND sale_datetime <= DATE_ADD('2017/03/08', INTERVAL 1 DAY)
                 ORDER BY sale_datetime, orderline_stock_id
@@ -60,31 +60,40 @@ SQL;
                 $Paginator  = new Paginator( $conn, $query );
                 $results    = $Paginator->getData( $limit, $page );
 ?>
-        <div class="container">
-		<table class="striped" border="1">
-			<tr>
+    <div class="container">
+		  <table class="striped" border="1">
+			  <tr>
 <?php	
 			foreach($results->fields as $field)    {
 ?>
-				<th><?php echo get_column_name($field); ?></th>
+				  <th><?php echo get_column_name($field); ?></th>
 <?php
 			}
+				//<th></th><th></th></tr>
 ?>
-				<th></th><th></th></tr>
 <?php		
-			for( $i = 0; $i < count( $results->data ); $i++ ) {
+      for( $i = 0; $i < count( $results->data ); $i++ ) {
 ?>
-			<tr>
+			  <tr>
 <?php
-			foreach($results->data[$i] as $cell) {
+			  foreach($results->data[$i] as $cell) {
 ?>
-				<td><?php echo $cell; ?></td>
+				  <td><?php echo $cell; ?></td>
 <?php
-			}
+			  }
+				//<td><a class="waves-effect waves-light btn" href="/sales/edit_sale.php?sale_id=<? php echo $results->data[$i]["sale_id"]? >" title="Edit item <? php echo $results->data[$i]["sale_id"]? >">Edit</a></td>
+				//<td><a class="waves-effect waves-light btn" href="/sales/view_sale.php?sale_id=<? php echo $results->data[$i]["sale_id"]? >" title="View item <? php echo $results->data[$i]["sale_id"]? >">View</a></td>
 ?>
-				<td><a class="waves-effect waves-light btn" href="/sales/edit_sale.php?sale_id=<?php echo $results->data[$i]["sale_id"]?>" title="Edit item <?php echo $results->data[$i]["sale_id"]?>">Edit</a></td>
-				<td><a class="waves-effect waves-light btn" href="/sales/view_sale.php?sale_id=<?php echo $results->data[$i]["sale_id"]?>" title="View item <?php echo $results->data[$i]["sale_id"]?>">View</a></td>
-			</tr>
+			  </tr>
+<?php
+      }
+      if ($lastdate == "") $lastdate = $results->data['sale_datetime'];
+      elseif ($lastdate != $results->data['sale_datetime']) echo $results->data['sale_datetime']."<br>".PHP_EOL;
+			for ($i = 0; $i < count( $results->data ); $i++ ) {}
+			  /* <tr>
+				  <td></td>
+			  </tr> */
+?>
 <?php
 			}
 ?>
