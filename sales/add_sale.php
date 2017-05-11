@@ -39,7 +39,7 @@
 					<select name="stock_id" required style="padding:0 0 0 0">
 						<option value="" disabled selected>Choose your option</option>
 <?php
-				$results = get_all_stock();
+				$results = getAllStock();
 				foreach($results as $row){
 ?>
 						<option value="<?php echo $row['stock_id'];?>"> <?php echo $row['stock_id'];?> - <?php echo $row['stock_name'];?> </option>
