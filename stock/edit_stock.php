@@ -24,7 +24,8 @@
 	// Include functions for editing stock. Could be made part of all functions for stock. eg: stock_func.php
 	include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/stock_functions.php';
 	
-	if (!(isset ($_GET) && $_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET))) { // change post to get and display as ?stock_id= not ?html_stock_id=
+	if (!(isset ($_GET) && $_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET))) {
+		$results = getAllStock();
 ?>
 	<div class="container"> 
 		<form id="stock_item" action="edit_stock.php" method="get">
@@ -32,7 +33,7 @@
 				<select name="stock_id">
 					<option value="" disabled selected>Please select a stock item</option>
 <?php
-					$results = getAllStock();
+					
 					foreach($results as $row){
 ?>
 					<option value="<?php echo $row['stock_id'];?>"> <?php echo $row['stock_id'];?> - <?php echo $row['stock_name'];?> </option>

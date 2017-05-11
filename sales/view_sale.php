@@ -11,74 +11,102 @@
   
   // Variable to assign extra javascript files into the head of the page. just the file name needs to go in the quotes.
   // All files should reside in the "js" folder.
-  //$extra_js = "";
+  $extra_js = "view_sale.js";
 
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/head.php';
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/nav.php';
 ?>
     </nav>
-    <main>
+    
+<main>
 <?php
-  if (isset($GLOBALS['debug']) && ($GLOBALS['debug'])) echo "Debug check 1<br>".PHP_EOL;
-
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/sale_functions.php';
-  if (isset ($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {  // no ?stock_id= present
-    header("Location:/sales/view_sale.php?sale_id=".$_POST['html_sale_id']);
-  } 
-  elseif (!(isset ($_GET) && $_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET))) { // change post to get and display as ?stock_id= not ?html_stock_id=
-    if (isset($GLOBALS['debug']) && ($GLOBALS['debug'])) echo "Get Stock Item to view<br>".PHP_EOL;
+	
+	if (!(isset ($_GET) && $_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET))) {		
+		$results = getAllSales();
 ?>
-    <form id="stock_item" action="view_sale.php" method="post">
-      <label>Select an Order to view.</label><br>
-      <select class="browser-default" name="html_sale_id">
-        <option value="" disabled selected>Select an Order</option>
-        <?php getSaleID(); ?>
-      </select>     
-      <input type="submit" value="Submit"> 
-      <input type="reset" value="Reset">
-    </form>
+	<div class="container"> 
+		<form id="stock_item" action="view_sale.php" method="get">
+			<div class="input-field">
+				<select name="sale_id">
+					<option value="" disabled selected>Please select a sale</option>
 <?php
-  } 
-  else {
-    if (isset($GLOBALS['debug']) && ($GLOBALS['debug'])) echo "View a sale<br>".PHP_EOL;
+					
+					foreach($results as $row){
+?>
+					<option value="<?php echo $row['sale_id'];?>"> <?php echo $row['sale_id'];?> - <?php echo $row['sale_datetime'];?> </option>
+<?php
+					}
+?>
+				</select>
+				<label>Select stock item to view by ID.</label>			
+			</div>
+			<div class="center-align">
+				<button class="btn waves-effect waves-light" type="submit">Submit<i class="material-icons right">send</i></button>
+				<button class="btn waves-effect waves-light" type="reset">Clear<i class="material-icons right">clear</i></button>
+			</div>
+		</form>
+	</div>
+<?php
+	} elseif (isset($_GET['sale_id'])) {
     $php_sale = getSale($_GET['sale_id']);
+    $php_orderlines = getOrderlines($_GET['sale_id']);
 ?>
     <div class="container">     
-      <div class="fixed-action-btn">
-        <a class="btn-floating btn-large" href="\sales\edit_sale.php?sale_id=<?php echo $php_sale['id'];?>">
-          <i class="large material-icons">mode_edit</i>
-        </a>
-      </div>
-      <br>       
-      <h5>Sale ID: <span><?php echo $php_sale['sale_id']; ?> </span> </h5>
-      <h5>Sale Date: <span><?php echo $php_sale['sale_datetime'];?> </span> </h5>
-      <br> 
-      <table class="striped" border="1">
-        <tr><th scope="col">Stock ID</th><th scope="col">Stock Name</th><th scope="col">Qty</th><th scope="col">Price</th><th scope="col">Subtotal</th></tr>
+	<fieldset>
+		<legend>Sale Details</legend>
+		<br>       
+	      <h5>Sale ID: <span><?php echo $php_sale['sale_id']; ?> </span> </h5>
+	      <h5>Sale Date: <span><?php echo $php_sale['sale_datetime'];?> </span> </h5>
+	    <br> 
+	</fieldset>
+	<fieldset>
+		<legend>Orderlines</legend>
+			<table class="striped" border="1">
+				<thead>
+				    <tr>
+				    	<th scope="col">Stock ID</th>
+				    	<th scope="col">Stock Name</th>
+				    	<th scope="col">Qty</th>
+				    	<th scope="col">Price</th>
+				    	<th scope="col">Subtotal</th>
+				    </tr>
+				</thead>
+				
+				<tbody>
 <?php
-    if (!empty($php_sale['orderline_stock_id'])){
-      foreach( $php_sale['orderline_stock_id'] as $index => $php_sale_id ) {
-  //   print($php_sale_id.$php_sale_name[$index]);
-    // echo "<p>Stock ID: ".$php_sale_id." Stock Name: ".$php_sale['stock_name'][$index]."</p>";
-        echo "<tr>";
-        echo "<td>", $php_sale_id, "</td>";
-        echo "<td>", $php_sale['stock_name'][$index], "</td>";
-        echo "<td>", $php_sale['orderline_qty'][$index], "</td>";
-        echo "<td>", $php_sale['orderline_price'][$index], "</td>";
-        echo "<td>", $php_sale['orderline_subtotal'][$index], "</td>";
-      }
-?>
-        <tr><th>Total</th><td></td><td></td><td></td><th><?php echo array_sum($php_sale['orderline_total']);?></th></tr>
+    	if(isset($php_orderlines ) && count($php_orderlines ) > 0) {
+      		foreach( $php_orderlines ['orderline_stock_id'] as $index => $php_stock_id ) {
+?>    
+			        <tr>
+				        <td><?php echo $php_stock_id; ?></td>
+				        <td><?php echo $php_orderlines ['stock_name'][$index]; ?></td>
+				        <td><?php echo $php_orderlines ['orderline_qty'][$index]; ?></td>
+				        <td><?php echo $php_orderlines ['orderline_price'][$index]; ?></td>
+				        <td><?php echo $php_orderlines ['orderline_total'][$index]; ?></td>
+			        </tr>
 <?php
-    }
+      		}
 ?>
-      </table>
+					<tr>
+			        	<th>Total</th>
+			        	<td></td>
+			        	<td></td>
+			        	<td></td>
+			        	<th><?php echo array_sum($php_orderlines ['orderline_total']);?></th>
+			        </tr>
+<?php
+   	 }
+?>
+				</tbody>
+			</table>
+		</fieldset>
     </div>
 <?php
-  }
-  if (isset($GLOBALS['debug']) && ($GLOBALS['debug'])) echo "Debug check 2<br>".PHP_EOL;
+	}
 ?>
-    </main>
+</main>
+
 <?php
   include $_SERVER[ 'DOCUMENT_ROOT' ] . '/includes/tail.php';
 ?>

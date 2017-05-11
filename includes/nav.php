@@ -10,7 +10,7 @@
         </ul>
         <ul id="SaleDown" class="dropdown-content">
           <li><a href="/sales/" data-constrainwidth="false"><i class="material-icons">receipt</i>Manage Sales</a></li>
-          <li><a href="/sales/view_all_sales_.php"><i class="material-icons">view_list</i>All Sales</a></li>
+          <li><a href="/sales/view_all_sales.php"><i class="material-icons">view_list</i>All Sales</a></li>
           <li><a href="/sales/view_sale.php"><i class="material-icons">view_array</i>View Sale</a></li>
           <li><a href="/sales/add_sale.php"><i class="material-icons">note_add</i>Add Sale</a></li>
           <li><a href="/sales/edit_sale.php"><i class="material-icons">mode_edit</i>Edit Sale</a></li>

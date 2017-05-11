@@ -1,35 +1,69 @@
 <?php
-  function getSaleID(){
+	function getAllSales(){
+	    // Connect to database.
+	    include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
+	
+	  // SQL to select stock_id's from the Stock Database;
+	      $sql = <<<SQL
+	      	SELECT * 
+	      	FROM sales 
+	      	ORDER BY sale_id ASC
+SQL;
+
+		try{
+			// Query the database to acquire results and hand them to resultSet
+			$result = $conn->query($sql);
+		}
+		catch(PDOEXCEPTION $e){
+			// Display error message details
+			echo 'Error fetching list of stock IDs: '.$e->getMessage();
+			// Stop running script
+			exit();
+		}
+		
+		// Close connection to database.
+		$conn->close();
+		
+		return $result;
+	}
+  
+  function getSale($sale_id) {
     // Connect to database.
     include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
 
+    // SQL to select all fields from the stock table, matching the specified stock_id.
+    $sql = <<<SQL
+    SELECT * 
+    FROM sales
+    WHERE sales.sale_id = $sale_id
+SQL;
+   
     try{
-      // SQL to select stock_id's from the Stock Database;
-      $sql = "SELECT sale_id FROM sales ORDER BY sale_id ASC;";
-      // Query the database to acquire results and hand them to resultSet
-      $result = $conn->query($sql);
+        // Query the database to acquire results and hand them to resultSet
+        $result = $conn->query($sql);
     }
     catch(PDOEXCEPTION $e){
       // Display error message details
-      echo 'Error fetching list of stock IDs: '.$e->getMessage();
+      echo 'Error fetching stock item details: '.$e->getMessage();
       // Stop running script
       exit();
     }
-    $php_id_list = '';
-    // See if there are results to process.
-    if ($result->num_rows > 0) {
-      // work through each row returned, add to the option list for selection.
-      foreach ($result as $row) {
-        $php_id_list .= '<option value="'.$row['sale_id'].'">'.$row['sale_id'].'</option>';
-      }
-      echo $php_id_list."<br>".PHP_EOL;
-    }
-    else {
-        echo "0 results";
-    }
+    
     // Close connection to database.
     $conn->close();
+    
+    if ($result->num_rows == 0) echo "0 results";
+    if ($result->num_rows > 1) echo "Too many results";
+
+    $row = $result->fetch_assoc();
+
+    $php_sale = array();
+    $php_sale['sale_id']       = $row['sale_id'];
+    $php_sale['sale_datetime'] = $row['sale_datetime'];
+
+    return $php_sale;
   }
+
 
   function getOrderlines($sale_id) {
     // Connect to database.
