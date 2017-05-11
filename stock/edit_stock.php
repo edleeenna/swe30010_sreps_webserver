@@ -18,103 +18,124 @@
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/nav.php';
 ?>
     </nav>
-    <main>
+<main>
 <?php
-  //echo "connect<br>".PHP_EOL;
-  // Include functions for editing stock. Could be made part of all functions for stock. eg: stock_func.php
-  include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/stock_functions.php';
-  //if (!isset($_POST['html_stock_id']) && !isset($_GET['stock_id'])) echo 'Neither $_POST[\'html_stock_id\'] or $_GET[\'stock_id\'] set.<br>'.PHP_EOL;
-  //if (isset($_GET['stock_id'])) echo '$_GET[\'stock_id\'] is set.<br>'.PHP_EOL;
-  //if (isset($_POST['html_stock_id'])) echo '$_POST[\'html_stock_id\'] is set.<br>'.PHP_EOL;
-
-  //if (isset ($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {
-  if (!isset($_POST['html_stock_id']) && !isset($_GET['stock_id'])) {
-    if ($debug) echo '1) if NOT isset($_POST[\'html_stock_id\']) AND NOT isset($_GET[\'stock_id\']) section.<br>'.PHP_EOL;
+	//echo "connect<br>".PHP_EOL;
+	// Include functions for editing stock. Could be made part of all functions for stock. eg: stock_func.php
+	include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/stock_functions.php';
+	
+	if (!(isset ($_GET) && $_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET))) { // change post to get and display as ?stock_id= not ?html_stock_id=
 ?>
-    <form id="stock_item" action="edit_stock.php" method="get">
-      <label>Select stock item to edit, by ID or Name.</label><br>
-      <select class="browser-default" name="stock_id">      
-        <?php get_ID_list(); ?>
-      </select>
-      <!-- TODO - Link id and name selection -->
-      <input type="submit" value="Edit"> 
-      <input type="reset" value="Reset">
-    </form>
+	<div class="container"> 
+		<form id="stock_item" action="edit_stock.php" method="get">
+			<div class="input-field">
+				<select name="stock_id">
+					<option value="" disabled selected>Please select a stock item</option>
+<?php
+					$results = getAllStock();
+					foreach($results as $row){
+?>
+					<option value="<?php echo $row['stock_id'];?>"> <?php echo $row['stock_id'];?> - <?php echo $row['stock_name'];?> </option>
+<?php
+					}
+?>
+				</select>
+				<label>Select stock item to view by ID.</label>			
+			</div>
+			<div class="center-align">
+				<button class="btn waves-effect waves-light" type="submit">Submit<i class="material-icons right">send</i></button>
+				<button class="btn waves-effect waves-light" type="reset">Clear<i class="material-icons right">clear</i></button>
+			</div>
+		</form>
+	</div>
 <?php
   } elseif (isset($_GET['stock_id'])) {
     if ($debug) echo '2) if isset($_GET[\'stock_id\']) section.<br>'.PHP_EOL;
     $php_stock = get_stock($_GET['stock_id']);
     // onsubmit="return check_stock_details(this)"
 ?>
-      <div class="container">      
-        <form id="edit_stock" action="\stock\edit_stock.php" method="post">
-          <fieldset>
-            <legend>Edit Stock Item</legend>
-            <div class="input-field">
-              <input readonly type="text" id="html_stock_id" name="html_stock_id" class="validate" value="<?php echo $php_stock['id'];?>">
-              <label for="html_stock_id">Item ID</label>
-            </div>
-            <div class="input-field">
-              <input type="text" id="html_stock_name" name="html_stock_name" class="validate" value="<?php echo $php_stock['name'];?>">
-              <label for="html_stock_name">Item Name</label>
-            </div>
-            <div class="input-field">
-              <textarea id="html_stock_description" name="html_stock_description" class="materialize-textarea"><?php echo $php_stock['description'];?></textarea>
-              <label for="html_stock_description">Item Description</label>
-            </div>
-            <div class="input-field">
-              <textarea id="html_stock_directions" name="html_stock_directions" class="materialize-textarea"><?php echo $php_stock['directions'];?></textarea>
-              <label for="html_stock_directions">Directions</label>
-            </div>
-            <div class="input-field">
-              <textarea id="html_stock_ingredients" name="html_stock_ingredients" class="materialize-textarea"><?php echo $php_stock['ingredients'];?></textarea>
-              <label for="html_stock_ingredients">Ingredients</label>
-            </div>
-            <div class="input-field">
-              <span id="html_stock_price_validation"></span>
-              <input type="text" id="html_stock_price" name="html_stock_price" class="validate" value="<?php echo $php_stock['price'];?>">
-              <label for="html_stock_price">Item Price</label>
-            </div>
-            <div class="input-field">
-              <span id="html_stock_cost_price_validation"></span>
-              <input type="text" id="html_stock_cost_price" name="html_stock_cost_price" class="validate" value="<?php echo $php_stock['cost_price'];?>">
-              <label for="html_stock_cost_price">Item Cost Price</label>
-            </div>
-            <div class="input-field">
-              <span id="html_stock_qty_validation"></span>
-              <input type="text" id="html_stock_qty" name="html_stock_qty" class="validate" value="<?php echo $php_stock['qty'];?>">
-              <label for="html_stock_qty">Item Qty</label>
-            </div>
-            <div class="input-field">
-              <span id="html_stock_target_min_qty_validation"></span>
-              <input type="text" id="html_stock_target_min_qty" name="html_stock_target_min_qty" class="validate" value="<?php echo $php_stock['target_min_qty'];?>">
-              <label for="html_stock_target_min_qty">Item Target</label>
-            </div>
-            <div class="input-field">
-              <input type="text" id="html_stock_supplier" name="html_stock_supplier" class="validate" value="<?php echo $php_stock['supplier'];?>">
-              <label for="html_stock_supplier">Item Supplier</label>
-            </div>
-            <div class="input-field">
-              <input type="text" id="html_stock_supplier_code" name="html_stock_supplier_code" class="validate" value="<?php echo $php_stock['supplier_order_code'];?>">
-              <label for="html_stock_supplier_code">Item Supplier Code</label>
-            </div>
-            <div class="input-field">
-              <span id="html_stock_category_id_validation"></span>
-              <select id="html_stock_category_id" name="html_stock_category_id">
-                <option value="" disabled>Choose your option</option>
-                  <?php get_cat_list($php_stock['category_id']); ?>
-              </select>
-              <label>Category Name</label>
-            </div>
-            <div class="input-field">
-              <input type="text" id="html_stock_barcode" name="html_stock_barcode" class="validate" value="<?php echo $php_stock['barcode'];?>">
-              <label for="html_stock_barcode">Item Barcode</label>
-            </div>
-          </fieldset>
-          <p>
-            <input type="reset" value="Reset">
-            <input type="submit" value="Submit">
-          </p>
+	<div class="container">      
+		<form id="edit_stock" action="\stock\edit_stock.php" method="post">
+			<fieldset>
+				<legend>Edit Stock Item</legend>
+				<div class="input-field">
+					<input readonly type="text" id="html_stock_id" name="html_stock_id" class="validate" value="<?php echo $php_stock['id'];?>">
+					<label for="html_stock_id">Item ID</label>
+				</div>
+				<div class="input-field">
+					<input type="text" id="html_stock_name" name="html_stock_name" class="validate" value="<?php echo $php_stock['name'];?>">
+					<label for="html_stock_name">Item Name</label>
+				</div>
+				<div class="input-field">
+					<textarea id="html_stock_description" name="html_stock_description" class="materialize-textarea"><?php echo $php_stock['description'];?></textarea>
+					<label for="html_stock_description">Item Description</label>
+				</div>
+				<div class="input-field">
+					<textarea id="html_stock_directions" name="html_stock_directions" class="materialize-textarea"><?php echo $php_stock['directions'];?></textarea>
+					<label for="html_stock_directions">Directions</label>
+				</div>
+				<div class="input-field">
+					<textarea id="html_stock_ingredients" name="html_stock_ingredients" class="materialize-textarea"><?php echo $php_stock['ingredients'];?></textarea>
+					<label for="html_stock_ingredients">Ingredients</label>
+				</div>
+					<div class="input-field">
+					<span id="html_stock_price_validation"></span>
+					<input type="text" id="html_stock_price" name="html_stock_price" class="validate" value="<?php echo $php_stock['price'];?>">
+					<label for="html_stock_price">Item Price</label>
+				</div>
+				<div class="input-field">
+					<span id="html_stock_cost_price_validation"></span>
+					<input type="text" id="html_stock_cost_price" name="html_stock_cost_price" class="validate" value="<?php echo $php_stock['cost_price'];?>">
+					<label for="html_stock_cost_price">Item Cost Price</label>
+				</div>
+				<div class="input-field">
+					<span id="html_stock_qty_validation"></span>
+					<input type="text" id="html_stock_qty" name="html_stock_qty" class="validate" value="<?php echo $php_stock['qty'];?>">
+					<label for="html_stock_qty">Item Qty</label>
+				</div>
+				<div class="input-field">
+					<span id="html_stock_target_min_qty_validation"></span>
+					<input type="text" id="html_stock_target_min_qty" name="html_stock_target_min_qty" class="validate" value="<?php echo $php_stock['target_min_qty'];?>">
+					<label for="html_stock_target_min_qty">Item Target</label>
+				</div>
+				<div class="input-field">
+					<input type="text" id="html_stock_supplier" name="html_stock_supplier" class="validate" value="<?php echo $php_stock['supplier'];?>">
+					<label for="html_stock_supplier">Item Supplier</label>
+				</div>
+				<div class="input-field">
+					<input type="text" id="html_stock_supplier_code" name="html_stock_supplier_code" class="validate" value="<?php echo $php_stock['supplier_order_code'];?>">
+					<label for="html_stock_supplier_code">Item Supplier Code</label>
+				</div>
+				<div class="input-field">
+					<select id="html_stock_category_id" name="html_stock_category_id">
+						<option value="" disabled selected>Please select a stock item your option</option>
+<?php
+						$results = getAllCategories();
+						foreach($results as $row){
+							if ($php_stock['category_id'] == $row['category_id']) {
+?>
+						<option value="<?php echo $row['category_id'];?>" selected> <?php echo $row['category_id'];?> - <?php echo $row['category_name'];?> </option>
+<?php
+							} else {
+?>
+						<option value="<?php echo $row['category_id'];?>"> <?php echo $row['category_id'];?> - <?php echo $row['category_name'];?> </option>
+<?php
+							}
+						}
+?>
+					</select>
+					<label>Select stock category</label>			
+				</div>
+	            <div class="input-field">
+	              <input type="text" id="html_stock_barcode" name="html_stock_barcode" class="validate" value="<?php echo $php_stock['barcode'];?>">
+	              <label for="html_stock_barcode">Item Barcode</label>
+	            </div>
+				
+				<div class="center-align">
+					<button class="btn waves-effect waves-light" type="submit">Submit<i class="material-icons right">send</i></button>
+					<button class="btn waves-effect waves-light" type="reset">Reset<i class="material-icons right">clear</i></button>
+				</div>
+			</fieldset>
         </form>
       </div>
 <?php

@@ -33,9 +33,14 @@ function getPrice(qty, price){
 }
 
 function init(){
-  'use strict';
+	'use strict';
 
-  document.getElementById("html_sales_datetime").value = getDateTime();
-
+	document.getElementById("html_sales_datetime").value = getDateTime();
 }
+
 window.onload = init;
+
+  // initialise select fields
+$(document).ready(function() {
+  $('select').material_select();
+});

@@ -14,110 +14,83 @@
   //start of body and nav are in the head.php section.
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/nav.php';
 ?>
-    </nav>
-    <main>
+</nav>
+
+<main>
 <?php
-  if (isset($GLOBALS['debug']) && ($GLOBALS['debug'])) echo "Work In Progress.<br>".PHP_EOL;
-  //echo "connect<br>".PHP_EOL;
-  // Include functions for deleting stock. Could be made part of all functions for stock. eg: stock_func.php
-  include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/stock_functions.php';
-  //if (isset ($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {
-  if (!isset($_POST['html_stock_id']) && !isset($_GET['stock_id'])) {
-    if (isset($GLOBALS['debug']) && ($GLOBALS['debug'])) echo "1) Select item to delete.<br>".PHP_EOL;
+	//echo "connect<br>".PHP_EOL;
+	// Include functions for deleting stock. Could be made part of all functions for stock. eg: stock_func.php
+ 	include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/stock_functions.php';
+  	if ((isset ($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST))) { 
+  		//echo $_POST['stock_id'];
+		deleteStock($_POST['stock_id']);
+
 ?>
-    <form id="stock_item" action="delete_stock.php" method="get">
-      <label>Select stock item to delete, by ID.</label><br>
-      <select class="browser-default" name="stock_id">
-        <?php get_ID_list(); ?>
-      </select> 
-      <!-- TODO - Link id and name selection -->
-      <input type="submit" value="Select">
-      <input type="reset" value="Reset">
-    </form>
+	<div class="container">
+		Stock item with stock id: <?php echo $_POST['stock_id'] ?> was deleted.<br>
+		Press the button to return.<br>
+		<a class="waves-effect waves-light btn" href="/stock/delete_stock.php"><i class="material-icons left">arrow_back</i>Return</a>
+	</div>
 <?php
-  } elseif (isset($_GET['stock_id'])) {
-    if (isset($GLOBALS['debug']) && ($GLOBALS['debug'])) {
-      echo "2) Display selected item prior to delete request.<br>".PHP_EOL;
-      echo "Request entry of \"Delete".$_GET['stock_id']."\" to confirm proceeding with delete request.<br>".PHP_EOL;
-    }
-    $php_stock = get_stock($_GET['stock_id']);
+  	}
+  	elseif (!(isset ($_GET) && $_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET))) { 
 ?>
-    <div class="container">      
-      <form id="delete_stock" action="\stock\delete_stock.php" method="post" onsubmit="return confirm_del('<?php echo $php_stock['id'];?>');">
-        <fieldset>
-          <legend>Edit Stock Item</legend>
-          <div class="input-field">
-            <label for="html_stock_id">Item ID</label>
-            <input readonly type="text" id="html_stock_id" name="html_stock_id" class="validate" value="<?php echo $php_stock['id'];?>">
-          </div>
-          <div class="input-field">
-            <label for="html_stock_name">Item Name</label>
-            <input readonly type="text" id="html_stock_name" name="html_stock_name" class="validate" value="<?php echo $php_stock['name'];?>">
-          </div>
-          <div class="input-field">
-            <label for="html_stock_description">Item Description</label>
-            <textarea readonly id="html_stock_description" name="html_stock_description" class="materialize-textarea"><?php echo $php_stock['description'];?></textarea>
-          </div>
-          <div class="input-field">
-            <label for="html_stock_directions">Directions</label>
-            <textarea readonly id="html_stock_directions" name="html_stock_directions" class="materialize-textarea"><?php echo $php_stock['directions'];?></textarea>
-          </div>
-          <div class="input-field">
-            <label for="html_stock_ingredients">Ingredients</label>
-            <textarea readonly id="html_stock_ingredients" name="html_stock_ingredients" class="materialize-textarea"><?php echo $php_stock['ingredients'];?></textarea>
-          </div>
-          <div class="input-field">
-            <label for="html_stock_price">Item Price</label>
-            <input readonly type="text" id="html_stock_price" name="html_stock_price" class="validate" value="<?php echo $php_stock['price'];?>">
-          </div>
-          <div class="input-field">
-            <label for="html_stock_cost_price">Item Cost Price</label>
-            <input readonly type="text" id="html_stock_cost_price" name="html_stock_cost_price" class="validate" value="<?php echo $php_stock['cost_price'];?>">
-          </div>
-          <div class="input-field">
-            <label for="html_stock_qty">Item Qty</label>
-            <input readonly type="text" id="html_stock_qty" name="html_stock_qty" class="validate" value="<?php echo $php_stock['qty'];?>">
-          </div>
-          <div class="input-field">
-            <label for="html_stock_target_min_qty">Item Target</label>
-            <input readonly type="text" id="html_stock_target_min_qty" name="html_stock_target_min_qty" class="validate" value="<?php echo $php_stock['target_min_qty'];?>">
-          </div>
-          <div class="input-field">
-            <label for="html_stock_supplier">Item Supplier</label>
-            <input readonly type="text" id="html_stock_supplier" name="html_stock_supplier" class="validate" value="<?php echo $php_stock['supplier'];?>">
-          </div>
-          <div class="input-field">
-            <label for="html_stock_supplier_code">Item Supplier Code</label>
-            <input readonly type="text" id="html_stock_supplier_code" name="html_stock_supplier_code" class="validate" value="<?php echo $php_stock['supplier_order_code'];?>">
-          </div>
-          <div class="input-field">
-            <span id="html_stock_category_id_validation"></span>
-            <label for="html_stock_category_id">Category Name</label>
-            <?php get_category($php_stock['category_id']);?>
-          </div>
-          <div class="input-field">
-            <label for="html_stock_barcode">Item Barcode</label>
-            <input readonly type="text" id="html_stock_barcode" name="html_stock_barcode" class="validate" value="<?php echo $php_stock['barcode'];?>">
-          </div>
-        </fieldset>
-        <p>
-          <input type="reset" value="Reset">
-          <input id="delete_item" type="submit" value="Delete">
-        </p>
-      </form>
-    </div>
+	<div class="container"> 
+		<form id="stock_item" action="delete_stock.php" method="get">
+			<div class="input-field">
+				<select name="stock_id">
+					<option value="" disabled selected>Please select a stock item</option>
 <?php
-  }
-  elseif (isset($_POST['html_stock_id'])) {
-    if (isset($GLOBALS['debug']) && ($GLOBALS['debug'])) echo "3) Display item deleted confirmation message.<br>".PHP_EOL;
-      //$succ = delete_stock($_POST);
-    //$success = delete_stock_item($_POST['html_stock_id']);
-    delete_stock_item($_POST['html_stock_id']);
-    //echo "Stock item with stock id: ".$php_stock['id']." was deleted.<br>".PHP_EOL;
-    echo "Stock item with stock id: ".$_POST['html_stock_id']." was deleted.<br>".PHP_EOL;
-  }
+					$results = getAllStock();
+					foreach($results as $row){
 ?>
-      </main>
+					<option value="<?php echo $row['stock_id'];?>"> <?php echo $row['stock_id'];?> - <?php echo $row['stock_name'];?> </option>
+<?php
+					}
+?>
+				</select>
+				<label>Select stock item to view by ID.</label>			
+			</div>
+			<div class="center-align">
+				<button class="btn waves-effect waves-light" type="submit">Submit<i class="material-icons right">send</i></button>
+				<button class="btn waves-effect waves-light" type="reset">Clear<i class="material-icons right">clear</i></button>
+			</div>
+		</form>
+	</div>
+<?php
+	} elseif (isset($_GET['stock_id'])) {
+    	$php_stock = get_stock($_GET['stock_id']);
+?>
+		<div class="container">      
+			<form id="delete_stock" action="\stock\delete_stock.php" method="post" onsubmit="return confirm_del('<?php echo $_GET['stock_id']; ?>');">
+				<fieldset>
+					<legend>Edit Stock Item</legend>
+					<input type="hidden" name="stock_id" value="<?php echo $_GET['stock_id']; ?>" />
+					Item ID: <span><?php echo $php_stock['id']; ?> </span><br>
+					Item Name: <span><?php echo $php_stock['name'];?> </span><br>
+					Item Description: <span><?php echo $php_stock['description'];?> </span><br>
+					Directions: <span><?php echo $php_stock['directions'];?> </span><br>
+					Ingredients: <?php echo $php_stock['ingredients'];?> <br>
+					Item Price: <span><?php echo $php_stock['price'];?> </span> <br>
+					Item Cost Price: <span><?php echo $php_stock['cost_price'];?> </span> <br>
+					Item Qty: <span><?php echo $php_stock['qty'];?> </span> <br>
+					Item Target: <span><?php echo $php_stock['target_min_qty'];?> </span> <br>
+					Item Supplier: <span><?php echo $php_stock['supplier'];?> </span> <br>
+					Item Supplier Code: <span><?php echo $php_stock['supplier_order_code'];?> </span> <br>
+					Item Category Name: <span><?php echo $php_stock['category_name'];?> </span> <br>
+					Item Barcode: <span><?php echo $php_stock['barcode'];?> </span> <br>
+					<div class="center-align">
+						<button class="btn waves-effect waves-light" type="submit">Delete<i class="material-icons right">delete</i></button>
+						<a class="waves-effect waves-light btn" href="/stock/delete_stock.php"><i class="material-icons left">clear</i>Cancel</a>
+					</div>			
+				</fieldset>
+			</form>
+		</div>
+<?php
+	}
+?>
+</main>
+
 <?php
   include $_SERVER[ 'DOCUMENT_ROOT' ] . '/includes/tail.php';
 ?>

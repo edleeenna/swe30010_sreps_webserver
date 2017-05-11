@@ -7,7 +7,7 @@
 
   // Variable to assign extra css files into the head of the page. just the file name needs to go in the quotes.
   // All files should reside in the "css" folder.
-  //$extra_css = array("test.css", "test2.css");
+  $extra_css = "tablecss.css";
 
   // Variable to assign extra javascript files into the head of the page. just the file name needs to go in the quotes.
   // All files should reside in the "js" folder.
@@ -17,85 +17,106 @@
   //start of body and nav are in the head.php section.
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/nav.php';
 ?>
-    </nav>
-    <main>
-<?php
-  //echo "connect<br>".PHP_EOL;
-  // Include functions for editing stock. Could be made part of all functions for stock. eg: stock_func.php
-  include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/stock_functions.php';
-  //if (!isset($_POST['html_stock_id']) && !isset($_GET['stock_id'])) echo 'Neither $_POST[\'html_stock_id\'] or $_GET[\'stock_id\'] set.<br>'.PHP_EOL;
-  //if (isset($_GET['stock_id'])) echo '$_GET[\'stock_id\'] is set.<br>'.PHP_EOL;
-  //if (isset($_POST['html_stock_id'])) echo '$_POST[\'html_stock_id\'] is set.<br>'.PHP_EOL;
+</nav>
 
-  //if (isset ($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {
-  if (!isset($_POST['html_stock_id']) && !isset($_GET['stock_id'])) {
-    if ($debug) /*echo '1) if NOT isset($_POST[\'html_stock_id\']) AND NOT isset($_GET[\'stock_id\']) section.<br>'.PHP_EOL; */
-?>
-    <form id="sale_item" action="add_sale.php" method="get">
-      <label>Select stock item for Sale.</label><br>
-      <select class="browser-default" name="stock_id">
-        <?php get_ID_list(); ?>
-      </select>
-      <!-- TODO - Link id and name selection -->
-      <input type="submit" value="Choose Stock for Sale">
-      <input type="reset" value="Reset">
-    </form>
+<main>
 <?php
-  } elseif (isset($_GET['stock_id'])) {
-    if ($debug) echo /*'2) if isset($_GET[\'stock_id\']) section.<br>'.PHP_EOL; */
-    $php_stock = get_stock($_GET['stock_id']);
-    // onsubmit="return check_stock_details(this)"
+	include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/stock_functions.php';
+	include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/sale_functions.php';
+	
+	if (!(isset ($_GET) && $_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET))) {		
+		header("location:/sales/sale_new.php");
+	}
+	else{
 ?>
-      <div class="container">
-        <form id="edit_stock" action="\sales\sales_added.php" method="post">
-          <fieldset>
-            <legend>Add Sale Item</legend>
-		  <div class="input-field">
-            <input type="text" id="html_sales_datetime" name="html_sales_datetime" class="validate">
-            <label class="active" for="html_sales_datetime">Sales Date/Time</label>
-          </div>
-		<div class="input-field">
-              <input readonly type="text" id="html_stock_orderlines_id" name="html_stock_orderlines_id" class="validate" value="<?php echo $php_stock['id'];?>">
-              <label for="html_stock_orderlines_id">Stock ID</label>
-            </div>
-            <div class="input-field">
-              <input readonly type="text" id="html_stock_orderlines_name" name="html_stock_orderlines_name" class="validate" value="<?php echo $php_stock['name'];?>">
-              <label for="html_stock_orderlines_name">Stock Name</label>
-            </div>
-	 <div class="input-field">
-            <input type="text" id="html_orderlines_qty" name="html_orderlines_qty" class="validate" onchange="getPrice(this.value, <?php echo $php_stock['price'];?>)">
-            <label for="html_orderlines_qty">Sales Quantity</label>
-          </div>
-	 <div class="input-field">
-            <input readonly type="text" id="html_orderlines_price" name="html_orderlines_price" class="validate">
-            <label class="active" for="html_orderlines_price">Sales Price. (Automatically calculated by quantity</label>
-          </div>
-           
-          </fieldset>
-          <p>
-            <input type="reset" value="Reset">
-            <input type="submit" value="Add Sale">
-          </p>
-        </form>
-      </div>
+<div class="container">
+	<fieldset>
+		<legend>Add Orderline</legend>
+		<form action="/sales/orderline_add.php" method="post" >
+			<div class="row">
+				<input type="hidden" name="sale_id" value="<?php echo $_GET['sale_id']; ?>" />
+				<div class="input-field col s6">
+					<select name="stock_id" required style="padding:0 0 0 0">
+						<option value="" disabled selected>Choose your option</option>
 <?php
-  }
-  //else{
-  //elseif (isset($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {
-  elseif (isset($_POST['html_stock_id'])) {
-    if ($debug) echo '3) if isset($_POST[\'html_stock_id\']) section.<br>'.PHP_EOL;
-    $succ = update_stock($_POST);
-    //$succ = update_stock();
-    // jump to item view of newly created stock item
-    if ($succ == true) {
-      echo 'Success! $_POST[\'html_stock_id\']: '.$_POST['html_stock_id'].'<br>'.PHP_EOL;
-//      header("Location:/stock/view_stock.php?stock_id=".$_POST['stock_id']);
-    }
-    else echo 'Failed!<br>'.PHP_EOL;
-  //} elseif (!(isset ($_GET) && $_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET))) {
-  }
+				$results = get_all_stock();
+				foreach($results as $row){
 ?>
-    </main>
+						<option value="<?php echo $row['stock_id'];?>"> <?php echo $row['stock_id'];?> - <?php echo $row['stock_name'];?> </option>
+<?php
+}
+?>
+					</select>
+				</div>
+				<div class="input-field col s1">
+					<input type="number" name="stock_qty" value="1" min="1" placeholder="Qty" autocomplete="off" required>
+				</div>
+				<button class="btn waves-effect waves-light" type="submit" title="Add to order"><i class="material-icons">add_shopping_cart</i>
+				</button>
+			</div>
+		</form>		
+	</fieldset>
+	<fieldset>
+		<legend>Current Orderlines</legend>
+<?php
+			$php_sale = getOrderlines($_GET['sale_id']);
+?>
+			<table class="striped" border="1">
+				<thead>
+				    <tr>
+				    	<th scope="col">Stock ID</th>
+				    	<th scope="col">Stock Name</th>
+				    	<th scope="col">Qty</th>
+				    	<th scope="col">Price</th>
+				    	<th scope="col">Subtotal</th>
+				    	<th></th>
+				    </tr>
+				</thead>
+				
+				<tbody>
+<?php
+    	if(isset($php_sale) && count($php_sale) > 0) {
+      		foreach( $php_sale['orderline_stock_id'] as $index => $php_stock_id ) {
+?>    
+			        <tr>
+				        <td><?php echo $php_stock_id; ?></td>
+				        <td><?php echo $php_sale['stock_name'][$index]; ?></td>
+				        <td><?php echo $php_sale['orderline_qty'][$index]; ?></td>
+				        <td><?php echo $php_sale['orderline_price'][$index]; ?></td>
+				        <td><?php echo $php_sale['orderline_total'][$index]; ?></td>
+				        <td>
+				        	<form method="post" action="/sales/orderline_delete.php">
+				        		<input type="hidden" name="sale_id" value="<?php echo $_GET['sale_id']; ?>" />
+				        		<input type="hidden" name="stock_id" value="<?php echo $php_stock_id; ?>" />
+				        		<input type="hidden" name="stock_qty" value="<?php $php_sale['orderline_qty'][$index]; ?>" />
+				        		<button class="btn waves-effect waves-light" type="submit" title="Remove from order"><i class="material-icons">remove_shopping_cart</i></button>
+				        	</form>
+				        </td>
+			        </tr>
+<?php
+      		}
+?>
+					<tr>
+			        	<th>Total</th>
+			        	<td></td>
+			        	<td></td>
+			        	<td></td>
+			        	<th><?php echo array_sum($php_sale['orderline_total']);?></th>
+			        	<td></td>
+			        </tr>
+<?php
+   	 }
+?>
+				</tbody>
+			</table>
+		</fieldset>
+	</div>
+<?php	
+	}
+?>
+</main>
+
+
 <?php
   include $_SERVER[ 'DOCUMENT_ROOT' ] . '/includes/tail.php';
 ?>

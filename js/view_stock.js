@@ -8,10 +8,6 @@
 */
 
 function init(){
-	// initalise form
-	//var js_edit_stock = $(document).getElementById("edit_stock");
-	//js_edit_stock.onsubmit = validate_stock;
-	
 	// initialise select fields
 	$(document).ready(function() {
 		$('select').material_select();

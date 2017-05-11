@@ -45,33 +45,44 @@
 	return $result;
  } 
 
- // Gets all the stock item ids from the database
-   function get_ID_list(){
+// Gets all the stock item ids from the database
+function getStockID(){
+    // Connect to database.
+    include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
+
       $sql = <<<SQL
 	  SELECT stock_id 
 	  FROM stock 
 	  ORDER BY stock_id ASC
 SQL;
-      
-    $result = execute_query($sql)->result;
-
-    $php_id_list = '';
+     
+	 try{
+      // Query the database to acquire results and hand them to resultSet
+      $temp  = $conn->query($sql);
+    }
+    catch(Exception $e){
+      // Display error message details
+      echo 'Error fetching list of stock IDs: '.$e->errorMessage();
+      // Stop running script
+      exit();
+    }
+	
+    $php_result = array();
     // See if there are results to process.
-    if ($result->num_rows > 0) {
-      // work through each row returned, add to the option list for selection.
-      foreach ($result as $row) {
-        $php_id_list .= '<option value="'.$row['stock_id'].'">'.$row['stock_id'].'</option>';
-      }
-      echo $php_id_list.PHP_EOL;
-    }
-    else {
-      echo "0 results";
-    }
+    if($temp->num_rows > 0) {
+	    while($row = mysqli_fetch_assoc($temp)){ // loop to store the data in an associative array.
+	      $php_stock_id[] = $row['stock_id'];
+	    }
+	   
+	    $php_result['stock_id']  = $php_stock_id;
+	}
+
+    return $php_result;
   }
   
   // Gets all the stock items from the database
   // Also returns the category name of each stock item
-  function get_all_stock() {
+  function getAllStock() {
     // SQL to select all fields from the stock table, matching the specified stock_id.
     $sql = <<<SQL
       SELECT stock.*, categories.category_name
@@ -252,31 +263,48 @@ SQL;
 		return 0;
   }
 
-  function get_cat_list($val = ""){
+  function getAllCategories(){
+    // Connect to database.
+    include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
     $sql =<<<SQL
       SELECT category_id, category_name 
       FROM categories 
       ORDER BY category_id ASC
 SQL;
     
-    $result = execute_query($sql)->result;
-    
-    $php_cat_list = '';
-    // See if there are results to process.
-    if ($result->num_rows > 0) {
-      // work through each row returned, add to the option list for selection.
-      foreach ($result as $row) {
-        if ($val != "" && $val == $row['category_id']) {
-          $php_cat_list .= '                  <option value="'.$row['category_id'].'" selected>'.$row['category_name'].'</option>'.PHP_EOL;
-        } else {
-          $php_cat_list .= '                  <option value="'.$row['category_id'].'">'.$row['category_name'].'</option>'.PHP_EOL;
-        }
-      }
-        echo $php_cat_list;
-     }
-     else {
-      echo "0 results";
+
+	 try{
+      // Query the database to acquire results and hand them to resultSet
+      $result = $conn->query($sql);
     }
+    catch(Exception $e){
+      // Display error message details
+      echo 'Error fetching list of stock IDs: '.$e->errorMessage();
+      // Stop running script
+      exit();
+    }
+    
+    // Close connection to database.
+    $conn->close();
+    // return stock item details to calling section. Should be the Web Interface.
+    return $result;
+
+//    $php_cat_list = '';
+//    // See if there are results to process.
+//    if ($result->num_rows > 0) {
+//      // work through each row returned, add to the option list for selection.
+//      foreach ($result as $row) {
+//        if ($val != "" && $val == $row['category_id']) {
+//          $php_cat_list .= '                  <option value="'.$row['category_id'].'" selected>'.$row['category_name'].'</option>'.PHP_EOL;
+//        } else {
+//          $php_cat_list .= '                  <option value="'.$row['category_id'].'">'.$row['category_name'].'</option>'.PHP_EOL;
+//        }
+//      }
+//        echo $php_cat_list;
+//     }
+//     else {
+//      echo "0 results";
+//    }
   }
   
   function get_category($val = ""){
@@ -295,13 +323,14 @@ SQL;
 	 echo '<input readonly type="text" id="html_stock_catagory_id" name="html_stock_catagory_id" value="'.$php_returned_category['category_name'].'">';
   }
 
-  function delete_stock_item($php_stock_id) {
+  function deleteStock($php_stock_id) {
     // Connect to database.
     include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
 
     // SQL to select all fields from the stock table, matching the specified stock_id.
     $sql = <<<SQL
-      DELETE FROM stock WHERE stock_id = $php_stock_id
+      DELETE FROM stock 
+      WHERE stock_id = $php_stock_id
 SQL;
   
     try{

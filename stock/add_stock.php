@@ -85,23 +85,30 @@
 						<input type="text" id="html_stock_supplier_code" name="html_stock_supplier_code" class="validate">
 		        		<label for="html_stock_supplier_code">Item Supplier Code</label>
 					</div>
-					<div class="input-field"> 
-						<span id="html_stock_category_id_validation"></span>
+					<div class="input-field">
 						<select id="html_stock_category_id" name="html_stock_category_id">
-							<option value="" disabled selected>Select category</option>
-<?php get_cat_list(); ?>
+							<option value="" disabled selected>Please select a stock item your option</option>
+<?php
+							$results = getAllCategories();
+							foreach($results as $row){
+?>
+							<option value="<?php echo $row['category_id'];?>"> <?php echo $row['category_id'];?> - <?php echo $row['category_name'];?> </option>
+<?php
+}
+?>
 						</select>
-						<label>Stock Category</label>
+						<label>Select stock category</label>			
 					</div>
 					<div class="input-field">
 						<input type="text" id="html_stock_barcode" name="html_stock_barcode" class="validate">
 		        		<label for="html_stock_barcode">Item Barcode</label>
-					</div> 
+					</div>
+					
+					<div class="center-align">
+						<button class="btn waves-effect waves-light" type="submit">Submit<i class="material-icons right">send</i></button>
+						<button class="btn waves-effect waves-light" type="reset">Clear<i class="material-icons right">clear</i></button>
+					</div>
 				</fieldset>
-				<p>
-					<button class="btn waves-effect waves-light" type="reset">Reset<i class="material-icons right">clear</i></button>
-					<button class="btn waves-effect waves-light" type="submit">Submit<i class="material-icons right">send</i></button>
-				</p>
 			</form>
 		</div>
 <?php

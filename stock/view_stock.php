@@ -8,7 +8,7 @@
   
   // Variable to assign extra javascript files into the head of the page. just the file name needs to go in the quotes.
   // All files should reside in the "js" folder.
-  //$extra_js = "";
+  $extra_js = "view_stock.js";
 
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/head.php';
 ?>
@@ -16,28 +16,35 @@
   include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/nav.php';
 ?>
     </nav>
-    <main>
+<main>
 <?php
-  //echo "connect<br>".PHP_EOL;
-  // Include functions for editing stock. Could be made part of all functions for stock. eg: stock_func.php
-  include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/stock_functions.php';
-  if (isset ($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {  // no ?stock_id= present
-    header("Location:/stock/view_stock.php?stock_id=".$_POST['html_stock_id']);
-  } 
-  elseif (!(isset ($_GET) && $_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET))) { // change post to get and display as ?stock_id= not ?html_stock_id=
+	//echo "connect<br>".PHP_EOL;
+	// Include functions for editing stock. Could be made part of all functions for stock. eg: stock_func.php
+	include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/stock_functions.php';
+	if (!(isset ($_GET) && $_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET))) { // change post to get and display as ?stock_id= not ?html_stock_id=
 ?>
-    <form id="stock_item" action="view_stock.php" method="post">
-      <label>
-        Select stock item to view by ID.
-      </label><br>
-
-      <select class="browser-default" name="html_stock_id">
-        <option value="" disabled selected>Select a stock item</option>
-        <?php get_ID_list(); ?>
-      </select>      
-      <input type="submit" value="Submit"> 
-      <input type="reset" value="Reset">
-    </form>
+	<div class="container"> 
+		<form id="stock_item" action="view_stock.php" method="get">
+			<div class="input-field">
+				<select name="stock_id">
+					<option value="" disabled selected>Please select a stock item</option>
+<?php
+					$results = getAllStock();
+					foreach($results as $row){
+?>
+					<option value="<?php echo $row['stock_id'];?>"> <?php echo $row['stock_id'];?> - <?php echo $row['stock_name'];?> </option>
+<?php
+}
+?>
+				</select>
+				<label>Select stock item to view by ID.</label>			
+			</div>
+			<div class="center-align">
+				<button class="btn waves-effect waves-light" type="submit">Submit<i class="material-icons right">send</i></button>
+				<button class="btn waves-effect waves-light" type="reset">Clear<i class="material-icons right">clear</i></button>
+			</div>
+		</form>
+	</div>
 <?php
   } 
   else {
@@ -46,7 +53,7 @@
     <div class="container">  
 		
 		<div class="fixed-action-btn horizontal">
-		    <a class="btn-floating btn-large red" title="Menu"><i class="large material-icons">menu</i></a>
+		    <a class="btn-floating btn-large red pulse" title="Menu"><i class="large material-icons">menu</i></a>
 		    <ul>
 		      <li><a class="btn-floating red darken-1" title="Delete" href="\stock\delete_stock.php?stock_id=<?= $php_stock['id'] ?>"><i class="material-icons">delete</i></a></li>
 		      <li><a class="btn-floating yellow" title="Edit" href="\stock\edit_stock.php?stock_id=<?= $php_stock['id'] ?>"><i class="material-icons">edit</i></a></li>
@@ -54,19 +61,19 @@
 		    </ul>
 		  </div>    
              
-      <p>Item ID: <span><?php echo $php_stock['id']; ?> </span><p>
-      <p>Item Name: <span><?php echo $php_stock['name'];?> </span><p>
-      <p>Item Description: <span><?php echo $php_stock['description'];?> </span><p>
-      <p>Directions: <span><?php echo $php_stock['directions'];?> </span><p>
-      <p>Ingredients: <?php echo $php_stock['ingredients'];?> <p>
-      <p>Item Price: <span><?php echo $php_stock['price'];?> </span> <p>
-      <p>Item Cost Price: <span><?php echo $php_stock['cost_price'];?> </span> <p>
-      <p>Item Qty: <span><?php echo $php_stock['qty'];?> </span> <p>
-      <p>Item Target: <span><?php echo $php_stock['target_min_qty'];?> </span> <p>
-      <p>Item Supplier: <span><?php echo $php_stock['supplier'];?> </span> <p>
-      <p>Item Supplier Code: <span><?php echo $php_stock['supplier_order_code'];?> </span> <p>
-      <p>Item Category Name: <span><?php echo $php_stock['category_name'];?> </span> <p>
-      <p>Item Barcode: <span><?php echo $php_stock['barcode'];?> </span> <p>
+      		Item ID: <span><?php echo $php_stock['id']; ?> </span><br>
+			Item Name: <span><?php echo $php_stock['name'];?> </span><br>
+			Item Description: <span><?php echo $php_stock['description'];?> </span><br>
+			Directions: <span><?php echo $php_stock['directions'];?> </span><br>
+			Ingredients: <?php echo $php_stock['ingredients'];?> <br>
+			Item Price: <span><?php echo $php_stock['price'];?> </span> <br>
+			Item Cost Price: <span><?php echo $php_stock['cost_price'];?> </span> <br>
+			Item Qty: <span><?php echo $php_stock['qty'];?> </span> <br>
+			Item Target: <span><?php echo $php_stock['target_min_qty'];?> </span> <br>
+			Item Supplier: <span><?php echo $php_stock['supplier'];?> </span> <br>
+			Item Supplier Code: <span><?php echo $php_stock['supplier_order_code'];?> </span> <br>
+			Item Category Name: <span><?php echo $php_stock['category_name'];?> </span> <br>
+			Item Barcode: <span><?php echo $php_stock['barcode'];?> </span> <br>
     </div>
 <?php
   }
