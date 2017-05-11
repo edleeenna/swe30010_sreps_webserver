@@ -41,7 +41,7 @@
 			$pageTitle = "Sales by week";
 				echo "<p>Sales by week report</p>".PHP_EOL;
 				echo "<p>UNIMPLEMENTED</p>".PHP_EOL;
-				
+				// SELECT sale_datetime, orderline_stock_id, orderline_qty, (orderline_qty * orderline_price) as subtotal FROM orderlines INNER JOIN sales ON orderline_sale_id = sale_id WHERE sale_datetime >= '2017/03/07' AND sale_datetime <= DATE_ADD('2017/03/08', INTERVAL 1 DAY) ORDER BY sale_datetime, orderline_stock_id
 				// for week dd/mm/yyy to dd/mm/yyy
 				// day | stock id | qty sold | total price per stock ($) | total price per day
 				// ----|----------|----------|-------------              |
