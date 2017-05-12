@@ -71,6 +71,7 @@ SQL;
         }
         //<th></th><th></th></tr>
 ?>
+        </tr>
 <?php    
         for( $i = 0; $i < count( $results->data ); $i++ ) {
 ?>
@@ -88,8 +89,8 @@ SQL;
 <?php
       
       //if ($lastdate == "") $lastdate = $results->data['sale_datetime'];
-      if ($lastdate != $results->data['sale_datetime']) echo $results->data['sale_datetime']."<br>".PHP_EOL;
-      //for ($i = 0; $i < count( $results->data ); $i++ ) {}
+        //if ($lastdate != $results->data['sale_datetime']) echo $results->data['sale_datetime']."<br>".PHP_EOL;
+        //for ($i = 0; $i < count( $results->data ); $i++ ) {}
         /* <tr>
           <td></td>
         </tr> */
@@ -101,7 +102,7 @@ SQL;
       </table>
     </div>
 <?php
-                // SELECT sale_datetime, orderline_stock_id, orderline_qty, (orderline_qty * orderline_price) as subtotal FROM orderlines INNER JOIN sales ON orderline_sale_id = sale_id WHERE sale_datetime >= '2017/03/07' AND sale_datetime <= DATE_ADD('2017/03/08', INTERVAL 1 DAY) ORDER BY sale_datetime, orderline_stock_id
+        // SELECT sale_datetime, orderline_stock_id, orderline_qty, (orderline_qty * orderline_price) as subtotal FROM orderlines INNER JOIN sales ON orderline_sale_id = sale_id WHERE sale_datetime >= '2017/03/07' AND sale_datetime <= DATE_ADD('2017/03/08', INTERVAL 1 DAY) ORDER BY sale_datetime, orderline_stock_id
         // for week dd/mm/yyy to dd/mm/yyy
         // day | stock id | qty sold | total price per stock ($) | total price per day
         // ----|----------|----------|-------------              |
@@ -116,7 +117,8 @@ SQL;
         
         // display results
         
-        break;
+        break;  //  END  case "sales_by_week":
+// ************************************************************************************************************************************
       case "sales_by_month":
         echo "<p>Sales by month report</p>".PHP_EOL;
         echo "<p>UNIMPLEMENTED</p>".PHP_EOL;
