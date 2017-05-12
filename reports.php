@@ -40,7 +40,7 @@
       case "sales_by_week":
         $pageTitle = "Sales by week";
         echo "<p>Sales by week report</p>".PHP_EOL;
-        echo "<p>UNIMPLEMENTED</p>".PHP_EOL;
+        //echo "<p>UNIMPLEMENTED</p>".PHP_EOL;
 
         $start_date = "2017/03/06";
         $end_date = "2017/03/13";
