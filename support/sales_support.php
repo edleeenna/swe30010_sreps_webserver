@@ -21,7 +21,7 @@
   Support for how to use the sections of the sales system.
   <div class="row">
   <div class="col s12">
-    <h3>Addt Sale</h3>
+    <h3>Add Sale</h3>
     <p>This will take you through how to navigate to and how to add sale to the database.</p>
   </div>
   <div class="row">
