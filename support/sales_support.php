@@ -17,7 +17,6 @@
 </nav>
 <main>
   <div class="container">
-  Work in progress.
   <h2>Sales Support</h2>
   Support for how to use the sections of the sales system.
   <div class="row">
@@ -36,7 +35,7 @@
   </div>
   <div class="col s4">
     <img class="responsive-img materialboxed" src="/images/addsale.png" alt="how to add sale" />
-    <p></p>
+    <p>You should be able to see the ID and date time of the sale you are about to add. Add an orderline by clicking on it's name in the drop down box and type in it's quantity. Now click on the green shopping cart to add the orderline to the sale. It should now be displayed along with the stock ID, name, qty and price  </p>
   </div>
 
   <div class="row">
