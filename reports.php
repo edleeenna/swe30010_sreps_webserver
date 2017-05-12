@@ -75,13 +75,13 @@ SQL;
 ?>
         </tr>
 <?php    
-        if ($lastdate == "") $lastdate = $results->data[$i]['sale_datetime'];
-        elseif ($lastdate != $results->data[$i]['sale_datetime']) {
-         echo '<tr><td>'.$results->data[$i]['sale_datetime']."</td><td></td><td></td><td></td><td></td></tr><br>".PHP_EOL;
-          $lastdate = $results->data[$i]['sale_datetime'];
-        }
-        
         for( $i = 0; $i < count( $results->data ); $i++ ) {
+
+          if ($lastdate == "") $lastdate = $results->data[$i]['sale_datetime'];
+          elseif ($lastdate != $results->data[$i]['sale_datetime']) {
+           echo '<tr><td>'.$results->data[$i]['sale_datetime']."</td><td></td><td></td><td></td><td></td></tr><br>".PHP_EOL;
+            $lastdate = $results->data[$i]['sale_datetime'];
+          }        
 ?>
         <tr>
 <?php
