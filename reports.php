@@ -75,7 +75,7 @@ SQL;
         </tr>
 <?php    
         for( $i = 0; $i < count( $results->data ); $i++ ) {
-          echo "<p>Testline. Last Date = $lastdate</p>".PHP_EOL;
+          //echo "<p>Testline. Last Date = $lastdate</p>".PHP_EOL;
           if ($lastdate == "") $lastdate = $results->data[$i]['sale_datetime'];
           elseif ($lastdate != $results->data[$i]['sale_datetime']) {
             echo '<tr><td>'.$results->data[$i]['sale_datetime']."</td><td></td><td></td><td></td><td></td></tr>".PHP_EOL;
