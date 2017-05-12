@@ -20,9 +20,25 @@
   Work in progress.
   <h2>Sales Support</h2>
   Support for how to use the sections of the sales system.
-  <h3>Add Sale</h3>
-  Change this text later. Screen shot, with description of what the parts are and for. Description of how you would use them.
-  Perhaps take them through from start to finish, how to do a complete run.
+  <div class="row">
+  <div class="col s12">
+    <h3>Addt Sale</h3>
+    <p>This will take you through how to navigate to and how to add sale to the database.</p>
+  </div>
+  <div class="row">
+  <div class="col s4">
+    <img class="responsive-img materialboxed" src="/images/navtomanagesales.png" alt="how to nav to managesales" />
+    <p>From the home page click on the "Manage Sales" button as shown above to navigate to the "Manage Sales" page</p>
+  </div>
+  <div class="col s4">
+    <img class="responsive-img materialboxed" src="/images/navtoaddsale.png" alt="how to nav to add sale" />
+    <p>From Manage Sales, click on the "edit Sale" button as shown above.</p>
+  </div>
+  <div class="col s4">
+    <img class="responsive-img materialboxed" src="/images/addsale.png" alt="how to add sale" />
+    <p></p>
+  </div>
+
   <div class="row">
   <div class="col s12">
     <h3>Edit Sale</h3>
