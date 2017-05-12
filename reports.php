@@ -52,7 +52,7 @@
         include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/stock_functions.php';
         include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/Paginator.class.php';
         include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/utilities.php';
-        $limit      = ( isset( $_GET['limit'] ) ) ? $_GET['limit'] : 10;
+        $limit      = ( isset( $_GET['limit'] ) ) ? $_GET['limit'] : 100;
         $page       = ( isset( $_GET['page'] ) )  ? $_GET['page']  : 1;
         $links      = ( isset( $_GET['links'] ) ) ? $_GET['links'] : 3;
         $query = <<<SQL
