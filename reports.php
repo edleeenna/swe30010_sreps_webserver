@@ -42,8 +42,8 @@
         echo "<p>Sales by week report</p>".PHP_EOL;
         echo "<p>UNIMPLEMENTED</p>".PHP_EOL;
 
-        $start_date = "2017/03/07";
-        $end_date = "2017/03/08";
+        $start_date = "2017/03/06";
+        $end_date = "2017/03/13";
         $lastdate   = "";
         $daytotal = 0;
         $grandtotal = 0;
