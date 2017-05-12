@@ -19,7 +19,7 @@
           <!-- Dropdown Trigger -->
           <ul class="right hide-on-med-and-down">
             <li><a href="/">Home</a></li>
-            <li><a href="/sales/add_sales.php">Quick Sale</a></li>
+            <li><a href="/sales/add_sale.php">Quick Sale</a></li>
             <li><a href="/search.php">Search</a></li>
             <li><a class="dropdown-button" data-constrainwidth="false" data-hover="true" href="#" data-activates="StockDown">Manage Stock<i class="material-icons right">arrow_drop_down</i></a></li>
             <li><a class="dropdown-button" data-constrainwidth="false" data-hover="true" href="#" data-activates="SaleDown">Manage Sales<i class="material-icons right">arrow_drop_down</i></a></li>
