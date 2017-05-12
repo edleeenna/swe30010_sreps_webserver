@@ -90,8 +90,8 @@ SQL;
         </tr>
 <?php
       
-      //if ($lastdate == "") $lastdate = $results->data['sale_datetime'];
-        //if ($lastdate != $results->data['sale_datetime']) echo $results->data['sale_datetime']."<br>".PHP_EOL;
+        //if ($lastdate == "") $lastdate = $results->data['sale_datetime'];
+        if ($lastdate != $results->data['sale_datetime']) echo $results->data['sale_datetime']."<br>".PHP_EOL;
         //for ($i = 0; $i < count( $results->data ); $i++ ) {}
         /* <tr>
           <td></td>
