@@ -92,7 +92,7 @@ SQL;
       
         if ($lastdate == "") $lastdate = $results->data[$i]['sale_datetime'];
         elseif ($lastdate != $results->data[$i]['sale_datetime']) {
-          echo $results->data[$i]['sale_datetime']."<br>".PHP_EOL;
+         echo '<tr><td>'.$results->data[$i]['sale_datetime']."</td><td></td><td></td><td></td><td></td></tr><br>".PHP_EOL;
           $lastdate = $results->data[$i]['sale_datetime'];
         }
         //if ($lastdate != $results['sale_datetime']) echo $results['sale_datetime']."<br>".PHP_EOL;
