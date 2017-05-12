@@ -60,7 +60,6 @@
 SQL;
         $Paginator  = new Paginator( $conn, $query );
         $results    = $Paginator->getData( $limit, $page );
-        echo "<p>Testline</p>".PHP_EOL;
 ?>
     <div class="container">
       <table class="striped" border="1">
@@ -76,10 +75,10 @@ SQL;
         </tr>
 <?php    
         for( $i = 0; $i < count( $results->data ); $i++ ) {
-
+          echo "<p>Testline $lastdate</p>".PHP_EOL;
           if ($lastdate == "") $lastdate = $results->data[$i]['sale_datetime'];
           elseif ($lastdate != $results->data[$i]['sale_datetime']) {
-           echo '<tr><td>'.$results->data[$i]['sale_datetime']."</td><td></td><td></td><td></td><td></td></tr><br>".PHP_EOL;
+            echo '<tr><td>'.$results->data[$i]['sale_datetime']."</td><td></td><td></td><td></td><td></td></tr>".PHP_EOL;
             $lastdate = $results->data[$i]['sale_datetime'];
           }        
 ?>
