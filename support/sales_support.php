@@ -39,11 +39,11 @@
   </div>
   <div class="col s3">
     <img class="responsive-img materialboxed" src="/images/selectsaletoedit.png" alt="how to view all stock" />
-    <p></p>
+    <p>Select the sale you'd wish to edit from the dropdown box and click submit. If you make a mistake you can click on the cancel button to start again.</p>
   </div>
   <div class="col s3">
     <img class="responsive-img materialboxed" src="/images/editsale.png" alt="how to view all stock" />
-    <p>e</p>
+    <p>You should now be taken to this page which allows you to edit sales. Now, you can add or remove orderlines. Edit the sale as you wish</p>
   </div>
   <div class="row">
   <div class="col s12">
