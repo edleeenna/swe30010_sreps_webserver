@@ -43,6 +43,7 @@
         echo "<p>UNIMPLEMENTED</p>".PHP_EOL;
 
         $lastdate   = "";
+        $daytotal = 0;
         $allSaleQuery = ""; /* */
         include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
         include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/stock_functions.php';
@@ -76,10 +77,12 @@ SQL;
 <?php    
         for( $i = 0; $i < count( $results->data ); $i++ ) {
        //   echo "<p>Testline. Last Date = $lastdate</p>".PHP_EOL;
+          $daytotal = $results->data[$i]['subtotal'];
           if ($lastdate == "") $lastdate = $results->data[$i]['sale_datetime'];
           elseif ($lastdate != $results->data[$i]['sale_datetime']) {
-            echo '<tr><td>'.$results->data[$i]['sale_datetime']."</td><td></td><td></td><td></td><td></td></tr>".PHP_EOL;
+            echo '<tr><td>'.$results->data[$i]['sale_datetime']."</td><td></td><td></td><td></td><td><b>$daytotal</b></td></tr>".PHP_EOL;
             $lastdate = $results->data[$i]['sale_datetime'];
+            $daytotal = 0;
           }        
 ?>
         <tr>
