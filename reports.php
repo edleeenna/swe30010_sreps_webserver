@@ -42,8 +42,11 @@
         echo "<p>Sales by week report</p>".PHP_EOL;
         echo "<p>UNIMPLEMENTED</p>".PHP_EOL;
 
+        $start_date = '2017/03/07';
+        $end_date = '2017/03/08';
         $lastdate   = "";
         $daytotal = 0;
+        $grandtotal = 0;
         $allSaleQuery = ""; /* */
         include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/db_connect.php';
         include $_SERVER[ 'DOCUMENT_ROOT' ].'/includes/stock_functions.php';
@@ -56,9 +59,11 @@
         SELECT sale_datetime, orderline_stock_id, stock_name, orderline_qty, (orderline_qty * orderline_price) as subtotal FROM orderlines
         INNER JOIN sales ON orderline_sale_id = sale_id
         INNER JOIN stock ON orderline_stock_id = stock_id
-        WHERE sale_datetime >= '2017/03/07' AND sale_datetime <= DATE_ADD('2017/03/08', INTERVAL 1 DAY)
+        WHERE sale_datetime >= $start_date AND sale_datetime <= DATE_ADD($end_date, INTERVAL 1 DAY)
         ORDER BY sale_datetime, orderline_stock_id
 SQL;
+        //WHERE sale_datetime >= '2017/03/07' AND sale_datetime <= DATE_ADD('2017/03/08', INTERVAL 1 DAY)
+
         $Paginator  = new Paginator( $conn, $query );
         $results    = $Paginator->getData( $limit, $page );
 ?>
@@ -81,8 +86,9 @@ SQL;
           if ($lastdate == "") $lastdate = $results->data[$i]['sale_datetime'];
           elseif ($lastdate != $results->data[$i]['sale_datetime']) {
             //echo '        <tr><td>'.$results->data[$i]['sale_datetime']."</td><td></td><td></td><td></td><td><b>$daytotal</b></td></tr>".PHP_EOL;
-            echo "        <tr><td></td><td></td><td></td><td></td><td><b>$daytotal</b></td></tr>".PHP_EOL;
+            echo "        <tr><td><b>Day total</b></td><td></td><td></td><td></td><td><b>$daytotal</b></td></tr>".PHP_EOL;
             $lastdate = $results->data[$i]['sale_datetime'];
+            $grandtotal += $daytotal;
             $daytotal = 0;
           }
           if ($lastdate != "") $daytotal += $results->data[$i]['subtotal'];
@@ -109,10 +115,12 @@ SQL;
 ?>
 <?php
     //}
-            echo "        <tr><td></td><td></td><td></td><td></td><td><b>$daytotal</b></td></tr>".PHP_EOL;
+            $grandtotal += $daytotal;
+            echo "        <tr><td><b>Day total</b></td><td></td><td></td><td></td><td><b>$daytotal</b></td></tr>".PHP_EOL;
+            echo "        <tr><td><b>Grand total</b></td><td></td><td></td><td></td><td><b>$grandtotal</b></td></tr>".PHP_EOL;
 ?>
       </table>
-    </div>
+    </div><br><br>
 <?php
         // SELECT sale_datetime, orderline_stock_id, orderline_qty, (orderline_qty * orderline_price) as subtotal FROM orderlines INNER JOIN sales ON orderline_sale_id = sale_id WHERE sale_datetime >= '2017/03/07' AND sale_datetime <= DATE_ADD('2017/03/08', INTERVAL 1 DAY) ORDER BY sale_datetime, orderline_stock_id
         // for week dd/mm/yyy to dd/mm/yyy
