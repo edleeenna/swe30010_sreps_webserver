@@ -80,7 +80,7 @@ SQL;
           $daytotal = $results->data[$i]['subtotal'];
           if ($lastdate == "") $lastdate = $results->data[$i]['sale_datetime'];
           elseif ($lastdate != $results->data[$i]['sale_datetime']) {
-            echo '<tr><td>'.$results->data[$i]['sale_datetime']."</td><td></td><td></td><td></td><td><b>$daytotal</b></td></tr>".PHP_EOL;
+            echo '        <tr><td>'.$results->data[$i]['sale_datetime']."</td><td></td><td></td><td></td><td><b>$daytotal</b></td></tr>".PHP_EOL;
             $lastdate = $results->data[$i]['sale_datetime'];
             $daytotal = 0;
           }        
