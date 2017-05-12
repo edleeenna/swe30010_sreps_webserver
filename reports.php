@@ -76,14 +76,15 @@ SQL;
         </tr>
 <?php    
         for( $i = 0; $i < count( $results->data ); $i++ ) {
-          echo "<p>Testline. Last Date = $lastdate, Day total = $daytotal</p>".PHP_EOL;
-          $daytotal = $results->data[$i]['subtotal'];
+          //echo "<p>Testline. Last Date = $lastdate, Day total = $daytotal</p>".PHP_EOL;
+          //$daytotal += $results->data[$i]['subtotal'];
           if ($lastdate == "") $lastdate = $results->data[$i]['sale_datetime'];
           elseif ($lastdate != $results->data[$i]['sale_datetime']) {
             echo '        <tr><td>'.$results->data[$i]['sale_datetime']."</td><td></td><td></td><td></td><td><b>$daytotal</b></td></tr>".PHP_EOL;
             $lastdate = $results->data[$i]['sale_datetime'];
             $daytotal = 0;
-          }        
+          }
+          if ($lastdate != "") $daytotal += $results->data[$i]['subtotal'];
 ?>
         <tr>
 <?php
