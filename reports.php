@@ -90,9 +90,11 @@ SQL;
         </tr>
 <?php
       
-        //if ($lastdate == "") $lastdate = $results->data['sale_datetime'];
-        //if ($lastdate != 1)
-        echo $results->data[$i]['sale_datetime']."<br>".PHP_EOL;
+        if ($lastdate == "") $lastdate = $results->data[$i]['sale_datetime'];
+        elseif ($lastdate != $results->data[$i]['sale_datetime']) {
+          echo $results->data[$i]['sale_datetime']."<br>".PHP_EOL;
+          $lastdate = $results->data[$i]['sale_datetime'];
+        }
         //if ($lastdate != $results['sale_datetime']) echo $results['sale_datetime']."<br>".PHP_EOL;
         //for ($i = 0; $i < count( $results->data ); $i++ ) {}
         /* <tr>
