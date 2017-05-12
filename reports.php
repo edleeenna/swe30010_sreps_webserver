@@ -42,8 +42,8 @@
         echo "<p>Sales by week report</p>".PHP_EOL;
         echo "<p>UNIMPLEMENTED</p>".PHP_EOL;
 
-        $start_date = '2017/03/07';
-        $end_date = '2017/03/08';
+        $start_date = "2017/03/07";
+        $end_date = "2017/03/08";
         $lastdate   = "";
         $daytotal = 0;
         $grandtotal = 0;
@@ -59,7 +59,7 @@
         SELECT sale_datetime, orderline_stock_id, stock_name, orderline_qty, (orderline_qty * orderline_price) as subtotal FROM orderlines
         INNER JOIN sales ON orderline_sale_id = sale_id
         INNER JOIN stock ON orderline_stock_id = stock_id
-        WHERE sale_datetime >= $start_date AND sale_datetime <= DATE_ADD($end_date, INTERVAL 1 DAY)
+        WHERE sale_datetime >= '$start_date' AND sale_datetime <= DATE_ADD('$end_date', INTERVAL 1 DAY)
         ORDER BY sale_datetime, orderline_stock_id
 SQL;
         //WHERE sale_datetime >= '2017/03/07' AND sale_datetime <= DATE_ADD('2017/03/08', INTERVAL 1 DAY)
