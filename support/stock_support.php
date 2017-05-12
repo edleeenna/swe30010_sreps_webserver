@@ -142,7 +142,7 @@
           </div>
               <div class="col s2">
             <img class="responsive-img materialboxed" src="/images/deleteitem.png" alt="how to view all stock" />
-               <p>Here you should be able to view the item details of the stock you would like to delete. Click on "deleete" to delete the stock item or "reset" if you make a mistake</p>
+               <p>Here you should be able to view the item details of the stock you would like to delete. Click on "delete" to delete the stock item or "reset" if you make a mistake</p>
           </div>
              <div class="col s2">
             <img class="responsive-img materialboxed" src="/images/ConfirmDelete.png" alt="how to view all stock" />
