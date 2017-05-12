@@ -54,11 +54,13 @@
         $query = <<<SQL
         SELECT sale_datetime, orderline_stock_id, stock_name, orderline_qty, (orderline_qty * orderline_price) as subtotal FROM orderlines
         INNER JOIN sales ON orderline_sale_id = sale_id
+        INNER JOIN stock ON orderline_stock_id = stock_id
         WHERE sale_datetime >= '2017/03/07' AND sale_datetime <= DATE_ADD('2017/03/08', INTERVAL 1 DAY)
         ORDER BY sale_datetime, orderline_stock_id
 SQL;
         $Paginator  = new Paginator( $conn, $query );
         $results    = $Paginator->getData( $limit, $page );
+        echo "<p>Testline</p>".PHP_EOL;
 ?>
     <div class="container">
       <table class="striped" border="1">
