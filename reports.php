@@ -83,11 +83,11 @@ SQL;
         for( $i = 0; $i < count( $results->data ); $i++ ) {
           //echo "<p>Testline. Last Date = $lastdate, Day total = $daytotal</p>".PHP_EOL;
           //$daytotal += $results->data[$i]['subtotal'];
-          if ($lastdate == "") $lastdate = $results->data[$i]['sale_datetime'];
-          elseif ($lastdate != $results->data[$i]['sale_datetime']) {
+          if ($lastdate == "") $lastdate = substr($results->data[$i]['sale_datetime'], 0, 10);
+          elseif ($lastdate != substr($results->data[$i]['sale_datetime'], 0, 10) {
             //echo '        <tr><td>'.$results->data[$i]['sale_datetime']."</td><td></td><td></td><td></td><td><b>$daytotal</b></td></tr>".PHP_EOL;
             echo "        <tr><td><b>Day total</b></td><td></td><td></td><td></td><td><b>$daytotal</b></td></tr>".PHP_EOL;
-            $lastdate = $results->data[$i]['sale_datetime'];
+            $lastdate = substr($results->data[$i]['sale_datetime'], 0, 10);
             $grandtotal += $daytotal;
             $daytotal = 0;
           }
