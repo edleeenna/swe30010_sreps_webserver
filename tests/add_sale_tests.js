@@ -53,14 +53,14 @@ QUnit.test("Test orderline value returns 'not valid' if name is not a string", f
 });
 
 QUnit.module("Test user input of orderline qty is a number");
-QUnit.test("Test qty is a number", function(assert) {
-  //var result = isNumber(3);
- // assert.equal(result, true);
+QUnit.test("Test qty is a number. Return false if it is a number", function(assert) {
+  var result = validate_qty(3);
+  assert.equal(result, "this is a valid number");
 });
 
-QUnit.test('Test qty is not a number', function(assert) {
- // var result = isNumber("five");
-  //assert.equal(result, false);
+QUnit.test('Test qty is not a number. Return true if not a number', function(assert) {
+  var result = validate_qty("five");
+    assert.equal(result, "this is not a number");
 });
 
 
