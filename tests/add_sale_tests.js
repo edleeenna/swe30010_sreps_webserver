@@ -33,6 +33,4 @@ QUnit.test( "a basic test example", function( assert ) {
   datetime = getDateTime();
   assert.equal(getDateTime(), datetime );
 });
-QUnit.test( "a basic test example 2", function( assert ) {
-  assert.ok( true, "this test is fine" );
-}); */
+
