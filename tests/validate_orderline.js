@@ -9,7 +9,7 @@ This file is for Distinction Task - Qualilty Review
 
 function validate_name(name)
 {
-	if (isNumber(name) == false ) {
+	if (isNaN(name) == false ) {
 		return "not valid";
 	}
 	else {
@@ -18,12 +18,5 @@ function validate_name(name)
 	
 }
 
-//checking if input is a number
-function isNumber(number) {
-	if (isNaN(number)){
-		return true;
-	} else {
-		return false;
-	}
-}
+
 
