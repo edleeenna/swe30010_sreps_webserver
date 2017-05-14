@@ -7,13 +7,6 @@
 * Credits: QUnit
 */
 
-/*QUnit.module( "group a" );
-QUnit.test( "a basic test example", function( assert ) {
-  assert.ok( true, "this test is fine" );
-});
-QUnit.test( "a basic test example 2", function( assert ) {
-  assert.ok( true, "this test is fine" );
-}); */
 
 QUnit.test("Hello Test", function(assert){
   assert.ok(1 == "1", "Passed!");
@@ -32,3 +25,14 @@ QUnit.test("Test getPrice doesn't accept a string", function(assert){
   var price = getPrice(1, "four");
   assert.notOk(price);
 });
+
+QUnit.module( "Test Date time" );
+QUnit.test( "a basic test example", function( assert ) {
+
+  var datetime = document.getElementById("datetime").innerHTML;
+  datetime = getDateTime();
+  assert.equal(getDateTime(), datetime );
+});
+QUnit.test( "a basic test example 2", function( assert ) {
+  assert.ok( true, "this test is fine" );
+}); */
