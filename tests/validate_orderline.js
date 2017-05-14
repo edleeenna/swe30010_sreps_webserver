@@ -20,5 +20,17 @@ function validate_name(name)
 	
 }
 
+function validate_qty(qty)
+{
+	//if a number
+	if (isNaN(qty)) {
+		return "this is not a number";
+	}
+	//if not a number
+	else {
+		return "this is a valid number";
+	}
+		
+}
 
 
