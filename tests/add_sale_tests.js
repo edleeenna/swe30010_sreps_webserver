@@ -39,3 +39,15 @@ QUnit.test( "Sale dateime return false if incorrect", function( assert ) {
   datetime = "2017/09/05 2:00:00"
   assert.notEqual(getDateTime(), datetime);
 });
+
+QUnit.module("Test user input of orderline name is of a string value");
+QUnit.test("Test orderline name returns a string", function(assert) {
+  var result = validate_name("Ear Plugs");
+  assert.equal(result, "valid");
+});
+
+QUnit.test("Test orderline value returns 'not valid' if name is not a string", function(assert) {
+  var result = validate_name(1);
+  assert.equal(result, "not valid");
+
+});
