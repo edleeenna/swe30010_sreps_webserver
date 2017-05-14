@@ -19,7 +19,7 @@ QUnit.test("Hello Test", function(assert){
   assert.ok(1 == "1", "Passed!");
 });
 
-QUnit.module( "Test getPrice );
+QUnit.module( "Test getPrice" );
 QUnit.test("Test getPrice returns a correct result", function(assert){
   var price = getPrice(1, 3);
   assert.equal(price, 3);
