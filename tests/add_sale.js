@@ -35,7 +35,7 @@ function getPrice(qty, price){
 function init(){
 	'use strict';
 
-	document.getElementById("html_sales_datetime").value = getDateTime();
+	//document.getElementById("html_sales_datetime").value = getDateTime();
 }
 
 window.onload = init;
