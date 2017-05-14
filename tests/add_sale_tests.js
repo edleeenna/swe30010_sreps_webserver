@@ -7,12 +7,24 @@
 * Credits: QUnit
 */
 
+/*QUnit.module( "group a" );
+QUnit.test( "a basic test example", function( assert ) {
+  assert.ok( true, "this test is fine" );
+});
+QUnit.test( "a basic test example 2", function( assert ) {
+  assert.ok( true, "this test is fine" );
+}); */
 
 QUnit.test("Hello Test", function(assert){
   assert.ok(1 == "1", "Passed!");
 });
 
-QUnit.test("Add Price Test", function(assert){
+QUnit.module( "Test getPrice );
+QUnit.test("Test getPrice returns a correct result", function(assert){
   var price = getPrice(1, 3);
   assert.equal(price, 3);
+});
+QUnit.test("Test getPrice returns a false result", function(assert){
+  var price = getPrice(1, 4);
+  assert.notEqual(price, 3);
 });
