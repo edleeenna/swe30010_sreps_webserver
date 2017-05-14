@@ -14,5 +14,5 @@ QUnit.test("Hello Test", function(assert){
 
 QUnit.test("Add Price Test", function(assert){
   var price = getPrice(1, 3);
-  assert.true(price, 3);
+  assert.equal(price, 3);
 });
