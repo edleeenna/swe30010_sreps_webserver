@@ -27,10 +27,15 @@ QUnit.test("Test getPrice doesn't accept a string", function(assert){
 });
 
 QUnit.module( "Test Date time" );
-QUnit.test( "a basic test example", function( assert ) {
+QUnit.test( "Sale dateime is correct", function( assert ) {
 
   var datetime = document.getElementById("datetime").innerHTML;
   datetime = getDateTime();
-  assert.equal(getDateTime(), datetime );
+  assert.equal(getDateTime(), datetime);
 });
 
+QUnit.test( "Sale dateime is correct", function( assert ) {
+  var datetime = document.getElementById("datetime").innerHTML;
+  datetime = "2017/09/05 2:00:00"
+  assert.notEqual(getDateTime(), datetime);
+});
