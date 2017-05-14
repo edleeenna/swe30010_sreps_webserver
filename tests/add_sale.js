@@ -43,4 +43,4 @@ window.onload = init;
   // initialise select fields
 //$(document).ready(function() {
   //$('select').material_select();
-});
+//});
