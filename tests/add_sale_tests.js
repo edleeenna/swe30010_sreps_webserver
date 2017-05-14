@@ -34,7 +34,7 @@ QUnit.test( "Sale dateime is correct", function( assert ) {
   assert.equal(getDateTime(), datetime);
 });
 
-QUnit.test( "Sale dateime is correct", function( assert ) {
+QUnit.test( "Sale dateime return false if incorrect", function( assert ) {
   var datetime = document.getElementById("datetime").innerHTML;
   datetime = "2017/09/05 2:00:00"
   assert.notEqual(getDateTime(), datetime);
