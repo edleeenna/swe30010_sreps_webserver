@@ -18,4 +18,12 @@ function validate_name(name)
 	
 }
 
+//checking if input is a number
+function isNumber(number) {
+	if (isNaN(number)){
+		return true;
+	} else {
+		return false;
+	}
+}
 
