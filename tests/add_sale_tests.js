@@ -28,3 +28,7 @@ QUnit.test("Test getPrice returns a false result", function(assert){
   var price = getPrice(1, 4);
   assert.notEqual(price, 3);
 });
+QUnit.test("Test getPrice doesn't accept a string", function(assert){
+  var price = getPrice(1, "four");
+  assert.notOk(price);
+});
