@@ -63,6 +63,12 @@ QUnit.test('Test qty is not a number. Return true if not a number', function(ass
     assert.equal(result, "this is not a number");
 });
 
+QUnit.test('Test qty cannot be under 0', function(assert) {
+  var result = validate_aty(-5);
+  assert.equal(result, "quantity cannot be less than 0")
+  
+});
+
 
 
 
