@@ -26,6 +26,9 @@ function validate_qty(qty)
 	if (isNaN(qty)) {
 		return "this is not a number";
 	}
+	else if (qty < 0) {
+		return "quantity cannot be less than 0";
+	}
 	//if not a number
 	else {
 		return "this is a valid number";
